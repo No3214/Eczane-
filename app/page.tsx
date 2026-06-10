@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import PharmacyCard from "@/components/PharmacyCard";
 import CityDistrictPicker from "@/components/CityDistrictPicker";
 import KvkkBanner from "@/components/KvkkBanner";
@@ -12,9 +12,22 @@ import { MapPin, RefreshCw, Compass, AlertTriangle, ShieldCheck, Glasses } from 
 import { motion, AnimatePresence } from "framer-motion";
 import { useGeolocation } from "@/lib/hooks/useGeolocation";
 import { usePharmacies } from "@/lib/hooks/usePharmacies";
+import dynamic from "next/dynamic";
+
+const InteractiveMap = dynamic(() => import("@/components/InteractiveMap"), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-[220px] rounded-2xl border border-neutral-800 bg-neutral-950 flex items-center justify-center mb-6">
+      <div className="flex flex-col items-center gap-3">
+        <div className="h-7 w-7 animate-spin rounded-full border-2 border-neutral-800 border-t-emerald-500" />
+        <span className="text-[10px] font-bold text-neutral-500 uppercase tracking-widest">Harita Yükleniyor</span>
+      </div>
+    </div>
+  )
+});
 
 export default function Home() {
-  const { pharmacies, loading, error, fetchPharmacies } = usePharmacies();
+  const { pharmacies, loading, error, isOfflineData, fetchPharmacies } = usePharmacies();
   
   // Geolocation states from custom hook
   const {
@@ -36,12 +49,12 @@ export default function Home() {
   const [showPicker, setShowPicker] = useState(false);
 
   // Wrapper for requestLocation to also fetch pharmacies
-  const handleRequestLocation = () => {
+  const handleRequestLocation = useCallback(() => {
     requestLocation(
       (lat, lng) => fetchPharmacies(lat, lng), // onSuccess
       () => setShowPicker(true) // onError
     );
-  };
+  }, [requestLocation, fetchPharmacies]);
 
   const handleOnboardingComplete = (useGps: boolean) => {
     setIsAppReady(true);
@@ -53,12 +66,13 @@ export default function Home() {
     }
   };
 
-  const handleManualSearch = (city: string, district: string) => {
+  const handleManualSearch = useCallback((city: string, district: string) => {
     setSelectedArea({ city, district });
     clearCoords(); // Clear GPS coordinates to bypass distance sorting based on GPS
     setShowPicker(false);
     fetchPharmacies(undefined, undefined, city, district);
-  };
+  }, [clearCoords, fetchPharmacies]);
+
 
   if (!isAppReady) {
     return <OnboardingFlow onComplete={handleOnboardingComplete} />;
@@ -117,7 +131,20 @@ export default function Home() {
         </header>
 
         {/* GPS Prompt / Status Messaging */}
-        <div className="mb-5">
+        <div className="mb-5 space-y-3">
+          {isOfflineData && (
+            <div className="rounded-2xl bg-amber-500/10 border border-amber-500/25 p-3 text-center flex flex-col items-center justify-center gap-1">
+              <div className="flex items-center gap-1.5">
+                <AlertTriangle className="h-4 w-4 text-amber-400 animate-pulse" />
+                <span className="text-[11px] font-black text-amber-300 uppercase tracking-wide">
+                  Çevrimdışı Çalışma Modu
+                </span>
+              </div>
+              <span className="text-[10px] text-neutral-400 font-medium leading-relaxed">
+                İnternet bağlantısı yok. Bilgiler yerel veritabanı önbelleğinden getirildi.
+              </span>
+            </div>
+          )}
           {gpsStatus === "requesting" && (
             <div className="rounded-2xl border border-neutral-800 bg-neutral-900/40 p-4 text-center animate-pulse-slow">
               <Compass className="mx-auto h-7 w-7 text-emerald-500 animate-spin" />
@@ -208,6 +235,16 @@ export default function Home() {
 
         {/* Drug Prospectus Lookup */}
         <DrugProspectus elderMode={elderMode} />
+
+        {/* Interactive Map */}
+        {!loading && pharmacies.length > 0 && (
+          <div className="mb-6">
+            <InteractiveMap 
+              pharmacies={pharmacies} 
+              userCoords={userCoords.lat && userCoords.lng ? { lat: userCoords.lat, lng: userCoords.lng } : null}
+            />
+          </div>
+        )}
 
         {/* Pharmacy Cards List */}
         <div className="space-y-4 flex-grow">

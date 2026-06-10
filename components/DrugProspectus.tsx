@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { BookOpen, Search, Pill, Activity, HelpCircle, AlertTriangle, Clock } from "lucide-react";
+import { BookOpen, Search, Pill, Activity, HelpCircle, AlertTriangle, Clock, Camera } from "lucide-react";
 import { DRUGS_DATABASE, DrugInfo } from "@/lib/drug-data";
 import { motion, AnimatePresence } from "framer-motion";
+import OcrScanner from "./OcrScanner";
 
 interface DrugProspectusProps {
   elderMode?: boolean;
@@ -12,6 +13,7 @@ interface DrugProspectusProps {
 export default function DrugProspectus({ elderMode = false }: DrugProspectusProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedDrug, setSelectedDrug] = useState<DrugInfo | null>(null);
+  const [isScannerOpen, setIsScannerOpen] = useState(false);
 
   const handleSearch = (query: string) => {
     setSearchQuery(query);
@@ -46,17 +48,24 @@ export default function DrugProspectus({ elderMode = false }: DrugProspectusProp
       </div>
 
       {/* Search Bar */}
-      <div className="relative mb-3">
+      <div className="relative mb-3 flex items-center">
         <input 
           type="text" 
           placeholder="İlaç veya etken madde adı yazın (örn: Parol)..." 
           value={searchQuery}
           onChange={(e) => handleSearch(e.target.value)}
-          className={`w-full bg-neutral-950 border border-neutral-800 rounded-xl pl-9 pr-3 py-2 text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900 transition-all ${
+          className={`w-full bg-neutral-950 border border-neutral-800 rounded-xl pl-9 pr-11 py-2 text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900 transition-all ${
             elderMode ? "text-base py-3" : "text-xs"
           }`}
         />
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-neutral-500 pointer-events-none" />
+        <button
+          onClick={() => setIsScannerOpen(true)}
+          className="absolute right-3.5 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-emerald-400 active:scale-95 transition"
+          title="Kamerayla İlaç Tara"
+        >
+          <Camera className="h-4.5 w-4.5" />
+        </button>
       </div>
 
       {/* Quick Suggestion Pills */}
@@ -209,6 +218,13 @@ export default function DrugProspectus({ elderMode = false }: DrugProspectusProp
           <strong>Yasal Uyarı:</strong> Burada sunulan bilgiler sadece bilgilendirme amaçlıdır. Bir hekim tavsiyesi, tıbbi tanı veya tedavi yöntemi yerine geçmez. İlaç kullanımı ve sağlık sorunlarınız için lütfen doktorunuza veya eczacınıza danışın.
         </p>
       </div>
+
+      {/* OCR Scanner Component */}
+      <OcrScanner 
+        isOpen={isScannerOpen} 
+        onClose={() => setIsScannerOpen(false)} 
+        onDetected={(drugName) => handleSearch(drugName)} 
+      />
     </div>
   );
 }

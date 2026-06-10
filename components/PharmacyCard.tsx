@@ -1,12 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Pharmacy } from "@/types/pharmacy";
 import { formatDistance } from "@/lib/distance";
 import { getPhoneUrl, getWhatsappUrl, normalizePhone } from "@/lib/phone";
 import { Phone, MessageCircle, MapPin, AlertTriangle, Navigation, Clock, Share2 } from "lucide-react";
 import MapChoiceSheet from "@/components/MapChoiceSheet";
 import ReportDialog from "@/components/ReportDialog";
+import ShareCard from "@/components/ShareCard";
+import { toBlob } from "html-to-image";
 
 interface PharmacyCardProps {
   pharmacy: Pharmacy;
@@ -63,26 +65,55 @@ export default function PharmacyCard({ pharmacy, index, elderMode = false }: Pha
     return `https://wa.me/${cleanNum}?text=${text}`;
   };
 
-  // Native Web Share API or copy-to-clipboard fallback
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  // Generate PNG visual card and share via Web Share API
   const handleShare = async () => {
-    const shareText = `🏥 ${pharmacy.name}\n📍 Adres: ${pharmacy.address}\n📞 Telefon: ${pharmacy.phone}\n🗺️ Yol Tarifi Al: https://www.google.com/maps/dir/?api=1&destination=${pharmacy.latitude},${pharmacy.longitude}`;
+    if (!cardRef.current) return;
     
-    if (typeof window !== "undefined" && navigator.share) {
-      try {
+    const shareText = `🏥 ${pharmacy.name}\n📍 Adres: ${pharmacy.address}\n📞 Telefon: ${pharmacy.phone}\n🗺️ Yol Tarifi Al: https://www.google.com/maps/dir/?api=1&destination=${pharmacy.latitude},${pharmacy.longitude}`;
+
+    try {
+      const blob = await toBlob(cardRef.current, { cacheBust: true, pixelRatio: 2 });
+      if (!blob) throw new Error("Görsel oluşturulamadı.");
+
+      const file = new File([blob], `${pharmacy.name.replace(/\s+/g, "_")}_nobetci.png`, { type: "image/png" });
+
+      if (typeof window !== "undefined" && navigator.canShare && navigator.canShare({ files: [file] })) {
         await navigator.share({
+          files: [file],
           title: `${pharmacy.name} Nöbetçi Eczane`,
           text: shareText,
         });
-      } catch (err) {
-        console.warn("Share API cancelled:", err);
-      }
-    } else {
-      try {
+      } else {
+        const dataUrl = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.download = `${pharmacy.name}_nobetci.png`;
+        link.href = dataUrl;
+        link.click();
+        URL.revokeObjectURL(dataUrl);
+
         await navigator.clipboard.writeText(shareText);
-        alert("Eczane bilgileri panoya kopyalandı!");
-      } catch (err) {
-        console.error("Clipboard copy failed:", err);
-        alert("Kopyalanamadı.");
+        alert("Eczane bilgi görseli indirildi ve detaylar panoya kopyalandı!");
+      }
+    } catch (err) {
+      console.error("Görsel paylaşım hatası, metin paylaşımına geçiliyor:", err);
+      if (typeof window !== "undefined" && navigator.share) {
+        try {
+          await navigator.share({
+            title: `${pharmacy.name} Nöbetçi Eczane`,
+            text: shareText,
+          });
+        } catch (shareErr) {
+          console.warn("Share API iptal edildi:", shareErr);
+        }
+      } else {
+        try {
+          await navigator.clipboard.writeText(shareText);
+          alert("Eczane bilgileri panoya kopyalandı!");
+        } catch (copyErr) {
+          console.error("Kopyalama hatası:", copyErr);
+        }
       }
     }
   };
@@ -279,6 +310,11 @@ export default function PharmacyCard({ pharmacy, index, elderMode = false }: Pha
         onClose={() => setIsReportOpen(false)}
         pharmacyId={pharmacy.id}
         pharmacyName={pharmacy.name}
+      />
+
+      <ShareCard
+        pharmacy={pharmacy}
+        cardRef={cardRef}
       />
     </div>
   );

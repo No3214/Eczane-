@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "maplibre-gl/dist/maplibre-gl.css";
+
 
 :root {
   --background: #060807; /* Deep clinical dark green-charcoal */
@@ -46,3 +48,17 @@ body {
 .animate-pulse-slow {
   animation: pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
+
+@keyframes scan {
+  0%, 100% {
+    top: 0%;
+  }
+  50% {
+    top: 100%;
+  }
+}
+
+.animate-scan {
+  animation: scan 2.5s ease-in-out infinite;
+}
+

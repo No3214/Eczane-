@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --webpack",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
@@ -11,12 +11,20 @@
     "test:watch": "vitest"
   },
   "dependencies": {
+    "@serwist/next": "^9.5.11",
     "@supabase/supabase-js": "^2.108.1",
+    "dexie": "^4.4.3",
+    "dexie-react-hooks": "^4.4.0",
     "framer-motion": "^12.40.0",
+    "html-to-image": "^1.11.13",
     "lucide-react": "^1.17.0",
+    "maplibre-gl": "^5.24.0",
     "next": "16.2.9",
     "react": "19.2.4",
     "react-dom": "19.2.4",
+    "serwist": "^9.5.11",
+    "tesseract.js": "^7.0.0",
+    "vaul": "^1.1.2",
     "zod": "^4.4.3"
   },
   "devDependencies": {
