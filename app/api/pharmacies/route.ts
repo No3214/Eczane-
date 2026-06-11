@@ -6,6 +6,7 @@ import { IzmirProvider } from "@/lib/providers/izmir-provider";
 import { CollectApiProvider } from "@/lib/providers/collectapi-provider";
 import { SupabaseProvider } from "@/lib/providers/supabase-provider";
 import { MockProvider } from "@/lib/providers/mock-provider";
+import { normalizePharmacy } from "@/lib/pharmacy-normalizer";
 
 const providers = [
   new IzmirProvider(),
@@ -46,7 +47,7 @@ export async function GET(request: NextRequest) {
         try {
           const results = await provider.fetch(input);
           if (results.length > 0) {
-            pharmacies = results;
+            pharmacies = results.map(r => normalizePharmacy(r, provider.name as any));
             break; // Stop at the first provider that successfully returns data
           }
         } catch (err) {

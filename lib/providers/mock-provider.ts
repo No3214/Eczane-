@@ -1,6 +1,7 @@
 import { Pharmacy } from "@/types/pharmacy";
 import { PharmacyProvider, PharmacyProviderInput } from "../pharmacy-provider";
 import { generateMockPharmacies } from "@/lib/pharmacy-data";
+import { normalizePharmacy } from "../pharmacy-normalizer";
 
 export class MockProvider implements PharmacyProvider {
   name = "mock";
@@ -13,15 +14,6 @@ export class MockProvider implements PharmacyProvider {
 
   async fetch(input: PharmacyProviderInput): Promise<Pharmacy[]> {
     const mocks = generateMockPharmacies(input.lat, input.lng, input.city, input.district);
-    
-    return mocks.map((m) => ({
-      ...m,
-      source: this.name,
-      source_label: "Demo Veri (Mock)",
-      source_updated_at: new Date().toISOString(),
-      is_live: false,
-      confidence_score: 50,
-      warning_message: "Demo veri gösteriliyor."
-    }));
+    return mocks.map((m) => normalizePharmacy(m, "mock"));
   }
 }

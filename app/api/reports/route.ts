@@ -11,7 +11,7 @@ export async function GET(request: NextRequest) {
     const adminKey = request.headers.get("x-admin-key");
     const requiredKey = process.env.ADMIN_SECRET_KEY;
     if (!requiredKey) {
-      return NextResponse.json({ success: false, error: "Admin yetkisi yapılandırılmamış." }, { status: 500 });
+      return NextResponse.json({ success: false, error: "Admin yetkisi yapılandırılmamış." }, { status: 503 });
     }
     if (adminKey !== requiredKey) {
       return NextResponse.json({ success: false, error: "Yetkisiz erişim." }, { status: 401 });
@@ -140,7 +140,7 @@ export async function PUT(request: NextRequest) {
     const adminKey = request.headers.get("x-admin-key");
     const requiredKey = process.env.ADMIN_SECRET_KEY;
     if (!requiredKey) {
-      return NextResponse.json({ success: false, error: "Admin yetkisi yapılandırılmamış." }, { status: 500 });
+      return NextResponse.json({ success: false, error: "Admin yetkisi yapılandırılmamış." }, { status: 503 });
     }
     if (adminKey !== requiredKey) {
       return NextResponse.json({ success: false, error: "Yetkisiz erişim." }, { status: 401 });

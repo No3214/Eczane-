@@ -14,10 +14,10 @@ import { useGeolocation } from "@/lib/hooks/useGeolocation";
 import { usePharmacies } from "@/lib/hooks/usePharmacies";
 import dynamic from "next/dynamic";
 
-const InteractiveMap = dynamic(() => import("@/components/InteractiveMap"), {
+const MapSection = dynamic(() => import("@/components/MapSection"), {
   ssr: false,
   loading: () => (
-    <div className="w-full h-[220px] rounded-2xl border border-neutral-800 bg-neutral-950 flex items-center justify-center mb-6">
+    <div className="w-full h-[250px] rounded-3xl border border-neutral-850 bg-neutral-950 flex items-center justify-center">
       <div className="flex flex-col items-center gap-3">
         <div className="h-7 w-7 animate-spin rounded-full border-2 border-neutral-800 border-t-emerald-500" />
         <span className="text-[10px] font-bold text-neutral-500 uppercase tracking-widest">Harita Yükleniyor</span>
@@ -47,6 +47,7 @@ export default function Home() {
   // Selected area fallback states
   const [selectedArea, setSelectedArea] = useState<{ city: string; district: string } | null>(null);
   const [showPicker, setShowPicker] = useState(false);
+  const [showMap, setShowMap] = useState(false);
 
   // Wrapper for requestLocation to also fetch pharmacies
   const handleRequestLocation = useCallback(() => {
@@ -59,7 +60,7 @@ export default function Home() {
   const handleOnboardingComplete = (useGps: boolean) => {
     setIsAppReady(true);
     if (useGps) {
-      requestLocation();
+      handleRequestLocation();
     } else {
       setGpsStatus("denied");
       setShowPicker(true);
@@ -236,18 +237,40 @@ export default function Home() {
         {/* Drug Prospectus Lookup */}
         <DrugProspectus elderMode={elderMode} />
 
-        {/* Interactive Map */}
+        {/* Map Section with Accordion Toggle */}
         {!loading && pharmacies.length > 0 && (
-          <div className="mb-6">
-            <InteractiveMap 
-              pharmacies={pharmacies} 
-              userCoords={userCoords.lat && userCoords.lng ? { lat: userCoords.lat, lng: userCoords.lng } : null}
-            />
+          <div className="mb-6 rounded-3xl bg-neutral-900 border border-neutral-850 overflow-hidden shadow-md">
+            <button
+              onClick={() => setShowMap(!showMap)}
+              className="w-full px-5 py-4 flex items-center justify-between text-neutral-200 hover:text-white font-bold text-xs uppercase tracking-wider transition-colors"
+            >
+              <span className="flex items-center gap-2">
+                <Compass className="h-4 w-4 text-emerald-400" />
+                Haritada Gör (En Yakın 3 Eczane)
+              </span>
+              <span className="text-[10px] text-neutral-500 font-bold bg-neutral-950 px-2.5 py-1 rounded-lg border border-neutral-800">
+                {showMap ? "Gizle" : "Göster"}
+              </span>
+            </button>
+            
+            {showMap && (
+              <div className="border-t border-neutral-850 p-4 bg-neutral-950/20">
+                <MapSection
+                  pharmacies={pharmacies}
+                  userCoords={userCoords.lat && userCoords.lng ? { lat: userCoords.lat, lng: userCoords.lng } : null}
+                />
+              </div>
+            )}
           </div>
         )}
 
         {/* Pharmacy Cards List */}
         <div className="space-y-4 flex-grow">
+          {isOfflineData && (
+            <h3 className="text-xs font-black text-amber-500 uppercase tracking-wider pl-1 mb-2">
+              Son Görüntülenen Eczaneler
+            </h3>
+          )}
           {pharmacies.slice(0, 3).map((pharmacy, index) => (
             <motion.div
               key={pharmacy.id}

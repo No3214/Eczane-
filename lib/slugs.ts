@@ -1,3 +1,5 @@
+import citiesData from "@/data/tr-cities-districts.json";
+
 const trMap: Record<string, string> = {
   "ç": "c", "ğ": "g", "ı": "i", "ö": "o", "ş": "s", "ü": "u",
   "Ç": "c", "Ğ": "g", "İ": "i", "Ö": "o", "Ş": "s", "Ü": "u",
@@ -32,4 +34,19 @@ export function fromSlug(slug: string): string {
 export function normalizeTurkishText(text: string): string {
   if (!text) return "";
   return text.toLocaleLowerCase("tr-TR").trim();
+}
+
+export function findCityBySlug(slug: string): { city: string; districts: string[] } | undefined {
+  if (!slug) return undefined;
+  const targetSlug = slug.trim().toLowerCase();
+  return citiesData.find(c => toSlug(c.city) === targetSlug);
+}
+
+export function findDistrictBySlug(city: string, districtSlug: string): string | undefined {
+  if (!city || !districtSlug) return undefined;
+  const targetCity = findCityBySlug(toSlug(city));
+  if (!targetCity) return undefined;
+  
+  const targetSlug = districtSlug.trim().toLowerCase();
+  return targetCity.districts.find(d => toSlug(d) === targetSlug);
 }

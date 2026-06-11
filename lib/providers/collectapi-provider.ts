@@ -25,13 +25,15 @@ export class CollectApiProvider implements PharmacyProvider {
   }
 
   canHandle(input: PharmacyProviderInput): boolean {
+    const key = this.apiKey || process.env.COLLECTAPI_KEY || "";
     // Only handle if we have an API key and exact city/district 
     // CollectAPI requires city and district explicitly for reliable duty pharmacies
-    return Boolean(this.apiKey && input.city && input.district);
+    return Boolean(key && input.city && input.district);
   }
 
   async fetch(input: PharmacyProviderInput): Promise<Pharmacy[]> {
-    if (!input.city || !input.district) return [];
+    const key = this.apiKey || process.env.COLLECTAPI_KEY || "";
+    if (!key || !input.city || !input.district) return [];
 
     try {
       const res = await fetch(
@@ -39,7 +41,7 @@ export class CollectApiProvider implements PharmacyProvider {
         {
           headers: {
             "Content-Type": "application/json",
-            "Authorization": `apikey ${this.apiKey}`
+            "Authorization": `apikey ${key}`
           },
           next: { revalidate: 1800 } // Cache for 30 minutes
         }

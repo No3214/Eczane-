@@ -19,7 +19,6 @@ interface PharmacyCardProps {
 export default function PharmacyCard({ pharmacy, index, elderMode = false }: PharmacyCardProps) {
   const [isMapOpen, setIsMapOpen] = useState(false);
   const [isReportOpen, setIsReportOpen] = useState(false);
-  const [medication, setMedication] = useState("");
 
   // Calculate current duty time countdown (weekdays: 18:00-08:00, Sat: 13:00-08:00, Sun: 24h)
   const getDutyTimeStatus = () => {
@@ -55,12 +54,9 @@ export default function PharmacyCard({ pharmacy, index, elderMode = false }: Pha
 
   // Dynamic WhatsApp text generator for prefilled stock query
   const getCustomWhatsappUrl = () => {
-    if (!medication.trim()) {
-      return getWhatsappUrl(pharmacy.phone);
-    }
     const cleanNum = normalizePhone(pharmacy.phone);
     const text = encodeURIComponent(
-      `Merhaba, ${pharmacy.name}. Nöbetçi misiniz? Stoklarınızda "${medication.trim()}" ilacı bulunuyor mu? Konum teyidi ile birlikte bilgi alabilir miyim?`
+      `Merhaba ${pharmacy.name}, nöbet durumunuzu ve stok bilginizi teyit etmek için iletişime geçiyorum. Şu an açık mısınız?`
     );
     return `https://wa.me/${cleanNum}?text=${text}`;
   };
@@ -189,21 +185,12 @@ export default function PharmacyCard({ pharmacy, index, elderMode = false }: Pha
         ⚠️ Yola çıkmadan önce eczaneyi arayıp nöbet durumunu teyit edin.
       </p>
 
-      {/* Dynamic Medication Stock inquiry box (Consumer pain point) */}
+      {/* WhatsApp Stock Inquiry Help Text */}
       {!elderMode && (
-        <div className="mt-3 bg-neutral-950/40 rounded-xl p-2.5 border border-neutral-800/40 flex items-center gap-2 focus-within:border-emerald-500/50 focus-within:ring-1 focus-within:ring-emerald-500/30 transition-all">
-          <span className="text-[10px] font-bold text-neutral-500 uppercase tracking-wide shrink-0">💊 İlaç Sor:</span>
-          <input
-            type="text"
-            value={medication}
-            onChange={(e) => setMedication(e.target.value)}
-            placeholder="Sorgulamak için ilaç adı yazın..."
-            className="flex-grow bg-transparent text-xs text-neutral-200 placeholder-neutral-600 focus:outline-none"
-          />
-        </div>
+        <p className="mt-3 text-[10px] text-neutral-400 font-semibold flex items-center gap-1 bg-neutral-950/20 p-2 rounded-xl border border-neutral-850">
+          💬 WhatsApp ile nöbet ve stok durumunu sorabilirsiniz.
+        </p>
       )}
-
-      {/* Surplus Items block removed per product strategy */}
 
       {/* Last Updated Status */}
       <div className={`mt-2 font-bold flex items-center gap-1 ${
@@ -261,16 +248,18 @@ export default function PharmacyCard({ pharmacy, index, elderMode = false }: Pha
       <div className="mt-4 flex flex-col gap-3 border-t border-neutral-800/40 pt-3">
         
         {/* Affiliate / Monetization: Taxi/Uber (Demoted to optional link) */}
-        <div className="flex justify-center mb-1">
-          <a 
-            href={`https://m.uber.com/ul/?action=setPickup&pickup=my_location&dropoff[latitude]=${pharmacy.latitude}&dropoff[longitude]=${pharmacy.longitude}&dropoff[nickname]=${encodeURIComponent(pharmacy.name)}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[10px] text-neutral-500 hover:text-neutral-400 underline decoration-neutral-700 underline-offset-4 focus-visible:outline-none focus-visible:text-neutral-300 transition"
-          >
-            🚕 (Opsiyonel) Taksi Çağır
-          </a>
-        </div>
+        {process.env.NEXT_PUBLIC_FEATURE_TAXI_AFFILIATE === "true" && (
+          <div className="flex justify-center mb-1">
+            <a 
+              href={`https://m.uber.com/ul/?action=setPickup&pickup=my_location&dropoff[latitude]=${pharmacy.latitude}&dropoff[longitude]=${pharmacy.longitude}&dropoff[nickname]=${encodeURIComponent(pharmacy.name)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[10px] text-neutral-500 hover:text-neutral-400 underline decoration-neutral-700 underline-offset-4 focus-visible:outline-none focus-visible:text-neutral-300 transition"
+            >
+              🚕 (Opsiyonel) Taksi Çağır
+            </a>
+          </div>
+        )}
 
         <div className="flex justify-between items-center">
           <button

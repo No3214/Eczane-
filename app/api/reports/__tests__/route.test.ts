@@ -26,7 +26,7 @@ describe("/api/reports Route", () => {
   });
 
   describe("GET", () => {
-    it("returns 500 if ADMIN_SECRET_KEY is not configured", async () => {
+    it("returns 503 if ADMIN_SECRET_KEY is not configured", async () => {
       const originalKey = process.env.ADMIN_SECRET_KEY;
       delete process.env.ADMIN_SECRET_KEY;
 
@@ -34,7 +34,7 @@ describe("/api/reports Route", () => {
         headers: { "x-admin-key": "some-key" }
       });
       const res = await GET(req);
-      expect(res.status).toBe(500);
+      expect(res.status).toBe(503);
       const body = await res.json();
       expect(body.success).toBe(false);
       expect(body.error).toContain("Admin yetkisi yapılandırılmamış");
