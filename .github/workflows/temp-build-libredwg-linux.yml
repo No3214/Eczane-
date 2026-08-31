@@ -1,0 +1,71 @@
+name: Temporary LibreDWG Linux build
+
+on:
+  push:
+    branches:
+      - chatgpt-temp-dwg-dependency-20260831
+
+permissions:
+  contents: read
+
+jobs:
+  build-libredwg:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Install build dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            autoconf automake libtool make gcc g++ pkg-config texinfo \
+            libpcre2-dev libxml2-dev libreadline-dev zlib1g-dev
+      - name: Build LibreDWG 0.14
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --depth 1 --branch 0.14 --recurse-submodules \
+            https://github.com/LibreDWG/libredwg.git libredwg
+          cd libredwg
+          sh ./autogen.sh
+          ./configure \
+            --prefix="$PWD/install" \
+            --disable-bindings \
+            --disable-docs \
+            --disable-shared \
+            --enable-static \
+            --enable-release
+          make -j2
+          make install
+          mkdir -p ../artifact
+          cp -a install ../artifact/libredwg-0.14-linux
+          {
+            echo 'LibreDWG version:'
+            install/bin/dwgread --version || true
+            echo
+            echo 'Installed programs:'
+            find install/bin -maxdepth 1 -type f -printf '%f\n' | sort
+            echo
+            echo 'Binary dependencies:'
+            for f in install/bin/dwg2SVG install/bin/dwg2dxf install/bin/dwgread; do
+              if [ -x "$f" ]; then
+                echo "--- $f"
+                ldd "$f" || true
+              fi
+            done
+          } > ../artifact/build-manifest.txt 2>&1
+          tar -C ../artifact -czf ../artifact/libredwg-0.14-linux.tar.gz libredwg-0.14-linux
+          sha256sum ../artifact/libredwg-0.14-linux.tar.gz > ../artifact/SHA256SUMS
+          cat ../artifact/build-manifest.txt
+          cat ../artifact/SHA256SUMS
+      - name: Upload LibreDWG artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: libredwg-0.14-linux
+          path: |
+            artifact/libredwg-0.14-linux.tar.gz
+            artifact/build-manifest.txt
+            artifact/SHA256SUMS
+          retention-days: 1
+          if-no-files-found: error
