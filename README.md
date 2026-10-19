@@ -28,14 +28,20 @@ Eczane+ olarak kullanıcı verilerinin güvenliğine ve gizliliğine en üst dü
 
 ## 🔌 Veri Sağlayıcı (Provider) Mimarisi
 
-Sistemde esnek ve hata payı olmayan zincirleme (chain) bir veri mimarisi kuruludur:
-1. **İzmir Resmi Açık Veri (`IzmirProvider` - Öncelik: 10):** İzmir Büyükşehir Belediyesi'nin resmi açık veri portalından doğrudan çekilen en güncel nöbet listesi.
+Sistemde sağlayıcılar öncelik sırasıyla denenir; kaynaklara erişim ve verilerin güncelliği değişebilir:
+1. **İzmir Resmi Açık Veri (`IzmirProvider` - Öncelik: 10):** İzmir Büyükşehir Belediyesi'nin tarihli eczane listesi; tek başına bir eczanenin şu an nöbetçi olduğunu doğrulamaz.
 2. **CollectAPI (`CollectApiProvider` - Öncelik: 20):** Tüm Türkiye geneli nöbetçi eczane bilgilerini getiren ticari API (API Anahtarı gerektirir).
 3. **Supabase (`SupabaseProvider` - Öncelik: 30):** Yedeklenmiş veya önbelleğe alınmış eczane kayıtlarını sorgulayan veritabanı.
 4. **Mock Fallback (`MockProvider` - Öncelik: 100):** API sınırları aşıldığında veya bağlantı koptuğunda uygulamanın çökmesini önleyen demo veri sağlayıcısı.
 
 > [!NOTE]
 > Demo verileri kullanıldığında kayıtlara otomatik olarak `Demo veri` etiketi eklenir ve kullanıcının güvenliği için "Yola çıkmadan önce resmi kaynaklardan teyit edin." uyarısı gösterilir.
+
+Demo sağlayıcının ürettiği örnek saatler kaynak güncellemesi olarak taşınmaz. Kartta kaynak güncelleme saati gösterilmez; sağlayıcının oluşturduğu istek veya varsayılan saat, kaynağın güncellendiği an olarak sunulmaz. Paylaşılabilir bilgi görselinde de demo durumu veya doğrulanmamış nöbet saatleri, kaynak adı, varsa liste tarihi ve kaynak uyarısı görünür kalır.
+
+İzmir sağlayıcısı, [belediyenin API belgesindeki](https://openfiles.izmir.bel.tr/111324/docs/ibbapi-WebServisKullanimDokumani_1.0.pdf) `https://openapi.izmir.bel.tr/api/ibb/nobetcieczaneler` adresini kullanır. `LokasyonX` enlem, `LokasyonY` boylam olarak doğrulanır; bölge eşleştirmesi `Bolge` etiketinin tam eşleşmesine dayanır. `IlceId` değeri 0 olabildiğinden `BORNOVA 1` gibi etiketlerden idari ilçe üyeliği tahmin edilmez.
+
+`Tarih`, saat dilimi veya eczaneye özel nöbet bitişi belirtmez. [Belediyenin kendi listesinde](https://www.izmir.bel.tr/tr/NobetciEczane/27) farklı başlangıç ve bitiş saatleri bulunur. Bu yüzden sağlayıcı yalnızca İstanbul takviminde bugüne ait, geçerli tarihli kayıtları kabul eder; bu bir güncellik filtresidir, nöbet saati hesabı değildir. Gece yarısından sonra önceki gün başlamış bir nöbet bu muhafazakâr filtre nedeniyle listelenmeyebilir. Kartlarda liste tarihi ve nöbet saatlerinin doğrulanmadığı uyarısı gösterilir; istemci saatinden nöbet durumu, geri sayım veya kaynak güncelleme zamanı üretilmez.
 
 ---
 
@@ -79,7 +85,7 @@ Doldurulması gereken değişkenler:
 Arama motorlarının nöbetçi eczaneleri indeksleyebilmesi için dinamik sunucu taraflı (SSR) rotalar eklenmiştir:
 - `/nobetci-eczane`: Türkiye geneli şehir seçim listesi.
 - `/[city]/nobetci-eczane`: Şehre ait ilçelerin listesi.
-- `/[city]/[district]/nobetci-eczane`: İlgili ilçe için aktif nöbetçi eczanelerin sunucu tarafında oluşturulan (SSR) statik listesi.
+- `/[city]/[district]/nobetci-eczane`: İlgili bölge için kaynaklardan alınan kayıtları ve kaynak uyarılarını gösteren sunucu taraflı (SSR) liste.
 
 Her SEO sayfasında canonical adresler, OpenGraph meta etiketleri ve arama sonuçlarında doğrudan görünmek üzere **JSON-LD FAQPage** şemaları yer almaktadır.
 
@@ -91,7 +97,7 @@ Tüm testleri vitest ile çalıştırmak için:
 ```bash
 npm run test
 ```
-*Toplam 72 adet unit test başarıyla geçmektedir.*
+Test özeti, çalıştırılan komutun çıktısında gösterilir. İzmir sağlayıcısı testleri sentetik yanıtlar kullanır; gerçek sağlayıcıya istek göndermez.
 
 ---
 

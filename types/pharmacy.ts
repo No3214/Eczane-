@@ -15,6 +15,7 @@ export interface Pharmacy {
   source?: string;
   source_label?: string;
   source_updated_at?: string;
+  roster_date?: string; // Source calendar date; does not establish current duty hours
   is_live?: boolean;
   warning_message?: string;
 }

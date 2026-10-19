@@ -26,7 +26,7 @@ export default function ShareCard({ pharmacy, cardRef }: ShareCardProps) {
         <div className="absolute -left-10 -bottom-10 w-24 h-24 bg-emerald-500/5 blur-2xl rounded-full pointer-events-none" />
 
         {/* Card Header */}
-        <div className="flex items-center justify-between border-b border-neutral-800/80 pb-3">
+        <div className="flex items-center justify-between gap-3 border-b border-neutral-800/80 pb-3">
           <div className="flex items-center gap-2">
             <div className="flex items-center justify-center h-8 w-8 rounded-xl bg-emerald-600 shadow-md">
               <span className="text-white font-black text-lg">+</span>
@@ -40,8 +40,9 @@ export default function ShareCard({ pharmacy, cardRef }: ShareCardProps) {
               </p>
             </div>
           </div>
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/35 px-2.5 py-0.5 text-[9px] font-black text-emerald-400 uppercase tracking-wider">
-            <ShieldAlert className="h-3 w-3" /> Nöbetçi
+          <span className="inline-flex max-w-[180px] items-center gap-1.5 rounded-xl bg-amber-500/10 border border-amber-500/35 px-2.5 py-1 text-[9px] leading-snug text-center font-black text-amber-300 uppercase tracking-wider">
+            <ShieldAlert className="h-3 w-3 shrink-0" />
+            <span>{pharmacy.source === "mock" ? "DEMO VERİ" : "NÖBET SAATLERİ TEYİT EDİLMEDİ"}</span>
           </span>
         </div>
 
@@ -56,6 +57,15 @@ export default function ShareCard({ pharmacy, cardRef }: ShareCardProps) {
                 📍 Yaklaşık Mesafe: {pharmacy.distance >= 1 ? `${pharmacy.distance.toFixed(1)} km` : `${Math.round(pharmacy.distance * 1000)} m`}
               </p>
             )}
+          </div>
+
+          {/* Keep provenance inside the exported image, not only on the page. */}
+          <div className="space-y-1 text-[10px] leading-normal font-bold text-neutral-300">
+            <p>Kaynak: {pharmacy.source_label || "Bilinmiyor"}</p>
+            {pharmacy.roster_date && <p>Liste tarihi: {pharmacy.roster_date}</p>}
+            <p className="text-amber-300">
+              {pharmacy.warning_message || "Nöbet saatleri doğrulanmadı; yola çıkmadan önce eczaneyi arayın."}
+            </p>
           </div>
 
           {/* Address Box */}

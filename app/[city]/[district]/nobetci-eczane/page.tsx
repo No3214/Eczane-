@@ -1,6 +1,5 @@
 import { Metadata } from "next";
-import { fromSlug, toSlug } from "@/lib/slugs";
-import citiesData from "@/data/tr-cities-districts.json";
+import { fromSlug, toSlug, findCityBySlug, findDistrictBySlug } from "@/lib/slugs";
 import Link from "next/link";
 import { ChevronLeft, Phone, MapPin, Navigation } from "lucide-react";
 import { notFound } from "next/navigation";
@@ -43,11 +42,11 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { city, district } = await params;
-  const cityName = fromSlug(city);
-  const districtName = fromSlug(district);
+  const cityName = findCityBySlug(toSlug(city))?.city || fromSlug(city);
+  const districtName = findDistrictBySlug(cityName, toSlug(district)) || fromSlug(district);
   return {
     title: `${districtName} Nöbetçi Eczaneleri | Eczane+`,
-    description: `${cityName} ili ${districtName} ilçesindeki tüm nöbetçi eczaneler. En güncel ${districtName} nöbetçi eczane telefon, adres ve harita bilgisi.`,
+    description: `${cityName} ili ${districtName} için kaynaklardan alınan eczane kayıtları. Nöbet saatlerini yola çıkmadan önce eczaneyi arayarak teyit edin.`,
     alternates: {
       canonical: `${SITE_URL}/${city}/${district}/nobetci-eczane`,
     },
@@ -62,16 +61,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function DistrictPharmaciesPage({ params }: Props) {
   const { city, district } = await params;
-  const cityName = fromSlug(city);
-  const districtName = fromSlug(district);
-
   // Validate city & district
-  const cityData = citiesData.find(c => c.city.toLowerCase() === cityName.toLowerCase());
+  const cityData = findCityBySlug(toSlug(city));
   if (!cityData) {
     notFound();
   }
-  const hasDistrict = cityData.districts.some(d => toSlug(d) === toSlug(districtName));
-  if (!hasDistrict) {
+  const cityName = cityData.city;
+  const districtName = findDistrictBySlug(cityName, toSlug(district));
+  if (!districtName) {
     notFound();
   }
 
@@ -86,7 +83,7 @@ export default async function DistrictPharmaciesPage({ params }: Props) {
         "name": `${districtName} nöbetçi eczaneleri nerede?`,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": `${districtName} ilçesinde şu an nöbetçi olan eczanelerin tam listesi, telefon numaraları ve adres bilgileri sayfamızda listelenmektedir.`
+          "text": `${districtName} için erişilebilen kaynakların eczane kayıtları ve kaynak uyarıları bu sayfada gösterilir. Kayıt bulunması eczanenin şu an açık olduğunu doğrulamaz; nöbet saatlerini telefonla teyit edin.`
         }
       }
     ]
@@ -107,7 +104,7 @@ export default async function DistrictPharmaciesPage({ params }: Props) {
         
         <h1 className="text-2xl font-black text-emerald-400 mb-2">{districtName} Nöbetçi Eczane</h1>
         <p className="text-xs text-neutral-400 mb-6 leading-relaxed">
-          {cityName} ilinin {districtName} ilçesinde nöbetçi olan eczanelerin güncel adres ve telefon listesi aşağıdadır. Lütfen yola çıkmadan önce eczaneyi arayarak nöbet durumunu teyit edin.
+          {cityName} ilinin {districtName} ilçesi için kaynaklardan alınan eczane kayıtları aşağıdadır. Liste tarihini ve kaynak uyarılarını kontrol edin; yola çıkmadan önce eczaneyi arayarak nöbet saatlerini teyit edin.
         </p>
 
         {/* Action CTA Link */}
@@ -125,7 +122,7 @@ export default async function DistrictPharmaciesPage({ params }: Props) {
           
           {pharmacies.length === 0 ? (
             <div className="rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6 text-center">
-              <p className="text-xs text-neutral-400 font-semibold">Bu ilçe için şu an aktif nöbetçi eczane kaydı bulunamadı.</p>
+              <p className="text-xs text-neutral-400 font-semibold">Bu ilçe için kaynaklardan kayıt alınamadı. Bu sonuç, nöbetçi eczane bulunmadığı anlamına gelmez; resmi kaynaklardan teyit edin.</p>
             </div>
           ) : (
             pharmacies.map((pharmacy) => (

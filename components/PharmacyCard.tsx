@@ -20,37 +20,10 @@ export default function PharmacyCard({ pharmacy, index, elderMode = false }: Pha
   const [isMapOpen, setIsMapOpen] = useState(false);
   const [isReportOpen, setIsReportOpen] = useState(false);
 
-  // Calculate current duty time countdown (weekdays: 18:00-08:00, Sat: 13:00-08:00, Sun: 24h)
-  const getDutyTimeStatus = () => {
-    const now = new Date();
-    const day = now.getDay(); // 0: Sunday, 6: Sat
-    const hour = now.getHours();
-
-    let isDuty = false;
-    let statusText = "";
-
-    if (day === 0) {
-      isDuty = true;
-      statusText = "🟢 NÖBETÇİ (PAZAR HİZMETİ)";
-    } else if (day === 6) {
-      if (hour >= 13 || hour < 8) {
-        isDuty = true;
-        statusText = "🟢 NÖBETÇİ (CUMARTESİ HİZMETİ)";
-      } else {
-        statusText = `⏰ NÖBET BAŞLANGICI: ${13 - hour} SAAT SONRA`;
-      }
-    } else {
-      if (hour >= 18 || hour < 8) {
-        isDuty = true;
-        statusText = "🟢 NÖBETÇİ (HAFTA İÇİ HİZMETİ)";
-      } else {
-        statusText = `⏰ NÖBET BAŞLANGICI: ${18 - hour} SAAT SONRA`;
-      }
-    }
-    return { isDuty, statusText };
-  };
-
-  const { isDuty, statusText } = getDutyTimeStatus();
+  // No provider contract supplies a verified per-pharmacy duty interval.
+  const statusText = pharmacy.source === "mock"
+    ? "DEMO VERİ"
+    : "NÖBET SAATLERİ TEYİT EDİLMEDİ";
 
   // Dynamic WhatsApp text generator for prefilled stock query
   const getCustomWhatsappUrl = () => {
@@ -156,13 +129,11 @@ export default function PharmacyCard({ pharmacy, index, elderMode = false }: Pha
               {pharmacy.distance !== undefined ? formatDistance(pharmacy.distance) : "Hesaplanıyor"}
             </span>
 
-            {/* Countdown / Status badge */}
+            {/* Source status: never infer duty from the client clock */}
             <span className={`inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[10px] font-bold ${
               elderMode
                 ? "bg-black text-white border border-white text-xs"
-                : isDuty 
-                  ? "bg-emerald-500/10 text-emerald-400"
-                  : "bg-amber-500/10 text-amber-400"
+                : "bg-amber-500/10 text-amber-400"
             }`}>
               <Clock className="h-3 w-3" />
               {statusText}
@@ -180,9 +151,14 @@ export default function PharmacyCard({ pharmacy, index, elderMode = false }: Pha
         {pharmacy.address}
       </p>
 
-      {/* Legal disclaimer notice inside card */}
-      <p className={`text-[10px] text-amber-500/80 font-bold mt-2.5 flex items-center gap-1`}>
-        ⚠️ Yola çıkmadan önce eczaneyi arayıp nöbet durumunu teyit edin.
+      {/* Keep provider provenance and uncertainty visible on the actual card. */}
+      <div className={`mt-2 space-y-1 font-bold ${elderMode ? "text-sm text-white" : "text-[10px] text-neutral-400"}`}>
+        <p>Kaynak: {pharmacy.source_label || "Bilinmiyor"}</p>
+        {pharmacy.roster_date && <p>Liste tarihi: {pharmacy.roster_date}</p>}
+      </div>
+      <p className={`font-bold mt-2.5 flex items-start gap-1 ${elderMode ? "text-sm text-amber-300" : "text-[10px] text-amber-400"}`}>
+        <AlertTriangle className="h-3.5 w-3.5 shrink-0" />
+        {pharmacy.warning_message || "Yola çıkmadan önce eczaneyi arayıp nöbet durumunu teyit edin."}
       </p>
 
       {/* WhatsApp Stock Inquiry Help Text */}
@@ -191,14 +167,6 @@ export default function PharmacyCard({ pharmacy, index, elderMode = false }: Pha
           💬 WhatsApp ile nöbet ve stok durumunu sorabilirsiniz.
         </p>
       )}
-
-      {/* Last Updated Status */}
-      <div className={`mt-2 font-bold flex items-center gap-1 ${
-        elderMode ? "text-xs text-neutral-300" : "text-[10px] text-neutral-500"
-      }`}>
-        <span className={`rounded-full bg-emerald-500 ${elderMode ? "h-2.5 w-2.5" : "h-1.5 w-1.5 animate-pulse"}`} />
-        Son Güncelleme: {pharmacy.updated_at || "22:40"}
-      </div>
 
       {/* Action Buttons Row */}
       <div className={`grid grid-cols-3 gap-2.5 ${elderMode ? "mt-6" : "mt-5"}`}>

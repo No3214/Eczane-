@@ -38,7 +38,8 @@ describe("pharmacy normalizer helper", () => {
       expect(normalized.city).toBe("İzmir");
       expect(normalized.phone).toBe("0 (232) 123 45 67");
       expect(normalized.latitude).toBe(38.419);
-      expect(normalized.is_live).toBe(true);
+      expect(normalized.is_live).toBe(false);
+      expect(normalized.warning_message).toContain("doğrulanmadı");
       expect(normalized.source).toBe("izmir_open_data");
       expect(normalized.source_label).toBe("İzmir Büyükşehir Belediyesi");
     });
