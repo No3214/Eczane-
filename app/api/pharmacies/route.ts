@@ -47,7 +47,7 @@ export async function GET(request: NextRequest) {
         try {
           const results = await provider.fetch(input);
           if (results.length > 0) {
-            pharmacies = results.map(r => normalizePharmacy(r, provider.name as any));
+            pharmacies = results.map(r => normalizePharmacy(r, provider.name));
             break; // Stop at the first provider that successfully returns data
           }
         } catch (err) {

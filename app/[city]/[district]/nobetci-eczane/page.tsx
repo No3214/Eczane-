@@ -27,7 +27,7 @@ async function getPharmacies(city: string, district: string): Promise<Pharmacy[]
       try {
         const results = await provider.fetch(input);
         if (results.length > 0) {
-          return results.map(r => normalizePharmacy(r, provider.name as any));
+          return results.map(r => normalizePharmacy(r, provider.name));
         }
       } catch (err) {
         console.error(`SSR Provider ${provider.name} failed:`, err);

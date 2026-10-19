@@ -4,7 +4,7 @@ import { generateMockPharmacies } from "@/lib/pharmacy-data";
 import { normalizePharmacy } from "../pharmacy-normalizer";
 
 export class MockProvider implements PharmacyProvider {
-  name = "mock";
+  readonly name = "mock";
   priority = 100; // Last resort
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars

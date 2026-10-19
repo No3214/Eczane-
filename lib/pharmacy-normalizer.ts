@@ -1,5 +1,18 @@
 import { Pharmacy } from "@/types/pharmacy";
 
+type RawPharmacy = Partial<Omit<Pharmacy, "latitude" | "longitude">> & {
+  latitude?: number | string;
+  longitude?: number | string;
+  Adi?: string;
+  il?: string;
+  Ilce?: string;
+  ilce?: string;
+  Telefon?: string;
+  Enlem?: number | string;
+  Boylam?: number | string;
+  Adres?: string;
+};
+
 export function capitalizeTurkish(str: string): string {
   if (!str) return "";
   return str.split(" ").map(word => {
@@ -21,7 +34,7 @@ export function formatTurkishPhone(phone: string): string {
 }
 
 export function normalizePharmacy(
-  raw: any,
+  raw: RawPharmacy,
   source: "izmir_open_data" | "collectapi" | "supabase" | "mock"
 ): Pharmacy {
   // Normalize name

@@ -15,7 +15,7 @@ const CollectApiResponseSchema = z.object({
 }).passthrough();
 
 export class CollectApiProvider implements PharmacyProvider {
-  name = "collectapi";
+  readonly name = "collectapi";
   priority = 20; // Secondary priority after official free ones
 
   private apiKey: string;

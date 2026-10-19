@@ -54,7 +54,7 @@ export default function TurkeyPharmaciesPage() {
 
         <h1 className="text-2xl font-black text-emerald-400 mb-2">Türkiye Nöbetçi Eczaneleri</h1>
         <p className="text-xs text-neutral-400 mb-6 leading-relaxed">
-          Tüm Türkiye'deki 81 ilde anlık nöbetçi eczane listelerine ulaşın. Konumunuza en yakın nöbetçi eczaneyi haritada görmek ve yol tarifi almak için ana sayfamızı ziyaret edebilirsiniz.
+          Tüm Türkiye&apos;deki 81 ilde anlık nöbetçi eczane listelerine ulaşın. Konumunuza en yakın nöbetçi eczaneyi haritada görmek ve yol tarifi almak için ana sayfamızı ziyaret edebilirsiniz.
         </p>
 
         {/* Action CTA Link */}

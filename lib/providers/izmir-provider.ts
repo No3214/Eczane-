@@ -14,7 +14,7 @@ const IzmirPharmacySchema = z.object({
 const IzmirApiResponseSchema = z.array(IzmirPharmacySchema);
 
 export class IzmirProvider implements PharmacyProvider {
-  name = "izmir_open_data";
+  readonly name = "izmir_open_data";
   priority = 10; // Highest priority for official free data
 
   canHandle(input: PharmacyProviderInput): boolean {
