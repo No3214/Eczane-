@@ -1,0 +1,17 @@
+// Diagnostic control only. The guard must reject before opening any connection.
+const path = require('node:path');
+const tsc = path.join(__dirname, 'repo', 'node_modules', 'typescript', 'bin', 'tsc');
+if (process.argv[1] && path.resolve(process.argv[1]) === tsc) {
+  let denied = false;
+  let reason = '';
+  try {
+    require('node:https').request('https://eczane-guard-control.invalid/');
+  } catch (error) {
+    reason = error.message;
+    denied = reason.startsWith('ECZANE_AUDIT_EXTERNAL_NETWORK_BLOCKED');
+  }
+  require('node:fs').writeFileSync(process.env.ECZANE_STDIO_DENY_CONTROL, JSON.stringify({
+    denied, reason, stdoutWriter: process.stdout.write.name,
+  }, null, 2) + '\n');
+  if (!denied) throw new Error('The required external-network guard control did not reject.');
+}

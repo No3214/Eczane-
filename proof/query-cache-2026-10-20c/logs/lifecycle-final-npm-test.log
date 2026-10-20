@@ -1,0 +1,65 @@
+
+> nobetci-plus@0.1.0 test
+> vitest run && node tests/pharmacy-share.node.cjs
+
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.8 [39m[90m/workspace/scratch/c1829247bf0c/continuation-20261020c/eczane/repo[39m
+
+ [32m✓[39m tests/izmir-provider.test.ts [2m([22m[2m34 tests[22m[2m)[22m[33m 308[2mms[22m[39m
+ [32m✓[39m tests/pharmacy-query-ownership.test.tsx [2m([22m[2m23 tests[22m[2m)[22m[32m 282[2mms[22m[39m
+ [32m✓[39m components/__tests__/ocr-scanner.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[33m 374[2mms[22m[39m
+ [32m✓[39m lib/__tests__/providers.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 70[2mms[22m[39m
+ [32m✓[39m components/__tests__/drug-prospectus.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 444[2mms[22m[39m
+ [32m✓[39m components/__tests__/share-card-status.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 331[2mms[22m[39m
+ [32m✓[39m tests/slugs.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 26[2mms[22m[39m
+ [32m✓[39m components/__tests__/pharmacy-card-status.test.tsx [2m([22m[2m10 tests[22m[2m)[22m[33m 1170[2mms[22m[39m
+     [33m[2m✓[22m[39m never derives current duty or a countdown from the weekday clock: 2026-10-19T20:00:00Z [33m 616[2mms[22m[39m
+ [32m✓[39m app/api/reports/__tests__/route.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 84[2mms[22m[39m
+ [32m✓[39m tests/pharmacy-normalizer.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 29[2mms[22m[39m
+ [32m✓[39m lib/__tests__/slugs.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 60[2mms[22m[39m
+ [32m✓[39m tests/distance.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 13[2mms[22m[39m
+ [32m✓[39m components/__tests__/share-card.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 269[2mms[22m[39m
+ [32m✓[39m lib/__tests__/phone.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 55[2mms[22m[39m
+ [32m✓[39m lib/__tests__/maps.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 58[2mms[22m[39m
+ [32m✓[39m tests/provider-fallback.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 14[2mms[22m[39m
+ [32m✓[39m lib/__tests__/distance.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 15[2mms[22m[39m
+ [32m✓[39m tests/phone.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 18[2mms[22m[39m
+ [32m✓[39m components/__tests__/interactive-map.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 160[2mms[22m[39m
+ [32m✓[39m tests/home-results.test.tsx [2m([22m[2m11 tests[22m[2m)[22m[33m 9536[2mms[22m[39m
+     [33m[2m✓[22m[39m starts with the first three records in provider order [33m 1479[2mms[22m[39m
+     [33m[2m✓[22m[39m expands the current results without opening the area picker or fetching again [33m 648[2mms[22m[39m
+     [33m[2m✓[22m[39m collapses back to three without discarding records or starting a new query [33m 838[2mms[22m[39m
+     [33m[2m✓[22m[39m resets expansion when a new GPS query is started [33m 702[2mms[22m[39m
+     [33m[2m✓[22m[39m keeps a new query collapsed while GPS and its response are still pending [33m 2196[2mms[22m[39m
+     [33m[2m✓[22m[39m resets expansion on a submitted manual city/district search [33m 1910[2mms[22m[39m
+     [33m[2m✓[22m[39m keeps expanded results when the unrelated large-text preference changes [33m 622[2mms[22m[39m
+     [33m[2m✓[22m[39m keeps expanded results when the area picker is opened and closed without submitting [33m 753[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m20 passed[39m[22m[90m (20)[39m
+[2m      Tests [22m [1m[32m153 passed[39m[22m[90m (153)[39m
+[2m   Start at [22m 14:58:53
+[2m   Duration [22m 17.95s[2m (transform 5.62s, setup 0ms, import 20.44s, tests 13.32s, environment 25.29s)[22m
+
+✔ native image sharing retains demo status, source, roster date and warning (12.53082ms)
+✔ an official-source fixture still shares unverified hours and its own warning (6.079394ms)
+✔ legacy metadata-free records get an unknown source and the call-first warning (3.962479ms)
+✔ an image-rendering error falls back to native text with the same provenance (7.590878ms)
+✔ a null image falls back to native text with unverified official-source status (4.650101ms)
+✔ unsupported file sharing downloads the image and copies full provenance (6.718348ms)
+✔ absent canShare uses the existing download and clipboard route (3.931991ms)
+✔ image failure without native share copies the complete warning (2.418724ms)
+✔ clipboard denial after download falls back to native text without a success alert (2.542016ms)
+✔ native cancellation ends sharing without retrying or performing fallback effects (3.077826ms)
+✔ a non-cancellation native file error still falls back to successful text sharing (2.808434ms)
+✔ text-only cancellation is caught and does not claim success or copy silently (3.321084ms)
+✔ clipboard-only denial is caught without a success alert (2.369891ms)
+✔ missing native-share and clipboard APIs remain a handled failure (2.572742ms)
+✔ a missing capture ref keeps the existing no-op behavior (2.082047ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 110.468675

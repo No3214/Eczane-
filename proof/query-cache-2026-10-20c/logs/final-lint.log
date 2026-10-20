@@ -1,0 +1,16 @@
+
+> nobetci-plus@0.1.0 lint
+> eslint
+
+
+/workspace/scratch/c1829247bf0c/continuation-20261020c/eczane/repo/app/[city]/[district]/nobetci-eczane/page.tsx
+  4:30  warning  'MapPin' is defined but never used  @typescript-eslint/no-unused-vars
+
+/workspace/scratch/c1829247bf0c/continuation-20261020c/eczane/repo/components/PharmacyCard.tsx
+  6:23  warning  'getWhatsappUrl' is defined but never used  @typescript-eslint/no-unused-vars
+
+/workspace/scratch/c1829247bf0c/continuation-20261020c/eczane/repo/tests/provider-fallback.test.ts
+  1:32  warning  'vi' is defined but never used  @typescript-eslint/no-unused-vars
+
+✖ 3 problems (0 errors, 3 warnings)
+

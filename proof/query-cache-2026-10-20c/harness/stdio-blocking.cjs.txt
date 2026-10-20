@@ -1,0 +1,7 @@
+// Local validation harness only. Preserve captured Node child-process output.
+// No application, dependency, transport or network-permission changes.
+for (const stream of [process.stdout, process.stderr]) {
+  if (stream && stream._handle && typeof stream._handle.setBlocking === 'function') {
+    stream._handle.setBlocking(true);
+  }
+}

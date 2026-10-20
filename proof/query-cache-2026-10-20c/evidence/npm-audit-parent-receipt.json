@@ -1,0 +1,18 @@
+{
+  "command": [
+    "npm",
+    "audit",
+    "--json",
+    "--package-lock-only",
+    "--ignore-scripts",
+    "--registry=https://registry.npmjs.org/",
+    "--fetch-retries=0",
+    "--fetch-timeout=20000"
+  ],
+  "started_at_utc": "2026-10-20T14:34:34.277789+00:00",
+  "elapsed_seconds": 1.448,
+  "exit_code": 1,
+  "network_scope": "public npm registry vulnerability metadata; credentials/config not inherited",
+  "stdout_sha256": "811e0554a8d4e034fc8a0d03a083b713671a62af110eadb0c5aa8dcca74c7e3d",
+  "stderr_sha256": "7abb6c732876e633c1857734b3b16395bda880809793e064e66ddd5592bacd21"
+}

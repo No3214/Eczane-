@@ -1,0 +1,17 @@
+Listing tests:
+  [chromium] › app.spec.ts:11:7 › Nöbetçi+ Critical Path E2E › User accepts KVKK, shares location, and sees pharmacies
+  [chromium] › cache-area.spec.ts:6:5 › offline manual searches never display another area's cached pharmacies
+  [chromium] › example.spec.ts:3:5 › has title
+  [chromium] › example.spec.ts:10:5 › get started link
+  [chromium] › results.spec.ts:6:5 › expands current results and resets after a new manual search
+  [firefox] › app.spec.ts:11:7 › Nöbetçi+ Critical Path E2E › User accepts KVKK, shares location, and sees pharmacies
+  [firefox] › cache-area.spec.ts:6:5 › offline manual searches never display another area's cached pharmacies
+  [firefox] › example.spec.ts:3:5 › has title
+  [firefox] › example.spec.ts:10:5 › get started link
+  [firefox] › results.spec.ts:6:5 › expands current results and resets after a new manual search
+  [webkit] › app.spec.ts:11:7 › Nöbetçi+ Critical Path E2E › User accepts KVKK, shares location, and sees pharmacies
+  [webkit] › cache-area.spec.ts:6:5 › offline manual searches never display another area's cached pharmacies
+  [webkit] › example.spec.ts:3:5 › has title
+  [webkit] › example.spec.ts:10:5 › get started link
+  [webkit] › results.spec.ts:6:5 › expands current results and resets after a new manual search
+Total: 15 tests in 4 files

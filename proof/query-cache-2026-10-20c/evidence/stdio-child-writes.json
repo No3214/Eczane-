@@ -1,0 +1,18 @@
+{
+  "scope": "Built-in stdio diagnostic only; no application code, network or credentials. Guard active.",
+  "parent_program": "const cp=require(\"node:child_process\");const p=cp.spawn(process.execPath,[\"-e\",\"const fs=require(\\\"node:fs\\\");const marker=\\\"/workspace/scratch/c1829247bf0c/continuation-20261020c/eczane/evidence/stdio-child-observation.json\\\";const events={fd1Socket:fs.fstatSync(1).isSocket(),fd1Fifo:fs.fstatSync(1).isFIFO(),stdoutConstructor:process.stdout.constructor.name,stdoutFd:process.stdout.fd,stdoutDestroyed:process.stdout.destroyed};console.log(\\\"console-constant\\\");try{events.streamWriteAccepted=process.stdout.write(\\\"stream-constant\\\\n\\\")}catch(e){events.streamError=e.message}try{events.syncBytes=fs.writeSync(1,\\\"fs-sync-constant\\\\n\\\")}catch(e){events.syncError=e.message}fs.writeFileSync(marker,JSON.stringify(events));\"],{stdio:[\"ignore\",\"pipe\",\"pipe\"]});let out=\"\",err=\"\";p.stdout.on(\"data\",x=>out+=x);p.stderr.on(\"data\",x=>err+=x);p.on(\"close\",code=>console.log(JSON.stringify({code,out,err})));",
+  "result": {
+    "exit_code": 0,
+    "stdout": "{\"code\":0,\"out\":\"fs-sync-constant\\n\",\"err\":\"\"}\n",
+    "stderr": ""
+  },
+  "child_observation": {
+    "fd1Socket": true,
+    "fd1Fifo": false,
+    "stdoutConstructor": "Writable",
+    "stdoutFd": 1,
+    "stdoutDestroyed": false,
+    "streamWriteAccepted": true,
+    "syncBytes": 17
+  }
+}

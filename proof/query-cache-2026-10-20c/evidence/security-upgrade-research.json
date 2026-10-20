@@ -1,0 +1,104 @@
+{
+  "observed_at_utc": "2026-10-20T14:46:55.757622+00:00",
+  "kind": "PUBLIC_PRIMARY_ADVISORY_AND_OFFLINE_SECURITY_UPGRADE_CANDIDATE",
+  "source": {
+    "url": "https://nextjs.org/blog/nextjs-security-update-october-14-2026",
+    "published_date": "2026-10-14",
+    "publisher": "Next.js / Vercel",
+    "patched_next_active_lts": "16.4.1",
+    "patched_sharp": "0.35.5",
+    "advisories": [
+      "GHSA-673q-mjm6-r5xr",
+      "GHSA-2464-fhr4-w9xw",
+      "GHSA-p3m5-59mp-jv5r"
+    ]
+  },
+  "baseline": {
+    "commit": "ccc6e4590ecf50a0326280cdfdfb0ec0de32f9f8",
+    "next": "16.2.9",
+    "eslint-config-next": "16.2.9",
+    "sharp": "0.34.5",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "candidate": {
+    "next": "16.4.1",
+    "eslint-config-next": "16.4.1",
+    "sharp": "0.35.5",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "eslint": "9.39.4"
+  },
+  "acquisition": {
+    "automatic_review": "Approved narrow public-reference package download",
+    "minimal_manifest_contains_project_sources_or_lockfile": false,
+    "npm_audit": false,
+    "install_scripts": false,
+    "credentials_inherited": false,
+    "network_environment": "Only existing proxy and TLS variables, PATH and explicit npm options",
+    "attempts": [
+      {
+        "name": "minimal-framework-install.log",
+        "exit_code": 1,
+        "cause": "EAI_AGAIN; proxy not inherited in empty environment"
+      },
+      {
+        "name": "minimal-framework-install-proxy.log",
+        "exit_code": 0,
+        "summary": "342 public packages installed into isolated reference folder"
+      }
+    ]
+  },
+  "project_resolution": {
+    "command": [
+      "npm",
+      "install",
+      "--package-lock-only",
+      "--offline",
+      "--ignore-scripts",
+      "--no-audit",
+      "--no-fund"
+    ],
+    "exit_code": 0,
+    "project_graph_submitted": false,
+    "network": "Disabled with npm offline; no proxy or credentials inherited"
+  },
+  "audit_status": {
+    "full_project_npm_audit": "Not executed successfully; escalation was rejected by automatic approval review for metadata disclosure",
+    "retry_denied_audit": false,
+    "all_dependency_alerts_resolved": false,
+    "remaining_alert_count": "Unknown until authorized fresh audit or existing CI installation evidence"
+  },
+  "applicability": {
+    "source_inspection": "No literal use cache, use server, cacheComponents or next/image matches in app, components, lib and next.config.ts at inspected baseline",
+    "proof_of_exploitability_or_exploit_test": false,
+    "production_platform_verified": false,
+    "conclusion": "Upgrade follows primary maintainer patch guidance; source search alone does not prove or disprove production vulnerability."
+  },
+  "reference_integrities": {
+    "next": {
+      "version": "16.4.1",
+      "resolved": "https://registry.npmjs.org/next/-/next-16.4.1.tgz",
+      "integrity": "sha512-uc657V62E34fOI6W5NtG9IzwsPcms0Z60grz2MJGtglgD+pTFnNt4Yw2PzaU622tfX4vhrDgLZzicE2YlhI20Q=="
+    },
+    "eslint-config-next": {
+      "version": "16.4.1",
+      "resolved": "https://registry.npmjs.org/eslint-config-next/-/eslint-config-next-16.4.1.tgz",
+      "integrity": "sha512-6AsojbCfRdpWkP6BIUnMBv3MH4OvtfmH9p4hSfLh8ZgsW7nfhu7DpUMNBB7leisDyyMz+YYxTc+NAdBOQfovlA=="
+    },
+    "sharp": {
+      "version": "0.35.5",
+      "resolved": "https://registry.npmjs.org/sharp/-/sharp-0.35.5.tgz",
+      "integrity": "sha512-Ywn4OnzGukp7CDMrp08RQ50YKmuwG47brZgIVPTvBaaAfQlRlygrRqSrxdCiL9M+LlzLBiJ68IR1QqvzHyjC7g=="
+    }
+  },
+  "local_file_sha256": {
+    "minimal/package.json": "28647ab7e74498028ea4239112d3ece35d934097e974030518168021d04566ff",
+    "minimal/package-lock.json": "4c9677d69e410eac8974b1b2b98cd569550f5d64d83104f9e36b22b79148ae60",
+    "evidence/minimal-framework-install.log": "67bace034ef343119046c48f6f09f0d3f100bd461f416865410c0e271ad72aea",
+    "evidence/minimal-framework-install-proxy.log": "03df59d3d44224cb6f59bd49588b4f5c890a48d6f61e475cd8ce44abf1d4e2e6",
+    "evidence/offline-project-lock-receipt.json": "ad130d04223d7e767c2f75c3a159dbacd4f875b24ef490b459f15e92db8ca2b6",
+    "evidence/lock-delta.json": "4a8cfe070e5df7e029f875fc5a0af074d3182445387dbca2c9a38dd52e90c33a"
+  },
+  "status": "CANDIDATE_NOT_YET_APPLICATION_TESTED_OR_PUBLISHED"
+}

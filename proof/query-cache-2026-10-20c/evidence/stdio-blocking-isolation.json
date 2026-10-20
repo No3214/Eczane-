@@ -1,0 +1,20 @@
+{
+  "recorded_at_utc": "2026-10-20T14:51:49.562625+00:00",
+  "program": "const cp=require(\"node:child_process\");const c=cp.spawn(process.execPath,[\"-e\",\"console.log(12345)\"],{stdio:[\"ignore\",\"pipe\",\"pipe\"]});let out=\"\",err=\"\";c.stdout.on(\"data\",x=>out+=x);c.stderr.on(\"data\",x=>err+=x);c.on(\"close\",code=>console.log(JSON.stringify({code,out,err})));",
+  "scope": "Built-in node:child_process only; child prints constant 12345. Network guard stays active in both runs.",
+  "results": [
+    {
+      "blocking": false,
+      "exit_code": 0,
+      "stdout": "{\"code\":0,\"out\":\"\",\"err\":\"\"}\n",
+      "stderr": ""
+    },
+    {
+      "blocking": true,
+      "exit_code": 0,
+      "stdout": "{\"code\":0,\"out\":\"\",\"err\":\"\"}\n",
+      "stderr": ""
+    }
+  ],
+  "stdio_helper_sha256": "10c90cdf06949131843e1a7d56ce4c59e555516c0bcbb8344876fba131d2a12a"
+}

@@ -1,0 +1,15 @@
+{
+  "info": {
+    "packageJsonPath": "/workspace/scratch/c1829247bf0c/continuation-20261020c/eczane/repo/node_modules/typescript/package.json",
+    "packageDir": "/workspace/scratch/c1829247bf0c/continuation-20261020c/eczane/repo/node_modules/typescript",
+    "version": "5.9.3",
+    "apiPath": "/workspace/scratch/c1829247bf0c/continuation-20261020c/eczane/repo/node_modules/typescript/lib/typescript.js",
+    "tscPath": "/workspace/scratch/c1829247bf0c/continuation-20261020c/eczane/repo/node_modules/typescript/bin/tsc"
+  },
+  "execPath": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+  "exitCode": 0,
+  "signal": null,
+  "stdoutLength": 0,
+  "stderr": "",
+  "stdoutPrefix": ""
+}

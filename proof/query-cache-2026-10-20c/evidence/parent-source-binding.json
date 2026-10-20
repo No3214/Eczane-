@@ -1,0 +1,1266 @@
+{
+  "parent_commit": "ccc6e4590ecf50a0326280cdfdfb0ec0de32f9f8",
+  "parent_tree": "326e48fe1c7022bbb2c282ef6664f10363506c34",
+  "verified_at_utc": "2026-10-20T14:34:17.050534+00:00",
+  "materialized": 186,
+  "unmaterialized_preserved_remotely": 325,
+  "files": [
+    {
+      "path": ".github/workflows/playwright.yml",
+      "sha256": "b51cb367e18f8a59367d99103c5433934172534d40341e2daaf5efcfa67a0acd",
+      "git_blob_sha": "3eb13143c3dd93d2ed5c2ce64886c8744c9631f4"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "e047bd384439081ceac27ab9b9fd5f7d7423cad4f3e754a1b7b74b4fd01cb2f1",
+      "git_blob_sha": "3a8184d61d2628baf1f48f5caa2d84bd5f0cbbdf"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "e3447d84251880fb34cfae09131cb4c57471529bbfe60976a3245793cf621627",
+      "git_blob_sha": "8bd0e39085d5260e7f8faffcad2fdc45e10aef33"
+    },
+    {
+      "path": "CLAUDE.md",
+      "sha256": "336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49",
+      "git_blob_sha": "43c994c2d3617f947bcb5adf1933e21dabe46bb5"
+    },
+    {
+      "path": "README.md",
+      "sha256": "06aa4a1cde1289a09e2d0aea802f96dff774a2b5d8b4b5cf98ca85222d4e4cbd",
+      "git_blob_sha": "334e7016fe46732054d3ede0d6f7178add8ab270"
+    },
+    {
+      "path": "app/[city]/[district]/nobetci-eczane/page.tsx",
+      "sha256": "0808351e735c0456b7444890e4890557a1d10779b8be868675fe17e644e4d91d",
+      "git_blob_sha": "d0ad184e4891db11cbe7819d4bee66890f23e6de"
+    },
+    {
+      "path": "app/[city]/nobetci-eczane/page.tsx",
+      "sha256": "be1285034bb81e260c45a548488c563278deaf9f9bce30a18164fd83414f35c9",
+      "git_blob_sha": "c5cb771f7af98662411ed3950c04bdc92fe87617"
+    },
+    {
+      "path": "app/admin/reports/page.tsx",
+      "sha256": "4f3f1a666f38e7abf22b81ca3bf4b2f61dbe8e0518820034ba60abe1da88d048",
+      "git_blob_sha": "dc6a3b2561ad9d939205f08d922d4da16acc1196"
+    },
+    {
+      "path": "app/api/geocode/route.ts",
+      "sha256": "b2d8828cdc2d966b3dd6230ea16caadf800c674d3e55161922117850e43b4f3f",
+      "git_blob_sha": "c739c41f10cd69d42f9d96ed5efd5bc2bfd0757b"
+    },
+    {
+      "path": "app/api/pharmacies/route.ts",
+      "sha256": "b414d50b28299313a0b6d9a353bf48e9a644cc130ddd8969608c3c394bf5ad2d",
+      "git_blob_sha": "380f1c4e588a3261dc9cb8033d4cbaeb6da581f1"
+    },
+    {
+      "path": "app/api/reports/__tests__/route.test.ts",
+      "sha256": "4672b24b9054f81ff78597053ae59dd0cb2074bfe5266595518cd1cc0e1011c6",
+      "git_blob_sha": "df82f06ab78a53c7ec07d19023233ac164579190"
+    },
+    {
+      "path": "app/api/reports/route.ts",
+      "sha256": "a01da6eefcc1af4fb71aad11f7325d2a84a29bfa79e802a8a2d97204285fbec7",
+      "git_blob_sha": "007d3c83c10652b578f228b82a18265bfa71724e"
+    },
+    {
+      "path": "app/fonts.css",
+      "sha256": "09794339da6030bcc23fdf7ef1e85385d0c6976be2523cc631aa266de9d3c081",
+      "git_blob_sha": "a8bc08309a4dd45692059240c0af0ffca07dfe51"
+    },
+    {
+      "path": "app/globals.css",
+      "sha256": "611b3fe20125c86cbb59fdcd25f7b0e6bbc6e645828f112d7ef283ee8cb3419c",
+      "git_blob_sha": "484ed444a45f62585d9937306248e510a00e7341"
+    },
+    {
+      "path": "app/layout.tsx",
+      "sha256": "fa8df982122dcd5ec27e3e358fe1d3b51ec77f83a6288acc880d3cdcb65baf04",
+      "git_blob_sha": "f7a155cc1ec6d3317f70726fb4248009813d1f5f"
+    },
+    {
+      "path": "app/nobetci-eczane/page.tsx",
+      "sha256": "eef1b11ddd81078ba06de997ef4b4221b2475604b80ba540eb312b7df28c9dea",
+      "git_blob_sha": "1e037d2caa2c9e4b355ac547fff2b7cd1e8b13b7"
+    },
+    {
+      "path": "app/page.tsx",
+      "sha256": "1d69f981ab5a7415f22b6502781dc94bdbf9f363ec70009e4b13c471a82afdc0",
+      "git_blob_sha": "83ee47ff77b93ac307163608ba1c35eb4b77cdfd"
+    },
+    {
+      "path": "app/sw.ts",
+      "sha256": "9afb1a42ae5d0e50793370de29750f1fddbfbb7b3d625ffa41231a421f8903a6",
+      "git_blob_sha": "552e004f6472c3b787444701375554bfc35aac55"
+    },
+    {
+      "path": "components/CityDistrictPicker.tsx",
+      "sha256": "d66d8a7b08aefcf9be830c6dcde13bde796405f9fc72e7e4ae905b0dc1d42d50",
+      "git_blob_sha": "c15320ff85faf9bd6be293a6af16b115bb05620a"
+    },
+    {
+      "path": "components/DrugProspectus.tsx",
+      "sha256": "850b6739abb8529a46200e4d84d963c081e97341693f761bd9032ef8f4229db8",
+      "git_blob_sha": "7e2dc691f4ca687a25092da69d45e9cd4ea717c3"
+    },
+    {
+      "path": "components/GraphPanel.tsx",
+      "sha256": "6ef2e26d0ddfbf350b8af2264dede13a35b44a96e1ddc2972bf580d66d6a9c7b",
+      "git_blob_sha": "3db1319b9ae59e9a121dc19df7ba9b3235a3cd2d"
+    },
+    {
+      "path": "components/HealthDashboard.tsx",
+      "sha256": "8c8e7ab4dc8a3ab234e136a6a017a8257fc93b2a502aa1277485bdd14c37c6c6",
+      "git_blob_sha": "a6aba30397be2cf1cb0bf189d20bbf0f4bbdd1b3"
+    },
+    {
+      "path": "components/InteractiveMap.tsx",
+      "sha256": "9ebab92b011b66872d8c14af5604e517c1edacfa5ee512341b1b25b45a495880",
+      "git_blob_sha": "d30f8bb15b2bee3bcf0feeeb3a514e162b9ae00d"
+    },
+    {
+      "path": "components/KvkkBanner.tsx",
+      "sha256": "d8ce0d08bdfaacf659d1f2f003fb99a668ada519c28783993a274edccf895989",
+      "git_blob_sha": "6dc60e1be78cbddc0bd9c5e6a547267931cfefa7"
+    },
+    {
+      "path": "components/KvkkModal.tsx",
+      "sha256": "822349d99135ea9ec6a97d58fbb1f82c4a7a04db55d9c4275c911e98c0fc617e",
+      "git_blob_sha": "77bcd9a839cbc4229f0032e0940a21a45c68dd93"
+    },
+    {
+      "path": "components/MapChoiceSheet.tsx",
+      "sha256": "122617b18b3346e85fed61e0c456773536b13668910bd8987b3e1a2a4093abae",
+      "git_blob_sha": "ae0e70116f45562d8626d1ef2431e0a4866cddfe"
+    },
+    {
+      "path": "components/MapSection.tsx",
+      "sha256": "46026535f6d9b304b984df0f8e50db1ac06f7a32502cc5d29ac49a81ccd8cb2f",
+      "git_blob_sha": "efef9b5dded5ab1715d929d799fbd9c8951961f5"
+    },
+    {
+      "path": "components/OcrScanner.tsx",
+      "sha256": "57acaa0cb54d0e1eb88328f7ff13dc0ba272b6c8e92c61d09bfc52f03ef9dd87",
+      "git_blob_sha": "db12c6fe25bf802272422fac6d42830832eedee6"
+    },
+    {
+      "path": "components/OnboardingFlow.tsx",
+      "sha256": "84bfa461302fb5cfcd5e2364f77145f30e7fd14ed773ff2fbd366f3f88b27149",
+      "git_blob_sha": "b8f35530e3b69ee637346dc2b7b834d66fa1a8b5"
+    },
+    {
+      "path": "components/PharmacyCard.tsx",
+      "sha256": "c2f6d11872a33fe2d710d2f0a57f3ef1d254fa84c1c157dec0bcef7ef205679b",
+      "git_blob_sha": "a02e794775d1e7d8f016358c1678f1af131f4802"
+    },
+    {
+      "path": "components/ReportDialog.tsx",
+      "sha256": "f76cd236b03e2f57c6277963ecaedd4bf3dcb3c766d586473b7a37fc7a912fd5",
+      "git_blob_sha": "351e32dc2dd552a4686ae08e51362f73b5f16b4f"
+    },
+    {
+      "path": "components/ShareCard.tsx",
+      "sha256": "cfa657f0f10923185128c0bde81cb9ffde6248d6a70dba0fa3d1adfb266dd058",
+      "git_blob_sha": "5ae577bf446107c67764307e547441ddd6a848e8"
+    },
+    {
+      "path": "components/WelcomeScreen.tsx",
+      "sha256": "5117790a7daab995250eb04b2c4f67490365929185aa8d8681d88687080d62e3",
+      "git_blob_sha": "d5d84d304857aafd195c1e9a39d9a077a342ecf5"
+    },
+    {
+      "path": "components/__tests__/drug-prospectus.test.tsx",
+      "sha256": "d47ed0cd94538e4ded8c5d8d144cf63503898310c0dc1f9cc28852f061878a62",
+      "git_blob_sha": "0dc2fc2cf48407791ca2f60b14914befdec6b564"
+    },
+    {
+      "path": "components/__tests__/interactive-map.test.tsx",
+      "sha256": "0e2236117dc928e47aa0d2776d781ab6a682d5eb2059ddaf941ab9c5281e143d",
+      "git_blob_sha": "acfa0a9cba8a43f037bc98583e26d32a5a7465a6"
+    },
+    {
+      "path": "components/__tests__/ocr-scanner.test.tsx",
+      "sha256": "8b4c256c3f45e80114bbff443b473592d03a59b046f045762cdcaa8e268034c4",
+      "git_blob_sha": "1a37b91232f223d373996c4e41da8bf395155a06"
+    },
+    {
+      "path": "components/__tests__/pharmacy-card-status.test.tsx",
+      "sha256": "ab8e6cc456a64ce38c93fd2e8ad47d2864754889552707c146ec082f80086bc7",
+      "git_blob_sha": "afbd412a6740262a0cc29551a617d7fa68445d7f"
+    },
+    {
+      "path": "components/__tests__/share-card-status.test.tsx",
+      "sha256": "cf59e877004097fea5c658ca699e83272decdb937401b715337118ba64db66cf",
+      "git_blob_sha": "b0f01ad64b7f177b2090b571b3410a1bed200880"
+    },
+    {
+      "path": "components/__tests__/share-card.test.tsx",
+      "sha256": "32bf9fd357002484bb77cd355bd17f6d0904d4098625fd2c1d504872f8c546b5",
+      "git_blob_sha": "9f506aeba4f22494512910e194220539e2704b77"
+    },
+    {
+      "path": "data/tr-cities-districts.json",
+      "sha256": "d242a45669d90d1a9038e5301b2dec9a4f8315aebdf7896f6504b5cc7fffaa6f",
+      "git_blob_sha": "1f747d1fe005c32c4ad70c2c97647c6b454760cc"
+    },
+    {
+      "path": "docs/RESULTS_EXPANSION_AUDIT_2026-10-20B.md",
+      "sha256": "344d66f59a1b2ffc2c254c522c1b42334546426a3b982a8041ca105ad9f693db",
+      "git_blob_sha": "be3d496dfba543f4c5e45252a4378d0386c87df8"
+    },
+    {
+      "path": "docs/audits/2026-10-20-share-verification.md",
+      "sha256": "37f85a5b2906dc17a68aeca04e9e244b793a6d391bf5da5fac9fd0c59add46e2",
+      "git_blob_sha": "551c87d5a0176bbfb69c43d7ce70587280f8ca60"
+    },
+    {
+      "path": "eslint.config.mjs",
+      "sha256": "1473b4313fc9a03b2904e82d695e2c9ad7c34b52736342d29a5ba8652349a5f9",
+      "git_blob_sha": "9df381212807a081d673d8221f8c82a8f8efd15d"
+    },
+    {
+      "path": "lib/__tests__/distance.test.ts",
+      "sha256": "5a51e98c2433e4ef01fc605a1a86c6b6b3bee13d3a1e316c59b343141fef9535",
+      "git_blob_sha": "1542a081ff073be8a3fdb4dd5ec466c62b104514"
+    },
+    {
+      "path": "lib/__tests__/maps.test.ts",
+      "sha256": "544c764a068a6889971743f0a5bf3eba9c92544547ee3e19e710ec20d3220c2b",
+      "git_blob_sha": "a91bf1e7c6593dffd16020dbf728845da841086c"
+    },
+    {
+      "path": "lib/__tests__/phone.test.ts",
+      "sha256": "4ff00db6f4ff6c0f44aa7e4cba0c2b4ba94850a22095d778f6819863925c9026",
+      "git_blob_sha": "4c889d74c36184f84497e4bbe271968622f7dc2e"
+    },
+    {
+      "path": "lib/__tests__/providers.test.ts",
+      "sha256": "74028dbd1f5d48fba5d4d45811bff3c71162a48ec7616057a86eed33373ed328",
+      "git_blob_sha": "3575cc4a96da697714076c140e0412decccf8159"
+    },
+    {
+      "path": "lib/__tests__/slugs.test.ts",
+      "sha256": "f023335da334d827606b54f4530b89e8a178fe5a65a13a50429a375eb8b33424",
+      "git_blob_sha": "dc640a89fdd6d198c3622ee696767cd19f6004dc"
+    },
+    {
+      "path": "lib/db.ts",
+      "sha256": "f0f1f1284268df5ac45e031c12cb89d817624b67f5289f13d6acd7a41d884426",
+      "git_blob_sha": "27c26d7b8cfd761745b2e5b999c4562f830d3748"
+    },
+    {
+      "path": "lib/device.ts",
+      "sha256": "fd6ded689dcdfb6c827f583d4f822d82c9aa0fa38454adbcb13bb2256a0784ef",
+      "git_blob_sha": "03ed6829f16c6f92e568d091ecd8b3bf183b7d82"
+    },
+    {
+      "path": "lib/distance.ts",
+      "sha256": "20f9d4e64c2cc1572ec60a333c893292a34888a3fd1c9acb8262df2ed6013b64",
+      "git_blob_sha": "ec37453011894258bb12eefc15df98d45f165929"
+    },
+    {
+      "path": "lib/drug-data.ts",
+      "sha256": "85d99b7f2c903ca962a8336155c325532621e8924a96733499f4f3aacec3946b",
+      "git_blob_sha": "747f712cdfe3b7873213bee74c63cc61facd20a7"
+    },
+    {
+      "path": "lib/hooks/useGeolocation.ts",
+      "sha256": "a2711f931a7ed4e025c356d1b0133cb9eff4db49a10190952b583e7c73d16f58",
+      "git_blob_sha": "cd930dfdba5b3cdfbe13acced881a92e847fed11"
+    },
+    {
+      "path": "lib/hooks/usePharmacies.ts",
+      "sha256": "e0be5eb49a3a7e937279860f7d3e55a2b81298a2eaf8d07291f1696f0b76307e",
+      "git_blob_sha": "9a68db4e18b5e56ed55acfa479081108a52c6849"
+    },
+    {
+      "path": "lib/maps.ts",
+      "sha256": "9b54a3fa219b8b5a9d6a8088217383d89130b780b1804ca6ed973a6176a995d7",
+      "git_blob_sha": "c8c7caa12ac7d23f75491690e8718a12d40d6519"
+    },
+    {
+      "path": "lib/pharmacy-api.ts",
+      "sha256": "58e96dffdfae8b860dfc5ffd2fbaf9a21ffd618ae06a6920336a454af4bb5c80",
+      "git_blob_sha": "18ccb532a780df9947d6f945afcf8fe923b8a91a"
+    },
+    {
+      "path": "lib/pharmacy-data.ts",
+      "sha256": "a5927c7bac7628a8a15ed5e56c6f8662d520bf28bf75e6dfffeb30705e034909",
+      "git_blob_sha": "5f2a0a63199af8d56d6f2c54645763cf8b5c71b1"
+    },
+    {
+      "path": "lib/pharmacy-normalizer.ts",
+      "sha256": "e239456e40b8abe159f85bd5c1167e2f639454aa7751ddf1d0570a0021a7a6d7",
+      "git_blob_sha": "8d24a07a3b21432d92e45de642e3a9b8eff12986"
+    },
+    {
+      "path": "lib/pharmacy-provider.ts",
+      "sha256": "9718eecb338e709e0712afc1fd5c165b0175b4d2a9f39ce751901fb229e073c5",
+      "git_blob_sha": "9de282ac60a06e9c8e6945d418940aa3cd0ba28f"
+    },
+    {
+      "path": "lib/phone.ts",
+      "sha256": "c5ea572ec622eb539cd10dc11a6b910d1f8ba2aafc2432d396a8750d23c2533a",
+      "git_blob_sha": "3aa00c65dedc190f9371949c9f52a2df722ec08d"
+    },
+    {
+      "path": "lib/providers/collectapi-provider.ts",
+      "sha256": "eb89be011e58e871dcf71193448aeb13b483af03cd49c4c9f92c089618e4026f",
+      "git_blob_sha": "9dcacc9dd0885d904f3c43f21880a2f1d6962f63"
+    },
+    {
+      "path": "lib/providers/izmir-provider.ts",
+      "sha256": "6d0a2d1b939479370a1720345b40344e41eee21ad72644daa64a7c02145bb9aa",
+      "git_blob_sha": "aab0cfba7b6234ed04069d6e897a3fb27f85a819"
+    },
+    {
+      "path": "lib/providers/mock-provider.ts",
+      "sha256": "52d3455e27c7320a2f64ddc83f08f22805ab2533c6b8ae2b8cd13a50731f796a",
+      "git_blob_sha": "1b141e2c0a1d65b5876877178b16f566eb95229c"
+    },
+    {
+      "path": "lib/providers/supabase-provider.ts",
+      "sha256": "9bc126989447aaf5f155390ed4c8bd6d72cada7316edb9f375762b8cbc77954c",
+      "git_blob_sha": "952d526a4025bbb2807ace6fe33e6600e29296ac"
+    },
+    {
+      "path": "lib/slugs.ts",
+      "sha256": "ee9a44e859b8fe5060fc78aa9f9e559ae0eeb0fd8e2b9603919879607487d2fc",
+      "git_blob_sha": "a75f9c6ebd2d9c7cb45f9a6cfc74a176e46c7e0d"
+    },
+    {
+      "path": "lib/supabase.ts",
+      "sha256": "d728e2441e767e977d4b348e7cab03208f00d128939b44f59684602335ff880f",
+      "git_blob_sha": "69074b15086884468997d3c20ee853d5a9eda2b1"
+    },
+    {
+      "path": "next.config.ts",
+      "sha256": "6304cb4005e59f80661763146ec802e838f7f227e4b072c5ac6dfca77e25df01",
+      "git_blob_sha": "b5ba91f8396778018ffb8e56f6d2d3d27f6678c8"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "1659380efcd1eea666d46989cd6250fcbd0b605950ec18574b4f79fc11002e64",
+      "git_blob_sha": "232661e0aa80780dc66f7b112b459cd5de809369"
+    },
+    {
+      "path": "package.json",
+      "sha256": "558370050c259dc7d0445ae6f1a1945447150685f8e20c3ac0c80318398a3848",
+      "git_blob_sha": "24e6120cec2e8d90388c1b4329c3be0fed21a4ac"
+    },
+    {
+      "path": "playwright.config.ts",
+      "sha256": "9eaa66d9f2d554e364134e4c8787ab4418f8bb642d5914bffea2a35363e414a6",
+      "git_blob_sha": "24b0a0a6ae8c9a3806b41e837d8793ff84808c85"
+    },
+    {
+      "path": "postcss.config.mjs",
+      "sha256": "dfac7ac2d86d326a0e5adb024e7943c181393ed17a5fcb8f0315b24c7da6ddde",
+      "git_blob_sha": "61e36849cf7cfa9f1f71b4a3964a4953e3e243d3"
+    },
+    {
+      "path": "proof/results-expansion-2026-10-20b/EVIDENCE_INDEX.json",
+      "sha256": "a5ff232b19c2d06363d577fab4d1fd1db9b960319149b83abc3b01afa418e865",
+      "git_blob_sha": "392f3037419a82ec02753fbee69ee256861c144d"
+    },
+    {
+      "path": "proof/results-expansion-2026-10-20b/README.md",
+      "sha256": "1491d5772c3287a497cdf43c0ff556f3edf994c137044d69901bf63ade98a6af",
+      "git_blob_sha": "4fd05e6674fd7880befa2ed56f999b4d2c94cf26"
+    },
+    {
+      "path": "proof/results-expansion-2026-10-20b/commands.json",
+      "sha256": "8848e631929350022bdedfda0cc004c823465f29fd0bdd83af01beb90d581587",
+      "git_blob_sha": "43545d2ffe31c5a776c0ed9bcebb7456830f143b"
+    },
+    {
+      "path": "proof/results-expansion-2026-10-20b/harness/offline-guard.cjs.txt",
+      "sha256": "8e968739063ec5c694c2e23056c5c1b7476389ea7385fca8c674d08fe10357e8",
+      "git_blob_sha": "768dba51bf2d1c5425dec1e2e43df24089303381"
+    },
+    {
+      "path": "proof/results-expansion-2026-10-20b/harness/run_gate.py.txt",
+      "sha256": "aeb8b0d0af7696fb2fc4591279b166008f126e717edfe463a3f5d2f32f12e4f2",
+      "git_blob_sha": "4ccb9f3bd5a908e907357c78fd8c0cc556f5ef10"
+    },
+    {
+      "path": "proof/results-expansion-2026-10-20b/independent-review/EVIDENCE_INDEX.json",
+      "sha256": "fce270c8d704452f7f1861f0aea9894353d269e976caef392b2e61ee7b113a2a",
+      "git_blob_sha": "a2e4aed5a737cbc11358099ea456d6e6eff8b328"
+    },
+    {
+      "path": "proof/results-expansion-2026-10-20b/independent-review/README.md",
+      "sha256": "df11f67491757ee43f1959df60f5c6f6bdbb995efbc88c52dbc7a5eec0d78ae0",
+      "git_blob_sha": "f3a64fafac539e8cdd5ba9db81845a67ad6cbb4f"
+    },
+    {
+      "path": "proof/results-expansion-2026-10-20b/independent-review/focused-home-results.json",
+      "sha256": "e07c2c6a6f61ce5936cf322cb8bc7ec708a6b507c6104757ce8611e375215728",
+      "git_blob_sha": "b602d625268eb3e9fb0800cedc3d890ec0952081"
+    },
+    {
+      "path": "proof/results-expansion-2026-10-20b/independent-review/focused-home-results.log",
+      "sha256": "b59e62a9dfa5cb515d39085174877252be5c143403e2d64c2ed2c843c9eec791",
+      "git_blob_sha": "b87276246f6185435274e23836839d9a83a5ffd6"
+    },
+    {
+      "path": "proof/results-expansion-2026-10-20b/independent-review/focused-network.ndjson",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "proof/results-expansion-2026-10-20b/independent-review/independent-review.json",
+      "sha256": "04d54c8437b8910e6dba50cdedb4cdc7d35b6fcf191dbdebb11dc6ffdc832a7f",
+      "git_blob_sha": "380834c29073e0f164b375a85a0b93ba63218d87"
+    },
+    {
+      "path": "proof/results-expansion-2026-10-20b/independent-review/offline-guard.cjs.txt",
+      "sha256": "8e968739063ec5c694c2e23056c5c1b7476389ea7385fca8c674d08fe10357e8",
+      "git_blob_sha": "768dba51bf2d1c5425dec1e2e43df24089303381"
+    },
+    {
+      "path": "proof/results-expansion-2026-10-20b/independent-review/run-focused.py.txt",
+      "sha256": "8c7a353ee63ed87fd05188b9bdf2ff400279ede4088e6f6a89a60a2bbf7ab669",
+      "git_blob_sha": "445ae8060081c30425904392491b877c010f41e7"
+    },
+    {
+      "path": "proof/results-expansion-2026-10-20b/independent-review/source-manifest.json",
+      "sha256": "970bb4485087fe8d1b3e8cc8c786b76bea80826425280c37d71a3b7eb29d76e2",
+      "git_blob_sha": "536f219f136b332b8ae60d8c3a7eb989ed9f0fcc"
+    },
+    {
+      "path": "proof/results-expansion-2026-10-20b/logs/final-npm-test.log",
+      "sha256": "d46387faba1d4966776bfb185d224fac5c1a4b9cdf85fe9e970e05b7f89aabde",
+      "git_blob_sha": "8e2de0eb2dda641b85929688e64fec73463ec42e"
+    },
+    {
+      "path": "proof/results-expansion-2026-10-20b/logs/final-strict-types.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "proof/results-expansion-2026-10-20b/logs/final-tests-parent-red.log",
+      "sha256": "a11756ab9279a06b0e0af7c3dec4c0ec3180f374b4fa3d78166b511fa33e0337",
+      "git_blob_sha": "a14a8d74d7e1e0b9384dc49704f990e92f133bd6"
+    },
+    {
+      "path": "proof/results-expansion-2026-10-20b/logs/pending-query-red.log",
+      "sha256": "80cbc60c6f01138a12439900a01c0cfbe86b33aa974238951fbf0fec1d66122b",
+      "git_blob_sha": "6ace2a1c1c854600663bae8314d2033976a3ba82"
+    },
+    {
+      "path": "proof/results-expansion-2026-10-20b/logs/playwright-discovery.log",
+      "sha256": "d453f3be1de004098603ada6962d0de3b99b997528747b2b117a46024d871439",
+      "git_blob_sha": "51606a39f37d21d559d9519330e0ecfbc81ebb3c"
+    },
+    {
+      "path": "proof/results-expansion-2026-10-20b/logs/postbuild-lint.log",
+      "sha256": "a3908bc8423b8db493a2127ced3d243ac554e37edcb36f2e456930ed2aca0735",
+      "git_blob_sha": "9a27b025ccaa0491e8b18ca28f43e31720eb939c"
+    },
+    {
+      "path": "proof/results-expansion-2026-10-20b/logs/strict-types.log",
+      "sha256": "7dd66b1131c5169dfefcdc05b86c038ee1e189d9a89fbc0e76ef6f52cb9a099d",
+      "git_blob_sha": "f87fe91e730962bd010ac2af94ccf93bd0d9cc5b"
+    },
+    {
+      "path": "proof/results-expansion-2026-10-20b/logs/webpack-production-build.log",
+      "sha256": "b898bc9dc1fc1f7a5ea6d605911dbb44b781ed967061d7b7ab248bfd8fe29002",
+      "git_blob_sha": "b9ddd6202c9ac7bb44101449827c5a7837a3ec21"
+    },
+    {
+      "path": "proof/results-expansion-2026-10-20b/source-npm-types.json",
+      "sha256": "c3c83b8a2f6f7e7e3ba11eaed7313c78fe62501e0afe44297291ae6d9a210b84",
+      "git_blob_sha": "9596e683eb6fb98d8dfef9f26d317cb03cbb2cde"
+    },
+    {
+      "path": "proof/results-expansion-2026-10-20b/source-parent-red.json",
+      "sha256": "9faf1bbe2691fc92278b013b7bfd6540d45a60409d99f5190800f11aec830c86",
+      "git_blob_sha": "59f5d60ef14c1115a8db542258e74e94af6f5b87"
+    },
+    {
+      "path": "proof/results-expansion-2026-10-20b/source-provenance.json",
+      "sha256": "56592b918ec7babff1ea413b1df4628b997559b33001f50f27c724861ed03c9e",
+      "git_blob_sha": "d8cef4dd03aaa5610daaf9e1f70c6960ffe34429"
+    },
+    {
+      "path": "proof/results-expansion-2026-10-20b/source-publication.json",
+      "sha256": "970bb4485087fe8d1b3e8cc8c786b76bea80826425280c37d71a3b7eb29d76e2",
+      "git_blob_sha": "536f219f136b332b8ae60d8c3a7eb989ed9f0fcc"
+    },
+    {
+      "path": "proof/results-expansion-2026-10-20b/validation-source-binding.json",
+      "sha256": "46eee23e397e9cd7f09bc6cdb3751b8ff6182650352ae11757657104c1e07d80",
+      "git_blob_sha": "3ee0211505ff8a1811fddc81fce4721ebdccfbe0"
+    },
+    {
+      "path": "proof/results-expansion-2026-10-20b/verification.json",
+      "sha256": "9c166317081b65d8fb8146f996aaaf951d6fc43a09924c835047b00b02d94aa7",
+      "git_blob_sha": "1867aa16b2e4fefa51636a1a009e90d86ee5cd0f"
+    },
+    {
+      "path": "proof/share-2026-10-20/EVIDENCE_INDEX.json",
+      "sha256": "97906c229bf73df68ceee45109401b0d80a063fa127f2b4d1a21ee92df471ba0",
+      "git_blob_sha": "38bbca55b731d5e75c9f970898526033ff58f614"
+    },
+    {
+      "path": "proof/share-2026-10-20/README.md",
+      "sha256": "aad5a62b35242e0828b31f47848d8e14a58c4299f49e3f918f2331cbd2c11ee7",
+      "git_blob_sha": "2642e9d50711ff34d59e138b3d74634fd1fd974a"
+    },
+    {
+      "path": "proof/share-2026-10-20/base-source-manifest.json",
+      "sha256": "99f36600a3f0ddcecabe30b989d3b513314d9f9716cd3dc6ea6cd536fc740cfa",
+      "git_blob_sha": "cc8ee6a5609060aa3e1af906de25acde8b511bf5"
+    },
+    {
+      "path": "proof/share-2026-10-20/baseline-test-source-files.json",
+      "sha256": "7aaeed4af5d9cee7a678eb9f2f7ec01707c18ccce4e488ce4408525cae83ab2c",
+      "git_blob_sha": "650ccfebd3953bdb85ffed8b5f358fc98d8e14be"
+    },
+    {
+      "path": "proof/share-2026-10-20/cancellation-fixed-before-hygiene-source-files.json",
+      "sha256": "b0221dbf1403de89593d8337132dc9f5cb1ec01c0d0f1ee7ff15e9498fe30239",
+      "git_blob_sha": "2ed745a5981071f00f65edeeeb97f50f7600c96f"
+    },
+    {
+      "path": "proof/share-2026-10-20/cancellation-red-source-files.json",
+      "sha256": "cd1bd8158973010050d81769268b74f9c504e60358727a1978837bb67614552b",
+      "git_blob_sha": "3a92e12b1474ee28071a38edc178865c72f987c1"
+    },
+    {
+      "path": "proof/share-2026-10-20/dependency-provenance.json",
+      "sha256": "5cc0a4be38505f11b0319698a2900c8c1f0f0709804d3d1cf13bb08c740ea571",
+      "git_blob_sha": "b8cb9c1bbc0c0018819d0f6bb309e50e7b5b2f3b"
+    },
+    {
+      "path": "proof/share-2026-10-20/final-candidate.patch",
+      "sha256": "52d971fc269d7706719a9bf3850959a8fc52f3161977ff92ccd59d925595182c",
+      "git_blob_sha": "fc922398d28792de06cd50f6799fbb13d4d3c642"
+    },
+    {
+      "path": "proof/share-2026-10-20/final-source-files.json",
+      "sha256": "5953afda7ac5d18507012522d6a978d2ba79589336f68aa921b8e47ef09740b6",
+      "git_blob_sha": "1ce034894d9411e9e27ec5414c72c42767faec63"
+    },
+    {
+      "path": "proof/share-2026-10-20/generated-worker.json",
+      "sha256": "149bb893d7dba13e302d3e6fa4426b672d95a67cc235c2ef3f0a44fc5a6134ef",
+      "git_blob_sha": "68bd53240bee7d40248e8a57fda03ead0020cae7"
+    },
+    {
+      "path": "proof/share-2026-10-20/independent-review/REVIEW.md",
+      "sha256": "2556922e1b25087c3189f8a39cae3937d3b7ecf821bfd7ed5b96c8a78aa0af32",
+      "git_blob_sha": "ab47f6aec208f8a5fbbefbd0ffcb122b6f9bb22d"
+    },
+    {
+      "path": "proof/share-2026-10-20/independent-review/check-ignore-scope.mjs.txt",
+      "sha256": "d0f102ce152de73d94f85b6344f8c9a468988b83a5588735ec8873e68334091a",
+      "git_blob_sha": "61c0daeb2a0e755baba6ac42ecca0023e6376eb2"
+    },
+    {
+      "path": "proof/share-2026-10-20/independent-review/eslint-ignore-command.json",
+      "sha256": "dff3a47084d07fea389e0c88c15bf7930963992af7c79b2b86e005942af8086d",
+      "git_blob_sha": "49cebee2668c4c20582bd71b57a01958183f0cf4"
+    },
+    {
+      "path": "proof/share-2026-10-20/independent-review/eslint-ignore-scope.json",
+      "sha256": "d58c421cd6c4a668502a1aa319b2abc5b428b0cba03f4627db3c65874291a001",
+      "git_blob_sha": "086d3bb9c84b4dceec69756684cbfaf8740cef3f"
+    },
+    {
+      "path": "proof/share-2026-10-20/independent-review/eslint-ignore-scope.log",
+      "sha256": "d58c421cd6c4a668502a1aa319b2abc5b428b0cba03f4627db3c65874291a001",
+      "git_blob_sha": "086d3bb9c84b4dceec69756684cbfaf8740cef3f"
+    },
+    {
+      "path": "proof/share-2026-10-20/independent-review/git-ignore-scope.json",
+      "sha256": "3352a84542aa418409b4551a2e6f82af18296ac1a430cf4e8ea73f150e2a9396",
+      "git_blob_sha": "1cc4b6652de943cf42c032cfa7270bc88176fcc9"
+    },
+    {
+      "path": "proof/share-2026-10-20/independent-review/ignore-scope-network.ndjson",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "proof/share-2026-10-20/independent-review/independent-share-network.ndjson",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "proof/share-2026-10-20/independent-review/independent-share.json",
+      "sha256": "733ee5a0de63a17deb43792f195884263c255873ac690ab3bee31bc4f0b7b21f",
+      "git_blob_sha": "28f2e5e8a602065d73207e89dd54fcc2098302b0"
+    },
+    {
+      "path": "proof/share-2026-10-20/independent-review/independent-share.log",
+      "sha256": "379dde3b7a7e325198636cfa293da9622df2506ef2537733509b00ce310aac1b",
+      "git_blob_sha": "d1c49fee95c9bc2c7c5b3870ab02bee21939180e"
+    },
+    {
+      "path": "proof/share-2026-10-20/independent-review/offline-guard.cjs.txt",
+      "sha256": "8e968739063ec5c694c2e23056c5c1b7476389ea7385fca8c674d08fe10357e8",
+      "git_blob_sha": "768dba51bf2d1c5425dec1e2e43df24089303381"
+    },
+    {
+      "path": "proof/share-2026-10-20/independent-review/review-manifest.json",
+      "sha256": "b7155e946a46fa11cb8c3a1fc9831311bfc9f50c6c41b4f15f1a71f04ab090ba",
+      "git_blob_sha": "2928a13d0c10d5a7fe1332fed428e6865f02cb6d"
+    },
+    {
+      "path": "proof/share-2026-10-20/independent-review/source-pins.json",
+      "sha256": "f33a85d4bce4904aa407e0884c36ba8cc2b8284927e439f3b9b75d24a0d59733",
+      "git_blob_sha": "cb38837b810dcf682e3a651ad264f4d3b852eb60"
+    },
+    {
+      "path": "proof/share-2026-10-20/logs/cancellation-red-on-v2-network.ndjson",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "proof/share-2026-10-20/logs/cancellation-red-on-v2.json",
+      "sha256": "212070b789c3e7b3aba72a690a0d105337d44ff19c4f835a169942265d6ec9b4",
+      "git_blob_sha": "14aea4e17d10934db0745412cfc65f5e942906db"
+    },
+    {
+      "path": "proof/share-2026-10-20/logs/cancellation-red-on-v2.log",
+      "sha256": "981c0dc0f73f87684f748b27a821c7df65a4c4c4af0616cf264860409266bbb7",
+      "git_blob_sha": "d253590e556d174f9260190a5ecc032c6faae431"
+    },
+    {
+      "path": "proof/share-2026-10-20/logs/current-baseline-share-red-network.ndjson",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "proof/share-2026-10-20/logs/current-baseline-share-red.json",
+      "sha256": "d2ba572bbb43391054f0adb747182bb35f2d32249d2deb50cafa4ff1ddbdd1ea",
+      "git_blob_sha": "cde0e246bb270d0d22ec99862e6f325c55dc8671"
+    },
+    {
+      "path": "proof/share-2026-10-20/logs/current-baseline-share-red.log",
+      "sha256": "11a1dfe152da7ba6acbe285696e71a96eced73bc2581c0b5ee0491b328e7a797",
+      "git_blob_sha": "a7b79312dc2510b53878901abc9ce94474b769ff"
+    },
+    {
+      "path": "proof/share-2026-10-20/logs/current-default-build-network.ndjson",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "proof/share-2026-10-20/logs/current-default-build.json",
+      "sha256": "6f153a8972f289d2c717f3a7b8724ef9ece3111b96fc8f4774828d69d37d420c",
+      "git_blob_sha": "045b82103964f341485582512a03a60d0e288ebd"
+    },
+    {
+      "path": "proof/share-2026-10-20/logs/current-default-build.log",
+      "sha256": "f316ea0febdb67e9027243031153b31610695e7e5380f2ce6bb766a066bc17e2",
+      "git_blob_sha": "96945ecf39335ef7dbb99593a3b625bc1922e2e0"
+    },
+    {
+      "path": "proof/share-2026-10-20/logs/final-complete-npm-test-network.ndjson",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "proof/share-2026-10-20/logs/final-complete-npm-test.json",
+      "sha256": "ae57f8e92bffe6e6b88b18fcd096b41cddabd27a779d2fc18712f7c3c7587c78",
+      "git_blob_sha": "f08e255186c4941a6e0014f0db316f3b05b747ad"
+    },
+    {
+      "path": "proof/share-2026-10-20/logs/final-complete-npm-test.log",
+      "sha256": "69d570cd67519c8757f259678336194a4bdf2a8574f73a84ddb86e688337d583",
+      "git_blob_sha": "a9e182f93be7a7700de2f758bcc3c0110e3ebf35"
+    },
+    {
+      "path": "proof/share-2026-10-20/logs/final-complete-strict-types-network.ndjson",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "proof/share-2026-10-20/logs/final-complete-strict-types.json",
+      "sha256": "546705a7335dfef0f97f0cff9e3d1f4a404798e9e475d6f2f351202945126614",
+      "git_blob_sha": "ed6f82d767c46303346ed1acb1ec1d5d7d93dd65"
+    },
+    {
+      "path": "proof/share-2026-10-20/logs/final-complete-strict-types.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "proof/share-2026-10-20/logs/final-lint-network.ndjson",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "proof/share-2026-10-20/logs/final-lint.json",
+      "sha256": "0abfc2c95f5835a1dcd5f61f736fd5fc07b934cbc4913158ab8c4752906adb57",
+      "git_blob_sha": "492023c88875497b0b2897619e10b308fa3e0e27"
+    },
+    {
+      "path": "proof/share-2026-10-20/logs/final-lint.log",
+      "sha256": "4907610143a909e21764fcaff2a21086856bd7c4a35f3fff0a67eb99b1e96de9",
+      "git_blob_sha": "bfdf126a628fe59e2371b224008322ec241f9cae"
+    },
+    {
+      "path": "proof/share-2026-10-20/logs/final-postbuild-lint-network.ndjson",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "proof/share-2026-10-20/logs/final-postbuild-lint.json",
+      "sha256": "00533f6fe6eed94e7c4a81e956cfb2c32d9b3922886b2321673c1dc94a498e1d",
+      "git_blob_sha": "57a939e14da366b2af5a04443db1fc0d8601989c"
+    },
+    {
+      "path": "proof/share-2026-10-20/logs/final-postbuild-lint.log",
+      "sha256": "9e880c1fd81be5cdadd18de71f317cc7b68ee18e0db0b475e1fda9ecd7516b05",
+      "git_blob_sha": "cc3bfccc7aa3069f3a14372eb0ea3e29f3e76a24"
+    },
+    {
+      "path": "proof/share-2026-10-20/logs/final-webpack-build-network.ndjson",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "proof/share-2026-10-20/logs/final-webpack-build.json",
+      "sha256": "ae36068476f59cec6d109e42713f4147c181effc5d9c45ac6567c4e64f138cdc",
+      "git_blob_sha": "73aecf8d819a21b43d9c1c48deda70f8dea20591"
+    },
+    {
+      "path": "proof/share-2026-10-20/logs/final-webpack-build.log",
+      "sha256": "96c839b89bb46c6b9f13870395a37c17ce203a6127f4e054ff2bc98861a55824",
+      "git_blob_sha": "b2aece450bf8882ed9e2c67859496a747370186e"
+    },
+    {
+      "path": "proof/share-2026-10-20/patch-check.json",
+      "sha256": "afe233e87f70c3e99a73ee4cab9d1a013482551795a2176c1c6c3ac6dd32345b",
+      "git_blob_sha": "4368f2f14ac1443b0b665ac84bb432b67913ca6f"
+    },
+    {
+      "path": "proof/share-2026-10-20/recorded-harness/offline-guard.cjs.txt",
+      "sha256": "8e968739063ec5c694c2e23056c5c1b7476389ea7385fca8c674d08fe10357e8",
+      "git_blob_sha": "768dba51bf2d1c5425dec1e2e43df24089303381"
+    },
+    {
+      "path": "proof/share-2026-10-20/recorded-harness/run_baseline.py.txt",
+      "sha256": "c754651e8db26cd6675577a1967acda381bdb90e71284d97ba236b4738f69188",
+      "git_blob_sha": "97e6d1e356aaa04bb1df4bdbf9c994640f0564c9"
+    },
+    {
+      "path": "proof/share-2026-10-20/recorded-harness/run_gate-recovered-v2.py.txt",
+      "sha256": "369c744aba3bbfa4311ad137f045cc02048e44dec4a1ae098d34b5cee7ab1e77",
+      "git_blob_sha": "341ba5865a63013318eee8da1a171379720180d3"
+    },
+    {
+      "path": "proof/share-2026-10-20/recorded-harness/run_gate.py.txt",
+      "sha256": "aeb8b0d0af7696fb2fc4591279b166008f126e717edfe463a3f5d2f32f12e4f2",
+      "git_blob_sha": "4ccb9f3bd5a908e907357c78fd8c0cc556f5ef10"
+    },
+    {
+      "path": "proof/share-2026-10-20/recovered-v2-source-files.json",
+      "sha256": "f85b4ec5e6558b4b9e06b046904f3543b2396018cbaed10715e9848256ac86c9",
+      "git_blob_sha": "9916403ab62a56db8a4509769ba0b5676111a575"
+    },
+    {
+      "path": "proof/share-2026-10-20/recovered-v2.patch",
+      "sha256": "cc3d2a98b38a7eed7901caa7b5fd856651d9a1d6e7aaa6a38f27a84035ec4e2a",
+      "git_blob_sha": "b26ad6e344289bed64c63d48970da8920cb4e367"
+    },
+    {
+      "path": "proof/share-2026-10-20/source-manifest.json",
+      "sha256": "ec07a1a354bd2032462a5ee9e08be5f04a8b1e62fd5b848bdd4d7c0dc556797d",
+      "git_blob_sha": "058ad88dc493891ccf83702479b670af362514dd"
+    },
+    {
+      "path": "proof/share-2026-10-20/verification-summary.json",
+      "sha256": "9728d18de83c372b7e8b37918e698dfa3eea48d76b0f8d63e76b2324278d52fa",
+      "git_blob_sha": "3220e48e1b63ea87978ed27ebedb25280eb9de90"
+    },
+    {
+      "path": "proxy.ts",
+      "sha256": "583b32910424c1faf21e5e637c31c0a35ab49c6b20ae3dbd4cdb0f6587e97b1c",
+      "git_blob_sha": "b1202c332ecc1eb4b7743c8bcafb3cde298f1b38"
+    },
+    {
+      "path": "public/file.svg",
+      "sha256": "2b67812c325c199a02536cdbeea0c593a72f707d323b72ee3e08dbab06753bd4",
+      "git_blob_sha": "004145cddf3f9db91b57b9cb596683c8eb420862"
+    },
+    {
+      "path": "public/fonts/geist/OFL.txt",
+      "sha256": "c683bfbcc7e087f5d37a54ef628f10387c451a83ddc459b151403a164ac46c90",
+      "git_blob_sha": "04e95fc550855eb44416b9db1f6722f5cb7342db"
+    },
+    {
+      "path": "public/fonts/geist/README.md",
+      "sha256": "a13234cd313da690eb87f9599c369fe839adf368d328376bbaf165e1e2752e1a",
+      "git_blob_sha": "890f8b910cb173c0d8ea745c15fb267f42fcba4a"
+    },
+    {
+      "path": "public/fonts/geist/geist-latin-ext.woff2",
+      "sha256": "f7604a53a00250f66db4b47dd44327ce2a43f6edec850d5217bb80238819efdd",
+      "git_blob_sha": "e36649933f3a206057fe1068cff2e5078f043c59"
+    },
+    {
+      "path": "public/fonts/geist/geist-latin.woff2",
+      "sha256": "1b5ebfb3a01a97343ac96873e6d59a8cb285c66012b6a1ac509cb2765e995ba8",
+      "git_blob_sha": "445e0e55cbb80e4a1fd7d429c4384b61b453da2b"
+    },
+    {
+      "path": "public/fonts/geist/geist-mono-latin-ext.woff2",
+      "sha256": "7d5609538a79545ec945e019771ed562e2c65a6c1c3c4ccc4ea34372e277c396",
+      "git_blob_sha": "944424f972b9f9c985163da8096a25b214fa1983"
+    },
+    {
+      "path": "public/fonts/geist/geist-mono-latin.woff2",
+      "sha256": "b7ac144b394cbd81052d6397ec0c33397977b1d7e9bc095e744e652a378c6fb3",
+      "git_blob_sha": "68eeb7f4bd4a789bc1600f76e6ebac0a0c170d46"
+    },
+    {
+      "path": "public/globe.svg",
+      "sha256": "b614b9bf183925957661ac851498fe1d8029fd43a62fbfed86f9e2624a57e7cf",
+      "git_blob_sha": "567f17b0d7c7fb662c16d4357dd74830caf2dccb"
+    },
+    {
+      "path": "public/icon.svg",
+      "sha256": "cd7c34d778bd9c4fda4d6b8834fd10e58f85b38358a897f391d644dc2270349a",
+      "git_blob_sha": "ea4c6c52b32d9c6142ca36e88e6aab23be389164"
+    },
+    {
+      "path": "public/manifest.json",
+      "sha256": "6bdf81aba26c9a7638171f33f3cbb11e821fdbd4288a400c2fb1b1587d8c21e1",
+      "git_blob_sha": "55fdb60a9fbc1672d8a9fd37ecdfbe8de08cd7e9"
+    },
+    {
+      "path": "public/next.svg",
+      "sha256": "55995dfad6ecb4945a1e856ddca03c5e16aa5bf13fd21b4df6a74ae79357bcfc",
+      "git_blob_sha": "5174b28c565c285e3e312ec5178be64fbeca8398"
+    },
+    {
+      "path": "public/offline.html",
+      "sha256": "b10f6dd36725d59f321ad42a60b68307d8347bc7213d3f927e2dbbfea56d8b24",
+      "git_blob_sha": "148bb1677371ca79f706968ceba1a88f39d9d8e4"
+    },
+    {
+      "path": "public/vercel.svg",
+      "sha256": "f081337b2fee635b455b63275406a3e7f39d6a014e25ad90dab5a67e62a12ac4",
+      "git_blob_sha": "77053960334e2e34dc584dea8019925c3b4ccca9"
+    },
+    {
+      "path": "public/window.svg",
+      "sha256": "644768c4aaeb4767bce293344eeb0c125fb804a94d801440424072202d85e3a1",
+      "git_blob_sha": "b2b2a44f6ebc70c450043c05a002e7a93ba5d651"
+    },
+    {
+      "path": "supabase/schema.sql",
+      "sha256": "5532602d196f9d74b9b0372b3da7def1ade1fa281bc324cdd1277673add46896",
+      "git_blob_sha": "f5318230ef41306a6f2c786c1e028c1a951e4b1e"
+    },
+    {
+      "path": "tests/app.spec.ts",
+      "sha256": "85888726a5edf7557ae32a6cda629bb4827c286f37849878721f3159dd4ee31a",
+      "git_blob_sha": "4177e8a8dbb522ec1e765ba838b41ce16418865f"
+    },
+    {
+      "path": "tests/distance.test.ts",
+      "sha256": "dacae99a51c9cee7622509b15448c67c80442d2dcdf9c586ea37dfd9f1df5f4c",
+      "git_blob_sha": "487ee11cf6793d68d10b0b321563c5b4b403d202"
+    },
+    {
+      "path": "tests/example.spec.ts",
+      "sha256": "a3cbab846a58843b6350e2cc96801b4b6c41e86880451a68c9a01b149708a042",
+      "git_blob_sha": "54a906a4e84f0b1f9fd24d3dd9dddcc580c1bbc7"
+    },
+    {
+      "path": "tests/home-results.test.tsx",
+      "sha256": "07d9012e229337e4d6e5604c337e6cd4c54bdc2bb3402e450d015df5abb76bf9",
+      "git_blob_sha": "a27f6c3e99abe971be7f69e953dfaf17d3f905a4"
+    },
+    {
+      "path": "tests/izmir-provider.test.ts",
+      "sha256": "465ce59f413554b816d9e4fc780abda78753add4ebda4e99618cd5ae21fd3c08",
+      "git_blob_sha": "f7df305e3b6718f02cfcdf07995b988f018a71cc"
+    },
+    {
+      "path": "tests/pharmacy-normalizer.test.ts",
+      "sha256": "686160cdde4669d8ae3d27d29e176bd9398de9df131f3eb0aea3233e576929ed",
+      "git_blob_sha": "0cf0b17ded73ca9b17617cb5a765e664c31d852d"
+    },
+    {
+      "path": "tests/pharmacy-share.node.cjs",
+      "sha256": "d1ef650b12ea98edbf6fbc3643eee99908e3b36b5c5870d2df332c94a2b95eeb",
+      "git_blob_sha": "708646c499a8ee88997112de06ee8571cafff2c4"
+    },
+    {
+      "path": "tests/phone.test.ts",
+      "sha256": "11f14e8f2cf18993b0078d0ddd32118db2104e9e8fab040f43930632406c403b",
+      "git_blob_sha": "c3027c77f81ad6746182f5e0c1be988fd6bd47b3"
+    },
+    {
+      "path": "tests/provider-fallback.test.ts",
+      "sha256": "34151c4de05c1d3fd93de90e1ff7feaf7fcebfbd1dee8b4bd25721e8d78eaddb",
+      "git_blob_sha": "97607cbd8bd9b6d194720d7718c516fc6b2e996d"
+    },
+    {
+      "path": "tests/results.spec.ts",
+      "sha256": "38b64c59ad7c2f6be5ae997bfa75bba04df4442def18f7f3ff2a535457d40950",
+      "git_blob_sha": "3c421b6f7b0b42a4af4e435001e1d194127e7d28"
+    },
+    {
+      "path": "tests/slugs.test.ts",
+      "sha256": "dafe22c8288d0ddc102327b482514974a92cf9c6c0e3f6f5bfce076d30ba83a5",
+      "git_blob_sha": "74f6ee444ce4048b8f8f8607d7a8e0242dbf5903"
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "be18523b23b78b6e1a876ddd107d330f0168bddf09d751b57e0b5edce69c66f3",
+      "git_blob_sha": "3a13f90a773b0facb675bf5b1a8239c8f33d36f5"
+    },
+    {
+      "path": "types/pharmacy.ts",
+      "sha256": "c9f31291aa62bc91d99d046aea9a6c6067b2116aed4360c350ccf8bb9943578f",
+      "git_blob_sha": "069057d9280e7c63eeac2c230055eeb5264ce407"
+    },
+    {
+      "path": "vercel.json",
+      "sha256": "49da3297625db34b7ba85fecfcdf5303766dabb6900de2dfa377f4576a034e9a",
+      "git_blob_sha": "676e3f5337d46ebf69179457be2f230f52a1d03c"
+    },
+    {
+      "path": "vitest.config.ts",
+      "sha256": "faa9b28c8b42732aa036169375284ef3f309b3d5f0dd06ace9a1a58929f3f26b",
+      "git_blob_sha": "86bf695786edf945b6155ff7be2478d42dc4a9c4"
+    }
+  ],
+  "missing_paths": [
+    ".agent/.agents/plugins/marketplace.json",
+    ".agent/.agents/skills/agent-introspection-debugging/SKILL.md",
+    ".agent/.agents/skills/agent-introspection-debugging/agents/openai.yaml",
+    ".agent/.agents/skills/agent-sort/SKILL.md",
+    ".agent/.agents/skills/agent-sort/agents/openai.yaml",
+    ".agent/.agents/skills/api-design/SKILL.md",
+    ".agent/.agents/skills/api-design/agents/openai.yaml",
+    ".agent/.agents/skills/article-writing/SKILL.md",
+    ".agent/.agents/skills/article-writing/agents/openai.yaml",
+    ".agent/.agents/skills/backend-patterns/SKILL.md",
+    ".agent/.agents/skills/backend-patterns/agents/openai.yaml",
+    ".agent/.agents/skills/brand-voice/SKILL.md",
+    ".agent/.agents/skills/brand-voice/agents/openai.yaml",
+    ".agent/.agents/skills/brand-voice/references/voice-profile-schema.md",
+    ".agent/.agents/skills/bun-runtime/SKILL.md",
+    ".agent/.agents/skills/bun-runtime/agents/openai.yaml",
+    ".agent/.agents/skills/coding-standards/SKILL.md",
+    ".agent/.agents/skills/coding-standards/agents/openai.yaml",
+    ".agent/.agents/skills/content-engine/SKILL.md",
+    ".agent/.agents/skills/content-engine/agents/openai.yaml",
+    ".agent/.agents/skills/crosspost/SKILL.md",
+    ".agent/.agents/skills/crosspost/agents/openai.yaml",
+    ".agent/.agents/skills/deep-research/SKILL.md",
+    ".agent/.agents/skills/deep-research/agents/openai.yaml",
+    ".agent/.agents/skills/dmux-workflows/SKILL.md",
+    ".agent/.agents/skills/dmux-workflows/agents/openai.yaml",
+    ".agent/.agents/skills/documentation-lookup/SKILL.md",
+    ".agent/.agents/skills/documentation-lookup/agents/openai.yaml",
+    ".agent/.agents/skills/e2e-testing/SKILL.md",
+    ".agent/.agents/skills/e2e-testing/agents/openai.yaml",
+    ".agent/.agents/skills/eval-harness/SKILL.md",
+    ".agent/.agents/skills/eval-harness/agents/openai.yaml",
+    ".agent/.agents/skills/everything-claude-code/SKILL.md",
+    ".agent/.agents/skills/everything-claude-code/agents/openai.yaml",
+    ".agent/.agents/skills/exa-search/SKILL.md",
+    ".agent/.agents/skills/exa-search/agents/openai.yaml",
+    ".agent/.agents/skills/fal-ai-media/SKILL.md",
+    ".agent/.agents/skills/fal-ai-media/agents/openai.yaml",
+    ".agent/.agents/skills/frontend-patterns/SKILL.md",
+    ".agent/.agents/skills/frontend-patterns/agents/openai.yaml",
+    ".agent/.agents/skills/frontend-slides/SKILL.md",
+    ".agent/.agents/skills/frontend-slides/STYLE_PRESETS.md",
+    ".agent/.agents/skills/frontend-slides/agents/openai.yaml",
+    ".agent/.agents/skills/investor-materials/SKILL.md",
+    ".agent/.agents/skills/investor-materials/agents/openai.yaml",
+    ".agent/.agents/skills/investor-outreach/SKILL.md",
+    ".agent/.agents/skills/investor-outreach/agents/openai.yaml",
+    ".agent/.agents/skills/market-research/SKILL.md",
+    ".agent/.agents/skills/market-research/agents/openai.yaml",
+    ".agent/.agents/skills/mcp-server-patterns/SKILL.md",
+    ".agent/.agents/skills/mcp-server-patterns/agents/openai.yaml",
+    ".agent/.agents/skills/mle-workflow/SKILL.md",
+    ".agent/.agents/skills/mle-workflow/agents/openai.yaml",
+    ".agent/.agents/skills/nextjs-turbopack/SKILL.md",
+    ".agent/.agents/skills/nextjs-turbopack/agents/openai.yaml",
+    ".agent/.agents/skills/product-capability/SKILL.md",
+    ".agent/.agents/skills/product-capability/agents/openai.yaml",
+    ".agent/.agents/skills/security-review/SKILL.md",
+    ".agent/.agents/skills/security-review/agents/openai.yaml",
+    ".agent/.agents/skills/strategic-compact/SKILL.md",
+    ".agent/.agents/skills/strategic-compact/agents/openai.yaml",
+    ".agent/.agents/skills/tdd-workflow/SKILL.md",
+    ".agent/.agents/skills/tdd-workflow/agents/openai.yaml",
+    ".agent/.agents/skills/verification-loop/SKILL.md",
+    ".agent/.agents/skills/verification-loop/agents/openai.yaml",
+    ".agent/.agents/skills/video-editing/SKILL.md",
+    ".agent/.agents/skills/video-editing/agents/openai.yaml",
+    ".agent/.agents/skills/x-api/SKILL.md",
+    ".agent/.agents/skills/x-api/agents/openai.yaml",
+    ".agent/AGENTS.md",
+    ".agent/ecc-install-state.json",
+    ".agent/rules/README.md",
+    ".agent/rules/angular-coding-style.md",
+    ".agent/rules/angular-hooks.md",
+    ".agent/rules/angular-patterns.md",
+    ".agent/rules/angular-security.md",
+    ".agent/rules/angular-testing.md",
+    ".agent/rules/arkts-coding-style.md",
+    ".agent/rules/arkts-hooks.md",
+    ".agent/rules/arkts-patterns.md",
+    ".agent/rules/arkts-security.md",
+    ".agent/rules/arkts-testing.md",
+    ".agent/rules/common-agents.md",
+    ".agent/rules/common-code-review.md",
+    ".agent/rules/common-coding-style.md",
+    ".agent/rules/common-development-workflow.md",
+    ".agent/rules/common-git-workflow.md",
+    ".agent/rules/common-hooks.md",
+    ".agent/rules/common-patterns.md",
+    ".agent/rules/common-performance.md",
+    ".agent/rules/common-security.md",
+    ".agent/rules/common-testing.md",
+    ".agent/rules/cpp-coding-style.md",
+    ".agent/rules/cpp-hooks.md",
+    ".agent/rules/cpp-patterns.md",
+    ".agent/rules/cpp-security.md",
+    ".agent/rules/cpp-testing.md",
+    ".agent/rules/csharp-coding-style.md",
+    ".agent/rules/csharp-hooks.md",
+    ".agent/rules/csharp-patterns.md",
+    ".agent/rules/csharp-security.md",
+    ".agent/rules/csharp-testing.md",
+    ".agent/rules/dart-coding-style.md",
+    ".agent/rules/dart-hooks.md",
+    ".agent/rules/dart-patterns.md",
+    ".agent/rules/dart-security.md",
+    ".agent/rules/dart-testing.md",
+    ".agent/rules/fsharp-coding-style.md",
+    ".agent/rules/fsharp-hooks.md",
+    ".agent/rules/fsharp-patterns.md",
+    ".agent/rules/fsharp-security.md",
+    ".agent/rules/fsharp-testing.md",
+    ".agent/rules/golang-coding-style.md",
+    ".agent/rules/golang-hooks.md",
+    ".agent/rules/golang-patterns.md",
+    ".agent/rules/golang-security.md",
+    ".agent/rules/golang-testing.md",
+    ".agent/rules/java-coding-style.md",
+    ".agent/rules/java-hooks.md",
+    ".agent/rules/java-patterns.md",
+    ".agent/rules/java-security.md",
+    ".agent/rules/java-testing.md",
+    ".agent/rules/kotlin-coding-style.md",
+    ".agent/rules/kotlin-hooks.md",
+    ".agent/rules/kotlin-patterns.md",
+    ".agent/rules/kotlin-security.md",
+    ".agent/rules/kotlin-testing.md",
+    ".agent/rules/perl-coding-style.md",
+    ".agent/rules/perl-hooks.md",
+    ".agent/rules/perl-patterns.md",
+    ".agent/rules/perl-security.md",
+    ".agent/rules/perl-testing.md",
+    ".agent/rules/php-coding-style.md",
+    ".agent/rules/php-hooks.md",
+    ".agent/rules/php-patterns.md",
+    ".agent/rules/php-security.md",
+    ".agent/rules/php-testing.md",
+    ".agent/rules/python-coding-style.md",
+    ".agent/rules/python-fastapi.md",
+    ".agent/rules/python-hooks.md",
+    ".agent/rules/python-patterns.md",
+    ".agent/rules/python-security.md",
+    ".agent/rules/python-testing.md",
+    ".agent/rules/react-coding-style.md",
+    ".agent/rules/react-hooks.md",
+    ".agent/rules/react-patterns.md",
+    ".agent/rules/react-security.md",
+    ".agent/rules/react-testing.md",
+    ".agent/rules/ruby-coding-style.md",
+    ".agent/rules/ruby-hooks.md",
+    ".agent/rules/ruby-patterns.md",
+    ".agent/rules/ruby-security.md",
+    ".agent/rules/ruby-testing.md",
+    ".agent/rules/rust-coding-style.md",
+    ".agent/rules/rust-hooks.md",
+    ".agent/rules/rust-patterns.md",
+    ".agent/rules/rust-security.md",
+    ".agent/rules/rust-testing.md",
+    ".agent/rules/swift-coding-style.md",
+    ".agent/rules/swift-hooks.md",
+    ".agent/rules/swift-patterns.md",
+    ".agent/rules/swift-security.md",
+    ".agent/rules/swift-testing.md",
+    ".agent/rules/typescript-coding-style.md",
+    ".agent/rules/typescript-hooks.md",
+    ".agent/rules/typescript-patterns.md",
+    ".agent/rules/typescript-security.md",
+    ".agent/rules/typescript-testing.md",
+    ".agent/rules/web-coding-style.md",
+    ".agent/rules/web-design-quality.md",
+    ".agent/rules/web-hooks.md",
+    ".agent/rules/web-patterns.md",
+    ".agent/rules/web-performance.md",
+    ".agent/rules/web-security.md",
+    ".agent/rules/web-testing.md",
+    ".agent/skills/a11y-architect.md",
+    ".agent/skills/architect.md",
+    ".agent/skills/build-error-resolver.md",
+    ".agent/skills/chief-of-staff.md",
+    ".agent/skills/code-architect.md",
+    ".agent/skills/code-explorer.md",
+    ".agent/skills/code-reviewer.md",
+    ".agent/skills/code-simplifier.md",
+    ".agent/skills/comment-analyzer.md",
+    ".agent/skills/conversation-analyzer.md",
+    ".agent/skills/cpp-build-resolver.md",
+    ".agent/skills/cpp-reviewer.md",
+    ".agent/skills/csharp-reviewer.md",
+    ".agent/skills/dart-build-resolver.md",
+    ".agent/skills/database-reviewer.md",
+    ".agent/skills/django-build-resolver.md",
+    ".agent/skills/django-reviewer.md",
+    ".agent/skills/doc-updater.md",
+    ".agent/skills/docs-lookup.md",
+    ".agent/skills/e2e-runner.md",
+    ".agent/skills/fastapi-reviewer.md",
+    ".agent/skills/flutter-reviewer.md",
+    ".agent/skills/fsharp-reviewer.md",
+    ".agent/skills/gan-evaluator.md",
+    ".agent/skills/gan-generator.md",
+    ".agent/skills/gan-planner.md",
+    ".agent/skills/go-build-resolver.md",
+    ".agent/skills/go-reviewer.md",
+    ".agent/skills/harmonyos-app-resolver.md",
+    ".agent/skills/harness-optimizer.md",
+    ".agent/skills/healthcare-reviewer.md",
+    ".agent/skills/homelab-architect.md",
+    ".agent/skills/java-build-resolver.md",
+    ".agent/skills/java-reviewer.md",
+    ".agent/skills/kotlin-build-resolver.md",
+    ".agent/skills/kotlin-reviewer.md",
+    ".agent/skills/loop-operator.md",
+    ".agent/skills/marketing-agent.md",
+    ".agent/skills/mle-reviewer.md",
+    ".agent/skills/network-architect.md",
+    ".agent/skills/network-config-reviewer.md",
+    ".agent/skills/network-troubleshooter.md",
+    ".agent/skills/opensource-forker.md",
+    ".agent/skills/opensource-packager.md",
+    ".agent/skills/opensource-sanitizer.md",
+    ".agent/skills/performance-optimizer.md",
+    ".agent/skills/php-reviewer.md",
+    ".agent/skills/planner.md",
+    ".agent/skills/pr-test-analyzer.md",
+    ".agent/skills/python-reviewer.md",
+    ".agent/skills/pytorch-build-resolver.md",
+    ".agent/skills/react-build-resolver.md",
+    ".agent/skills/react-reviewer.md",
+    ".agent/skills/refactor-cleaner.md",
+    ".agent/skills/rust-build-resolver.md",
+    ".agent/skills/rust-reviewer.md",
+    ".agent/skills/security-reviewer.md",
+    ".agent/skills/seo-specialist.md",
+    ".agent/skills/silent-failure-hunter.md",
+    ".agent/skills/swift-build-resolver.md",
+    ".agent/skills/swift-reviewer.md",
+    ".agent/skills/tdd-guide.md",
+    ".agent/skills/type-design-analyzer.md",
+    ".agent/skills/typescript-reviewer.md",
+    ".agent/workflows/aside.md",
+    ".agent/workflows/auto-update.md",
+    ".agent/workflows/build-fix.md",
+    ".agent/workflows/checkpoint.md",
+    ".agent/workflows/code-review.md",
+    ".agent/workflows/cost-report.md",
+    ".agent/workflows/cpp-build.md",
+    ".agent/workflows/cpp-review.md",
+    ".agent/workflows/cpp-test.md",
+    ".agent/workflows/ecc-guide.md",
+    ".agent/workflows/evolve.md",
+    ".agent/workflows/fastapi-review.md",
+    ".agent/workflows/feature-dev.md",
+    ".agent/workflows/flutter-build.md",
+    ".agent/workflows/flutter-review.md",
+    ".agent/workflows/flutter-test.md",
+    ".agent/workflows/gan-build.md",
+    ".agent/workflows/gan-design.md",
+    ".agent/workflows/go-build.md",
+    ".agent/workflows/go-review.md",
+    ".agent/workflows/go-test.md",
+    ".agent/workflows/gradle-build.md",
+    ".agent/workflows/harness-audit.md",
+    ".agent/workflows/hookify-configure.md",
+    ".agent/workflows/hookify-help.md",
+    ".agent/workflows/hookify-list.md",
+    ".agent/workflows/hookify.md",
+    ".agent/workflows/instinct-export.md",
+    ".agent/workflows/instinct-import.md",
+    ".agent/workflows/instinct-status.md",
+    ".agent/workflows/jira.md",
+    ".agent/workflows/kotlin-build.md",
+    ".agent/workflows/kotlin-review.md",
+    ".agent/workflows/kotlin-test.md",
+    ".agent/workflows/learn-eval.md",
+    ".agent/workflows/learn.md",
+    ".agent/workflows/loop-start.md",
+    ".agent/workflows/loop-status.md",
+    ".agent/workflows/marketing-campaign.md",
+    ".agent/workflows/model-route.md",
+    ".agent/workflows/multi-backend.md",
+    ".agent/workflows/multi-execute.md",
+    ".agent/workflows/multi-frontend.md",
+    ".agent/workflows/multi-plan.md",
+    ".agent/workflows/multi-workflow.md",
+    ".agent/workflows/orch-add-feature.md",
+    ".agent/workflows/orch-build-mvp.md",
+    ".agent/workflows/orch-change-feature.md",
+    ".agent/workflows/orch-fix-defect.md",
+    ".agent/workflows/orch-refine-code.md",
+    ".agent/workflows/plan-prd.md",
+    ".agent/workflows/plan.md",
+    ".agent/workflows/pm2.md",
+    ".agent/workflows/pr.md",
+    ".agent/workflows/project-init.md",
+    ".agent/workflows/projects.md",
+    ".agent/workflows/promote.md",
+    ".agent/workflows/prp-commit.md",
+    ".agent/workflows/prp-implement.md",
+    ".agent/workflows/prp-plan.md",
+    ".agent/workflows/prp-pr.md",
+    ".agent/workflows/prp-prd.md",
+    ".agent/workflows/prune.md",
+    ".agent/workflows/python-review.md",
+    ".agent/workflows/quality-gate.md",
+    ".agent/workflows/react-build.md",
+    ".agent/workflows/react-review.md",
+    ".agent/workflows/react-test.md",
+    ".agent/workflows/refactor-clean.md",
+    ".agent/workflows/resume-session.md",
+    ".agent/workflows/review-pr.md",
+    ".agent/workflows/rust-build.md",
+    ".agent/workflows/rust-review.md",
+    ".agent/workflows/rust-test.md",
+    ".agent/workflows/santa-loop.md",
+    ".agent/workflows/save-session.md",
+    ".agent/workflows/security-scan.md",
+    ".agent/workflows/sessions.md",
+    ".agent/workflows/setup-pm.md",
+    ".agent/workflows/skill-create.md",
+    ".agent/workflows/skill-health.md",
+    ".agent/workflows/test-coverage.md",
+    ".agent/workflows/update-codemaps.md",
+    ".agent/workflows/update-docs.md",
+    "app/favicon.ico",
+    "public/icon.png"
+  ]
+}

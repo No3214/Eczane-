@@ -1,0 +1,12 @@
+▲ Next.js 16.4.1 (webpack)
+✓ Running next.config.ts took 844ms
+⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
+
+  Creating an optimized production build ...
+
+> Build error occurred
+Error: Could not parse output from TypeScript's --showConfig.
+    at ignore-listed frames {
+  [cause]: SyntaxError: Unexpected end of JSON input
+      at JSON.parse (<anonymous>)
+}
