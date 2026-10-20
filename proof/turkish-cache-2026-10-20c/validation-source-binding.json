@@ -1,0 +1,58 @@
+{
+  "final_source_manifest_sha256": "aa300dfdfe5743fb87e10fd7340e8d39005425949a22ff99676eef1151389712",
+  "source_files": 102,
+  "primary_negative_evidence": {
+    "kind": "REAL_HOSTED_BROWSER_FAILURE",
+    "head": "a19404206966f7abe4ea6a37f8bba62eb91d5c1f",
+    "run_id": 39445094023,
+    "stats": {
+      "total": 15,
+      "expected": 12,
+      "unexpected": 3,
+      "flaky": 0,
+      "skipped": 0,
+      "ok": false
+    },
+    "failed_cache_cases": 3,
+    "attempts_each": 3,
+    "failure_line": 75,
+    "actual_empty_cards": true,
+    "final_unexpected_requests_assertion_reached": false,
+    "artifact_sha256": "a8de40e97e4b67e7ebb8d323c405289399851a08160efa2fa427b2b060b1f669"
+  },
+  "diagnostic": {
+    "actual_dependency": "dexie@4.4.3",
+    "database_opened": false,
+    "key_range_presence_only": "inert empty object without methods; no IndexedDB implementation",
+    "evidence": "evidence/dexie-range.json",
+    "limit": "Real collection range metadata, not a real database exception; hosted traces expose the Dexie error prefix but no exception type."
+  },
+  "secondary_contract_red": {
+    "manifest_sha256": "c491b0d553597cc7bc0394c8bba40125b64801675e9a2c5eb5d0c7c631d08daa",
+    "failed": 10,
+    "passed": 17,
+    "limit": "The old hook calls removed indexed-query methods in the corrected unfiltered-row mock. This demonstrates the new read contract, not Dexie's real IndexedDB bug."
+  },
+  "final_green": {
+    "manifest_sha256": "aa300dfdfe5743fb87e10fd7340e8d39005425949a22ff99676eef1151389712",
+    "ownership_tests": 27,
+    "home_tests": 11,
+    "focused_total": 38,
+    "vitest_total": 157,
+    "node_handler_total": 15,
+    "test_author": "implementation agent",
+    "independent_runtime_repeat": false
+  },
+  "same_27_case_test_bytes_between_contract_red_and_green": true,
+  "unchanged_browser_regression": {
+    "path": "tests/cache-area.spec.ts",
+    "sha256": "50bd583e099b6277ef9b8214181fda96c3df249d6746a260cd025fe0d6a398c8",
+    "new_hosted_result": "PENDING_NEW_FOLLOWUP_COMMIT"
+  },
+  "historical_results_not_reused": [
+    "Original C 153 Vitest +15 handler",
+    "Original C independent focused34",
+    "Original C harness-assisted local build",
+    "B hosted12/12"
+  ]
+}

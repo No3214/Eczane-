@@ -1,0 +1,102 @@
+{
+  "items": [
+    {
+      "id": "npm-ci-advisory-summary",
+      "observed": {
+        "line": 152,
+        "text": "2026-10-20T15:05:15.8957103Z 15 vulnerabilities (3 moderate, 11 high, 1 critical)",
+        "total": 15,
+        "severity_counts": {
+          "moderate": 3,
+          "high": 11,
+          "critical": 1
+        }
+      },
+      "installation_aggregate": [
+        {
+          "line": 147,
+          "text": "2026-10-20T15:05:15.8313407Z added 558 packages, and audited 559 packages in 23s"
+        }
+      ],
+      "status": "OBSERVED_AGGREGATE_NOT_A_FULL_AUDIT",
+      "limit": "This npm ci log reports an aggregate, not unique exploitable runtime flaws. Full npm audit was rejected by automatic approval review and was not retried. This follow-up does not establish advisory identities, dependency paths, production reachability, remediation attribution, or that every prior warning was fixed."
+    },
+    {
+      "id": "serwist-turbopack",
+      "evidence": [
+        {
+          "line": 1410,
+          "text": "2026-10-20T15:06:14.7434816Z [WebServer] [@serwist/next] WARNING: You are using '@serwist/next' with `next dev --turbopack`, but it doesn't support Turbopack. Do one of the following:"
+        }
+      ],
+      "limit": "Source-bound CI starts a production build/server. This compatibility warning prevents any service-worker/PWA acceptance inference."
+    },
+    {
+      "id": "browser-console-policy",
+      "evidence": [
+        {
+          "line": 1424,
+          "text": "2026-10-20T15:06:59.6879946Z ·××F···BROWSER LOG: [JavaScript Warning: \"Content-Security-Policy: Ignoring ‘block-all-mixed-content’ because mixed content display upgrading makes block-all-mixed-content obsolete.\" {file: \"http://localhost:3000/\" line: 0}]"
+        },
+        {
+          "line": 1425,
+          "text": "2026-10-20T15:07:00.2231386Z BROWSER LOG: [JavaScript Error: \"Referrer Policy: Ignoring the less restricted referrer policy “origin-when-cross-origin” for the cross-site request: https://api.open-meteo.com/v1/forecast?latitude=38.4237&longitude=27.1428&current=temperature_2m,uv_index,weather_code\" {file: \"https://api.open-meteo.com/v1/forecast?latitude=38.4237&longitude=27.1428&current=temperature_2m,uv_index,weather_code\" line: 0}]"
+        }
+      ],
+      "limit": "These are actual browser console entries, separate from assertion outcomes. Existing tests are not wholly offline."
+    },
+    {
+      "id": "dependency-install-warnings",
+      "evidence": [
+        {
+          "line": 145,
+          "text": "2026-10-20T15:04:56.8754662Z npm warn deprecated source-map@0.8.0-beta.0: The work that was done in this beta branch won't be included in future versions"
+        },
+        {
+          "line": 161,
+          "text": "2026-10-20T15:05:15.8970246Z npm warn install-scripts 2 packages have install scripts not yet covered by allowScripts:"
+        },
+        {
+          "line": 162,
+          "text": "2026-10-20T15:05:15.8971388Z npm warn install-scripts   tesseract.js@7.0.0 (postinstall: opencollective-postinstall || true)"
+        },
+        {
+          "line": 163,
+          "text": "2026-10-20T15:05:15.8972154Z npm warn install-scripts   unrs-resolver@1.12.2 (postinstall: node postinstall.js)"
+        },
+        {
+          "line": 164,
+          "text": "2026-10-20T15:05:15.8972644Z npm warn install-scripts"
+        },
+        {
+          "line": 165,
+          "text": "2026-10-20T15:05:15.8973269Z npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow."
+        }
+      ],
+      "limit": "Observed installation warnings; no install-script policy changes were made during acceptance verification."
+    },
+    {
+      "id": "action-runtime-deprecations",
+      "evidence": [
+        {
+          "line": 133,
+          "text": "2026-10-20T15:04:51.2548303Z (node:2280) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead."
+        },
+        {
+          "line": 1749,
+          "text": "2026-10-20T15:08:29.0301958Z (node:7287) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead."
+        },
+        {
+          "line": 1755,
+          "text": "2026-10-20T15:08:29.6609898Z (node:7287) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities."
+        },
+        {
+          "line": 1778,
+          "text": "2026-10-20T15:08:30.9867655Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/"
+        }
+      ],
+      "limit": "Observed Action/runtime warnings; no workflow/runtime changes were made by this verifier."
+    }
+  ],
+  "no_rerun_source_policy_or_dependency_changes_during_verification": true
+}

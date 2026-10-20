@@ -1,0 +1,177 @@
+{
+  "artifact_id": 12275522030,
+  "name": "playwright-report",
+  "url": "https://github.com/No3214/Eczane-/actions/runs/39445094023/artifacts/12275522030",
+  "run_id": 39445094023,
+  "head_sha": "a19404206966f7abe4ea6a37f8bba62eb91d5c1f",
+  "created_at": "2026-10-20T15:08:30Z",
+  "expires_at": "2026-11-19T15:08:29Z",
+  "archive": {
+    "path": "playwright-report.zip",
+    "bytes": 5468268,
+    "sha256": "a8de40e97e4b67e7ebb8d323c405289399851a08160efa2fa427b2b060b1f669"
+  },
+  "api_digest": "sha256:a8de40e97e4b67e7ebb8d323c405289399851a08160efa2fa427b2b060b1f669",
+  "job_log_digest": "a8de40e97e4b67e7ebb8d323c405289399851a08160efa2fa427b2b060b1f669",
+  "archive_api_log_and_download_digest_match": true,
+  "upload_log_evidence": [
+    {
+      "line": 1758,
+      "text": "2026-10-20T15:08:30.4337491Z SHA256 digest of uploaded artifact zip is a8de40e97e4b67e7ebb8d323c405289399851a08160efa2fa427b2b060b1f669"
+    },
+    {
+      "line": 1760,
+      "text": "2026-10-20T15:08:30.7008397Z Artifact playwright-report.zip successfully finalized. Artifact ID 12275522030"
+    },
+    {
+      "line": 1761,
+      "text": "2026-10-20T15:08:30.7010133Z Artifact playwright-report has been successfully uploaded! Final size is 5468268 bytes. Artifact ID is 12275522030"
+    }
+  ],
+  "outer_members": [
+    {
+      "path": "data/0128b7d5f36d43808b121aa6b6a4beff00953ae0.zip",
+      "bytes": 1303046
+    },
+    {
+      "path": "data/31b443496bc31a9660574c974042e930266f48cf.md",
+      "bytes": 7668
+    },
+    {
+      "path": "data/39787eb6c873e339dd2792bce78b2c7cb4fd067d.md",
+      "bytes": 7668
+    },
+    {
+      "path": "data/3d56bc8117bcc455f9d08c67379cc9fd9e109692.zip",
+      "bytes": 2422599
+    },
+    {
+      "path": "data/6581e8b75f63ea01ac8410aeed37fd9cd50a0d42.md",
+      "bytes": 7704
+    },
+    {
+      "path": "data/6eb5f1f934f6d32c11374761dafa9826733f82ba.zip",
+      "bytes": 1655327
+    },
+    {
+      "path": "index.html",
+      "bytes": 618380
+    },
+    {
+      "path": "trace/assets/codeMirrorModule-Ds_H_9Yq.js",
+      "bytes": 313054
+    },
+    {
+      "path": "trace/assets/defaultSettingsView-D31xz8zv.js",
+      "bytes": 649133
+    },
+    {
+      "path": "trace/assets/urlMatch-BYQrIQwR.js",
+      "bytes": 819
+    },
+    {
+      "path": "trace/codeMirrorModule.DYBRYzYX.css",
+      "bytes": 6421
+    },
+    {
+      "path": "trace/codicon.DCmgc-ay.ttf",
+      "bytes": 80340
+    },
+    {
+      "path": "trace/defaultSettingsView.BDKsFU3c.css",
+      "bytes": 110856
+    },
+    {
+      "path": "trace/index.BCnMPevh.js",
+      "bytes": 6591
+    },
+    {
+      "path": "trace/index.html",
+      "bytes": 2363
+    },
+    {
+      "path": "trace/index.CzXZzn5A.css",
+      "bytes": 2111
+    },
+    {
+      "path": "trace/manifest.webmanifest",
+      "bytes": 429
+    },
+    {
+      "path": "trace/playwright-logo.svg",
+      "bytes": 5033
+    },
+    {
+      "path": "trace/snapshot.v8KI4P3m.js",
+      "bytes": 660
+    },
+    {
+      "path": "trace/snapshot.html",
+      "bytes": 389
+    },
+    {
+      "path": "trace/sw.bundle.js",
+      "bytes": 95469
+    },
+    {
+      "path": "trace/uiMode.C2Efnu2P.js",
+      "bytes": 38201
+    },
+    {
+      "path": "trace/uiMode.Btcz36p_.css",
+      "bytes": 60239
+    },
+    {
+      "path": "trace/uiMode.html",
+      "bytes": 727
+    },
+    {
+      "path": "trace/xtermModule.DYP7pi_n.css",
+      "bytes": 4150
+    }
+  ],
+  "index_html": {
+    "bytes": 618380,
+    "sha256": "dedd7267246dec5b3e0cb3af5774ae3bcb46c6ee8d6695d23847219aec7b6d74"
+  },
+  "embedded_report_zip": {
+    "bytes": 70480,
+    "sha256": "17aa664270f0690452c3d95cd917e21e5dc9a8c52d5bf9f44858ca2c217463fd"
+  },
+  "embedded_members": [
+    {
+      "path": "c31ff144dc4fee3acd0a.json",
+      "bytes": 21991,
+      "sha256": "07779534e6df4bf32aaa39c4a73eaa618eda1570f3b4b941f080f9d71a60a6be"
+    },
+    {
+      "path": "65797c57229856c81e3e.json",
+      "bytes": 321805,
+      "sha256": "d28f0fdefa2f571c4da1664d3dbcd37979b9ce43b569eeedcce1dab9a7948e82"
+    },
+    {
+      "path": "a30a6eba6312f6b87ea5.json",
+      "bytes": 20990,
+      "sha256": "9b29cd5246c017e5eeaabcb989a4a090ab16d108a4dc6a37b59751ac30e45253"
+    },
+    {
+      "path": "fbc70143e18771724c2b.json",
+      "bytes": 90516,
+      "sha256": "ade91f8e8defe2d5b45ef037216a7501f84d19abdccac70b9226123117c67b5e"
+    },
+    {
+      "path": "report.json",
+      "bytes": 114854,
+      "sha256": "7d4be63a12cbbde337f7ffb4d4d9c93763ff097557c893b3528e83b0719a55b8"
+    }
+  ],
+  "extraction": "Read archive index.html, decode template#playwrightReportBase64, parse JSON members; no HTML/JavaScript execution or archive extraction.",
+  "report_ci_checkout_sha": "ec32f472edecceacfb9c5ac750869dc4bc7bfdcd",
+  "report_git_checkout_sha": "ec32f472edecceacfb9c5ac750869dc4bc7bfdcd",
+  "report_run_url": "https://github.com/No3214/Eczane-/actions/runs/39445094023",
+  "download_receipt": {
+    "path": "artifact-download.json",
+    "bytes": 465,
+    "sha256": "0daf9e1bb4a21c35dd29f6c536af3be1b3ffc208ea57b22ea6f587f2dcaf0f7a"
+  }
+}

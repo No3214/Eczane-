@@ -1,0 +1,89 @@
+--- a/lib/hooks/usePharmacies.ts
++++ b/lib/hooks/usePharmacies.ts
+@@ -138,12 +138,9 @@
+       // nearest rows cannot prove that they belong to the current GPS query.
+       if (cached === null && query?.kind === "area") {
+         try {
+-          const rows = await db.pharmacies
+-            .where("city")
+-            .equalsIgnoreCase(query.city)
+-            .filter(p => typeof p.district === "string"
+-              && normalizeArea(p.district) === normalizeArea(query.district))
+-            .toArray();
++          // Dexie's indexed case folding is not Turkish-aware. Validate and
++          // match both area fields with the same normalization as browser cache.
++          const rows = await db.pharmacies.toArray();
+           cached = scopedRows(rows, query);
+         } catch (dbErr) {
+           console.error("Dexie read error:", dbErr);
+--- a/tests/pharmacy-query-ownership.test.tsx
++++ b/tests/pharmacy-query-ownership.test.tsx
+@@ -5,13 +5,11 @@
+ import { usePharmacies } from "@/lib/hooks/usePharmacies";
+ import type { Pharmacy } from "@/types/pharmacy";
+ 
+-const database = vi.hoisted(() => ({ read: vi.fn(), bulkPut: vi.fn(), where: vi.fn() }));
++const database = vi.hoisted(() => ({ read: vi.fn(), bulkPut: vi.fn() }));
+ vi.mock("@/lib/db", () => ({
+   db: { pharmacies: {
+     bulkPut: database.bulkPut,
+-    where: database.where,
+     toArray: database.read,
+-    limit: () => ({ toArray: database.read }),
+   } },
+ }));
+ 
+@@ -36,15 +34,8 @@
+   fetchMock.mockReset();
+   database.read.mockReset().mockResolvedValue([]);
+   database.bulkPut.mockReset().mockResolvedValue(undefined);
+-  database.where.mockReset().mockImplementation(() => ({
+-    equalsIgnoreCase: (city: string) => ({
+-      filter: (predicate: (record: Pharmacy) => boolean) => ({
+-        toArray: async () => (await database.read() as Pharmacy[])
+-          .filter(row => row.city.toLocaleLowerCase("tr-TR") === city.toLocaleLowerCase("tr-TR"))
+-          .filter(predicate),
+-      }),
+-    }),
+-  }));
++  // Return unfiltered stored rows. Area normalization belongs to the hook, not
++  // a mock implementation of Dexie's locale-independent indexed case folding.
+   vi.stubGlobal("fetch", fetchMock);
+   vi.spyOn(console, "error").mockImplementation(() => undefined);
+ });
+@@ -212,6 +203,35 @@
+     expect(hook.result.current.isOfflineData).toBe(true);
+   });
+ 
++  it.each(["İzmir", "izmir", "  İZMİR  "])("restores only valid matching IndexedDB rows for Turkish city variant %s", async (city) => {
++    const hook = renderHook(() => usePharmacies());
++    await load(hook, [bornova], undefined, undefined, "İzmir", "Bornova");
++    const paddedKonak = { ...konak, city: " İZMİR ", district: " KONAK " };
++    database.read.mockResolvedValueOnce([
++      null,
++      { ...konak, id: "broken-city", city: null },
++      { ...konak, id: "broken-coordinate", latitude: NaN },
++      { ...konak, id: "another-city", city: "Ankara" },
++      bornova,
++      paddedKonak,
++    ]);
++    fetchMock.mockRejectedValueOnce(new Error("offline"));
++    await finish(begin(hook, undefined, undefined, city, " konak "));
++    expect(database.read).toHaveBeenCalledTimes(1);
++    expect(hook.result.current.pharmacies).toEqual([paddedKonak]);
++    expect(hook.result.current.isOfflineData).toBe(true);
++  });
++
++  it("matches dotless Turkish I in cached city and district without accepting a different city", async () => {
++    const row = { ...konak, id: "igdir-record", city: " IĞDIR ", district: " ARALIK " };
++    database.read.mockResolvedValueOnce([row, { ...row, id: "different-city", city: "ığdırx" }]);
++    const hook = renderHook(() => usePharmacies());
++    fetchMock.mockRejectedValueOnce(new Error("offline"));
++    await finish(begin(hook, undefined, undefined, "ığdır", "aralık"));
++    expect(hook.result.current.pharmacies).toEqual([row]);
++    expect(hook.result.current.isOfflineData).toBe(true);
++  });
++
+   it("clears the old result when the new area fails and has no matching cached records", async () => {
+     const hook = renderHook(() => usePharmacies());
+     await load(hook, [konak], undefined, undefined, "İzmir", "Konak");

@@ -1,0 +1,152 @@
+{
+  "repository": "No3214/Eczane-",
+  "published_head": "a19404206966f7abe4ea6a37f8bba62eb91d5c1f",
+  "actual_checkout_sha": "ec32f472edecceacfb9c5ac750869dc4bc7bfdcd",
+  "checkout_kind": "GitHub pull-request synthetic merge",
+  "checkout_parents": [
+    "b7bdcfd9a12e36f1f33a68845b0d488b97da0b3f",
+    "a19404206966f7abe4ea6a37f8bba62eb91d5c1f"
+  ],
+  "published_tree": "37da218ddf02567fd86fb6d0f80edf613a3cb0d3",
+  "checkout_tree": "37da218ddf02567fd86fb6d0f80edf613a3cb0d3",
+  "full_tree_equal": true,
+  "recursive_tree_truncated": false,
+  "remote_leaf_entries": 574,
+  "expected_leaf_entries": 574,
+  "full_path_mode_type_blob_match": true,
+  "recomputed_git_tree": "37da218ddf02567fd86fb6d0f80edf613a3cb0d3",
+  "source_manifest": {
+    "path": "../../eczane/source-publication.json",
+    "sha256": "2b3685b4df1c670301b784efb0a476f3acb92201b9ded4356d4fc02e09de9550",
+    "file_count": 102
+  },
+  "all_102_final_source_sha256_and_git_blob_hashes_match": true,
+  "key_bound_files": [
+    {
+      "path": "lib/hooks/usePharmacies.ts",
+      "sha256": "90acf167f7aca84d2eaea7acc5ed4a31def2ae23684541be80c3f61bd1bcf554",
+      "git_blob_sha": "e89a7b2d1a80fd6a407c80da253ee668ab739c72",
+      "mode": "100644"
+    },
+    {
+      "path": "tests/pharmacy-query-ownership.test.tsx",
+      "sha256": "4aa30ec467f8b79850a92e7445f8dbe5843c736bea8a8597373a4d8e9b8b3f67",
+      "git_blob_sha": "22599af82fdc4e6447281ec2cd71817762de101b",
+      "mode": "100644"
+    },
+    {
+      "path": "app/page.tsx",
+      "sha256": "1d69f981ab5a7415f22b6502781dc94bdbf9f363ec70009e4b13c471a82afdc0",
+      "git_blob_sha": "83ee47ff77b93ac307163608ba1c35eb4b77cdfd",
+      "mode": "100644"
+    },
+    {
+      "path": "tests/cache-area.spec.ts",
+      "sha256": "50bd583e099b6277ef9b8214181fda96c3df249d6746a260cd025fe0d6a398c8",
+      "git_blob_sha": "dfb67b03bd8cdc6b62e5034a84fb25f626c24044",
+      "mode": "100644"
+    },
+    {
+      "path": "tests/results.spec.ts",
+      "sha256": "38b64c59ad7c2f6be5ae997bfa75bba04df4442def18f7f3ff2a535457d40950",
+      "git_blob_sha": "3c421b6f7b0b42a4af4e435001e1d194127e7d28",
+      "mode": "100644"
+    },
+    {
+      "path": "tests/app.spec.ts",
+      "sha256": "85888726a5edf7557ae32a6cda629bb4827c286f37849878721f3159dd4ee31a",
+      "git_blob_sha": "4177e8a8dbb522ec1e765ba838b41ce16418865f",
+      "mode": "100644"
+    },
+    {
+      "path": "tests/example.spec.ts",
+      "sha256": "a3cbab846a58843b6350e2cc96801b4b6c41e86880451a68c9a01b149708a042",
+      "git_blob_sha": "54a906a4e84f0b1f9fd24d3dd9dddcc580c1bbc7",
+      "mode": "100644"
+    },
+    {
+      "path": "playwright.config.ts",
+      "sha256": "9eaa66d9f2d554e364134e4c8787ab4418f8bb642d5914bffea2a35363e414a6",
+      "git_blob_sha": "24b0a0a6ae8c9a3806b41e837d8793ff84808c85",
+      "mode": "100644"
+    },
+    {
+      "path": ".github/workflows/playwright.yml",
+      "sha256": "b51cb367e18f8a59367d99103c5433934172534d40341e2daaf5efcfa67a0acd",
+      "git_blob_sha": "3eb13143c3dd93d2ed5c2ce64886c8744c9631f4",
+      "mode": "100644"
+    },
+    {
+      "path": "package.json",
+      "sha256": "fc583f96c79f74c34a881b395ad4759714f2e87137d1a9c4dd0920976e194cc6",
+      "git_blob_sha": "a88de05dc8316a0d6a668e7c21bdcb7b4731f552",
+      "mode": "100644"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "fb935c07a027102acb5247aaa2c758e803e756d3d6e40943d1431805c6eabca4",
+      "git_blob_sha": "31de125048b175f93e96ecc2244ddd4e7edd058e",
+      "mode": "100644"
+    }
+  ],
+  "source_bound_lock_versions": {
+    "next": "16.4.1",
+    "eslint-config-next": "16.4.1",
+    "sharp": "0.35.5",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "eslint": "9.39.4"
+  },
+  "checkout_log_evidence": [
+    {
+      "line": 123,
+      "text": "2026-10-20T15:04:51.0510659Z [command]/usr/bin/git log -1 --format=%H"
+    },
+    {
+      "line": 94,
+      "text": "2026-10-20T15:04:49.8962733Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +ec32f472edecceacfb9c5ac750869dc4bc7bfdcd:refs/remotes/pull/2/merge"
+    },
+    {
+      "line": 96,
+      "text": "2026-10-20T15:04:50.9931757Z  * [new ref]         ec32f472edecceacfb9c5ac750869dc4bc7bfdcd -> pull/2/merge"
+    },
+    {
+      "line": 124,
+      "text": "2026-10-20T15:04:51.0537736Z ec32f472edecceacfb9c5ac750869dc4bc7bfdcd"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "published-commit.json",
+      "bytes": 1311,
+      "sha256": "a2edd779654668e8f1924523cc8679fb7bc75a9ff4c4309a2525b311b9748c5a"
+    },
+    {
+      "path": "checkout-commit.json",
+      "bytes": 2780,
+      "sha256": "45b12d43513a75393ea633b366993ed681fda53a3c0dc741dbc2d992787790bc"
+    },
+    {
+      "path": "checkout-tree.json",
+      "bytes": 206829,
+      "sha256": "69d9c3ac53c1a2deb7939a0d8067d67023f95c1b077ae0f22cb12b8b1be37f06"
+    },
+    {
+      "path": "run-final.json",
+      "bytes": 13515,
+      "sha256": "2c96db5d5ce6e5ebcd5d9e0d4faa3bb7c6b2d878daf461ffec54a12dd5c08280"
+    },
+    {
+      "path": "jobs-final.json",
+      "bytes": 3687,
+      "sha256": "592d9c642627818df6bad010a9d672b65ee708ce41fae9d4541b06b680435f42"
+    },
+    {
+      "path": "checks-final.json",
+      "bytes": 5044,
+      "sha256": "e861bef138b58fbabd986ae37637c8542b13fad5ff6d469300b218f9311ef6c7"
+    }
+  ],
+  "published_receipt_sha256": "c081423f6dde748308e10ca4d9c5ba5565dc45e3e04909c0e72509d3c41e57d3",
+  "expected_entries_sha256": "621383bc3c0230ba1393742170b7bab186ddf5689e591301c4778753ac5576fa"
+}

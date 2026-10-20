@@ -138,12 +138,9 @@ export function usePharmacies() {
       // nearest rows cannot prove that they belong to the current GPS query.
       if (cached === null && query?.kind === "area") {
         try {
-          const rows = await db.pharmacies
-            .where("city")
-            .equalsIgnoreCase(query.city)
-            .filter(p => typeof p.district === "string"
-              && normalizeArea(p.district) === normalizeArea(query.district))
-            .toArray();
+          // Dexie's indexed case folding is not Turkish-aware. Validate and
+          // match both area fields with the same normalization as browser cache.
+          const rows = await db.pharmacies.toArray();
           cached = scopedRows(rows, query);
         } catch (dbErr) {
           console.error("Dexie read error:", dbErr);

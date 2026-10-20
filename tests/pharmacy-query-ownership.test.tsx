@@ -5,13 +5,11 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { usePharmacies } from "@/lib/hooks/usePharmacies";
 import type { Pharmacy } from "@/types/pharmacy";
 
-const database = vi.hoisted(() => ({ read: vi.fn(), bulkPut: vi.fn(), where: vi.fn() }));
+const database = vi.hoisted(() => ({ read: vi.fn(), bulkPut: vi.fn() }));
 vi.mock("@/lib/db", () => ({
   db: { pharmacies: {
     bulkPut: database.bulkPut,
-    where: database.where,
     toArray: database.read,
-    limit: () => ({ toArray: database.read }),
   } },
 }));
 
@@ -36,15 +34,8 @@ beforeEach(() => {
   fetchMock.mockReset();
   database.read.mockReset().mockResolvedValue([]);
   database.bulkPut.mockReset().mockResolvedValue(undefined);
-  database.where.mockReset().mockImplementation(() => ({
-    equalsIgnoreCase: (city: string) => ({
-      filter: (predicate: (record: Pharmacy) => boolean) => ({
-        toArray: async () => (await database.read() as Pharmacy[])
-          .filter(row => row.city.toLocaleLowerCase("tr-TR") === city.toLocaleLowerCase("tr-TR"))
-          .filter(predicate),
-      }),
-    }),
-  }));
+  // Return unfiltered stored rows. Area normalization belongs to the hook, not
+  // a mock implementation of Dexie's locale-independent indexed case folding.
   vi.stubGlobal("fetch", fetchMock);
   vi.spyOn(console, "error").mockImplementation(() => undefined);
 });
@@ -209,6 +200,35 @@ describe("offline results belong to the requested area", () => {
     fetchMock.mockRejectedValueOnce(new Error("offline"));
     await finish(begin(hook, undefined, undefined, "İzmir", "Bornova"));
     expect(hook.result.current.pharmacies).toEqual([bornova]);
+    expect(hook.result.current.isOfflineData).toBe(true);
+  });
+
+  it.each(["İzmir", "izmir", "  İZMİR  "])("restores only valid matching IndexedDB rows for Turkish city variant %s", async (city) => {
+    const hook = renderHook(() => usePharmacies());
+    await load(hook, [bornova], undefined, undefined, "İzmir", "Bornova");
+    const paddedKonak = { ...konak, city: " İZMİR ", district: " KONAK " };
+    database.read.mockResolvedValueOnce([
+      null,
+      { ...konak, id: "broken-city", city: null },
+      { ...konak, id: "broken-coordinate", latitude: NaN },
+      { ...konak, id: "another-city", city: "Ankara" },
+      bornova,
+      paddedKonak,
+    ]);
+    fetchMock.mockRejectedValueOnce(new Error("offline"));
+    await finish(begin(hook, undefined, undefined, city, " konak "));
+    expect(database.read).toHaveBeenCalledTimes(1);
+    expect(hook.result.current.pharmacies).toEqual([paddedKonak]);
+    expect(hook.result.current.isOfflineData).toBe(true);
+  });
+
+  it("matches dotless Turkish I in cached city and district without accepting a different city", async () => {
+    const row = { ...konak, id: "igdir-record", city: " IĞDIR ", district: " ARALIK " };
+    database.read.mockResolvedValueOnce([row, { ...row, id: "different-city", city: "ığdırx" }]);
+    const hook = renderHook(() => usePharmacies());
+    fetchMock.mockRejectedValueOnce(new Error("offline"));
+    await finish(begin(hook, undefined, undefined, "ığdır", "aralık"));
+    expect(hook.result.current.pharmacies).toEqual([row]);
     expect(hook.result.current.isOfflineData).toBe(true);
   });
 

@@ -1,0 +1,19 @@
+{
+  "installed_next_version": "16.4.1",
+  "read_before_source_edits": true,
+  "files": [
+    {
+      "path": "/workspace/scratch/c1829247bf0c/continuation-20261020c/eczane-followup/repo/AGENTS.md",
+      "sha256": "e3447d84251880fb34cfae09131cb4c57471529bbfe60976a3245793cf621627"
+    },
+    {
+      "path": "/workspace/scratch/c1829247bf0c/continuation-20261020c/eczane-followup/repo/node_modules/next/dist/docs/01-app/01-getting-started/05-server-and-client-components.md",
+      "sha256": "c08524a1483abbdaf1821081cf0480cdbccbbee42b5036f0933755894e435a17"
+    },
+    {
+      "path": "/workspace/scratch/c1829247bf0c/continuation-20261020c/eczane-followup/repo/node_modules/next/dist/docs/01-app/02-guides/testing/vitest.md",
+      "sha256": "0698c4235cbb5db5c663e07f6d6b793b53466509a2a18e945ac3cd30a20d21f8"
+    }
+  ],
+  "application": "Client custom-hook and synchronous-hook unit test guidance applied; no framework or config API migration in followup."
+}
