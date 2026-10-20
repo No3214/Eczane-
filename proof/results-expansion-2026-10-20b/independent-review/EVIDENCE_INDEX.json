@@ -1,0 +1,53 @@
+{
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 2157,
+      "sha256": "df11f67491757ee43f1959df60f5c6f6bdbb995efbc88c52dbc7a5eec0d78ae0",
+      "git_blob_sha": "f3a64fafac539e8cdd5ba9db81845a67ad6cbb4f"
+    },
+    {
+      "path": "independent-review.json",
+      "bytes": 4298,
+      "sha256": "04d54c8437b8910e6dba50cdedb4cdc7d35b6fcf191dbdebb11dc6ffdc832a7f",
+      "git_blob_sha": "380834c29073e0f164b375a85a0b93ba63218d87"
+    },
+    {
+      "path": "focused-home-results.json",
+      "bytes": 1074,
+      "sha256": "e07c2c6a6f61ce5936cf322cb8bc7ec708a6b507c6104757ce8611e375215728",
+      "git_blob_sha": "b602d625268eb3e9fb0800cedc3d890ec0952081"
+    },
+    {
+      "path": "focused-home-results.log",
+      "bytes": 2421,
+      "sha256": "b59e62a9dfa5cb515d39085174877252be5c143403e2d64c2ed2c843c9eec791",
+      "git_blob_sha": "b87276246f6185435274e23836839d9a83a5ffd6"
+    },
+    {
+      "path": "focused-network.ndjson",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "source-manifest.json",
+      "bytes": 13003,
+      "sha256": "970bb4485087fe8d1b3e8cc8c786b76bea80826425280c37d71a3b7eb29d76e2",
+      "git_blob_sha": "536f219f136b332b8ae60d8c3a7eb989ed9f0fcc"
+    },
+    {
+      "path": "offline-guard.cjs.txt",
+      "bytes": 2403,
+      "sha256": "8e968739063ec5c694c2e23056c5c1b7476389ea7385fca8c674d08fe10357e8",
+      "git_blob_sha": "768dba51bf2d1c5425dec1e2e43df24089303381"
+    },
+    {
+      "path": "run-focused.py.txt",
+      "bytes": 2447,
+      "sha256": "8c7a353ee63ed87fd05188b9bdf2ff400279ede4088e6f6a89a60a2bbf7ab669",
+      "git_blob_sha": "445ae8060081c30425904392491b877c010f41e7"
+    }
+  ],
+  "self_excluded": true
+}

@@ -1,0 +1,63 @@
+"""Independent focused page regression; no provider credentials or external network."""
+from datetime import datetime, timezone
+from pathlib import Path
+import hashlib
+import json
+import os
+import subprocess
+import sys
+import time
+
+OUT = Path(__file__).resolve().parent
+ROOT = OUT.parents[1] / "eczane"
+REPO = ROOT / "repo"
+source_manifest = Path(sys.argv[1])
+inventory = json.loads(source_manifest.read_text())
+if isinstance(inventory, dict):
+    inventory = inventory["files"]
+
+
+def sha(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def inspect_source():
+    return {
+        "verified_files": len(inventory),
+        "mismatches": [row["path"] for row in inventory if sha(REPO / row["path"]) != row["sha256"]],
+    }
+
+
+before = inspect_source()
+assert not before["mismatches"], before
+(OUT / "source-manifest.json").write_bytes(source_manifest.read_bytes())
+log = OUT / "focused-home-results.log"
+net = OUT / "focused-network.ndjson"
+net.write_text("")
+env = {
+    "PATH": os.environ["PATH"], "CI": "1", "TZ": "UTC",
+    "NEXT_TELEMETRY_DISABLED": "1",
+    "NODE_OPTIONS": "--require=" + str(OUT / "offline-guard.cjs"),
+    "ECZANE_AUDIT_NETWORK_LOG": str(net),
+}
+command = ["node", "node_modules/vitest/vitest.mjs", "run", "tests/home-results.test.tsx", "--no-cache", "--reporter=verbose"]
+receipt = {
+    "started_at_utc": datetime.now(timezone.utc).isoformat(), "cwd": str(REPO),
+    "command": command, "source_manifest_sha256": sha(source_manifest),
+    "runner_sha256": sha(Path(__file__)), "network_guard_sha256": sha(OUT / "offline-guard.cjs"),
+    "environment": "Minimal allowlist; provider credentials not inherited; external Node network blocked; Vitest result cache disabled.",
+    "source_before": before,
+}
+start = time.monotonic()
+with log.open("wb") as output:
+    run = subprocess.run(command, cwd=REPO, env=env, stdout=output, stderr=subprocess.STDOUT, timeout=90)
+after = inspect_source()
+receipt.update({
+    "ended_at_utc": datetime.now(timezone.utc).isoformat(), "exit_code": run.returncode,
+    "elapsed_seconds": round(time.monotonic() - start, 3), "source_after": after,
+    "network_blocked_attempts": len(net.read_text().splitlines()), "log_sha256": sha(log),
+})
+(OUT / "focused-home-results.json").write_text(json.dumps(receipt, indent=2) + "\n")
+print(json.dumps(receipt, indent=2))
+print(log.read_text(errors="replace")[-7000:])
+raise SystemExit(97 if after["mismatches"] else run.returncode)

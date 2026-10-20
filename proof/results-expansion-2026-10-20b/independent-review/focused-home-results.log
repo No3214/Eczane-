@@ -1,0 +1,20 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.8 [39m[90m/workspace/scratch/c1829247bf0c/continuation-20261020b/eczane/repo[39m
+
+ [32m✓[39m tests/home-results.test.tsx[2m > [22mhome pharmacy result expansion[2m > [22mstarts with the first three records in provider order[33m 508[2mms[22m[39m
+ [32m✓[39m tests/home-results.test.tsx[2m > [22mhome pharmacy result expansion[2m > [22mexpands the current results without opening the area picker or fetching again[33m 386[2mms[22m[39m
+ [32m✓[39m tests/home-results.test.tsx[2m > [22mhome pharmacy result expansion[2m > [22mcollapses back to three without discarding records or starting a new query[33m 491[2mms[22m[39m
+ [32m✓[39m tests/home-results.test.tsx[2m > [22mhome pharmacy result expansion[2m > [22mresets expansion when a new GPS query is started[33m 424[2mms[22m[39m
+ [32m✓[39m tests/home-results.test.tsx[2m > [22mhome pharmacy result expansion[2m > [22mkeeps a new query collapsed while GPS and its response are still pending[33m 809[2mms[22m[39m
+ [32m✓[39m tests/home-results.test.tsx[2m > [22mhome pharmacy result expansion[2m > [22mresets expansion on a submitted manual city/district search[33m 902[2mms[22m[39m
+ [32m✓[39m tests/home-results.test.tsx[2m > [22mhome pharmacy result expansion[2m > [22mkeeps expanded results when the unrelated large-text preference changes[33m 527[2mms[22m[39m
+ [32m✓[39m tests/home-results.test.tsx[2m > [22mhome pharmacy result expansion[2m > [22mkeeps expanded results when the area picker is opened and closed without submitting[33m 406[2mms[22m[39m
+ [32m✓[39m tests/home-results.test.tsx[2m > [22mhome pharmacy result expansion[2m > [22mdoes not offer expansion for a result set of 0[32m 43[2mms[22m[39m
+ [32m✓[39m tests/home-results.test.tsx[2m > [22mhome pharmacy result expansion[2m > [22mdoes not offer expansion for a result set of 1[32m 52[2mms[22m[39m
+ [32m✓[39m tests/home-results.test.tsx[2m > [22mhome pharmacy result expansion[2m > [22mdoes not offer expansion for a result set of 3[33m 346[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[32m11 passed[39m[22m[90m (11)[39m
+[2m   Start at [22m 12:44:21
+[2m   Duration [22m 7.87s[2m (transform 709ms, setup 0ms, import 1.43s, tests 4.90s, environment 1.31s)[22m
+

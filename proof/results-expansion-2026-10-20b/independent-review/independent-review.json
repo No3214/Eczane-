@@ -1,0 +1,80 @@
+{
+  "reviewed_at_utc": "2026-10-20T12:45:44.604499+00:00",
+  "reviewer": "independent child agent recover_portfolio",
+  "candidate_repo": "/workspace/scratch/c1829247bf0c/continuation-20261020b/eczane/repo",
+  "baseline_directory": "/workspace/scratch/c1829247bf0c/continuation-20261020b/eczane/base",
+  "verdict": "PASS_SCOPED_REVIEW",
+  "blocking_findings": [],
+  "reviewed_files": [
+    {
+      "path": "app/page.tsx",
+      "baseline_git_blob_sha": "9d325fe3465e6cd7249bcd920535d453346ca81c",
+      "bytes": 16393,
+      "sha256": "1d69f981ab5a7415f22b6502781dc94bdbf9f363ec70009e4b13c471a82afdc0",
+      "git_blob_sha": "83ee47ff77b93ac307163608ba1c35eb4b77cdfd"
+    },
+    {
+      "path": "tests/home-results.test.tsx",
+      "baseline_git_blob_sha": null,
+      "bytes": 8483,
+      "sha256": "07d9012e229337e4d6e5604c337e6cd4c54bdc2bb3402e450d015df5abb76bf9",
+      "git_blob_sha": "a27f6c3e99abe971be7f69e953dfaf17d3f905a4"
+    },
+    {
+      "path": "tests/results.spec.ts",
+      "baseline_git_blob_sha": null,
+      "bytes": 3601,
+      "sha256": "38b64c59ad7c2f6be5ae997bfa75bba04df4442def18f7f3ff2a535457d40950",
+      "git_blob_sha": "3c421b6f7b0b42a4af4e435001e1d194127e7d28"
+    }
+  ],
+  "source_manifest_sha256": "970bb4485087fe8d1b3e8cc8c786b76bea80826425280c37d71a3b7eb29d76e2",
+  "fresh_execution": {
+    "command": [
+      "node",
+      "node_modules/vitest/vitest.mjs",
+      "run",
+      "tests/home-results.test.tsx",
+      "--no-cache",
+      "--reporter=verbose"
+    ],
+    "exit_code": 0,
+    "test_files": 1,
+    "tests_passed": 11,
+    "tests_failed": 0,
+    "elapsed_seconds": 8.611,
+    "source_files_unchanged": 100,
+    "external_network_attempts_recorded": 0,
+    "receipt": "focused-home-results.json",
+    "raw_log": "focused-home-results.log",
+    "network_log": "focused-network.ndjson"
+  },
+  "review_findings_resolved": [
+    {
+      "finding": "Retained old results could be re-expanded while a new GPS/request was pending.",
+      "resolution": "Expansion resets in each real query handler; toggle disabled while loading or GPS requesting. Deferred GPS plus deferred pharmacy response case passes, including re-expansion attempts and final four-row result."
+    },
+    {
+      "finding": "Opening/closing the area picker is not itself a new query.",
+      "resolution": "Expansion and request count remain stable when picker is opened then closed without submission; tested."
+    },
+    {
+      "finding": "The browser fixture treated the existing offscreen ShareCard QR image as unexpected traffic.",
+      "resolution": "Only the precise HTTPS QR origin/path with resourceType image is fulfilled locally using a synthetic SVG; all other unexpected traffic still aborts and fails the assertion. Reviewed statically; no browser execution claimed."
+    }
+  ],
+  "semantic_review": [
+    "Initial view retains first three records in source order; expansion/collapse derives a view without discarding records or refetching.",
+    "GPS refresh and submitted manual query both reset expansion. Unrelated elder-mode preference and unsubmitted picker changes preserve it.",
+    "Expanded control exposes aria-expanded and a reversible collapse label; no expansion control for zero through three results.",
+    "GPS banner adjusts between first-three and all-results wording; card animation delay is capped at 0.2 seconds rather than growing with total rows.",
+    "Map keeps its existing explicitly labeled three-marker contract. Provider hooks, data policy, pharmacy provenance and share behavior are unchanged.",
+    "Browser test uses real onboarding/manual picker/page/cards, five local fixtures and a second submitted district; it checks expansion, collapse, preference preservation and reset without live provider/QR calls."
+  ],
+  "limits": [
+    "This reviewer independently ran only the focused 11-case jsdom suite. Root-owned full npm, type, build, and hosted CI receipts remain separate.",
+    "The Playwright spec was source-reviewed; no local browser installation or execution occurred. Hosted browser validation remains necessary.",
+    "JSDOM tests do not prove visual layout, real image capture, native sharing, live provider freshness or offline PWA behavior.",
+    "No candidate source edits or remote writes were made by this reviewer."
+  ]
+}

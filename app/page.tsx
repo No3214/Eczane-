@@ -48,9 +48,11 @@ export default function Home() {
   const [selectedArea, setSelectedArea] = useState<{ city: string; district: string } | null>(null);
   const [showPicker, setShowPicker] = useState(false);
   const [showMap, setShowMap] = useState(false);
+  const [showAllPharmacies, setShowAllPharmacies] = useState(false);
 
   // Wrapper for requestLocation to also fetch pharmacies
   const handleRequestLocation = useCallback(() => {
+    setShowAllPharmacies(false);
     requestLocation(
       (lat, lng) => fetchPharmacies(lat, lng), // onSuccess
       () => setShowPicker(true) // onError
@@ -68,6 +70,7 @@ export default function Home() {
   };
 
   const handleManualSearch = useCallback((city: string, district: string) => {
+    setShowAllPharmacies(false);
     setSelectedArea({ city, district });
     clearCoords(); // Clear GPS coordinates to bypass distance sorting based on GPS
     setShowPicker(false);
@@ -181,7 +184,7 @@ export default function Home() {
               <div className="flex items-center gap-1.5">
                 <ShieldCheck className="h-4 w-4 text-emerald-400 animate-pulse" />
                 <span className="text-[11px] font-bold text-emerald-300">
-                  Konuma Göre Sıralandı (En Yakın 3 Eczane)
+                  Konuma Göre Sıralandı {showAllPharmacies ? "(Tüm Sonuçlar)" : "(En Yakın 3 Eczane)"}
                 </span>
               </div>
               {addressLoading ? (
@@ -271,12 +274,12 @@ export default function Home() {
               Son Görüntülenen Eczaneler
             </h3>
           )}
-          {pharmacies.slice(0, 3).map((pharmacy, index) => (
+          {(showAllPharmacies ? pharmacies : pharmacies.slice(0, 3)).map((pharmacy, index) => (
             <motion.div
               key={pharmacy.id}
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1, duration: 0.3 }}
+              transition={{ delay: Math.min(index, 2) * 0.1, duration: 0.3 }}
             >
               <PharmacyCard pharmacy={pharmacy} index={index} elderMode={elderMode} />
             </motion.div>
@@ -284,10 +287,13 @@ export default function Home() {
           
           {pharmacies.length > 3 && (
             <button
-               onClick={() => setShowPicker(true)} // Or implement a 'showAll' state
-               className="w-full py-3 rounded-2xl bg-neutral-900 border border-neutral-800 text-xs font-bold text-neutral-400 hover:text-white transition"
+               type="button"
+               onClick={() => setShowAllPharmacies(current => !current)}
+               aria-expanded={showAllPharmacies}
+               disabled={loading || gpsStatus === "requesting"}
+               className="w-full py-3 rounded-2xl bg-neutral-900 border border-neutral-800 text-xs font-bold text-neutral-400 hover:text-white transition disabled:opacity-50 disabled:cursor-wait"
             >
-              Tüm Eczaneleri Göster ({pharmacies.length})
+              {showAllPharmacies ? "İlk 3 Eczaneyi Göster" : `Tüm Eczaneleri Göster (${pharmacies.length})`}
             </button>
           )}
 
