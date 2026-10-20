@@ -1,0 +1,34 @@
+{
+  "label": "current-default-build",
+  "command": [
+    "npm",
+    "run",
+    "build"
+  ],
+  "cwd": "/workspace/scratch/c1829247bf0c/eczane/repo",
+  "started_at_utc": "2026-10-20T11:52:53.254046+00:00",
+  "timeout_seconds": 120,
+  "environment": {
+    "minimal_environment": true,
+    "provider_credentials": "not inherited",
+    "TZ": "UTC",
+    "CI": "1",
+    "external_node_network": "blocked by preload",
+    "runtime_sandbox_network": "restricted"
+  },
+  "source_before": {
+    "verified_files": 98,
+    "mismatches": []
+  },
+  "ended_at_utc": "2026-10-20T11:54:32.042406+00:00",
+  "exit_code": 1,
+  "elapsed_seconds": 98.788,
+  "log_path": "/workspace/scratch/c1829247bf0c/eczane/logs/current-default-build.log",
+  "log_sha256": "f316ea0febdb67e9027243031153b31610695e7e5380f2ce6bb766a066bc17e2",
+  "network_log_path": "/workspace/scratch/c1829247bf0c/eczane/logs/current-default-build-network.ndjson",
+  "network_blocked_attempts": 0,
+  "source_after": {
+    "verified_files": 98,
+    "mismatches": []
+  }
+}

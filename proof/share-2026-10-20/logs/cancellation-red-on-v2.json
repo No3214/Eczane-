@@ -1,0 +1,36 @@
+{
+  "label": "cancellation-red-on-v2",
+  "command": [
+    "node",
+    "tests/pharmacy-share.node.cjs"
+  ],
+  "cwd": "/workspace/scratch/c1829247bf0c/eczane/repo",
+  "started_at_utc": "2026-10-20T11:58:27.373260+00:00",
+  "timeout_seconds": 45,
+  "environment": {
+    "minimal_environment": true,
+    "provider_credentials": "not inherited",
+    "TZ": "UTC",
+    "CI": "1",
+    "external_node_network": "blocked by preload",
+    "runtime_sandbox_network": "restricted"
+  },
+  "source_before": {
+    "verified_files": 98,
+    "mismatches": []
+  },
+  "source_manifest_sha256": "cd1bd8158973010050d81769268b74f9c504e60358727a1978837bb67614552b",
+  "runner_sha256": "aeb8b0d0af7696fb2fc4591279b166008f126e717edfe463a3f5d2f32f12e4f2",
+  "network_guard_sha256": "8e968739063ec5c694c2e23056c5c1b7476389ea7385fca8c674d08fe10357e8",
+  "ended_at_utc": "2026-10-20T11:58:28.100091+00:00",
+  "exit_code": 1,
+  "elapsed_seconds": 0.726,
+  "log_path": "/workspace/scratch/c1829247bf0c/eczane/logs/cancellation-red-on-v2.log",
+  "log_sha256": "981c0dc0f73f87684f748b27a821c7df65a4c4c4af0616cf264860409266bbb7",
+  "network_log_path": "/workspace/scratch/c1829247bf0c/eczane/logs/cancellation-red-on-v2-network.ndjson",
+  "network_blocked_attempts": 0,
+  "source_after": {
+    "verified_files": 98,
+    "mismatches": []
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "command": [
+    "node",
+    "/workspace/scratch/c1829247bf0c/review/eczane-independent/check-ignore-scope.mjs"
+  ],
+  "cwd": "/workspace/scratch/c1829247bf0c/eczane/repo",
+  "exit_code": 0,
+  "finished_at_utc": "2026-10-20T12:02:52.111579+00:00",
+  "log_sha256": "d58c421cd6c4a668502a1aa319b2abc5b428b0cba03f4627db3c65874291a001",
+  "script_sha256": "d0f102ce152de73d94f85b6344f8c9a468988b83a5588735ec8873e68334091a",
+  "observed_external_network_attempts": 0
+}

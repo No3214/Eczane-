@@ -1,0 +1,95 @@
+
+> nobetci-plus@0.1.0 build
+> next build
+
+[@serwist/next] WARNING: You are using '@serwist/next' with `next dev --turbopack`, but it doesn't support Turbopack. Do one of the following:
+
+- Set `disable` to `process.env.NODE_ENV !== "production"`.
+
+- Use webpack by running `next dev --webpack` instead of `next dev --turbopack`.
+
+- Migrate to '@serwist/turbopack' which has experimental support for Turbopack. See https://serwist.pages.dev/docs/next/turbo for more information.
+
+- Migrate to configurator mode which has support for Turbopack. See https://serwist.pages.dev/docs/next/config for more information. 
+
+Follow https://github.com/serwist/serwist/issues/54 for progress on Serwist + Turbopack. You can also suppress this warning by setting SERWIST_SUPPRESS_TURBOPACK_WARNING=1.
+
+⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
+▲ Next.js 16.2.9 (Turbopack)
+
+  Creating an optimized production build ...
+[1m[31mFATAL[39m[0m: An unexpected Turbopack error occurred:
+[project]/app/fonts.css [app-client] (css)
+
+Caused by:
+- creating new process
+- binding to a port
+- Operation not permitted (os error 1)
+
+Debug info:
+- Execution of get_all_written_entrypoints_with_issues_operation failed
+- Execution of EntrypointsOperation::new failed
+- Execution of all_entrypoints_write_to_disk_operation failed
+- Execution of output_assets_operation failed
+- Execution of <MiddlewareEndpoint as Endpoint>::output failed
+- Execution of MiddlewareEndpoint::output_assets failed
+- Execution of MiddlewareEndpoint::node_chunk failed
+- Execution of *<NodeJsChunkingContext as ChunkingContext>::entry_chunk_group failed
+- Execution of Project::server_chunking_context failed
+- Execution of *get_server_chunking_context failed
+- Execution of Project::module_ids failed
+- Execution of whole_app_module_graph_operation failed
+- Execution of *Project::get_all_additional_entries failed
+- Execution of ModuleGraph::from_single_graph_without_unused_references failed
+- Execution of ModuleGraph::create failed
+- Execution of SingleModuleGraph::new_with_entries failed
+- [project]/app/fonts.css [app-client] (css)
+- Execution of primary_chunkable_referenced_modules failed
+- Execution of <CssModule as Module>::references failed
+- Execution of parse_css failed
+- Execution of <PostCssTransformedAsset as Asset>::content failed
+- Execution of PostCssTransformedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- binding to a port
+- Operation not permitted (os error 1)
+
+> Build error occurred
+Error [TurbopackInternalError]: [project]/app/fonts.css [app-client] (css)
+
+Caused by:
+- creating new process
+- binding to a port
+- Operation not permitted (os error 1)
+
+Debug info:
+- Execution of get_all_written_entrypoints_with_issues_operation failed
+- Execution of EntrypointsOperation::new failed
+- Execution of all_entrypoints_write_to_disk_operation failed
+- Execution of output_assets_operation failed
+- Execution of <MiddlewareEndpoint as Endpoint>::output failed
+- Execution of MiddlewareEndpoint::output_assets failed
+- Execution of MiddlewareEndpoint::node_chunk failed
+- Execution of *<NodeJsChunkingContext as ChunkingContext>::entry_chunk_group failed
+- Execution of Project::server_chunking_context failed
+- Execution of *get_server_chunking_context failed
+- Execution of Project::module_ids failed
+- Execution of whole_app_module_graph_operation failed
+- Execution of *Project::get_all_additional_entries failed
+- Execution of ModuleGraph::from_single_graph_without_unused_references failed
+- Execution of ModuleGraph::create failed
+- Execution of SingleModuleGraph::new_with_entries failed
+- [project]/app/fonts.css [app-client] (css)
+- Execution of primary_chunkable_referenced_modules failed
+- Execution of <CssModule as Module>::references failed
+- Execution of parse_css failed
+- Execution of <PostCssTransformedAsset as Asset>::content failed
+- Execution of PostCssTransformedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- binding to a port
+- Operation not permitted (os error 1)
+    at <unknown> (TurbopackInternalError: [project]/app/fonts.css [app-client] (css)) {
+  type: 'TurbopackInternalError',
+  location: undefined
+}

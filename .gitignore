@@ -17,6 +17,9 @@
 /.next/
 /out/
 
+# Serwist output (source: app/sw.ts)
+/public/sw.js
+
 # production
 /build
 

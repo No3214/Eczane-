@@ -40,24 +40,34 @@ export default function PharmacyCard({ pharmacy, index, elderMode = false }: Pha
   const handleShare = async () => {
     if (!cardRef.current) return;
     
-    const shareText = `🏥 ${pharmacy.name}\n📍 Adres: ${pharmacy.address}\n📞 Telefon: ${pharmacy.phone}\n🗺️ Yol Tarifi Al: https://www.google.com/maps/dir/?api=1&destination=${pharmacy.latitude},${pharmacy.longitude}`;
+    const shareTitle = `${pharmacy.name} — Eczane Bilgisi`;
+    const shareText = [
+      `🏥 ${pharmacy.name}`,
+      `Durum: ${statusText}`,
+      `Kaynak: ${pharmacy.source_label || "Bilinmiyor"}`,
+      ...(pharmacy.roster_date ? [`Liste tarihi: ${pharmacy.roster_date}`] : []),
+      `⚠️ ${pharmacy.warning_message || "Yola çıkmadan önce eczaneyi arayıp nöbet durumunu teyit edin."}`,
+      `📍 Adres: ${pharmacy.address}`,
+      `📞 Telefon: ${pharmacy.phone}`,
+      `🗺️ Yol Tarifi Al: https://www.google.com/maps/dir/?api=1&destination=${pharmacy.latitude},${pharmacy.longitude}`,
+    ].join("\n");
 
     try {
       const blob = await toBlob(cardRef.current, { cacheBust: true, pixelRatio: 2 });
       if (!blob) throw new Error("Görsel oluşturulamadı.");
 
-      const file = new File([blob], `${pharmacy.name.replace(/\s+/g, "_")}_nobetci.png`, { type: "image/png" });
+      const file = new File([blob], `${pharmacy.name.replace(/\s+/g, "_")}_eczane_bilgisi.png`, { type: "image/png" });
 
       if (typeof window !== "undefined" && navigator.canShare && navigator.canShare({ files: [file] })) {
         await navigator.share({
           files: [file],
-          title: `${pharmacy.name} Nöbetçi Eczane`,
+          title: shareTitle,
           text: shareText,
         });
       } else {
         const dataUrl = URL.createObjectURL(blob);
         const link = document.createElement("a");
-        link.download = `${pharmacy.name}_nobetci.png`;
+        link.download = `${pharmacy.name}_eczane_bilgisi.png`;
         link.href = dataUrl;
         link.click();
         URL.revokeObjectURL(dataUrl);
@@ -66,11 +76,14 @@ export default function PharmacyCard({ pharmacy, index, elderMode = false }: Pha
         alert("Eczane bilgi görseli indirildi ve detaylar panoya kopyalandı!");
       }
     } catch (err) {
+      if (typeof err === "object" && err !== null && "name" in err && err.name === "AbortError") {
+        return;
+      }
       console.error("Görsel paylaşım hatası, metin paylaşımına geçiliyor:", err);
       if (typeof window !== "undefined" && navigator.share) {
         try {
           await navigator.share({
-            title: `${pharmacy.name} Nöbetçi Eczane`,
+            title: shareTitle,
             text: shareText,
           });
         } catch (shareErr) {

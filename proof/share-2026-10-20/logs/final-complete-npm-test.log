@@ -1,0 +1,58 @@
+
+> nobetci-plus@0.1.0 test
+> vitest run && node tests/pharmacy-share.node.cjs
+
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.8 [39m[90m/workspace/scratch/c1829247bf0c/eczane/repo[39m
+
+ [32m✓[39m tests/izmir-provider.test.ts [2m([22m[2m34 tests[22m[2m)[22m[33m 648[2mms[22m[39m
+ [32m✓[39m components/__tests__/ocr-scanner.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[33m 899[2mms[22m[39m
+     [33m[2m✓[22m[39m renders when isOpen is true and attempts to load camera stream [33m 596[2mms[22m[39m
+ [32m✓[39m components/__tests__/share-card.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 118[2mms[22m[39m
+ [32m✓[39m components/__tests__/drug-prospectus.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 741[2mms[22m[39m
+     [33m[2m✓[22m[39m renders search input and popular drugs list [33m 542[2mms[22m[39m
+ [32m✓[39m lib/__tests__/providers.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 41[2mms[22m[39m
+ [32m✓[39m tests/slugs.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 33[2mms[22m[39m
+ [32m✓[39m components/__tests__/share-card-status.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 386[2mms[22m[39m
+ [32m✓[39m lib/__tests__/slugs.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 15[2mms[22m[39m
+ [32m✓[39m components/__tests__/interactive-map.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[33m 470[2mms[22m[39m
+     [33m[2m✓[22m[39m renders loader screen initially before map loads [33m 324[2mms[22m[39m
+ [32m✓[39m app/api/reports/__tests__/route.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 141[2mms[22m[39m
+ [32m✓[39m components/__tests__/pharmacy-card-status.test.tsx [2m([22m[2m10 tests[22m[2m)[22m[33m 1141[2mms[22m[39m
+     [33m[2m✓[22m[39m never derives current duty or a countdown from the weekday clock: 2026-10-19T20:00:00Z [33m 356[2mms[22m[39m
+ [32m✓[39m lib/__tests__/maps.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 12[2mms[22m[39m
+ [32m✓[39m lib/__tests__/phone.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 12[2mms[22m[39m
+ [32m✓[39m lib/__tests__/distance.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 10[2mms[22m[39m
+ [32m✓[39m tests/distance.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m tests/provider-fallback.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 19[2mms[22m[39m
+ [32m✓[39m tests/pharmacy-normalizer.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 12[2mms[22m[39m
+ [32m✓[39m tests/phone.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m18 passed[39m[22m[90m (18)[39m
+[2m      Tests [22m [1m[32m119 passed[39m[22m[90m (119)[39m
+[2m   Start at [22m 12:02:34
+[2m   Duration [22m 6.20s[2m (transform 3.66s, setup 0ms, import 13.19s, tests 4.71s, environment 11.16s)[22m
+
+✔ native image sharing retains demo status, source, roster date and warning (6.430696ms)
+✔ an official-source fixture still shares unverified hours and its own warning (1.609878ms)
+✔ legacy metadata-free records get an unknown source and the call-first warning (1.611756ms)
+✔ an image-rendering error falls back to native text with the same provenance (2.501176ms)
+✔ a null image falls back to native text with unverified official-source status (1.262652ms)
+✔ unsupported file sharing downloads the image and copies full provenance (2.450731ms)
+✔ absent canShare uses the existing download and clipboard route (1.376132ms)
+✔ image failure without native share copies the complete warning (1.463197ms)
+✔ clipboard denial after download falls back to native text without a success alert (2.512107ms)
+✔ native cancellation ends sharing without retrying or performing fallback effects (2.738369ms)
+✔ a non-cancellation native file error still falls back to successful text sharing (1.280255ms)
+✔ text-only cancellation is caught and does not claim success or copy silently (1.638633ms)
+✔ clipboard-only denial is caught without a success alert (1.448089ms)
+✔ missing native-share and clipboard APIs remain a handled failure (1.902256ms)
+✔ a missing capture ref keeps the existing no-op behavior (1.28993ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 92.48454

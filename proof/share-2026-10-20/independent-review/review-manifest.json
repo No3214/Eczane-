@@ -1,0 +1,91 @@
+{
+  "repository": "No3214/Eczane-",
+  "parent_commit": "2f733bc472f0aea50e37afc8ec2214a87ecf8ba5",
+  "reviewer": "/root/met2_finish",
+  "finished_at_utc": "2026-10-20T12:03:37.777969+00:00",
+  "decision": "READY_FOR_ROOT_PUBLICATION_REVIEW",
+  "blocking_findings": [],
+  "reviewed_source_unchanged": true,
+  "handler_cases_passed": 15,
+  "handler_cases_failed": 0,
+  "eslint_scope_expectations": 8,
+  "git_ignore_paths_probed": 9,
+  "external_network_attempts_observed": 0,
+  "met2_frozen_manifest_sha256_unchanged": "0cd876e6bd8e88e93464ee61a8b8ccb5a6abd77a8b0d5e17c6ce147602f3bab6",
+  "artifacts": [
+    {
+      "path": "REVIEW.md",
+      "sha256": "2556922e1b25087c3189f8a39cae3937d3b7ecf821bfd7ed5b96c8a78aa0af32",
+      "bytes": 4083,
+      "archive_path": "REVIEW.md"
+    },
+    {
+      "path": "source-pins.json",
+      "sha256": "f33a85d4bce4904aa407e0884c36ba8cc2b8284927e439f3b9b75d24a0d59733",
+      "bytes": 2311,
+      "archive_path": "source-pins.json"
+    },
+    {
+      "path": "independent-share.log",
+      "sha256": "379dde3b7a7e325198636cfa293da9622df2506ef2537733509b00ce310aac1b",
+      "bytes": 1447,
+      "archive_path": "independent-share.log"
+    },
+    {
+      "path": "independent-share.json",
+      "sha256": "733ee5a0de63a17deb43792f195884263c255873ac690ab3bee31bc4f0b7b21f",
+      "bytes": 970,
+      "archive_path": "independent-share.json"
+    },
+    {
+      "path": "independent-share-network.ndjson",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "archive_path": "independent-share-network.ndjson"
+    },
+    {
+      "path": "offline-guard.cjs",
+      "sha256": "8e968739063ec5c694c2e23056c5c1b7476389ea7385fca8c674d08fe10357e8",
+      "bytes": 2403,
+      "archive_path": "offline-guard.cjs.txt"
+    },
+    {
+      "path": "check-ignore-scope.mjs",
+      "sha256": "d0f102ce152de73d94f85b6344f8c9a468988b83a5588735ec8873e68334091a",
+      "bytes": 1862,
+      "archive_path": "check-ignore-scope.mjs.txt"
+    },
+    {
+      "path": "eslint-ignore-scope.json",
+      "sha256": "d58c421cd6c4a668502a1aa319b2abc5b428b0cba03f4627db3c65874291a001",
+      "bytes": 737,
+      "archive_path": "eslint-ignore-scope.json"
+    },
+    {
+      "path": "eslint-ignore-scope.log",
+      "sha256": "d58c421cd6c4a668502a1aa319b2abc5b428b0cba03f4627db3c65874291a001",
+      "bytes": 737,
+      "archive_path": "eslint-ignore-scope.log"
+    },
+    {
+      "path": "eslint-ignore-command.json",
+      "sha256": "dff3a47084d07fea389e0c88c15bf7930963992af7c79b2b86e005942af8086d",
+      "bytes": 467,
+      "archive_path": "eslint-ignore-command.json"
+    },
+    {
+      "path": "ignore-scope-network.ndjson",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "archive_path": "ignore-scope-network.ndjson"
+    },
+    {
+      "path": "git-ignore-scope.json",
+      "sha256": "3352a84542aa418409b4551a2e6f82af18296ac1a430cf4e8ea73f150e2a9396",
+      "bytes": 807,
+      "archive_path": "git-ignore-scope.json"
+    }
+  ],
+  "original_review_manifest_sha256": "d26ec4df69e1a5aacea9c706de997cc634f18fd43e2b3581e82d8c9cf4bb7436",
+  "publication_note": "Derived archive index. Original runtime scripts retain exact bytes under .txt names so evidence does not add executable lint inputs. Paths without archive_path refer the recorded scratch execution."
+}

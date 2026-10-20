@@ -1,0 +1,241 @@
+{
+  "source": "Existing prior scratch node_modules, copied locally; no package install or network acquisition",
+  "node": "v24.19.0",
+  "npm": "11.9.0",
+  "package_lock_sha256": "1659380efcd1eea666d46989cd6250fcbd0b605950ec18574b4f79fc11002e64",
+  "direct_dependencies": [
+    {
+      "name": "@playwright/test",
+      "installed_version": "1.60.0",
+      "locked_version": "1.60.0",
+      "match": true,
+      "package_json_sha256": "cf92117ef1d8cbf1e4b2dffb63a0da552c0173bd6052f0f45711c0f00b79dc99"
+    },
+    {
+      "name": "@serwist/next",
+      "installed_version": "9.5.11",
+      "locked_version": "9.5.11",
+      "match": true,
+      "package_json_sha256": "79f9a24e75e110f4b2d7ee752bf0fff7d2fd31aad7e05a0e1f4165b8eb4dacb4"
+    },
+    {
+      "name": "@supabase/supabase-js",
+      "installed_version": "2.108.1",
+      "locked_version": "2.108.1",
+      "match": true,
+      "package_json_sha256": "6f54ed6878d993d9515d7d6ec0dee29efd13ea31f9be69328181242df5871943"
+    },
+    {
+      "name": "@tailwindcss/postcss",
+      "installed_version": "4.3.0",
+      "locked_version": "4.3.0",
+      "match": true,
+      "package_json_sha256": "dbcdec5c029dc129fc5e26429282ac900878acc0ffb9decce3e5c6df0b1e423e"
+    },
+    {
+      "name": "@testing-library/dom",
+      "installed_version": "10.4.1",
+      "locked_version": "10.4.1",
+      "match": true,
+      "package_json_sha256": "4e62e2aa8b974b6a5d2d532396f7610d1b4e806d9d2aaef3c84221f0d2fab06d"
+    },
+    {
+      "name": "@testing-library/react",
+      "installed_version": "16.3.2",
+      "locked_version": "16.3.2",
+      "match": true,
+      "package_json_sha256": "67974b165512b3f03785a70ce8228c1df0ab84408f02d2185aafac171621ed6e"
+    },
+    {
+      "name": "@types/leaflet",
+      "installed_version": "1.9.21",
+      "locked_version": "1.9.21",
+      "match": true,
+      "package_json_sha256": "d3fe0c799a3f0a55b27c1c35c4ede33f9911871e8fbea9c9f6c8a396eadf14eb"
+    },
+    {
+      "name": "@types/node",
+      "installed_version": "20.19.42",
+      "locked_version": "20.19.42",
+      "match": true,
+      "package_json_sha256": "fc51965056dec1a4ca2815252292c3aa6b583ca35c735fcc7df64bf192c1a721"
+    },
+    {
+      "name": "@types/react",
+      "installed_version": "19.2.17",
+      "locked_version": "19.2.17",
+      "match": true,
+      "package_json_sha256": "36496fc09a9dcf31b0ca969ce5677c9ce9ebb5c89da9bd6212e0c89b6fae3f88"
+    },
+    {
+      "name": "@types/react-dom",
+      "installed_version": "19.2.3",
+      "locked_version": "19.2.3",
+      "match": true,
+      "package_json_sha256": "bf90986beaec5f757c164bf1d374f3038dc41b0b06673de4a55fd975d1e5deca"
+    },
+    {
+      "name": "@vitejs/plugin-react",
+      "installed_version": "6.0.2",
+      "locked_version": "6.0.2",
+      "match": true,
+      "package_json_sha256": "4cd7456c1d01b92b6a983ccec4916d55ae21a512608ea4087d8acf96c5327699"
+    },
+    {
+      "name": "dexie",
+      "installed_version": "4.4.3",
+      "locked_version": "4.4.3",
+      "match": true,
+      "package_json_sha256": "2887ae27084be63eae7d1710cb3817f88a57dc1926a4bf873725dfa326bd7f5d"
+    },
+    {
+      "name": "dexie-react-hooks",
+      "installed_version": "4.4.0",
+      "locked_version": "4.4.0",
+      "match": true,
+      "package_json_sha256": "f9850463c873b9cba5accecde0596d1b3ecb9d402e448136e5013636db5120a8"
+    },
+    {
+      "name": "eslint",
+      "installed_version": "9.39.4",
+      "locked_version": "9.39.4",
+      "match": true,
+      "package_json_sha256": "80a7caf2adf34963e47b32a1e75157de6d6814c3ae5a9d90358ddd9364833fe7"
+    },
+    {
+      "name": "eslint-config-next",
+      "installed_version": "16.2.9",
+      "locked_version": "16.2.9",
+      "match": true,
+      "package_json_sha256": "0ea4326eb9441b95dfd0f1b6275c643cd5ec76a96c4f654fe720ab4e5d7525b4"
+    },
+    {
+      "name": "framer-motion",
+      "installed_version": "12.40.0",
+      "locked_version": "12.40.0",
+      "match": true,
+      "package_json_sha256": "8c347ff3a2db814396b6348306eb4e987bcf6dad5ac36e65ed7fcb2d66f527cb"
+    },
+    {
+      "name": "html-to-image",
+      "installed_version": "1.11.13",
+      "locked_version": "1.11.13",
+      "match": true,
+      "package_json_sha256": "2d2de1eb25d1fdbe1f0745728513c5504d69e840f1300009a9a359c222502873"
+    },
+    {
+      "name": "jsdom",
+      "installed_version": "29.1.1",
+      "locked_version": "29.1.1",
+      "match": true,
+      "package_json_sha256": "def961b4c0a5fe3c37f68fb2b35fc80707975a1c0ff4f8d39ff5b7106c387e5c"
+    },
+    {
+      "name": "leaflet",
+      "installed_version": "1.9.4",
+      "locked_version": "1.9.4",
+      "match": true,
+      "package_json_sha256": "f070235e01c500ce19a3c687112f8d401e12abda49acd9f98a553c6f217368fa"
+    },
+    {
+      "name": "lucide-react",
+      "installed_version": "1.17.0",
+      "locked_version": "1.17.0",
+      "match": true,
+      "package_json_sha256": "e5f946744837895623cf4534a50851812a1c3afe539988223fc1497075fb3b33"
+    },
+    {
+      "name": "maplibre-gl",
+      "installed_version": "5.24.0",
+      "locked_version": "5.24.0",
+      "match": true,
+      "package_json_sha256": "196798d4536aa083aace0e2135279da067fc6582de9a0e86b8144397190d7e95"
+    },
+    {
+      "name": "next",
+      "installed_version": "16.2.9",
+      "locked_version": "16.2.9",
+      "match": true,
+      "package_json_sha256": "d80d1672ce2b502402340e6c5aa8fa99449db3ccda705e864bfbb1e91df7999e"
+    },
+    {
+      "name": "react",
+      "installed_version": "19.2.4",
+      "locked_version": "19.2.4",
+      "match": true,
+      "package_json_sha256": "e60b92f6031f023907bbfab8f96e63e44307776ec1488f310ba61d41b8cda8cc"
+    },
+    {
+      "name": "react-dom",
+      "installed_version": "19.2.4",
+      "locked_version": "19.2.4",
+      "match": true,
+      "package_json_sha256": "b8448092689c7e6191595a98526ced808288f35138d97fbce5801a94922e3c36"
+    },
+    {
+      "name": "react-leaflet",
+      "installed_version": "5.0.0",
+      "locked_version": "5.0.0",
+      "match": true,
+      "package_json_sha256": "5a352fdc11e90ea36875cf162a707c246ad12e57c9004c0f54215509091a151f"
+    },
+    {
+      "name": "serwist",
+      "installed_version": "9.5.11",
+      "locked_version": "9.5.11",
+      "match": true,
+      "package_json_sha256": "caa41e734740cf6236d4498eba44f5acaee853fa93053d2c7d56032c7c2a17e5"
+    },
+    {
+      "name": "tailwindcss",
+      "installed_version": "4.3.0",
+      "locked_version": "4.3.0",
+      "match": true,
+      "package_json_sha256": "3e87bf49f863a5b83b473e1e10212561b406c69e6101423e757340c876f374ee"
+    },
+    {
+      "name": "tesseract.js",
+      "installed_version": "7.0.0",
+      "locked_version": "7.0.0",
+      "match": true,
+      "package_json_sha256": "fa342f37afd665595eca66ee867197c47c9ac35a7967123d1132c39a40b3dfbd"
+    },
+    {
+      "name": "typescript",
+      "installed_version": "5.9.3",
+      "locked_version": "5.9.3",
+      "match": true,
+      "package_json_sha256": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6"
+    },
+    {
+      "name": "vaul",
+      "installed_version": "1.1.2",
+      "locked_version": "1.1.2",
+      "match": true,
+      "package_json_sha256": "23fe9f23330b97e7c4f8a692cba70b9b0390532c589943f854a2f0aa7b0e0eca"
+    },
+    {
+      "name": "vitest",
+      "installed_version": "4.1.8",
+      "locked_version": "4.1.8",
+      "match": true,
+      "package_json_sha256": "7514764431c71b6145ac008c36bdb8995d1998dfefe9f7bbbe3ca2da96716f3d"
+    },
+    {
+      "name": "zod",
+      "installed_version": "4.4.3",
+      "locked_version": "4.4.3",
+      "match": true,
+      "package_json_sha256": "c630bd10b52dcf71c112a2bf78dbf2734b9db58d62de663b8d86c2ec2c8cda2e"
+    }
+  ],
+  "all_lock_entries_version_review": {
+    "present": 564,
+    "missing": 82,
+    "mismatches": [],
+    "all_missing_are_optional": true,
+    "present_inventory_sha256": "bda508a93e2bdba4df9504756165abcc1d6ec76d8d1678f5baed1ed351897d32",
+    "limitation": "Package metadata versions and hashes, not registry archive integrity re-verification of every cached file."
+  },
+  "original_full_dependency_receipt_sha256": "86a172d95a3862540496d48b5545c8e8ccaa0cd7c1475ff994041cca64c91761"
+}

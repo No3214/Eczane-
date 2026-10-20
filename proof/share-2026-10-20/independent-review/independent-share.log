@@ -1,0 +1,23 @@
+✔ native image sharing retains demo status, source, roster date and warning (21.8766ms)
+✔ an official-source fixture still shares unverified hours and its own warning (5.098968ms)
+✔ legacy metadata-free records get an unknown source and the call-first warning (3.650249ms)
+✔ an image-rendering error falls back to native text with the same provenance (6.584349ms)
+✔ a null image falls back to native text with unverified official-source status (5.108837ms)
+✔ unsupported file sharing downloads the image and copies full provenance (7.509587ms)
+✔ absent canShare uses the existing download and clipboard route (4.587467ms)
+✔ image failure without native share copies the complete warning (7.120827ms)
+✔ clipboard denial after download falls back to native text without a success alert (5.870318ms)
+✔ native cancellation ends sharing without retrying or performing fallback effects (8.711561ms)
+✔ a non-cancellation native file error still falls back to successful text sharing (7.981709ms)
+✔ text-only cancellation is caught and does not claim success or copy silently (4.45613ms)
+✔ clipboard-only denial is caught without a success alert (2.14653ms)
+✔ missing native-share and clipboard APIs remain a handled failure (1.630799ms)
+✔ a missing capture ref keeps the existing no-op behavior (5.644516ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 179.87957

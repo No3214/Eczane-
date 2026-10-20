@@ -1,0 +1,33 @@
+{
+  "executed_at_utc": "2026-10-20T12:03:11.187523+00:00",
+  "parent_commit": "2f733bc472f0aea50e37afc8ec2214a87ecf8ba5",
+  "commands": [
+    {
+      "command": [
+        "git",
+        "apply",
+        "--check",
+        "/workspace/scratch/c1829247bf0c/eczane/evidence/final-candidate.patch"
+      ],
+      "cwd": "/workspace/scratch/c1829247bf0c/eczane/final-patch-apply-check",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "apply",
+        "/workspace/scratch/c1829247bf0c/eczane/evidence/final-candidate.patch"
+      ],
+      "cwd": "/workspace/scratch/c1829247bf0c/eczane/final-patch-apply-check",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "mismatches": [],
+  "matched_changed_files": 5,
+  "preserved_materialized_parent_files": 93,
+  "patch_sha256": "52d971fc269d7706719a9bf3850959a8fc52f3161977ff92ccd59d925595182c"
+}

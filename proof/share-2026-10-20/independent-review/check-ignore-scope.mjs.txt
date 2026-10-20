@@ -1,0 +1,47 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import { createRequire } from 'node:module';
+import { fileURLToPath } from 'node:url';
+
+const outputRoot = path.dirname(fileURLToPath(import.meta.url));
+const sourceRoot = '/workspace/scratch/c1829247bf0c/eczane/repo';
+const require = createRequire(path.join(sourceRoot, 'package.json'));
+const { ESLint } = require('eslint');
+const eslint = new ESLint({
+  cwd: sourceRoot,
+  overrideConfigFile: path.join(sourceRoot, 'eslint.config.mjs'),
+});
+
+const cases = [
+  ['public/sw.js', true],
+  ['app/sw.ts', false],
+  ['components/PharmacyCard.tsx', false],
+  ['tests/pharmacy-share.node.cjs', false],
+  ['public/sw-helper.js', false],
+  ['public/manual-worker.js', false],
+  ['public/nested/sw.js', false],
+  ['public/sw.ts', false],
+];
+const results = [];
+for (const [file, expectedIgnored] of cases) {
+  const ignored = await eslint.isPathIgnored(path.join(sourceRoot, file));
+  assert.equal(ignored, expectedIgnored, `${file} ignore scope`);
+  results.push({ file, ignored });
+}
+const workerConfig = await eslint.calculateConfigForFile(path.join(sourceRoot, 'app/sw.ts'));
+assert.ok(workerConfig && Object.keys(workerConfig.rules).length > 0,
+  'The service worker source retains an active lint configuration');
+const configSource = fs.readFileSync(path.join(sourceRoot, 'next.config.ts'), 'utf8');
+assert.match(configSource, /swSrc:\s*"app\/sw\.ts"/);
+assert.match(configSource, /swDest:\s*"public\/sw\.js"/);
+
+const record = {
+  checked_at_utc: new Date().toISOString(),
+  swSrc: 'app/sw.ts',
+  swDest: 'public/sw.js',
+  eslint: results,
+  source_worker_rule_count: Object.keys(workerConfig.rules).length,
+};
+fs.writeFileSync(path.join(outputRoot, 'eslint-ignore-scope.json'), JSON.stringify(record, null, 2) + '\n');
+console.log(JSON.stringify(record, null, 2));

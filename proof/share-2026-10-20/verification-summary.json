@@ -1,0 +1,178 @@
+{
+  "repository": "No3214/Eczane-",
+  "pull_request": 2,
+  "branch": "codex/audit-20261019-lint-types",
+  "parent_commit": "2f733bc472f0aea50e37afc8ec2214a87ecf8ba5",
+  "parent_tree": "e745555eef38c4b26f72b31c92f219fd72467f6a",
+  "verified_at_utc": "2026-10-20T12:05:57.181066+00:00",
+  "verdict": "READY_FOR_HUMAN_REVIEW",
+  "publication": "NOT_PERFORMED_BY_REVIEWER",
+  "scope": "Share provenance, native cancellation, and exact generated service-worker build/lint hygiene; five application/test/config files.",
+  "checks": {
+    "final_npm_test": {
+      "exit_code": 0,
+      "vitest_passed": 119,
+      "vitest_files": 18,
+      "share_handler_passed": 15,
+      "failed": 0
+    },
+    "final_strict_typescript": {
+      "exit_code": 0,
+      "incremental": false
+    },
+    "final_webpack_production_build": {
+      "exit_code": 0,
+      "generated_static_pages": 8,
+      "elapsed_seconds": 40.325
+    },
+    "final_postbuild_npm_lint": {
+      "exit_code": 0,
+      "errors": 0,
+      "preexisting_warnings": 3,
+      "generated_worker_remained_in_place": true
+    },
+    "parent_provenance_red_control": {
+      "phase": "Original recovered 14-case harness on parent source",
+      "exit_code": 1,
+      "passed": 2,
+      "failed": 12
+    },
+    "cancellation_red_control": {
+      "phase": "Final 15-case harness on recovered v2 production code",
+      "exit_code": 1,
+      "passed": 14,
+      "failed": 1,
+      "observed": "Expected one native share call, observed two."
+    },
+    "pre_hygiene_postbuild_lint": {
+      "exit_code": 1,
+      "errors": 1,
+      "warnings": 75,
+      "generated_error_path": "public/sw.js",
+      "rule": "@typescript-eslint/no-this-alias"
+    },
+    "earlier_v2_default_turbopack_build": {
+      "exit_code": 1,
+      "classification": "BLOCKED_BY_ENVIRONMENT",
+      "observed_cause": "CSS transform process could not bind a port: Operation not permitted (os error 1).",
+      "final_candidate_default_command_rerun": false
+    },
+    "final_patch_reconstruction": {
+      "matched_changed_files": 5,
+      "unrelated_materialized_files_preserved": 93
+    }
+  },
+  "review": {
+    "sharing_provenance": "Status, source, optional roster date and warning retained in native/clipboard paths; neutral title and file suffix.",
+    "native_cancellation": "AbortError returns before fallback and logging; no second dialog, copy, download or success alert.",
+    "real_error_fallback": "Non-cancellation native file errors still reach text sharing with complete provenance.",
+    "generated_output": "next.config.ts: app/sw.ts -> public/sw.js; only exact output excluded. Source stays linted; no map was observed.",
+    "preserved": [
+      "provider/data contracts",
+      "Pharmacy type",
+      "lockfile/dependencies",
+      "visible JSX",
+      "all earlier Vitest tests",
+      "worker source",
+      "lint rules and thresholds"
+    ]
+  },
+  "evidence": [
+    {
+      "label": "final-complete-npm-test",
+      "phase": "FINAL",
+      "receipt": "logs/final-complete-npm-test.json",
+      "raw_log": "logs/final-complete-npm-test.log",
+      "network_log": "logs/final-complete-npm-test-network.ndjson",
+      "source_manifest": "final-source-files.json",
+      "exit_code": 0,
+      "source_files_unchanged": 98,
+      "guarded_external_attempts": 0
+    },
+    {
+      "label": "final-complete-strict-types",
+      "phase": "FINAL",
+      "receipt": "logs/final-complete-strict-types.json",
+      "raw_log": "logs/final-complete-strict-types.log",
+      "network_log": "logs/final-complete-strict-types-network.ndjson",
+      "source_manifest": "final-source-files.json",
+      "exit_code": 0,
+      "source_files_unchanged": 98,
+      "guarded_external_attempts": 0
+    },
+    {
+      "label": "final-webpack-build",
+      "phase": "FINAL",
+      "receipt": "logs/final-webpack-build.json",
+      "raw_log": "logs/final-webpack-build.log",
+      "network_log": "logs/final-webpack-build-network.ndjson",
+      "source_manifest": "final-source-files.json",
+      "exit_code": 0,
+      "source_files_unchanged": 98,
+      "guarded_external_attempts": 0
+    },
+    {
+      "label": "final-postbuild-lint",
+      "phase": "FINAL_AFTER_BUILD",
+      "receipt": "logs/final-postbuild-lint.json",
+      "raw_log": "logs/final-postbuild-lint.log",
+      "network_log": "logs/final-postbuild-lint-network.ndjson",
+      "source_manifest": "final-source-files.json",
+      "exit_code": 0,
+      "source_files_unchanged": 98,
+      "guarded_external_attempts": 0
+    },
+    {
+      "label": "current-baseline-share-red",
+      "phase": "PARENT_WITH_RECOVERED_14_CASE_HARNESS",
+      "receipt": "logs/current-baseline-share-red.json",
+      "raw_log": "logs/current-baseline-share-red.log",
+      "network_log": "logs/current-baseline-share-red-network.ndjson",
+      "source_manifest": "baseline-test-source-files.json",
+      "exit_code": 1,
+      "source_files_unchanged": 98,
+      "guarded_external_attempts": 0
+    },
+    {
+      "label": "cancellation-red-on-v2",
+      "phase": "RECOVERED_V2_WITH_FINAL_15_CASE_HARNESS",
+      "receipt": "logs/cancellation-red-on-v2.json",
+      "raw_log": "logs/cancellation-red-on-v2.log",
+      "network_log": "logs/cancellation-red-on-v2-network.ndjson",
+      "source_manifest": "cancellation-red-source-files.json",
+      "exit_code": 1,
+      "source_files_unchanged": 98,
+      "guarded_external_attempts": 0
+    },
+    {
+      "label": "final-lint",
+      "phase": "CANCELLATION_FIXED_BEFORE_GENERATED_OUTPUT_IGNORES",
+      "receipt": "logs/final-lint.json",
+      "raw_log": "logs/final-lint.log",
+      "network_log": "logs/final-lint-network.ndjson",
+      "source_manifest": "cancellation-fixed-before-hygiene-source-files.json",
+      "exit_code": 1,
+      "source_files_unchanged": 98,
+      "guarded_external_attempts": 0
+    },
+    {
+      "label": "current-default-build",
+      "phase": "RECOVERED_V2_BEFORE_ADDITIONAL_FIXES",
+      "receipt": "logs/current-default-build.json",
+      "raw_log": "logs/current-default-build.log",
+      "network_log": "logs/current-default-build-network.ndjson",
+      "source_manifest": "recovered-v2-source-files.json",
+      "exit_code": 1,
+      "source_files_unchanged": 98,
+      "guarded_external_attempts": 0
+    }
+  ],
+  "limits": [
+    "Default Turbopack failed on recovered v2 under sandbox port restrictions; no final default-build pass is claimed. Final webpack success is a separate command.",
+    "No live pharmacy/provider/QR request, real native share, browser/mobile image capture, PWA installation, or hosted new-head CI acceptance.",
+    "Cached dependency metadata matched all 564 present lock entries; 82 absent entries are optional. Registry tarball integrity of every cached byte was not reverified.",
+    "The separate show-all/location-picker behavior remains outside this scoped change.",
+    "Unmaterialized historical/agent entries are not represented as newly audited. Preserve all unlisted parent entries.",
+    "No merge, deployment, or remote branch mutation performed by this reviewer."
+  ]
+}

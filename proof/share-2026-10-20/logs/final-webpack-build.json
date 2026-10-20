@@ -1,0 +1,38 @@
+{
+  "label": "final-webpack-build",
+  "command": [
+    "node",
+    "node_modules/next/dist/bin/next",
+    "build",
+    "--webpack"
+  ],
+  "cwd": "/workspace/scratch/c1829247bf0c/eczane/repo",
+  "started_at_utc": "2026-10-20T12:01:40.567280+00:00",
+  "timeout_seconds": 180,
+  "environment": {
+    "minimal_environment": true,
+    "provider_credentials": "not inherited",
+    "TZ": "UTC",
+    "CI": "1",
+    "external_node_network": "blocked by preload",
+    "runtime_sandbox_network": "restricted"
+  },
+  "source_before": {
+    "verified_files": 98,
+    "mismatches": []
+  },
+  "source_manifest_sha256": "5953afda7ac5d18507012522d6a978d2ba79589336f68aa921b8e47ef09740b6",
+  "runner_sha256": "aeb8b0d0af7696fb2fc4591279b166008f126e717edfe463a3f5d2f32f12e4f2",
+  "network_guard_sha256": "8e968739063ec5c694c2e23056c5c1b7476389ea7385fca8c674d08fe10357e8",
+  "ended_at_utc": "2026-10-20T12:02:20.892142+00:00",
+  "exit_code": 0,
+  "elapsed_seconds": 40.325,
+  "log_path": "/workspace/scratch/c1829247bf0c/eczane/logs/final-webpack-build.log",
+  "log_sha256": "96c839b89bb46c6b9f13870395a37c17ce203a6127f4e054ff2bc98861a55824",
+  "network_log_path": "/workspace/scratch/c1829247bf0c/eczane/logs/final-webpack-build-network.ndjson",
+  "network_blocked_attempts": 0,
+  "source_after": {
+    "verified_files": 98,
+    "mismatches": []
+  }
+}

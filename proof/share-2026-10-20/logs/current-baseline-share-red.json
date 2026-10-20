@@ -1,0 +1,34 @@
+{
+  "label": "current-baseline-share-red",
+  "command": [
+    "node",
+    "tests/pharmacy-share.node.cjs"
+  ],
+  "cwd": "/workspace/scratch/c1829247bf0c/eczane/base",
+  "started_at_utc": "2026-10-20T11:53:10.771893+00:00",
+  "timeout_seconds": 45,
+  "environment": {
+    "minimal_environment": true,
+    "provider_credentials": "not inherited",
+    "TZ": "UTC",
+    "CI": "1",
+    "NODE_PATH": "/workspace/scratch/c1829247bf0c/eczane/repo/node_modules",
+    "external_node_network": "blocked by preload",
+    "runtime_sandbox_network": "restricted"
+  },
+  "source_before": {
+    "verified_files": 98,
+    "mismatches": []
+  },
+  "ended_at_utc": "2026-10-20T11:53:11.447587+00:00",
+  "exit_code": 1,
+  "elapsed_seconds": 0.676,
+  "log_path": "/workspace/scratch/c1829247bf0c/eczane/logs/current-baseline-share-red.log",
+  "log_sha256": "11a1dfe152da7ba6acbe285696e71a96eced73bc2581c0b5ee0491b328e7a797",
+  "network_log_path": "/workspace/scratch/c1829247bf0c/eczane/logs/current-baseline-share-red-network.ndjson",
+  "network_blocked_attempts": 0,
+  "source_after": {
+    "verified_files": 98,
+    "mismatches": []
+  }
+}
