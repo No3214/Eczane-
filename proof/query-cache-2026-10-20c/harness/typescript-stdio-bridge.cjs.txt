@@ -1,0 +1,20 @@
+// Local validation harness only: this environment exposes a no-op Writable for
+// the TypeScript CLI's captured stdio. Preserve its real bytes on inherited fds.
+// Do not load this from application code or install it into node_modules.
+const fs = require('node:fs');
+const path = require('node:path');
+const tsc = path.join(__dirname, 'repo', 'node_modules', 'typescript', 'bin', 'tsc');
+
+if (process.argv[1] && path.resolve(process.argv[1]) === tsc) {
+  for (const [stream, fd] of [[process.stdout, 1], [process.stderr, 2]]) {
+    if (stream.constructor.name !== 'Writable' || !fs.fstatSync(fd).isSocket()) continue;
+    stream.write = function writeCapturedTypeScript(chunk, encoding, callback) {
+      if (typeof encoding === 'function') { callback = encoding; encoding = undefined; }
+      const buffer = typeof chunk === 'string' ? Buffer.from(chunk, encoding) : Buffer.from(chunk);
+      let offset = 0;
+      while (offset < buffer.length) offset += fs.writeSync(fd, buffer, offset, buffer.length - offset);
+      if (typeof callback === 'function') process.nextTick(callback);
+      return true;
+    };
+  }
+}

@@ -1,5 +1,18 @@
 import { Pharmacy } from "@/types/pharmacy";
 
+type RawPharmacy = Partial<Omit<Pharmacy, "latitude" | "longitude">> & {
+  latitude?: number | string;
+  longitude?: number | string;
+  Adi?: string;
+  il?: string;
+  Ilce?: string;
+  ilce?: string;
+  Telefon?: string;
+  Enlem?: number | string;
+  Boylam?: number | string;
+  Adres?: string;
+};
+
 export function capitalizeTurkish(str: string): string {
   if (!str) return "";
   return str.split(" ").map(word => {
@@ -21,7 +34,7 @@ export function formatTurkishPhone(phone: string): string {
 }
 
 export function normalizePharmacy(
-  raw: any,
+  raw: RawPharmacy,
   source: "izmir_open_data" | "collectapi" | "supabase" | "mock"
 ): Pharmacy {
   // Normalize name
@@ -59,13 +72,14 @@ export function normalizePharmacy(
   let sourceLabel = "Bilinmeyen Kaynak";
   let isLive = false;
   let warningMessage = "";
-  let confidenceScore = 50;
+  let confidenceScore: number | undefined = 50;
 
   switch (source) {
     case "izmir_open_data":
       sourceLabel = "İzmir Büyükşehir Belediyesi";
-      isLive = true;
-      confidenceScore = 99;
+      isLive = false;
+      confidenceScore = undefined;
+      warningMessage = "Nöbet saatleri doğrulanmadı; yola çıkmadan önce eczaneyi arayın.";
       break;
     case "collectapi":
       sourceLabel = "CollectAPI (Türkiye Geneli)";
@@ -96,12 +110,14 @@ export function normalizePharmacy(
     latitude,
     longitude,
     distance: raw.distance,
-    confidence_score: raw.confidence_score || confidenceScore,
-    updated_at: raw.updated_at || new Date().toLocaleTimeString("tr-TR", { hour: "2-digit", minute: "2-digit" }),
+    confidence_score: raw.confidence_score ?? confidenceScore,
+    // Mock timestamps are generated examples, not source freshness evidence.
+    updated_at: source === "mock" ? undefined : raw.updated_at,
     source,
     source_label: raw.source_label || sourceLabel,
-    source_updated_at: raw.source_updated_at || new Date().toISOString(),
-    is_live: raw.is_live !== undefined ? raw.is_live : isLive,
+    source_updated_at: source === "mock" ? undefined : raw.source_updated_at,
+    roster_date: raw.roster_date,
+    is_live: source === "izmir_open_data" ? false : (raw.is_live ?? isLive),
     warning_message: raw.warning_message || warningMessage,
   };
 }

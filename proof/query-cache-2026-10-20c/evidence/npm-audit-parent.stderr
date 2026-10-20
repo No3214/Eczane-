@@ -1,0 +1,3 @@
+npm warn audit request to https://registry.npmjs.org/-/npm/v1/security/advisories/bulk failed, reason: getaddrinfo EAI_AGAIN registry.npmjs.org
+npm error audit endpoint returned an error
+npm error A complete log of this run can be found in: /workspace/scratch/c1829247bf0c/continuation-20261020c/eczane/npm-cache/_logs/2026-10-20T14_34_34_475Z-debug-0.log

@@ -1,0 +1,37 @@
+{
+  "label": "final-lint",
+  "command": [
+    "node",
+    "node_modules/eslint/bin/eslint.js",
+    "."
+  ],
+  "cwd": "/workspace/scratch/c1829247bf0c/eczane/repo",
+  "started_at_utc": "2026-10-20T11:58:53.177621+00:00",
+  "timeout_seconds": 120,
+  "environment": {
+    "minimal_environment": true,
+    "provider_credentials": "not inherited",
+    "TZ": "UTC",
+    "CI": "1",
+    "external_node_network": "blocked by preload",
+    "runtime_sandbox_network": "restricted"
+  },
+  "source_before": {
+    "verified_files": 98,
+    "mismatches": []
+  },
+  "source_manifest_sha256": "b0221dbf1403de89593d8337132dc9f5cb1ec01c0d0f1ee7ff15e9498fe30239",
+  "runner_sha256": "aeb8b0d0af7696fb2fc4591279b166008f126e717edfe463a3f5d2f32f12e4f2",
+  "network_guard_sha256": "8e968739063ec5c694c2e23056c5c1b7476389ea7385fca8c674d08fe10357e8",
+  "ended_at_utc": "2026-10-20T11:59:08.511026+00:00",
+  "exit_code": 1,
+  "elapsed_seconds": 15.333,
+  "log_path": "/workspace/scratch/c1829247bf0c/eczane/logs/final-lint.log",
+  "log_sha256": "4907610143a909e21764fcaff2a21086856bd7c4a35f3fff0a67eb99b1e96de9",
+  "network_log_path": "/workspace/scratch/c1829247bf0c/eczane/logs/final-lint-network.ndjson",
+  "network_blocked_attempts": 0,
+  "source_after": {
+    "verified_files": 98,
+    "mismatches": []
+  }
+}

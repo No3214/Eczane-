@@ -1,0 +1,57 @@
+// Audit harness only: deny external network while allowing local tool IPC.
+const fs = require('node:fs');
+const net = require('node:net');
+const tls = require('node:tls');
+const http = require('node:http');
+const https = require('node:https');
+const dns = require('node:dns');
+const eventsPath = process.env.ECZANE_AUDIT_NETWORK_LOG;
+const local = new Set(['localhost', '127.0.0.1', '::1', '[::1]']);
+
+function deny(kind, host) {
+  const safeHost = String(host || 'unknown').split('?')[0].slice(0, 160);
+  if (eventsPath) fs.appendFileSync(eventsPath, JSON.stringify({kind, host: safeHost, pid: process.pid, blocked: true}) + '\n');
+  throw new Error(`ECZANE_AUDIT_EXTERNAL_NETWORK_BLOCKED ${kind} ${safeHost}`);
+}
+
+function address(args) {
+  if (args[0] instanceof URL) return {host: args[0].hostname};
+  if (typeof args[0] === 'string' && /^[a-z]+:\/\//i.test(args[0])) return {host: new URL(args[0]).hostname};
+  if (args[0] && typeof args[0] === 'object') {
+    if (args[0].path && !args[0].host && !args[0].hostname && !args[0].port) return {ipc: true};
+    return {host: args[0].hostname || args[0].host || 'localhost'};
+  }
+  if (typeof args[0] === 'string' && args[0].startsWith('/')) return {ipc: true};
+  return {host: typeof args[1] === 'string' ? args[1] : 'localhost'};
+}
+
+function wrap(object, key, kind) {
+  const original = object[key];
+  object[key] = function (...args) {
+    const value = address(args);
+    if (!value.ipc && !local.has(value.host)) deny(kind, value.host);
+    return original.apply(this, args);
+  };
+}
+
+wrap(net.Socket.prototype, 'connect', 'tcp');
+wrap(tls, 'connect', 'tls');
+wrap(http, 'request', 'http');
+wrap(http, 'get', 'http');
+wrap(https, 'request', 'https');
+wrap(https, 'get', 'https');
+for (const key of ['lookup', 'resolve', 'resolve4', 'resolve6']) {
+  const original = dns[key];
+  dns[key] = function (host, ...args) {
+    if (!local.has(String(host))) deny('dns', host);
+    return original.call(this, host, ...args);
+  };
+}
+if (typeof globalThis.fetch === 'function') {
+  const original = globalThis.fetch;
+  globalThis.fetch = function (input, options) {
+    const url = new URL(typeof input === 'string' || input instanceof URL ? input : input.url);
+    if (!local.has(url.hostname)) return Promise.reject((() => { try { deny('fetch', url.hostname); } catch (error) { return error; } })());
+    return original.call(this, input, options);
+  };
+}

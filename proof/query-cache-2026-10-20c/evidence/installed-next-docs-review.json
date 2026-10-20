@@ -1,0 +1,14 @@
+{
+  "installed_next": "16.4.1",
+  "read_before_final_build": [
+    {
+      "path": "node_modules/next/dist/docs/01-app/03-api-reference/01-directives/use-client.md",
+      "sha256": "12eb4f6e112bff41a0518717bbe107e10587f27d12a7d56da56d10976018b793"
+    },
+    {
+      "path": "node_modules/next/dist/docs/01-app/02-guides/upgrading/version-16.md",
+      "sha256": "0c5a732dcd26cd18c724782742a3ee70b9651c1aecec809fac4000a3e003c576"
+    }
+  ],
+  "migration_decision": "Same-major maintained upgrade; existing Serwist webpack plugin keeps explicit --webpack local production gate. No unrelated codemod or major migration. CLI guidance, minimum runtime, async-request and removed/deprecated API sections reviewed."
+}

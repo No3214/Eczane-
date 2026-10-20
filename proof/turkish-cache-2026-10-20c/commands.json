@@ -1,0 +1,307 @@
+{
+  "commands": [
+    {
+      "classification": "INITIAL_NODE_DIAGNOSTIC_MISSING_INDEXEDDB_API_NOT_APPLICATION_FAILURE",
+      "receipt_source_matches_final_manifest": false,
+      "original_receipt_sha256": "23e6540dcee50dd38ca993b803dbe6866036b6d3a778fc1cb6966040c76122f2",
+      "raw_log": "logs/actual-dexie-range.log",
+      "receipt": {
+        "label": "actual-dexie-range",
+        "command": [
+          "node",
+          "../dexie-range-diagnostic.cjs"
+        ],
+        "cwd": "/workspace/scratch/c1829247bf0c/continuation-20261020c/eczane-followup/repo",
+        "started_at_utc": "2026-10-20T15:14:05.790025+00:00",
+        "timeout_seconds": 30,
+        "environment": {
+          "minimal_environment": true,
+          "provider_credentials": "not inherited",
+          "TZ": "UTC",
+          "CI": "1",
+          "external_node_network": "blocked by preload",
+          "runtime_sandbox_network": "restricted"
+        },
+        "source_before": {
+          "verified_files": 102,
+          "mismatches": []
+        },
+        "source_manifest_sha256": "c491b0d553597cc7bc0394c8bba40125b64801675e9a2c5eb5d0c7c631d08daa",
+        "runner_sha256": "aeb8b0d0af7696fb2fc4591279b166008f126e717edfe463a3f5d2f32f12e4f2",
+        "network_guard_sha256": "8e968739063ec5c694c2e23056c5c1b7476389ea7385fca8c674d08fe10357e8",
+        "ended_at_utc": "2026-10-20T15:14:06.282002+00:00",
+        "exit_code": 1,
+        "elapsed_seconds": 0.492,
+        "log_path": "/workspace/scratch/c1829247bf0c/continuation-20261020c/eczane-followup/logs/actual-dexie-range.log",
+        "log_sha256": "0e3217cb593b0a6d366963eff80aa7b49681da4ba0e11ebda82e72883d5b3005",
+        "network_log_path": "/workspace/scratch/c1829247bf0c/continuation-20261020c/eczane-followup/logs/actual-dexie-range-network.ndjson",
+        "network_blocked_attempts": 0,
+        "source_after": {
+          "verified_files": 102,
+          "mismatches": []
+        }
+      }
+    },
+    {
+      "classification": "REAL_INSTALLED_DEXIE_RANGE_METADATA_NO_DATABASE_OPENED",
+      "receipt_source_matches_final_manifest": false,
+      "original_receipt_sha256": "d0be814490160af952a6208947db30b3826b7f56e84c807380e1655ea0ed38c2",
+      "raw_log": "logs/actual-dexie-range-metadata.log",
+      "receipt": {
+        "label": "actual-dexie-range-metadata",
+        "command": [
+          "node",
+          "../dexie-range-diagnostic.cjs"
+        ],
+        "cwd": "/workspace/scratch/c1829247bf0c/continuation-20261020c/eczane-followup/repo",
+        "started_at_utc": "2026-10-20T15:14:26.345221+00:00",
+        "timeout_seconds": 30,
+        "environment": {
+          "minimal_environment": true,
+          "provider_credentials": "not inherited",
+          "TZ": "UTC",
+          "CI": "1",
+          "external_node_network": "blocked by preload",
+          "runtime_sandbox_network": "restricted"
+        },
+        "source_before": {
+          "verified_files": 102,
+          "mismatches": []
+        },
+        "source_manifest_sha256": "c491b0d553597cc7bc0394c8bba40125b64801675e9a2c5eb5d0c7c631d08daa",
+        "runner_sha256": "aeb8b0d0af7696fb2fc4591279b166008f126e717edfe463a3f5d2f32f12e4f2",
+        "network_guard_sha256": "8e968739063ec5c694c2e23056c5c1b7476389ea7385fca8c674d08fe10357e8",
+        "ended_at_utc": "2026-10-20T15:14:26.531244+00:00",
+        "exit_code": 0,
+        "elapsed_seconds": 0.186,
+        "log_path": "/workspace/scratch/c1829247bf0c/continuation-20261020c/eczane-followup/logs/actual-dexie-range-metadata.log",
+        "log_sha256": "a9cfa70677254bb803cb638337a8d33f1941ec80f556b35593e36e4817468ad0",
+        "network_log_path": "/workspace/scratch/c1829247bf0c/continuation-20261020c/eczane-followup/logs/actual-dexie-range-metadata-network.ndjson",
+        "network_blocked_attempts": 0,
+        "source_after": {
+          "verified_files": 102,
+          "mismatches": []
+        }
+      }
+    },
+    {
+      "classification": "OLD_HOOK_WITH_NEW_UNFILTERED_READ_MOCK_10_FAIL_17_PASS_NOT_REAL_DEXIE_REPRODUCTION",
+      "receipt_source_matches_final_manifest": false,
+      "original_receipt_sha256": "bafb3f83ef682b8c164c7b8b3af8bf53e6ccceb393195122fadfbf73a70db3c0",
+      "raw_log": "logs/corrected-read-contract-parent-red.log",
+      "receipt": {
+        "label": "corrected-read-contract-parent-red",
+        "command": [
+          "node",
+          "node_modules/vitest/vitest.mjs",
+          "run",
+          "tests/pharmacy-query-ownership.test.tsx"
+        ],
+        "cwd": "/workspace/scratch/c1829247bf0c/continuation-20261020c/eczane-followup/repo",
+        "started_at_utc": "2026-10-20T15:14:30.843024+00:00",
+        "timeout_seconds": 120,
+        "environment": {
+          "minimal_environment": true,
+          "provider_credentials": "not inherited",
+          "TZ": "UTC",
+          "CI": "1",
+          "external_node_network": "blocked by preload",
+          "runtime_sandbox_network": "restricted"
+        },
+        "source_before": {
+          "verified_files": 102,
+          "mismatches": []
+        },
+        "source_manifest_sha256": "c491b0d553597cc7bc0394c8bba40125b64801675e9a2c5eb5d0c7c631d08daa",
+        "runner_sha256": "aeb8b0d0af7696fb2fc4591279b166008f126e717edfe463a3f5d2f32f12e4f2",
+        "network_guard_sha256": "8e968739063ec5c694c2e23056c5c1b7476389ea7385fca8c674d08fe10357e8",
+        "ended_at_utc": "2026-10-20T15:14:35.893713+00:00",
+        "exit_code": 1,
+        "elapsed_seconds": 5.051,
+        "log_path": "/workspace/scratch/c1829247bf0c/continuation-20261020c/eczane-followup/logs/corrected-read-contract-parent-red.log",
+        "log_sha256": "d0a547088b5328645bbbe58b591d012596e8b0443cdda94b51dc4adace45d968",
+        "network_log_path": "/workspace/scratch/c1829247bf0c/continuation-20261020c/eczane-followup/logs/corrected-read-contract-parent-red-network.ndjson",
+        "network_blocked_attempts": 0,
+        "source_after": {
+          "verified_files": 102,
+          "mismatches": []
+        }
+      }
+    },
+    {
+      "classification": "CURRENT_AUTHOR_FOCUSED_38_PASS_27_OWNERSHIP_AND_11_HOME",
+      "receipt_source_matches_final_manifest": true,
+      "original_receipt_sha256": "eb8d49c4cfcef642a74bdf42373efcaf4e42ff245133b3ed7e7f39bc9e72f42e",
+      "raw_log": "logs/followup-focused-final.log",
+      "receipt": {
+        "label": "followup-focused-final",
+        "command": [
+          "node",
+          "node_modules/vitest/vitest.mjs",
+          "run",
+          "tests/pharmacy-query-ownership.test.tsx",
+          "tests/home-results.test.tsx"
+        ],
+        "cwd": "/workspace/scratch/c1829247bf0c/continuation-20261020c/eczane-followup/repo",
+        "started_at_utc": "2026-10-20T15:14:51.532122+00:00",
+        "timeout_seconds": 120,
+        "environment": {
+          "minimal_environment": true,
+          "provider_credentials": "not inherited",
+          "TZ": "UTC",
+          "CI": "1",
+          "external_node_network": "blocked by preload",
+          "runtime_sandbox_network": "restricted"
+        },
+        "source_before": {
+          "verified_files": 102,
+          "mismatches": []
+        },
+        "source_manifest_sha256": "aa300dfdfe5743fb87e10fd7340e8d39005425949a22ff99676eef1151389712",
+        "runner_sha256": "aeb8b0d0af7696fb2fc4591279b166008f126e717edfe463a3f5d2f32f12e4f2",
+        "network_guard_sha256": "8e968739063ec5c694c2e23056c5c1b7476389ea7385fca8c674d08fe10357e8",
+        "ended_at_utc": "2026-10-20T15:15:01.956492+00:00",
+        "exit_code": 0,
+        "elapsed_seconds": 10.425,
+        "log_path": "/workspace/scratch/c1829247bf0c/continuation-20261020c/eczane-followup/logs/followup-focused-final.log",
+        "log_sha256": "bb52fb0165fd9199e211e4cc48ed27fd5f770a87d7d03564730b79df784e6420",
+        "network_log_path": "/workspace/scratch/c1829247bf0c/continuation-20261020c/eczane-followup/logs/followup-focused-final-network.ndjson",
+        "network_blocked_attempts": 0,
+        "source_after": {
+          "verified_files": 102,
+          "mismatches": []
+        }
+      }
+    },
+    {
+      "classification": "CURRENT_FULL_NPM_157_VITEST_AND_15_NODE_HANDLER_PASS",
+      "receipt_source_matches_final_manifest": true,
+      "original_receipt_sha256": "e38b67de5dca92c50d4e97f250461ff114f4eedfc2e4709da67d9d8943a37585",
+      "raw_log": "logs/followup-npm-test-final.log",
+      "receipt": {
+        "label": "followup-npm-test-final",
+        "command": [
+          "npm",
+          "test"
+        ],
+        "cwd": "/workspace/scratch/c1829247bf0c/continuation-20261020c/eczane-followup/repo",
+        "started_at_utc": "2026-10-20T15:15:14.962381+00:00",
+        "timeout_seconds": 180,
+        "environment": {
+          "minimal_environment": true,
+          "provider_credentials": "not inherited",
+          "TZ": "UTC",
+          "CI": "1",
+          "external_node_network": "blocked by preload",
+          "runtime_sandbox_network": "restricted"
+        },
+        "source_before": {
+          "verified_files": 102,
+          "mismatches": []
+        },
+        "source_manifest_sha256": "aa300dfdfe5743fb87e10fd7340e8d39005425949a22ff99676eef1151389712",
+        "runner_sha256": "aeb8b0d0af7696fb2fc4591279b166008f126e717edfe463a3f5d2f32f12e4f2",
+        "network_guard_sha256": "8e968739063ec5c694c2e23056c5c1b7476389ea7385fca8c674d08fe10357e8",
+        "ended_at_utc": "2026-10-20T15:15:30.324229+00:00",
+        "exit_code": 0,
+        "elapsed_seconds": 15.362,
+        "log_path": "/workspace/scratch/c1829247bf0c/continuation-20261020c/eczane-followup/logs/followup-npm-test-final.log",
+        "log_sha256": "9b5fd6db3c46e8d607743aea2721a9f2476cf52f2bf112e40188a91218a338e3",
+        "network_log_path": "/workspace/scratch/c1829247bf0c/continuation-20261020c/eczane-followup/logs/followup-npm-test-final-network.ndjson",
+        "network_blocked_attempts": 0,
+        "source_after": {
+          "verified_files": 102,
+          "mismatches": []
+        }
+      }
+    },
+    {
+      "classification": "CURRENT_STRICT_TYPES_PASS",
+      "receipt_source_matches_final_manifest": true,
+      "original_receipt_sha256": "b7fa406547d5b63ced64d7454d7e2998de040258b5f711bbebb9d5bf9b5930e3",
+      "raw_log": "logs/followup-strict-types-final.log",
+      "receipt": {
+        "label": "followup-strict-types-final",
+        "command": [
+          "node",
+          "node_modules/typescript/bin/tsc",
+          "--noEmit",
+          "--incremental",
+          "false"
+        ],
+        "cwd": "/workspace/scratch/c1829247bf0c/continuation-20261020c/eczane-followup/repo",
+        "started_at_utc": "2026-10-20T15:15:14.958726+00:00",
+        "timeout_seconds": 120,
+        "environment": {
+          "minimal_environment": true,
+          "provider_credentials": "not inherited",
+          "TZ": "UTC",
+          "CI": "1",
+          "external_node_network": "blocked by preload",
+          "runtime_sandbox_network": "restricted"
+        },
+        "source_before": {
+          "verified_files": 102,
+          "mismatches": []
+        },
+        "source_manifest_sha256": "aa300dfdfe5743fb87e10fd7340e8d39005425949a22ff99676eef1151389712",
+        "runner_sha256": "aeb8b0d0af7696fb2fc4591279b166008f126e717edfe463a3f5d2f32f12e4f2",
+        "network_guard_sha256": "8e968739063ec5c694c2e23056c5c1b7476389ea7385fca8c674d08fe10357e8",
+        "ended_at_utc": "2026-10-20T15:15:28.339632+00:00",
+        "exit_code": 0,
+        "elapsed_seconds": 13.381,
+        "log_path": "/workspace/scratch/c1829247bf0c/continuation-20261020c/eczane-followup/logs/followup-strict-types-final.log",
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "network_log_path": "/workspace/scratch/c1829247bf0c/continuation-20261020c/eczane-followup/logs/followup-strict-types-final-network.ndjson",
+        "network_blocked_attempts": 0,
+        "source_after": {
+          "verified_files": 102,
+          "mismatches": []
+        }
+      }
+    },
+    {
+      "classification": "CURRENT_LINT_ZERO_ERRORS_THREE_EXISTING_WARNINGS",
+      "receipt_source_matches_final_manifest": true,
+      "original_receipt_sha256": "8602c6dfe8efb25620548b54e14f66fc581602a31706b3ef4cc14a8a8b78d7ba",
+      "raw_log": "logs/followup-lint-final.log",
+      "receipt": {
+        "label": "followup-lint-final",
+        "command": [
+          "npm",
+          "run",
+          "lint"
+        ],
+        "cwd": "/workspace/scratch/c1829247bf0c/continuation-20261020c/eczane-followup/repo",
+        "started_at_utc": "2026-10-20T15:15:14.929363+00:00",
+        "timeout_seconds": 120,
+        "environment": {
+          "minimal_environment": true,
+          "provider_credentials": "not inherited",
+          "TZ": "UTC",
+          "CI": "1",
+          "external_node_network": "blocked by preload",
+          "runtime_sandbox_network": "restricted"
+        },
+        "source_before": {
+          "verified_files": 102,
+          "mismatches": []
+        },
+        "source_manifest_sha256": "aa300dfdfe5743fb87e10fd7340e8d39005425949a22ff99676eef1151389712",
+        "runner_sha256": "aeb8b0d0af7696fb2fc4591279b166008f126e717edfe463a3f5d2f32f12e4f2",
+        "network_guard_sha256": "8e968739063ec5c694c2e23056c5c1b7476389ea7385fca8c674d08fe10357e8",
+        "ended_at_utc": "2026-10-20T15:15:31.458499+00:00",
+        "exit_code": 0,
+        "elapsed_seconds": 16.529,
+        "log_path": "/workspace/scratch/c1829247bf0c/continuation-20261020c/eczane-followup/logs/followup-lint-final.log",
+        "log_sha256": "2ab01ff30e969ea758d845f09b11b50c474938ece86662cd47ebff91701c5675",
+        "network_log_path": "/workspace/scratch/c1829247bf0c/continuation-20261020c/eczane-followup/logs/followup-lint-final-network.ndjson",
+        "network_blocked_attempts": 0,
+        "source_after": {
+          "verified_files": 102,
+          "mismatches": []
+        }
+      }
+    }
+  ]
+}

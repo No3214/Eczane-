@@ -1,0 +1,22 @@
+{
+  "recorded_at_utc": "2026-10-20T12:03:11.188009+00:00",
+  "config_path": "next.config.ts",
+  "swSrc": "app/sw.ts",
+  "swDest": "public/sw.js",
+  "source_worker": {
+    "bytes": 2046,
+    "sha256": "9afb1a42ae5d0e50793370de29750f1fddbfbb7b3d625ffa41231a421f8903a6",
+    "git_blob_sha": "552e004f6472c3b787444701375554bfc35aac55"
+  },
+  "generated_worker": {
+    "bytes": 35756,
+    "sha256": "29f61fbbfa18b2027f95eddaac1c01f1f5c2371b79c34b71b0ab40b56174a134",
+    "git_blob_sha": "4bb83890980c0d0284574d4d29dddc7151017a46"
+  },
+  "generated_worker_remained_in_place_for_postbuild_lint": true,
+  "postbuild_lint_receipt": "logs/final-postbuild-lint.json",
+  "observed_map_files": [],
+  "eslint_ignore": "public/sw.js",
+  "gitignore_entry": "/public/sw.js",
+  "no_public_js_glob": true
+}

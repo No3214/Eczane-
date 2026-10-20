@@ -1,0 +1,31 @@
+{
+  "checked_at_utc": "2026-10-20T12:02:49.579360+00:00",
+  "command": [
+    "git",
+    "--git-dir=/workspace/scratch/c1829247bf0c/review/eczane-independent/git-ignore-probe/.git",
+    "--work-tree=/workspace/scratch/c1829247bf0c/eczane/repo",
+    "check-ignore",
+    "--no-index",
+    "--verbose",
+    "--stdin"
+  ],
+  "cwd": "/workspace/scratch/c1829247bf0c/eczane/repo",
+  "paths_probed": [
+    "public/sw.js",
+    "app/sw.ts",
+    "components/PharmacyCard.tsx",
+    "tests/pharmacy-share.node.cjs",
+    "public/sw-helper.js",
+    "public/manual-worker.js",
+    "public/nested/sw.js",
+    "public/sw.ts",
+    "public/sw.js.map"
+  ],
+  "ignored_paths": [
+    "public/sw.js"
+  ],
+  "exit_code": 0,
+  "stdout": ".gitignore:21:/public/sw.js\tpublic/sw.js\n",
+  "stderr": "",
+  "candidate_mutations": false
+}

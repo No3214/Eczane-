@@ -1,0 +1,89 @@
+"""Run a bounded offline audit command and retain complete output and source integrity."""
+import argparse
+from datetime import datetime, timezone
+import hashlib
+import json
+import os
+from pathlib import Path
+import re
+import signal
+import subprocess
+import time
+
+ROOT = Path(__file__).resolve().parent
+parser = argparse.ArgumentParser()
+parser.add_argument('--label', required=True)
+parser.add_argument('--timeout', type=int, default=120)
+parser.add_argument('command', nargs=argparse.REMAINDER)
+args = parser.parse_args()
+assert re.fullmatch(r'[a-z0-9-]+', args.label)
+command = args.command[1:] if args.command[:1] == ['--'] else args.command
+assert command
+log = ROOT / 'logs' / (args.label + '.log')
+network_log = ROOT / 'logs' / (args.label + '-network.ndjson')
+inventory = json.loads((ROOT / 'base-test-source-files.json').read_text())
+
+
+def integrity():
+    mismatches = []
+    for record in inventory:
+        path = ROOT / 'base' / record['path']
+        actual = hashlib.sha256(path.read_bytes()).hexdigest() if path.is_file() else None
+        if actual != record['sha256']:
+            mismatches.append({'path': record['path'], 'expected': record['sha256'], 'actual': actual})
+    return {'verified_files': len(inventory), 'mismatches': mismatches}
+
+
+before = integrity()
+assert not before['mismatches']
+network_log.write_text('')
+(ROOT / 'empty.npmrc').touch(exist_ok=True)
+env = {
+    'PATH': os.environ['PATH'],
+    'TZ': 'UTC',
+    'CI': '1',
+    'NODE_PATH': str(ROOT / 'repo' / 'node_modules'),
+    'NEXT_TELEMETRY_DISABLED': '1',
+    'NPM_CONFIG_CACHE': str(ROOT / 'npm-cache'),
+    'NPM_CONFIG_USERCONFIG': str(ROOT / 'empty.npmrc'),
+    'NPM_CONFIG_UPDATE_NOTIFIER': 'false',
+    'NODE_OPTIONS': '--require=' + str(ROOT / 'offline-guard.cjs'),
+    'ECZANE_AUDIT_NETWORK_LOG': str(network_log),
+}
+receipt = {
+    'label': args.label,
+    'command': command,
+    'cwd': str(ROOT / 'base'),
+    'started_at_utc': datetime.now(timezone.utc).isoformat(),
+    'timeout_seconds': args.timeout,
+    'environment': {'minimal_environment': True, 'provider_credentials': 'not inherited', 'TZ': 'UTC', 'CI': '1',
+    'NODE_PATH': str(ROOT / 'repo' / 'node_modules'), 'external_node_network': 'blocked by preload', 'runtime_sandbox_network': 'restricted'},
+    'source_before': before,
+}
+start = time.monotonic()
+with log.open('wb') as output:
+    process = subprocess.Popen(command, cwd=ROOT / 'base', env=env, stdout=output, stderr=subprocess.STDOUT, start_new_session=True)
+    try:
+        exit_code = process.wait(timeout=args.timeout)
+    except subprocess.TimeoutExpired:
+        os.killpg(process.pid, signal.SIGKILL)
+        process.wait()
+        exit_code = 124
+after = integrity()
+receipt.update({
+    'ended_at_utc': datetime.now(timezone.utc).isoformat(),
+    'exit_code': exit_code,
+    'elapsed_seconds': round(time.monotonic() - start, 3),
+    'log_path': str(log),
+    'log_sha256': hashlib.sha256(log.read_bytes()).hexdigest(),
+    'network_log_path': str(network_log),
+    'network_blocked_attempts': len(network_log.read_text().splitlines()),
+    'source_after': after,
+})
+receipt_path = ROOT / 'logs' / (args.label + '.json')
+receipt_path.write_text(json.dumps(receipt, indent=2) + '\n')
+print(json.dumps(receipt, indent=2))
+print(log.read_text(errors='replace')[-6500:])
+if after['mismatches']:
+    raise SystemExit(97)
+raise SystemExit(exit_code)

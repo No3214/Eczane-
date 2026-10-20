@@ -1,0 +1,6 @@
+{"name":"sync","status":0,"stdout":"","stderr":""}
+{"name":"echo","code":0,"stdout":"12345\n","stderr":""}
+12345
+{"name":"node-inherit","code":0,"stdout":"","stderr":""}
+{"name":"node-marker","code":0,"stdout":"","stderr":""}
+{"markerExists":true}

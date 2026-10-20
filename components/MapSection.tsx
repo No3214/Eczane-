@@ -9,7 +9,7 @@ import "leaflet/dist/leaflet.css";
 
 // Fix for default Leaflet icon images in Next.js/Webpack
 if (typeof window !== "undefined") {
-  delete (L.Icon.Default.prototype as any)._getIconUrl;
+  Reflect.deleteProperty(L.Icon.Default.prototype, "_getIconUrl");
   L.Icon.Default.mergeOptions({
     iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png",
     iconRetinaUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png",

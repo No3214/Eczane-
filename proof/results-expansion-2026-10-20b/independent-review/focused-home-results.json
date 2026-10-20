@@ -1,0 +1,29 @@
+{
+  "started_at_utc": "2026-10-20T12:44:20.539646+00:00",
+  "cwd": "/workspace/scratch/c1829247bf0c/continuation-20261020b/eczane/repo",
+  "command": [
+    "node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "tests/home-results.test.tsx",
+    "--no-cache",
+    "--reporter=verbose"
+  ],
+  "source_manifest_sha256": "970bb4485087fe8d1b3e8cc8c786b76bea80826425280c37d71a3b7eb29d76e2",
+  "runner_sha256": "8c7a353ee63ed87fd05188b9bdf2ff400279ede4088e6f6a89a60a2bbf7ab669",
+  "network_guard_sha256": "8e968739063ec5c694c2e23056c5c1b7476389ea7385fca8c674d08fe10357e8",
+  "environment": "Minimal allowlist; provider credentials not inherited; external Node network blocked; Vitest result cache disabled.",
+  "source_before": {
+    "verified_files": 100,
+    "mismatches": []
+  },
+  "ended_at_utc": "2026-10-20T12:44:29.150395+00:00",
+  "exit_code": 0,
+  "elapsed_seconds": 8.611,
+  "source_after": {
+    "verified_files": 100,
+    "mismatches": []
+  },
+  "network_blocked_attempts": 0,
+  "log_sha256": "b59e62a9dfa5cb515d39085174877252be5c143403e2d64c2ed2c843c9eec791"
+}

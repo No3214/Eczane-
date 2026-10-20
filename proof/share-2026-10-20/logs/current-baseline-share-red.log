@@ -1,0 +1,211 @@
+✖ native image sharing retains demo status, source, roster date and warning (11.781496ms)
+✖ an official-source fixture still shares unverified hours and its own warning (5.056944ms)
+✖ legacy metadata-free records get an unknown source and the call-first warning (2.697798ms)
+✖ an image-rendering error falls back to native text with the same provenance (3.811912ms)
+✖ a null image falls back to native text with unverified official-source status (2.054895ms)
+✖ unsupported file sharing downloads the image and copies full provenance (4.362535ms)
+✖ absent canShare uses the existing download and clipboard route (1.306595ms)
+✖ image failure without native share copies the complete warning (2.028601ms)
+✖ clipboard denial after download falls back to native text without a success alert (1.52759ms)
+✖ native cancellation preserves the existing caught text-retry behavior and provenance (2.254742ms)
+✖ text-only cancellation is caught and does not claim success or copy silently (2.740849ms)
+✖ clipboard-only denial is caught without a success alert (1.608286ms)
+✔ missing native-share and clipboard APIs remain a handled failure (1.903426ms)
+✔ a missing capture ref keeps the existing no-op behavior (1.393656ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 2
+ℹ fail 12
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 71.903294
+
+✖ failing tests:
+
+test at tests/pharmacy-share.node.cjs:181:1
+✖ native image sharing retains demo status, source, roster date and warning (11.781496ms)
+  AssertionError [ERR_ASSERTION]: Share text must retain: DEMO VERİ
+      at assertProvenance (/workspace/scratch/c1829247bf0c/eczane/base/tests/pharmacy-share.node.cjs:170:40)
+      at assertShare (/workspace/scratch/c1829247bf0c/eczane/base/tests/pharmacy-share.node.cjs:176:3)
+      at TestContext.<anonymous> (/workspace/scratch/c1829247bf0c/eczane/base/tests/pharmacy-share.node.cjs:185:3)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/pharmacy-share.node.cjs:192:1
+✖ an official-source fixture still shares unverified hours and its own warning (5.056944ms)
+  AssertionError [ERR_ASSERTION]: Share text must retain: NÖBET SAATLERİ TEYİT EDİLMEDİ
+      at assertProvenance (/workspace/scratch/c1829247bf0c/eczane/base/tests/pharmacy-share.node.cjs:170:40)
+      at assertShare (/workspace/scratch/c1829247bf0c/eczane/base/tests/pharmacy-share.node.cjs:176:3)
+      at TestContext.<anonymous> (/workspace/scratch/c1829247bf0c/eczane/base/tests/pharmacy-share.node.cjs:195:3)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/pharmacy-share.node.cjs:198:1
+✖ legacy metadata-free records get an unknown source and the call-first warning (2.697798ms)
+  AssertionError [ERR_ASSERTION]: Share text must retain: NÖBET SAATLERİ TEYİT EDİLMEDİ
+      at assertProvenance (/workspace/scratch/c1829247bf0c/eczane/base/tests/pharmacy-share.node.cjs:170:40)
+      at assertShare (/workspace/scratch/c1829247bf0c/eczane/base/tests/pharmacy-share.node.cjs:176:3)
+      at TestContext.<anonymous> (/workspace/scratch/c1829247bf0c/eczane/base/tests/pharmacy-share.node.cjs:204:3)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/pharmacy-share.node.cjs:207:1
+✖ an image-rendering error falls back to native text with the same provenance (3.811912ms)
+  AssertionError [ERR_ASSERTION]: Share text must retain: DEMO VERİ
+      at assertProvenance (/workspace/scratch/c1829247bf0c/eczane/base/tests/pharmacy-share.node.cjs:170:40)
+      at assertShare (/workspace/scratch/c1829247bf0c/eczane/base/tests/pharmacy-share.node.cjs:176:3)
+      at TestContext.<anonymous> (/workspace/scratch/c1829247bf0c/eczane/base/tests/pharmacy-share.node.cjs:211:3)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/pharmacy-share.node.cjs:217:1
+✖ a null image falls back to native text with unverified official-source status (2.054895ms)
+  AssertionError [ERR_ASSERTION]: Share text must retain: NÖBET SAATLERİ TEYİT EDİLMEDİ
+      at assertProvenance (/workspace/scratch/c1829247bf0c/eczane/base/tests/pharmacy-share.node.cjs:170:40)
+      at assertShare (/workspace/scratch/c1829247bf0c/eczane/base/tests/pharmacy-share.node.cjs:176:3)
+      at TestContext.<anonymous> (/workspace/scratch/c1829247bf0c/eczane/base/tests/pharmacy-share.node.cjs:221:3)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/pharmacy-share.node.cjs:225:1
+✖ unsupported file sharing downloads the image and copies full provenance (4.362535ms)
+  AssertionError [ERR_ASSERTION]: Share text must retain: DEMO VERİ
+      at assertProvenance (/workspace/scratch/c1829247bf0c/eczane/base/tests/pharmacy-share.node.cjs:170:40)
+      at TestContext.<anonymous> (/workspace/scratch/c1829247bf0c/eczane/base/tests/pharmacy-share.node.cjs:230:3)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/pharmacy-share.node.cjs:238:1
+✖ absent canShare uses the existing download and clipboard route (1.306595ms)
+  AssertionError [ERR_ASSERTION]: Share text must retain: NÖBET SAATLERİ TEYİT EDİLMEDİ
+      at assertProvenance (/workspace/scratch/c1829247bf0c/eczane/base/tests/pharmacy-share.node.cjs:170:40)
+      at TestContext.<anonymous> (/workspace/scratch/c1829247bf0c/eczane/base/tests/pharmacy-share.node.cjs:241:3)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/pharmacy-share.node.cjs:246:1
+✖ image failure without native share copies the complete warning (2.028601ms)
+  AssertionError [ERR_ASSERTION]: Share text must retain: DEMO VERİ
+      at assertProvenance (/workspace/scratch/c1829247bf0c/eczane/base/tests/pharmacy-share.node.cjs:170:40)
+      at TestContext.<anonymous> (/workspace/scratch/c1829247bf0c/eczane/base/tests/pharmacy-share.node.cjs:250:3)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/pharmacy-share.node.cjs:255:1
+✖ clipboard denial after download falls back to native text without a success alert (1.52759ms)
+  AssertionError [ERR_ASSERTION]: Share text must retain: DEMO VERİ
+      at assertProvenance (/workspace/scratch/c1829247bf0c/eczane/base/tests/pharmacy-share.node.cjs:170:40)
+      at TestContext.<anonymous> (/workspace/scratch/c1829247bf0c/eczane/base/tests/pharmacy-share.node.cjs:258:3)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/pharmacy-share.node.cjs:266:1
+✖ native cancellation preserves the existing caught text-retry behavior and provenance (2.254742ms)
+  AssertionError [ERR_ASSERTION]: Share text must retain: DEMO VERİ
+      at assertProvenance (/workspace/scratch/c1829247bf0c/eczane/base/tests/pharmacy-share.node.cjs:170:40)
+      at assertShare (/workspace/scratch/c1829247bf0c/eczane/base/tests/pharmacy-share.node.cjs:176:3)
+      at TestContext.<anonymous> (/workspace/scratch/c1829247bf0c/eczane/base/tests/pharmacy-share.node.cjs:271:41)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/pharmacy-share.node.cjs:278:1
+✖ text-only cancellation is caught and does not claim success or copy silently (2.740849ms)
+  AssertionError [ERR_ASSERTION]: Share text must retain: NÖBET SAATLERİ TEYİT EDİLMEDİ
+      at assertProvenance (/workspace/scratch/c1829247bf0c/eczane/base/tests/pharmacy-share.node.cjs:170:40)
+      at assertShare (/workspace/scratch/c1829247bf0c/eczane/base/tests/pharmacy-share.node.cjs:176:3)
+      at TestContext.<anonymous> (/workspace/scratch/c1829247bf0c/eczane/base/tests/pharmacy-share.node.cjs:281:3)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/pharmacy-share.node.cjs:287:1
+✖ clipboard-only denial is caught without a success alert (1.608286ms)
+  AssertionError [ERR_ASSERTION]: Share text must retain: DEMO VERİ
+      at assertProvenance (/workspace/scratch/c1829247bf0c/eczane/base/tests/pharmacy-share.node.cjs:170:40)
+      at TestContext.<anonymous> (/workspace/scratch/c1829247bf0c/eczane/base/tests/pharmacy-share.node.cjs:290:3)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

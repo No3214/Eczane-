@@ -1,0 +1,42 @@
+✔ native image sharing retains demo status, source, roster date and warning (9.038721ms)
+✔ an official-source fixture still shares unverified hours and its own warning (2.673407ms)
+✔ legacy metadata-free records get an unknown source and the call-first warning (2.040045ms)
+✔ an image-rendering error falls back to native text with the same provenance (9.466892ms)
+✔ a null image falls back to native text with unverified official-source status (1.229899ms)
+✔ unsupported file sharing downloads the image and copies full provenance (2.817384ms)
+✔ absent canShare uses the existing download and clipboard route (1.529713ms)
+✔ image failure without native share copies the complete warning (1.394441ms)
+✔ clipboard denial after download falls back to native text without a success alert (1.441239ms)
+✖ native cancellation ends sharing without retrying or performing fallback effects (4.13815ms)
+✔ a non-cancellation native file error still falls back to successful text sharing (1.902888ms)
+✔ text-only cancellation is caught and does not claim success or copy silently (1.421843ms)
+✔ clipboard-only denial is caught without a success alert (1.50193ms)
+✔ missing native-share and clipboard APIs remain a handled failure (1.601373ms)
+✔ a missing capture ref keeps the existing no-op behavior (1.008208ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 14
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 74.276449
+
+✖ failing tests:
+
+test at tests/pharmacy-share.node.cjs:266:1
+✖ native cancellation ends sharing without retrying or performing fallback effects (4.13815ms)
+  AssertionError [ERR_ASSERTION]: Cancelling the native dialog must not open a second one
+  
+  2 !== 1
+  
+      at TestContext.<anonymous> (/workspace/scratch/c1829247bf0c/eczane/repo/tests/pharmacy-share.node.cjs:270:10)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 2,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

@@ -3,7 +3,7 @@ import { PharmacyProvider, PharmacyProviderInput } from "../pharmacy-provider";
 import { supabase, isSupabaseConfigured } from "@/lib/supabase";
 
 export class SupabaseProvider implements PharmacyProvider {
-  name = "supabase";
+  readonly name = "supabase";
   priority = 30; // Fallback database
 
   canHandle(input: PharmacyProviderInput): boolean {

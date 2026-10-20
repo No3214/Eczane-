@@ -1,0 +1,76 @@
+{
+  "verdict": "READY_FOR_HUMAN_REVIEW",
+  "recorded_at_utc": "2026-10-20T13:44:53.365330+00:00",
+  "parent_commit": "ca89bca7ccdc2b9b7aa5bbcd3750cb6d13f9c28f",
+  "parent_tree": "d75304671f83d2592f100040317a02c166480063",
+  "new_page_regression_cases": 11,
+  "same_final_tests_on_parent": {
+    "passed": 4,
+    "failed": 7,
+    "exit_code": 1
+  },
+  "full_npm_test": {
+    "vitest_passed": 130,
+    "vitest_files": 19,
+    "node_handler_passed": 15,
+    "exit_code": 0
+  },
+  "strict_typescript_exit_code": 0,
+  "webpack_production_build": {
+    "exit_code": 0,
+    "generated_static_pages": 8,
+    "typescript_passed": true
+  },
+  "postbuild_lint": {
+    "exit_code": 0,
+    "errors": 0,
+    "existing_warnings": 3
+  },
+  "independent_focused_run": {
+    "passed": 11,
+    "failed": 0,
+    "exit_code": 0,
+    "additional_unique_cases": 0,
+    "source_files_unchanged": 100
+  },
+  "playwright": {
+    "discovered_tests": 12,
+    "files": 3,
+    "new_flow": "tests/results.spec.ts",
+    "configured_projects": [
+      "chromium",
+      "firefox",
+      "webkit"
+    ],
+    "local_browser_execution": "NOT_RUN",
+    "hosted_ci_for_this_candidate": "NOT_YET_OBSERVED"
+  },
+  "validation_source_binding": {
+    "full_npm_and_standalone_types_source_manifest": "c3c83b8a2f6f7e7e3ba11eaed7313c78fe62501e0afe44297291ae6d9a210b84",
+    "publication_source_manifest": "970bb4485087fe8d1b3e8cc8c786b76bea80826425280c37d71a3b7eb29d76e2",
+    "changed_after_full_npm_and_standalone_types": [
+      "tests/results.spec.ts"
+    ],
+    "unchanged_source_files": 99,
+    "scope": "Only the unexecuted Playwright fixture gained a narrowly matched local QR-image response. Application code and all 130 Vitest + 15 Node test bytes are unchanged. Final webpack build includes successful TypeScript on the publication manifest; independent 11-case page suite also ran on it. Browser execution requires hosted CI and is not inferred from --list."
+  },
+  "network": {
+    "credential_whitelist": true,
+    "guarded_external_attempts": 0,
+    "scope": "Recorded local Node processes, not an OS-wide or hosted-CI network audit"
+  },
+  "preserved": {
+    "all_parent_paths": 480,
+    "unrelated_parent_blobs_and_modes": 479,
+    "unmaterialized_paths": 325,
+    "deletions": 0
+  },
+  "limitations": [
+    "Playwright discovery is not execution; the final browser fixture was reviewed and typechecked but awaits browser acceptance.",
+    "JSDOM does not establish visual layout, native image sharing, installed PWA behavior or live pharmacy freshness.",
+    "Default local Turbopack was not rerun; the fresh build uses explicit --webpack.",
+    "Full npm and standalone strict types bind to c3c83b8a...; only the unexecuted browser fixture changed afterward. Application, Vitest and Node test bytes are identical; final build/types, lint and independent focused run bind to 970bb448... .",
+    "Provider query ordering and cache/freshness behavior were not redesigned by this view-state fix.",
+    "No new dependencies, browser installation, live provider calls, remote writes, merge or deployment were performed by packaging."
+  ]
+}

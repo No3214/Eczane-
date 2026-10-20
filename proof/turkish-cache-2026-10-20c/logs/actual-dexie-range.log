@@ -1,0 +1,9 @@
+
+/workspace/scratch/c1829247bf0c/continuation-20261020c/eczane-followup/repo/node_modules/dexie/dist/dexie.js:2959
+              throw new exceptions.MissingAPI();
+              ^
+[DexieError [MissingAPIError]: IndexedDB API missing. Please visit https://tinyurl.com/y2uuvskb] {
+  inner: null
+}
+
+Node.js v24.19.0

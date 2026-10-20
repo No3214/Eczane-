@@ -1,16 +1,6 @@
 import { Pharmacy } from "../types/pharmacy";
 import { z } from "zod";
-
-const IzmirPharmacySchema = z.object({
-  Adi: z.string(),
-  Ilce: z.string(),
-  Adres: z.string(),
-  Telefon: z.string().nullish().transform(val => val ?? ""),
-  Enlem: z.union([z.string(), z.number()]),
-  Boylam: z.union([z.string(), z.number()]),
-}).passthrough();
-
-const IzmirApiResponseSchema = z.array(IzmirPharmacySchema);
+import { IzmirProvider } from "./providers/izmir-provider";
 
 const CollectApiPharmacySchema = z.object({
   name: z.string(),
@@ -25,64 +15,11 @@ const CollectApiResponseSchema = z.object({
 }).passthrough();
 
 /**
- * Fetches live duty pharmacies directly from the Izmir Metropolitan Municipality Open Data API.
- * This is a free, official public endpoint.
+ * Compatibility entry point for the dated municipal roster.
+ * The shared adapter does not attest individual pharmacies' current duty hours.
  */
 export async function fetchLiveIzmirPharmacies(district?: string): Promise<Pharmacy[]> {
-  try {
-    // Fetch with a 15-minute fetch cache revalidation
-    const res = await fetch("https://openapi.izmir.bel.tr/api/nobetcieczaneler", {
-      next: { revalidate: 900 } 
-    });
-
-    if (!res.ok) {
-      console.warn("Izmir Open Data API returned error status:", res.status);
-      return [];
-    }
-
-    const data = await res.json();
-    const parsed = IzmirApiResponseSchema.safeParse(data);
-    
-    if (!parsed.success) {
-      console.warn("Izmir API shape changed or invalid:", parsed.error.format());
-      return [];
-    }
-
-    let pharmacies: Pharmacy[] = parsed.data.map((item, index: number) => {
-      const rawPhone = item.Telefon.replace(/\D/g, "");
-      // Format phone into standardized Turkish phone string: 0 (232) XXX XX XX
-      let formattedPhone = item.Telefon;
-      if (rawPhone.length === 10 && rawPhone.startsWith("232")) {
-        formattedPhone = `0 (232) ${rawPhone.slice(3, 6)} ${rawPhone.slice(6, 8)} ${rawPhone.slice(8, 10)}`;
-      }
-
-      return {
-        id: `live-izmir-${item.Adi.replace(/[^a-zA-Z0-9]/g, "-").toLowerCase()}-${index}`,
-        name: item.Adi.toLowerCase().includes("eczane") ? item.Adi : `${item.Adi} Eczanesi`,
-        city: "İzmir",
-        district: item.Ilce.trim(),
-        address: item.Adres,
-        phone: formattedPhone,
-        latitude: typeof item.Enlem === "number" ? item.Enlem : parseFloat(String(item.Enlem)),
-        longitude: typeof item.Boylam === "number" ? item.Boylam : parseFloat(String(item.Boylam)),
-        confidence_score: 99, // Municipal verified
-        updated_at: new Date().toLocaleTimeString("tr-TR", { hour: "2-digit", minute: "2-digit" })
-      };
-    });
-
-    // Filter by district if selected
-    if (district) {
-      const matchDistrict = district.toLocaleLowerCase("tr-TR").trim();
-      pharmacies = pharmacies.filter(
-        (p) => p.district.toLocaleLowerCase("tr-TR").trim() === matchDistrict
-      );
-    }
-
-    return pharmacies;
-  } catch (error) {
-    console.error("Error fetching live Izmir pharmacies:", error);
-    return [];
-  }
+  return new IzmirProvider().fetch({ city: "İzmir", district });
 }
 
 /**

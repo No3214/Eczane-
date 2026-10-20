@@ -1,0 +1,35 @@
+--- intermediate-22-test-file
++++ final-23-test-file
+@@ -1,4 +1,5 @@
+ // @vitest-environment jsdom
++import { StrictMode } from "react";
+ import { act, cleanup, renderHook } from "@testing-library/react";
+ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+ import { usePharmacies } from "@/lib/hooks/usePharmacies";
+@@ -165,6 +166,26 @@
+     expect(database.bulkPut).not.toHaveBeenCalled();
+     expect(localStorage.getItem("last_viewed_pharmacies")).toBeNull();
+   });
++
++  it("ignores a retained GPS callback invoked after unmount, while allowing requests after StrictMode effect replay", async () => {
++    const hook = renderHook(() => usePharmacies(), { wrapper: StrictMode });
++    await load(hook, [konak], 38.42, 27.13);
++    expect(hook.result.current.pharmacies).toEqual([konak]);
++    const retainedGpsCallback = hook.result.current.fetchPharmacies;
++    const cachedBeforeNavigation = localStorage.getItem("last_viewed_pharmacies");
++    fetchMock.mockClear();
++    database.bulkPut.mockClear();
++    const cacheWrites = vi.spyOn(Storage.prototype, "setItem");
++    hook.unmount();
++
++    fetchMock.mockResolvedValueOnce(response([bornova]));
++    await finish(retainedGpsCallback(38.46, 27.22));
++
++    expect(fetchMock).not.toHaveBeenCalled();
++    expect(database.bulkPut).not.toHaveBeenCalled();
++    expect(cacheWrites).not.toHaveBeenCalled();
++    expect(localStorage.getItem("last_viewed_pharmacies")).toBe(cachedBeforeNavigation);
++  });
+ });
+ 
+ describe("offline results belong to the requested area", () => {

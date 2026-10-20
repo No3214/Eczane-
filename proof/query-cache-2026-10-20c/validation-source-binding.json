@@ -1,0 +1,64 @@
+{
+  "manifests": [
+    {
+      "path": "source-parent-red.json",
+      "sha256": "addc6ee3ac76b581c355fdbae45bba85bcc2209ac539147e1ce645e4fc8ae585",
+      "files": 101
+    },
+    {
+      "path": "source-candidate-cache.json",
+      "sha256": "e250323c560f0eacf82012301ae5bdffb25e0ee24750c550c11c1d47ef448f20",
+      "files": 101
+    },
+    {
+      "path": "source-cache-with-browser.json",
+      "sha256": "954eac1e70dd8e9add236fad651a2bcc6984aea5245f76ec7968af4b851ff39f",
+      "files": 102
+    },
+    {
+      "path": "source-intermediate-pre-unmounted.json",
+      "sha256": "3bee31e27dee8f8511ae65f62faacb5f923bbc391b9053c59c738740ba9f1f70",
+      "files": 102
+    },
+    {
+      "path": "source-unmounted-entry-red.json",
+      "sha256": "d4a8d1d53e57bcd1add730001d06042efcf222a2d5f31439ca1ae4ce005b9307",
+      "files": 102
+    },
+    {
+      "path": "source-publication.json",
+      "sha256": "2b3685b4df1c670301b784efb0a476f3acb92201b9ded4356d4fc02e09de9550",
+      "files": 102
+    }
+  ],
+  "published_parent_red": {
+    "label": "query-parent-red",
+    "regression_cases": 22,
+    "failed": 18,
+    "passed": 4,
+    "manifest": "source-parent-red.json",
+    "test_snapshot": "intermediate-before-unmounted-entry/pharmacy-query-ownership.test.tsx.txt"
+  },
+  "intermediate_lifecycle_red": {
+    "label": "unmounted-entry-red",
+    "regression_cases": 23,
+    "failed": 1,
+    "passed": 22,
+    "manifest": "source-unmounted-entry-red.json",
+    "hook_snapshot": "intermediate-before-unmounted-entry/usePharmacies.ts.txt"
+  },
+  "final_lifecycle_green": {
+    "label": "unmounted-entry-green",
+    "regression_cases": 23,
+    "passed": 23,
+    "manifest": "source-publication.json"
+  },
+  "same_final_23_regression_bytes_in_lifecycle_red_and_green": true,
+  "initial_22_case_test_lines_preserved": true,
+  "test_delta": "evidence/lifecycle-regression.diff",
+  "lifecycle_red_to_final_changed": [
+    "lib/hooks/usePharmacies.ts"
+  ],
+  "dependency_files_identical_to_successful_offline_install": true,
+  "description": "The initial22-case test file reproduced18 failures on the published parent hook and passed on the first candidate. Independent review added exactly one lifecycle case plus StrictMode import, with no original test lines removed or changed. That same final23-case file failed1/passed22 on the intermediate hook and passed23 after only the mounted-entry guard changed. Final acceptance receipts must bind the final2b3685 source manifest, not prior3bee31 green receipts."
+}

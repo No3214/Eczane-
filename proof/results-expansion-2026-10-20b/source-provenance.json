@@ -1,0 +1,21 @@
+{
+  "parent_commit": "ca89bca7ccdc2b9b7aa5bbcd3750cb6d13f9c28f",
+  "parent_tree": "d75304671f83d2592f100040317a02c166480063",
+  "parent_recursive_tree_sha256": "dce8bc6f9e78b0dabdfa11e9020c2d95de5b42020300714e01807045615f4d92",
+  "parent_tree_truncated": false,
+  "parent_leaf_entries": 480,
+  "materialization_record_sha256": "53874c38f2517d5c270126784671e982ce0d34ae73276cc26d9775af45081228",
+  "materialized_parent_files_verified_against_git_blobs": 155,
+  "unmaterialized_parent_files_preserved_by_base_tree": 325,
+  "modified_existing_paths": [
+    "app/page.tsx"
+  ],
+  "new_runtime_test_paths": [
+    "tests/home-results.test.tsx",
+    "tests/results.spec.ts"
+  ],
+  "source_files_in_monitored_manifest": 100,
+  "source_manifest_sha256": "970bb4485087fe8d1b3e8cc8c786b76bea80826425280c37d71a3b7eb29d76e2",
+  "package_and_lockfile_unchanged": true,
+  "verification_scope": "Only existing local source bytes and completed receipts were checked during packaging; no runtime rerun or remote mutation."
+}

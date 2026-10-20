@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Serwist output from next.config.ts; app/sw.ts remains linted.
+    "public/sw.js",
   ]),
 ]);
 

@@ -1,0 +1,47 @@
+{
+  "recorded_at_utc": "2026-10-20T14:53:58.465274+00:00",
+  "program": "const cp=require(\"node:child_process\");const p=cp.spawn(process.execPath,[\"/workspace/scratch/c1829247bf0c/continuation-20261020c/eczane/repo/node_modules/typescript/bin/tsc\",\"--showConfig\",\"--project\",\"tsconfig.json\",\"--pretty\",\"false\"],{stdio:[\"ignore\",\"pipe\",\"pipe\"]});let out=\"\",err=\"\";p.stdout.on(\"data\",x=>out+=x);p.stderr.on(\"data\",x=>err+=x);p.on(\"close\",code=>{let parsed=null,parseError=null;try{parsed=JSON.parse(out)}catch(e){parseError=e.message}console.log(JSON.stringify({code,stdoutLength:out.length,stderr:err,parsed:!!parsed,strict:parsed?.compilerOptions.strict,fileCount:parsed?.files.length,parseError}));});",
+  "scope": "Actual TypeScript CLI child, unchanged tsconfig/source, unchanged external network guard; same JSON capture with/without scoped inherited-fd adapter.",
+  "results": [
+    {
+      "bridge": false,
+      "exit_code": 0,
+      "stdout": "{\"code\":0,\"stdoutLength\":0,\"stderr\":\"\",\"parsed\":false,\"parseError\":\"Unexpected end of JSON input\"}\n",
+      "stderr": "",
+      "deny_control": {
+        "denied": true,
+        "reason": "ECZANE_AUDIT_EXTERNAL_NETWORK_BLOCKED https eczane-guard-control.invalid",
+        "stdoutWriter": ""
+      },
+      "guard_events": [
+        {
+          "kind": "https",
+          "host": "eczane-guard-control.invalid",
+          "pid": 14,
+          "blocked": true
+        }
+      ]
+    },
+    {
+      "bridge": true,
+      "exit_code": 0,
+      "stdout": "{\"code\":0,\"stdoutLength\":4426,\"stderr\":\"\",\"parsed\":true,\"strict\":true,\"fileCount\":76,\"parseError\":null}\n",
+      "stderr": "",
+      "deny_control": {
+        "denied": true,
+        "reason": "ECZANE_AUDIT_EXTERNAL_NETWORK_BLOCKED https eczane-guard-control.invalid",
+        "stdoutWriter": "writeCapturedTypeScript"
+      },
+      "guard_events": [
+        {
+          "kind": "https",
+          "host": "eczane-guard-control.invalid",
+          "pid": 30,
+          "blocked": true
+        }
+      ]
+    }
+  ],
+  "helper_sha256": "4388171d0ba223d4c47b320f721b656da1f6c8610810ac5f961ed9508196c368",
+  "deny_control_sha256": "5ecc3a6857c6a8d5f7847c17734fe9952eac568d88bcfa1c022ee1531829db6c"
+}

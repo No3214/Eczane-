@@ -1,0 +1,43 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.8 [39m[90m/workspace/scratch/c1829247bf0c/continuation-20261020b/eczane/repo[39m
+
+ [31m❯[39m tests/home-results.test.tsx [2m([22m[2m11 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[33m 3984[2mms[22m[39m
+     [33m[2m✓[22m[39m starts with the first three records in provider order [33m 486[2mms[22m[39m
+     [33m[2m✓[22m[39m expands the current results without opening the area picker or fetching again [33m 392[2mms[22m[39m
+     [33m[2m✓[22m[39m collapses back to three without discarding records or starting a new query [33m 471[2mms[22m[39m
+     [33m[2m✓[22m[39m resets expansion when a new GPS query is started [33m 372[2mms[22m[39m
+[31m     [31m×[31m keeps a new query collapsed while GPS and its response are still pending[39m[33m 449[2mms[22m[39m
+     [33m[2m✓[22m[39m resets expansion on a submitted manual city/district search [33m 713[2mms[22m[39m
+     [33m[2m✓[22m[39m keeps expanded results when the unrelated large-text preference changes [33m 425[2mms[22m[39m
+     [33m[2m✓[22m[39m keeps expanded results when the area picker is opened and closed without submitting [33m 433[2mms[22m[39m
+     [32m✓[39m does not offer expansion for a result set of 0[32m 37[2mms[22m[39m
+     [32m✓[39m does not offer expansion for a result set of 1[32m 62[2mms[22m[39m
+     [32m✓[39m does not offer expansion for a result set of 3[32m 141[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/home-results.test.tsx[2m > [22mhome pharmacy result expansion[2m > [22mkeeps a new query collapsed while GPS and its response are still pending
+[31m[1mAssertionError[22m: expected false to be true // Object.is equality[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- true[39m
+[31m+ false[39m
+
+[36m [2m❯[22m tests/home-results.test.tsx:[2m135:107[22m[39m
+    [90m133|[39m     fireEvent[33m.[39m[34mclick[39m(screen[33m.[39m[34mgetByRole[39m([32m"button"[39m[33m,[39m { name[33m:[39m [32m"Yenile"[39m }))[33m;[39m
+    [90m134|[39m     [34mexpect[39m([34mcards[39m())[33m.[39m[34mtoHaveLength[39m([34m3[39m)[33m;[39m
+    [90m135|[39m     expect((screen.getByRole("button", { name: /Tüm Eczaneleri Göster/…
+    [90m   |[39m                                                                                                           [31m^[39m
+    [90m136|[39m     [34mexpand[39m()[33m;[39m
+    [90m137|[39m     [34mexpect[39m([34mcards[39m())[33m.[39m[34mtoHaveLength[39m([34m3[39m)[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m10 passed[39m[22m[90m (11)[39m
+[2m   Start at [22m 12:41:51
+[2m   Duration [22m 6.46s[2m (transform 526ms, setup 0ms, import 1.18s, tests 3.98s, environment 1.01s)[22m
+

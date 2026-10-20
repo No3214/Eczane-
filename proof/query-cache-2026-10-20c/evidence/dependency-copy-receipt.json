@@ -1,0 +1,16 @@
+{
+  "recorded_at_utc": "2026-10-20T14:47:04.984400+00:00",
+  "source": "/workspace/scratch/c1829247bf0c/continuation-20261020c/dependency-lab/eczane-offline-candidate",
+  "files": [
+    {
+      "path": "package.json",
+      "before_sha256": "558370050c259dc7d0445ae6f1a1945447150685f8e20c3ac0c80318398a3848",
+      "candidate_sha256": "fc583f96c79f74c34a881b395ad4759714f2e87137d1a9c4dd0920976e194cc6"
+    },
+    {
+      "path": "package-lock.json",
+      "before_sha256": "1659380efcd1eea666d46989cd6250fcbd0b605950ec18574b4f79fc11002e64",
+      "candidate_sha256": "fb935c07a027102acb5247aaa2c758e803e756d3d6e40943d1431805c6eabca4"
+    }
+  ]
+}

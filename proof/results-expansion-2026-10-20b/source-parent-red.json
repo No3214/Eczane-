@@ -1,0 +1,402 @@
+[
+  {
+    "path": ".github/workflows/playwright.yml",
+    "sha256": "b51cb367e18f8a59367d99103c5433934172534d40341e2daaf5efcfa67a0acd"
+  },
+  {
+    "path": ".gitignore",
+    "sha256": "e047bd384439081ceac27ab9b9fd5f7d7423cad4f3e754a1b7b74b4fd01cb2f1"
+  },
+  {
+    "path": "AGENTS.md",
+    "sha256": "e3447d84251880fb34cfae09131cb4c57471529bbfe60976a3245793cf621627"
+  },
+  {
+    "path": "CLAUDE.md",
+    "sha256": "336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49"
+  },
+  {
+    "path": "README.md",
+    "sha256": "06aa4a1cde1289a09e2d0aea802f96dff774a2b5d8b4b5cf98ca85222d4e4cbd"
+  },
+  {
+    "path": "app/[city]/[district]/nobetci-eczane/page.tsx",
+    "sha256": "0808351e735c0456b7444890e4890557a1d10779b8be868675fe17e644e4d91d"
+  },
+  {
+    "path": "app/[city]/nobetci-eczane/page.tsx",
+    "sha256": "be1285034bb81e260c45a548488c563278deaf9f9bce30a18164fd83414f35c9"
+  },
+  {
+    "path": "app/admin/reports/page.tsx",
+    "sha256": "4f3f1a666f38e7abf22b81ca3bf4b2f61dbe8e0518820034ba60abe1da88d048"
+  },
+  {
+    "path": "app/api/geocode/route.ts",
+    "sha256": "b2d8828cdc2d966b3dd6230ea16caadf800c674d3e55161922117850e43b4f3f"
+  },
+  {
+    "path": "app/api/pharmacies/route.ts",
+    "sha256": "b414d50b28299313a0b6d9a353bf48e9a644cc130ddd8969608c3c394bf5ad2d"
+  },
+  {
+    "path": "app/api/reports/__tests__/route.test.ts",
+    "sha256": "4672b24b9054f81ff78597053ae59dd0cb2074bfe5266595518cd1cc0e1011c6"
+  },
+  {
+    "path": "app/api/reports/route.ts",
+    "sha256": "a01da6eefcc1af4fb71aad11f7325d2a84a29bfa79e802a8a2d97204285fbec7"
+  },
+  {
+    "path": "app/fonts.css",
+    "sha256": "09794339da6030bcc23fdf7ef1e85385d0c6976be2523cc631aa266de9d3c081"
+  },
+  {
+    "path": "app/globals.css",
+    "sha256": "611b3fe20125c86cbb59fdcd25f7b0e6bbc6e645828f112d7ef283ee8cb3419c"
+  },
+  {
+    "path": "app/layout.tsx",
+    "sha256": "fa8df982122dcd5ec27e3e358fe1d3b51ec77f83a6288acc880d3cdcb65baf04"
+  },
+  {
+    "path": "app/nobetci-eczane/page.tsx",
+    "sha256": "eef1b11ddd81078ba06de997ef4b4221b2475604b80ba540eb312b7df28c9dea"
+  },
+  {
+    "path": "app/page.tsx",
+    "sha256": "b59348e777190859f86ebcf6a111ced9603790359970d505ab41b7db6af78e3c"
+  },
+  {
+    "path": "app/sw.ts",
+    "sha256": "9afb1a42ae5d0e50793370de29750f1fddbfbb7b3d625ffa41231a421f8903a6"
+  },
+  {
+    "path": "components/CityDistrictPicker.tsx",
+    "sha256": "d66d8a7b08aefcf9be830c6dcde13bde796405f9fc72e7e4ae905b0dc1d42d50"
+  },
+  {
+    "path": "components/DrugProspectus.tsx",
+    "sha256": "850b6739abb8529a46200e4d84d963c081e97341693f761bd9032ef8f4229db8"
+  },
+  {
+    "path": "components/GraphPanel.tsx",
+    "sha256": "6ef2e26d0ddfbf350b8af2264dede13a35b44a96e1ddc2972bf580d66d6a9c7b"
+  },
+  {
+    "path": "components/HealthDashboard.tsx",
+    "sha256": "8c8e7ab4dc8a3ab234e136a6a017a8257fc93b2a502aa1277485bdd14c37c6c6"
+  },
+  {
+    "path": "components/InteractiveMap.tsx",
+    "sha256": "9ebab92b011b66872d8c14af5604e517c1edacfa5ee512341b1b25b45a495880"
+  },
+  {
+    "path": "components/KvkkBanner.tsx",
+    "sha256": "d8ce0d08bdfaacf659d1f2f003fb99a668ada519c28783993a274edccf895989"
+  },
+  {
+    "path": "components/KvkkModal.tsx",
+    "sha256": "822349d99135ea9ec6a97d58fbb1f82c4a7a04db55d9c4275c911e98c0fc617e"
+  },
+  {
+    "path": "components/MapChoiceSheet.tsx",
+    "sha256": "122617b18b3346e85fed61e0c456773536b13668910bd8987b3e1a2a4093abae"
+  },
+  {
+    "path": "components/MapSection.tsx",
+    "sha256": "46026535f6d9b304b984df0f8e50db1ac06f7a32502cc5d29ac49a81ccd8cb2f"
+  },
+  {
+    "path": "components/OcrScanner.tsx",
+    "sha256": "57acaa0cb54d0e1eb88328f7ff13dc0ba272b6c8e92c61d09bfc52f03ef9dd87"
+  },
+  {
+    "path": "components/OnboardingFlow.tsx",
+    "sha256": "84bfa461302fb5cfcd5e2364f77145f30e7fd14ed773ff2fbd366f3f88b27149"
+  },
+  {
+    "path": "components/PharmacyCard.tsx",
+    "sha256": "c2f6d11872a33fe2d710d2f0a57f3ef1d254fa84c1c157dec0bcef7ef205679b"
+  },
+  {
+    "path": "components/ReportDialog.tsx",
+    "sha256": "f76cd236b03e2f57c6277963ecaedd4bf3dcb3c766d586473b7a37fc7a912fd5"
+  },
+  {
+    "path": "components/ShareCard.tsx",
+    "sha256": "cfa657f0f10923185128c0bde81cb9ffde6248d6a70dba0fa3d1adfb266dd058"
+  },
+  {
+    "path": "components/WelcomeScreen.tsx",
+    "sha256": "5117790a7daab995250eb04b2c4f67490365929185aa8d8681d88687080d62e3"
+  },
+  {
+    "path": "components/__tests__/drug-prospectus.test.tsx",
+    "sha256": "d47ed0cd94538e4ded8c5d8d144cf63503898310c0dc1f9cc28852f061878a62"
+  },
+  {
+    "path": "components/__tests__/interactive-map.test.tsx",
+    "sha256": "0e2236117dc928e47aa0d2776d781ab6a682d5eb2059ddaf941ab9c5281e143d"
+  },
+  {
+    "path": "components/__tests__/ocr-scanner.test.tsx",
+    "sha256": "8b4c256c3f45e80114bbff443b473592d03a59b046f045762cdcaa8e268034c4"
+  },
+  {
+    "path": "components/__tests__/pharmacy-card-status.test.tsx",
+    "sha256": "ab8e6cc456a64ce38c93fd2e8ad47d2864754889552707c146ec082f80086bc7"
+  },
+  {
+    "path": "components/__tests__/share-card-status.test.tsx",
+    "sha256": "cf59e877004097fea5c658ca699e83272decdb937401b715337118ba64db66cf"
+  },
+  {
+    "path": "components/__tests__/share-card.test.tsx",
+    "sha256": "32bf9fd357002484bb77cd355bd17f6d0904d4098625fd2c1d504872f8c546b5"
+  },
+  {
+    "path": "data/tr-cities-districts.json",
+    "sha256": "d242a45669d90d1a9038e5301b2dec9a4f8315aebdf7896f6504b5cc7fffaa6f"
+  },
+  {
+    "path": "eslint.config.mjs",
+    "sha256": "1473b4313fc9a03b2904e82d695e2c9ad7c34b52736342d29a5ba8652349a5f9"
+  },
+  {
+    "path": "lib/__tests__/distance.test.ts",
+    "sha256": "5a51e98c2433e4ef01fc605a1a86c6b6b3bee13d3a1e316c59b343141fef9535"
+  },
+  {
+    "path": "lib/__tests__/maps.test.ts",
+    "sha256": "544c764a068a6889971743f0a5bf3eba9c92544547ee3e19e710ec20d3220c2b"
+  },
+  {
+    "path": "lib/__tests__/phone.test.ts",
+    "sha256": "4ff00db6f4ff6c0f44aa7e4cba0c2b4ba94850a22095d778f6819863925c9026"
+  },
+  {
+    "path": "lib/__tests__/providers.test.ts",
+    "sha256": "74028dbd1f5d48fba5d4d45811bff3c71162a48ec7616057a86eed33373ed328"
+  },
+  {
+    "path": "lib/__tests__/slugs.test.ts",
+    "sha256": "f023335da334d827606b54f4530b89e8a178fe5a65a13a50429a375eb8b33424"
+  },
+  {
+    "path": "lib/db.ts",
+    "sha256": "f0f1f1284268df5ac45e031c12cb89d817624b67f5289f13d6acd7a41d884426"
+  },
+  {
+    "path": "lib/device.ts",
+    "sha256": "fd6ded689dcdfb6c827f583d4f822d82c9aa0fa38454adbcb13bb2256a0784ef"
+  },
+  {
+    "path": "lib/distance.ts",
+    "sha256": "20f9d4e64c2cc1572ec60a333c893292a34888a3fd1c9acb8262df2ed6013b64"
+  },
+  {
+    "path": "lib/drug-data.ts",
+    "sha256": "85d99b7f2c903ca962a8336155c325532621e8924a96733499f4f3aacec3946b"
+  },
+  {
+    "path": "lib/hooks/useGeolocation.ts",
+    "sha256": "a2711f931a7ed4e025c356d1b0133cb9eff4db49a10190952b583e7c73d16f58"
+  },
+  {
+    "path": "lib/hooks/usePharmacies.ts",
+    "sha256": "e0be5eb49a3a7e937279860f7d3e55a2b81298a2eaf8d07291f1696f0b76307e"
+  },
+  {
+    "path": "lib/maps.ts",
+    "sha256": "9b54a3fa219b8b5a9d6a8088217383d89130b780b1804ca6ed973a6176a995d7"
+  },
+  {
+    "path": "lib/pharmacy-api.ts",
+    "sha256": "58e96dffdfae8b860dfc5ffd2fbaf9a21ffd618ae06a6920336a454af4bb5c80"
+  },
+  {
+    "path": "lib/pharmacy-data.ts",
+    "sha256": "a5927c7bac7628a8a15ed5e56c6f8662d520bf28bf75e6dfffeb30705e034909"
+  },
+  {
+    "path": "lib/pharmacy-normalizer.ts",
+    "sha256": "e239456e40b8abe159f85bd5c1167e2f639454aa7751ddf1d0570a0021a7a6d7"
+  },
+  {
+    "path": "lib/pharmacy-provider.ts",
+    "sha256": "9718eecb338e709e0712afc1fd5c165b0175b4d2a9f39ce751901fb229e073c5"
+  },
+  {
+    "path": "lib/phone.ts",
+    "sha256": "c5ea572ec622eb539cd10dc11a6b910d1f8ba2aafc2432d396a8750d23c2533a"
+  },
+  {
+    "path": "lib/providers/collectapi-provider.ts",
+    "sha256": "eb89be011e58e871dcf71193448aeb13b483af03cd49c4c9f92c089618e4026f"
+  },
+  {
+    "path": "lib/providers/izmir-provider.ts",
+    "sha256": "6d0a2d1b939479370a1720345b40344e41eee21ad72644daa64a7c02145bb9aa"
+  },
+  {
+    "path": "lib/providers/mock-provider.ts",
+    "sha256": "52d3455e27c7320a2f64ddc83f08f22805ab2533c6b8ae2b8cd13a50731f796a"
+  },
+  {
+    "path": "lib/providers/supabase-provider.ts",
+    "sha256": "9bc126989447aaf5f155390ed4c8bd6d72cada7316edb9f375762b8cbc77954c"
+  },
+  {
+    "path": "lib/slugs.ts",
+    "sha256": "ee9a44e859b8fe5060fc78aa9f9e559ae0eeb0fd8e2b9603919879607487d2fc"
+  },
+  {
+    "path": "lib/supabase.ts",
+    "sha256": "d728e2441e767e977d4b348e7cab03208f00d128939b44f59684602335ff880f"
+  },
+  {
+    "path": "next.config.ts",
+    "sha256": "6304cb4005e59f80661763146ec802e838f7f227e4b072c5ac6dfca77e25df01"
+  },
+  {
+    "path": "package-lock.json",
+    "sha256": "1659380efcd1eea666d46989cd6250fcbd0b605950ec18574b4f79fc11002e64"
+  },
+  {
+    "path": "package.json",
+    "sha256": "558370050c259dc7d0445ae6f1a1945447150685f8e20c3ac0c80318398a3848"
+  },
+  {
+    "path": "playwright.config.ts",
+    "sha256": "9eaa66d9f2d554e364134e4c8787ab4418f8bb642d5914bffea2a35363e414a6"
+  },
+  {
+    "path": "postcss.config.mjs",
+    "sha256": "dfac7ac2d86d326a0e5adb024e7943c181393ed17a5fcb8f0315b24c7da6ddde"
+  },
+  {
+    "path": "proxy.ts",
+    "sha256": "583b32910424c1faf21e5e637c31c0a35ab49c6b20ae3dbd4cdb0f6587e97b1c"
+  },
+  {
+    "path": "public/file.svg",
+    "sha256": "2b67812c325c199a02536cdbeea0c593a72f707d323b72ee3e08dbab06753bd4"
+  },
+  {
+    "path": "public/fonts/geist/OFL.txt",
+    "sha256": "c683bfbcc7e087f5d37a54ef628f10387c451a83ddc459b151403a164ac46c90"
+  },
+  {
+    "path": "public/fonts/geist/README.md",
+    "sha256": "a13234cd313da690eb87f9599c369fe839adf368d328376bbaf165e1e2752e1a"
+  },
+  {
+    "path": "public/fonts/geist/geist-latin-ext.woff2",
+    "sha256": "f7604a53a00250f66db4b47dd44327ce2a43f6edec850d5217bb80238819efdd"
+  },
+  {
+    "path": "public/fonts/geist/geist-latin.woff2",
+    "sha256": "1b5ebfb3a01a97343ac96873e6d59a8cb285c66012b6a1ac509cb2765e995ba8"
+  },
+  {
+    "path": "public/fonts/geist/geist-mono-latin-ext.woff2",
+    "sha256": "7d5609538a79545ec945e019771ed562e2c65a6c1c3c4ccc4ea34372e277c396"
+  },
+  {
+    "path": "public/fonts/geist/geist-mono-latin.woff2",
+    "sha256": "b7ac144b394cbd81052d6397ec0c33397977b1d7e9bc095e744e652a378c6fb3"
+  },
+  {
+    "path": "public/globe.svg",
+    "sha256": "b614b9bf183925957661ac851498fe1d8029fd43a62fbfed86f9e2624a57e7cf"
+  },
+  {
+    "path": "public/icon.svg",
+    "sha256": "cd7c34d778bd9c4fda4d6b8834fd10e58f85b38358a897f391d644dc2270349a"
+  },
+  {
+    "path": "public/manifest.json",
+    "sha256": "6bdf81aba26c9a7638171f33f3cbb11e821fdbd4288a400c2fb1b1587d8c21e1"
+  },
+  {
+    "path": "public/next.svg",
+    "sha256": "55995dfad6ecb4945a1e856ddca03c5e16aa5bf13fd21b4df6a74ae79357bcfc"
+  },
+  {
+    "path": "public/offline.html",
+    "sha256": "b10f6dd36725d59f321ad42a60b68307d8347bc7213d3f927e2dbbfea56d8b24"
+  },
+  {
+    "path": "public/vercel.svg",
+    "sha256": "f081337b2fee635b455b63275406a3e7f39d6a014e25ad90dab5a67e62a12ac4"
+  },
+  {
+    "path": "public/window.svg",
+    "sha256": "644768c4aaeb4767bce293344eeb0c125fb804a94d801440424072202d85e3a1"
+  },
+  {
+    "path": "supabase/schema.sql",
+    "sha256": "5532602d196f9d74b9b0372b3da7def1ade1fa281bc324cdd1277673add46896"
+  },
+  {
+    "path": "tests/app.spec.ts",
+    "sha256": "85888726a5edf7557ae32a6cda629bb4827c286f37849878721f3159dd4ee31a"
+  },
+  {
+    "path": "tests/distance.test.ts",
+    "sha256": "dacae99a51c9cee7622509b15448c67c80442d2dcdf9c586ea37dfd9f1df5f4c"
+  },
+  {
+    "path": "tests/example.spec.ts",
+    "sha256": "a3cbab846a58843b6350e2cc96801b4b6c41e86880451a68c9a01b149708a042"
+  },
+  {
+    "path": "tests/home-results.test.tsx",
+    "sha256": "07d9012e229337e4d6e5604c337e6cd4c54bdc2bb3402e450d015df5abb76bf9"
+  },
+  {
+    "path": "tests/izmir-provider.test.ts",
+    "sha256": "465ce59f413554b816d9e4fc780abda78753add4ebda4e99618cd5ae21fd3c08"
+  },
+  {
+    "path": "tests/pharmacy-normalizer.test.ts",
+    "sha256": "686160cdde4669d8ae3d27d29e176bd9398de9df131f3eb0aea3233e576929ed"
+  },
+  {
+    "path": "tests/pharmacy-share.node.cjs",
+    "sha256": "d1ef650b12ea98edbf6fbc3643eee99908e3b36b5c5870d2df332c94a2b95eeb"
+  },
+  {
+    "path": "tests/phone.test.ts",
+    "sha256": "11f14e8f2cf18993b0078d0ddd32118db2104e9e8fab040f43930632406c403b"
+  },
+  {
+    "path": "tests/provider-fallback.test.ts",
+    "sha256": "34151c4de05c1d3fd93de90e1ff7feaf7fcebfbd1dee8b4bd25721e8d78eaddb"
+  },
+  {
+    "path": "tests/results.spec.ts",
+    "sha256": "38b64c59ad7c2f6be5ae997bfa75bba04df4442def18f7f3ff2a535457d40950"
+  },
+  {
+    "path": "tests/slugs.test.ts",
+    "sha256": "dafe22c8288d0ddc102327b482514974a92cf9c6c0e3f6f5bfce076d30ba83a5"
+  },
+  {
+    "path": "tsconfig.json",
+    "sha256": "be18523b23b78b6e1a876ddd107d330f0168bddf09d751b57e0b5edce69c66f3"
+  },
+  {
+    "path": "types/pharmacy.ts",
+    "sha256": "c9f31291aa62bc91d99d046aea9a6c6067b2116aed4360c350ccf8bb9943578f"
+  },
+  {
+    "path": "vercel.json",
+    "sha256": "49da3297625db34b7ba85fecfcdf5303766dabb6900de2dfa377f4576a034e9a"
+  },
+  {
+    "path": "vitest.config.ts",
+    "sha256": "faa9b28c8b42732aa036169375284ef3f309b3d5f0dd06ace9a1a58929f3f26b"
+  }
+]

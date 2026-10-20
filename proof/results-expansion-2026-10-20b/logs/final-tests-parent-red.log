@@ -1,0 +1,1428 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.8 [39m[90m/workspace/scratch/c1829247bf0c/continuation-20261020b/eczane/parent-red/repo[39m
+
+ [31m❯[39m tests/home-results.test.tsx [2m([22m[2m11 tests[22m[2m | [22m[31m7 failed[39m[2m)[22m[33m 3244[2mms[22m[39m
+     [33m[2m✓[22m[39m starts with the first three records in provider order [33m 421[2mms[22m[39m
+[31m     [31m×[31m expands the current results without opening the area picker or fetching again[39m[33m 338[2mms[22m[39m
+[31m     [31m×[31m collapses back to three without discarding records or starting a new query[39m[33m 662[2mms[22m[39m
+[31m     [31m×[31m resets expansion when a new GPS query is started[39m[32m 209[2mms[22m[39m
+[31m     [31m×[31m keeps a new query collapsed while GPS and its response are still pending[39m[33m 347[2mms[22m[39m
+[31m     [31m×[31m resets expansion on a submitted manual city/district search[39m[32m 176[2mms[22m[39m
+[31m     [31m×[31m keeps expanded results when the unrelated large-text preference changes[39m[32m 268[2mms[22m[39m
+[31m     [31m×[31m keeps expanded results when the area picker is opened and closed without submitting[39m[33m 572[2mms[22m[39m
+     [32m✓[39m does not offer expansion for a result set of 0[32m 33[2mms[22m[39m
+     [32m✓[39m does not offer expansion for a result set of 1[32m 73[2mms[22m[39m
+     [32m✓[39m does not offer expansion for a result set of 3[32m 140[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 7 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/home-results.test.tsx[2m > [22mhome pharmacy result expansion[2m > [22mexpands the current results without opening the area picker or fetching again
+[31m[1mAssertionError[22m: expected [ 'TEST ECZANESİ A', …(2) ] to deeply equal [ 'TEST ECZANESİ A', …(4) ][39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[2m  [[22m
+[2m    "TEST ECZANESİ A",[22m
+[2m    "TEST ECZANESİ B",[22m
+[2m    "TEST ECZANESİ C",[22m
+[32m-   "TEST ECZANESİ D",[39m
+[32m-   "TEST ECZANESİ E",[39m
+[2m  ][22m
+
+[36m [2m❯[22m tests/home-results.test.tsx:[2m100:51[22m[39m
+    [90m 98|[39m     [35mawait[39m [34mloadPage[39m()[33m;[39m
+    [90m 99|[39m     [34mexpand[39m()[33m;[39m
+    [90m100|[39m     [34mexpect[39m([34mcards[39m()[33m.[39m[34mmap[39m(node [33m=>[39m node[33m.[39mtextContent))[33m.[39m[34mtoEqual[39m([
+    [90m   |[39m                                                   [31m^[39m
+    [90m101|[39m       "TEST ECZANESİ A", "TEST ECZANESİ B", "TEST ECZANESİ C", "TEST E…
+    [90m102|[39m     ])[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/7]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/home-results.test.tsx[2m > [22mhome pharmacy result expansion[2m > [22mcollapses back to three without discarding records or starting a new query
+[31m[1mTestingLibraryElementError[22m[39m: Unable to find an accessible element with the role "button" and name `/İlk 3 Eczaneyi Göster/`
+
+Here are the accessible roles:
+
+  main:
+
+  Name "":
+  [36m<main[39m
+    [33mclass[39m=[32m"w-full max-w-md flex flex-col flex-grow"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  banner:
+
+  Name "":
+  [36m<header[39m
+    [33mclass[39m=[32m"mb-6 flex items-center justify-between"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Eczane+":
+  [36m<h1[39m
+    [33mclass[39m=[32m"text-xl font-black tracking-tight text-neutral-100 flex items-center gap-1.5"[39m
+  [36m/>[39m
+
+  Name "📖 İlaç Prospektüs Bilgisi":
+  [36m<h3[39m
+    [33mclass[39m=[32m"font-black text-emerald-400 flex items-center gap-1.5 uppercase tracking-wide text-xs"[39m
+  [36m/>[39m
+
+  Name "TEST ECZANESİ A":
+  [36m<h3[39m
+    [33mclass[39m=[32m"font-black text-neutral-100 flex items-center gap-1.5 leading-tight text-xl"[39m
+  [36m/>[39m
+
+  Name "Eczane+":
+  [36m<h1[39m
+    [33mclass[39m=[32m"text-base font-black tracking-tight text-neutral-100 flex items-center gap-1"[39m
+  [36m/>[39m
+
+  Name "TEST ECZANESİ A":
+  [36m<h2[39m
+    [33mclass[39m=[32m"text-xl font-black text-neutral-100 leading-tight"[39m
+  [36m/>[39m
+
+  Name "TEST ECZANESİ B":
+  [36m<h3[39m
+    [33mclass[39m=[32m"font-black text-neutral-100 flex items-center gap-1.5 leading-tight text-xl"[39m
+  [36m/>[39m
+
+  Name "Eczane+":
+  [36m<h1[39m
+    [33mclass[39m=[32m"text-base font-black tracking-tight text-neutral-100 flex items-center gap-1"[39m
+  [36m/>[39m
+
+  Name "TEST ECZANESİ B":
+  [36m<h2[39m
+    [33mclass[39m=[32m"text-xl font-black text-neutral-100 leading-tight"[39m
+  [36m/>[39m
+
+  Name "TEST ECZANESİ C":
+  [36m<h3[39m
+    [33mclass[39m=[32m"font-black text-neutral-100 flex items-center gap-1.5 leading-tight text-xl"[39m
+  [36m/>[39m
+
+  Name "Eczane+":
+  [36m<h1[39m
+    [33mclass[39m=[32m"text-base font-black tracking-tight text-neutral-100 flex items-center gap-1"[39m
+  [36m/>[39m
+
+  Name "TEST ECZANESİ C":
+  [36m<h2[39m
+    [33mclass[39m=[32m"text-xl font-black text-neutral-100 leading-tight"[39m
+  [36m/>[39m
+
+  Name "Veya İl/İlçe Seçin":
+  [36m<h3[39m
+    [33mclass[39m=[32m"text-sm font-bold text-neutral-100 mb-4 flex items-center gap-2"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-[9px] font-bold text-neutral-400 uppercase tracking-widest leading-none mt-0.5"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-neutral-500 italic text-[10px]"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-neutral-500 leading-normal font-medium text-[9px]"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"leading-relaxed text-neutral-200 mt-3.5 text-xs text-neutral-400 font-medium line-clamp-2"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"font-bold mt-2.5 flex items-start gap-1 text-[10px] text-amber-400"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"mt-3 text-[10px] text-neutral-400 font-semibold flex items-center gap-1 bg-neutral-950/20 p-2 rounded-xl border border-neutral-850"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-[7px] text-neutral-500 font-bold uppercase tracking-wider leading-none mt-0.5"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-[10px] text-emerald-400 font-bold mt-1"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-amber-300"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-xs text-neutral-300 leading-normal font-medium mt-0.5"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-xs text-emerald-300 font-bold mt-0.5"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-[9px] text-neutral-500 leading-normal max-w-[170px] font-medium mt-0.5"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"leading-relaxed text-neutral-200 mt-3.5 text-xs text-neutral-400 font-medium line-clamp-2"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"font-bold mt-2.5 flex items-start gap-1 text-[10px] text-amber-400"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"mt-3 text-[10px] text-neutral-400 font-semibold flex items-center gap-1 bg-neutral-950/20 p-2 rounded-xl border border-neutral-850"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-[7px] text-neutral-500 font-bold uppercase tracking-wider leading-none mt-0.5"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-[10px] text-emerald-400 font-bold mt-1"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-amber-300"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-xs text-neutral-300 leading-normal font-medium mt-0.5"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-xs text-emerald-300 font-bold mt-0.5"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-[9px] text-neutral-500 leading-normal max-w-[170px] font-medium mt-0.5"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"leading-relaxed text-neutral-200 mt-3.5 text-xs text-neutral-400 font-medium line-clamp-2"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"font-bold mt-2.5 flex items-start gap-1 text-[10px] text-amber-400"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"mt-3 text-[10px] text-neutral-400 font-semibold flex items-center gap-1 bg-neutral-950/20 p-2 rounded-xl border border-neutral-850"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-[7px] text-neutral-500 font-bold uppercase tracking-wider leading-none mt-0.5"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-[10px] text-emerald-400 font-bold mt-1"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-amber-300"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-xs text-neutral-300 leading-normal font-medium mt-0.5"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-xs text-emerald-300 font-bold mt-0.5"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-[9px] text-neutral-500 leading-normal max-w-[170px] font-medium mt-0.5"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-[10px] font-bold text-neutral-600 uppercase tracking-widest"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"mt-1 text-[9px] text-neutral-500"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "Büyük Yazı":
+  [36m<button[39m
+    [33mclass[39m=[32m"flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-bold transition active:scale-95 border bg-neutral-900 hover:bg-neutral-800 border-neutral-800 text-neutral-300"[39m
+  [36m/>[39m
+
+  Name "Yenile":
+  [36m<button[39m
+    [33mclass[39m=[32m"flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-bold transition active:scale-95 border bg-neutral-900 hover:bg-neutral-800 border-neutral-800 text-neutral-300"[39m
+  [36m/>[39m
+
+  Name "Kamerayla İlaç Tara":
+  [36m<button[39m
+    [33mclass[39m=[32m"absolute right-3.5 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-emerald-400 active:scale-95 transition"[39m
+    [33mtitle[39m=[32m"Kamerayla İlaç Tara"[39m
+  [36m/>[39m
+
+  Name "Parol":
+  [36m<button[39m
+    [33mclass[39m=[32m"bg-neutral-950 hover:bg-neutral-800 border border-neutral-800 hover:border-emerald-500/30 text-neutral-300 hover:text-emerald-400 rounded-lg px-2.5 py-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/50 focus-visible:ring-offset-1 focus-visible:ring-offset-neutral-900 transition text-[10px] font-semibold"[39m
+  [36m/>[39m
+
+  Name "Arveles":
+  [36m<button[39m
+    [33mclass[39m=[32m"bg-neutral-950 hover:bg-neutral-800 border border-neutral-800 hover:border-emerald-500/30 text-neutral-300 hover:text-emerald-400 rounded-lg px-2.5 py-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/50 focus-visible:ring-offset-1 focus-visible:ring-offset-neutral-900 transition text-[10px] font-semibold"[39m
+  [36m/>[39m
+
+  Name "Majezik":
+  [36m<button[39m
+    [33mclass[39m=[32m"bg-neutral-950 hover:bg-neutral-800 border border-neutral-800 hover:border-emerald-500/30 text-neutral-300 hover:text-emerald-400 rounded-lg px-2.5 py-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/50 focus-visible:ring-offset-1 focus-visible:ring-offset-neutral-900 transition text-[10px] font-semibold"[39m
+  [36m/>[39m
+
+  Name "Apranax / Apranax Forte":
+  [36m<button[39m
+    [33mclass[39m=[32m"bg-neutral-950 hover:bg-neutral-800 border border-neutral-800 hover:border-emerald-500/30 text-neutral-300 hover:text-emerald-400 rounded-lg px-2.5 py-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/50 focus-visible:ring-offset-1 focus-visible:ring-offset-neutral-900 transition text-[10px] font-semibold"[39m
+  [36m/>[39m
+
+  Name "Haritada Gör (En Yakın 3 Eczane)Göster":
+  [36m<button[39m
+    [33mclass[39m=[32m"w-full px-5 py-4 flex items-center justify-between text-neutral-200 hover:text-white font-bold text-xs uppercase tracking-wider transition-colors"[39m
+  [36m/>[39m
+
+  Name "Yol Tarifi":
+  [36m<button[39m
+    [33mclass[39m=[32m"flex flex-col items-center justify-center gap-1.5 rounded-2xl text-white active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900 transition-all bg-emerald-600/90 py-3.5 hover:bg-emerald-500 shadow-md shadow-emerald-900/10"[39m
+  [36m/>[39m
+
+  Name "Bilgileri Paylaş":
+  [36m<button[39m
+    [33mclass[39m=[32m"inline-flex items-center gap-1 font-bold text-emerald-400 hover:text-emerald-300 focus-visible:outline-none focus-visible:underline focus-visible:text-emerald-300 transition text-[11px]"[39m
+  [36m/>[39m
+
+  Name "Konum hatalı mı? Bildir":
+  [36m<button[39m
+    [33mclass[39m=[32m"inline-flex items-center gap-1 font-bold focus-visible:outline-none focus-visible:underline focus-visible:text-amber-400 transition text-[11px] text-neutral-500 hover:text-amber-400"[39m
+  [36m/>[39m
+
+  Name "Yol Tarifi":
+  [36m<button[39m
+    [33mclass[39m=[32m"flex flex-col items-center justify-center gap-1.5 rounded-2xl text-white active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900 transition-all bg-emerald-600/90 py-3.5 hover:bg-emerald-500 shadow-md shadow-emerald-900/10"[39m
+  [36m/>[39m
+
+  Name "Bilgileri Paylaş":
+  [36m<button[39m
+    [33mclass[39m=[32m"inline-flex items-center gap-1 font-bold text-emerald-400 hover:text-emerald-300 focus-visible:outline-none focus-visible:underline focus-visible:text-emerald-300 transition text-[11px]"[39m
+  [36m/>[39m
+
+  Name "Konum hatalı mı? Bildir":
+  [36m<button[39m
+    [33mclass[39m=[32m"inline-flex items-center gap-1 font-bold focus-visible:outline-none focus-visible:underline focus-visible:text-amber-400 transition text-[11px] text-neutral-500 hover:text-amber-400"[39m
+  [36m/>[39m
+
+  Name "Yol Tarifi":
+  [36m<button[39m
+    [33mclass[39m=[32m"flex flex-col items-center justify-center gap-1.5 rounded-2xl text-white active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900 transition-all bg-emerald-600/90 py-3.5 hover:bg-emerald-500 shadow-md shadow-emerald-900/10"[39m
+  [36m/>[39m
+
+  Name "Bilgileri Paylaş":
+  [36m<button[39m
+    [33mclass[39m=[32m"inline-flex items-center gap-1 font-bold text-emerald-400 hover:text-emerald-300 focus-visible:outline-none focus-visible:underline focus-visible:text-emerald-300 transition text-[11px]"[39m
+  [36m/>[39m
+
+  Name "Konum hatalı mı? Bildir":
+  [36m<button[39m
+    [33mclass[39m=[32m"inline-flex items-center gap-1 font-bold focus-visible:outline-none focus-visible:underline focus-visible:text-amber-400 transition text-[11px] text-neutral-500 hover:text-amber-400"[39m
+  [36m/>[39m
+
+  Name "Tüm Eczaneleri Göster (5)":
+  [36m<button[39m
+    [33mclass[39m=[32m"w-full py-3 rounded-2xl bg-neutral-900 border border-neutral-800 text-xs font-bold text-neutral-400 hover:text-white transition"[39m
+  [36m/>[39m
+
+  Name "Eczaneleri Listele":
+  [36m<button[39m
+    [33mclass[39m=[32m"mt-4.5 w-full rounded-2xl bg-emerald-600 py-3.5 text-xs font-black uppercase text-white hover:bg-emerald-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900 active:scale-98 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-md shadow-emerald-950/20"[39m
+    [33mdisabled[39m=[32m""[39m
+    [33mtype[39m=[32m"submit"[39m
+  [36m/>[39m
+
+  Name "Kapat":
+  [36m<button[39m
+    [33mclass[39m=[32m"mt-2.5 w-full text-center text-xs font-semibold text-neutral-500 hover:text-neutral-400 py-1"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Gizlilik Politikası & KVKK Aydınlatma":
+  [36m<button[39m
+    [33mclass[39m=[32m"text-[9px] text-neutral-500 hover:text-emerald-400 hover:underline transition font-bold uppercase tracking-wider block mx-auto mt-2.5"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  textbox:
+
+  Name "":
+  [36m<input[39m
+    [33mclass[39m=[32m"w-full bg-neutral-950 border border-neutral-800 rounded-xl pl-9 pr-11 py-2 text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900 transition-all text-xs"[39m
+    [33mplaceholder[39m=[32m"İlaç veya etken madde adı yazın (örn: Parol)..."[39m
+    [33mtype[39m=[32m"text"[39m
+    [33mvalue[39m=[32m""[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<input[39m
+    [33mclass[39m=[32m"w-full rounded-2xl border border-neutral-800 bg-neutral-950 p-3.5 pr-10 text-xs font-semibold text-white placeholder-neutral-600 focus:outline-none focus:border-emerald-500/70 focus:ring-1 focus:ring-emerald-500/20 transition-all"[39m
+    [33mplaceholder[39m=[32m"İl ara... (Örn: İzmir)"[39m
+    [33mtype[39m=[32m"text"[39m
+    [33mvalue[39m=[32m""[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<input[39m
+    [33mclass[39m=[32m"w-full rounded-2xl border border-neutral-800 bg-neutral-950 p-3.5 pr-10 text-xs font-semibold text-white placeholder-neutral-600 focus:outline-none focus:border-emerald-500/70 focus:ring-1 focus:ring-emerald-500/20 transition-all disabled:opacity-40 disabled:cursor-not-allowed"[39m
+    [33mdisabled[39m=[32m""[39m
+    [33mplaceholder[39m=[32m"Önce il seçin..."[39m
+    [33mtype[39m=[32m"text"[39m
+    [33mvalue[39m=[32m""[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  strong:
+
+  Name "":
+  [36m<strong />[39m
+
+  --------------------------------------------------
+  link:
+
+  Name "Ara":
+  [36m<a[39m
+    [33mclass[39m=[32m"flex flex-col items-center justify-center gap-1.5 rounded-2xl active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900 transition-all bg-neutral-800 text-neutral-100 border border-neutral-700/50 py-3.5 hover:bg-neutral-700"[39m
+    [33mhref[39m=[32m"tel:+90"[39m
+  [36m/>[39m
+
+  Name "WhatsApp":
+  [36m<a[39m
+    [33mclass[39m=[32m"flex flex-col items-center justify-center gap-1.5 rounded-2xl active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900 transition-all bg-neutral-800 text-neutral-100 border border-neutral-700/50 py-3.5 hover:bg-neutral-700"[39m
+    [33mhref[39m=[32m"https://wa.me/90?text=Merhaba%20TEST%20ECZANES%C4%B0%20A%2C%20n%C3%B6bet%20durumunuzu%20ve%20stok%20bilginizi%20teyit%20etmek%20i%C3%A7in%20ileti%C5%9Fime%20ge%C3%A7iyorum.%20%C5%9Eu%20an%20a%C3%A7%C4%B1k%20m%C4%B1s%C4%B1n%C4%B1z%3F"[39m
+    [33mrel[39m=[32m"noopener noreferrer"[39m
+    [33mtarget[39m=[32m"_blank"[39m
+  [36m/>[39m
+
+  Name "Ara":
+  [36m<a[39m
+    [33mclass[39m=[32m"flex flex-col items-center justify-center gap-1.5 rounded-2xl active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900 transition-all bg-neutral-800 text-neutral-100 border border-neutral-700/50 py-3.5 hover:bg-neutral-700"[39m
+    [33mhref[39m=[32m"tel:+90"[39m
+  [36m/>[39m
+
+  Name "WhatsApp":
+  [36m<a[39m
+    [33mclass[39m=[32m"flex flex-col items-center justify-center gap-1.5 rounded-2xl active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900 transition-all bg-neutral-800 text-neutral-100 border border-neutral-700/50 py-3.5 hover:bg-neutral-700"[39m
+    [33mhref[39m=[32m"https://wa.me/90?text=Merhaba%20TEST%20ECZANES%C4%B0%20B%2C%20n%C3%B6bet%20durumunuzu%20ve%20stok%20bilginizi%20teyit%20etmek%20i%C3%A7in%20ileti%C5%9Fime%20ge%C3%A7iyorum.%20%C5%9Eu%20an%20a%C3%A7%C4%B1k%20m%C4%B1s%C4%B1n%C4%B1z%3F"[39m
+    [33mrel[39m=[32m"noopener noreferrer"[39m
+    [33mtarget[39m=[32m"_blank"[39m
+  [36m/>[39m
+
+  Name "Ara":
+  [36m<a[39m
+    [33mclass[39m=[32m"flex flex-col items-center justify-center gap-1.5 rounded-2xl active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900 transition-all bg-neutral-800 text-neutral-100 border border-neutral-700/50 py-3.5 hover:bg-neutral-700"[39m
+    [33mhref[39m=[32m"tel:+90"[39m
+  [36m/>[39m
+
+  Name "WhatsApp":
+  [36m<a[39m
+    [33mclass[39m=[32m"flex flex-col items-center justify-center gap-1.5 rounded-2xl active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900 transition-all bg-neutral-800 text-neutral-100 border border-neutral-700/50 py-3.5 hover:bg-neutral-700"[39m
+    [33mhref[39m=[32m"https://wa.me/90?text=Merhaba%20TEST%20ECZANES%C4%B0%20C%2C%20n%C3%B6bet%20durumunuzu%20ve%20stok%20bilginizi%20teyit%20etmek%20i%C3%A7in%20ileti%C5%9Fime%20ge%C3%A7iyorum.%20%C5%9Eu%20an%20a%C3%A7%C4%B1k%20m%C4%B1s%C4%B1n%C4%B1z%3F"[39m
+    [33mrel[39m=[32m"noopener noreferrer"[39m
+    [33mtarget[39m=[32m"_blank"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  img:
+
+  Name "Harita Rota QR Kodu":
+  [36m<img[39m
+    [33malt[39m=[32m"Harita Rota QR Kodu"[39m
+    [33mclass[39m=[32m"h-full w-full object-contain rounded-lg"[39m
+    [33msrc[39m=[32m"https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fwww.google.com%2Fmaps%2Fdir%2F%3Fapi%3D1%26destination%3D38.4%2C27.1&color=10-185-129&bgcolor=17-20-19"[39m
+  [36m/>[39m
+
+  Name "Harita Rota QR Kodu":
+  [36m<img[39m
+    [33malt[39m=[32m"Harita Rota QR Kodu"[39m
+    [33mclass[39m=[32m"h-full w-full object-contain rounded-lg"[39m
+    [33msrc[39m=[32m"https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fwww.google.com%2Fmaps%2Fdir%2F%3Fapi%3D1%26destination%3D38.4%2C27.1&color=10-185-129&bgcolor=17-20-19"[39m
+  [36m/>[39m
+
+  Name "Harita Rota QR Kodu":
+  [36m<img[39m
+    [33malt[39m=[32m"Harita Rota QR Kodu"[39m
+    [33mclass[39m=[32m"h-full w-full object-contain rounded-lg"[39m
+    [33msrc[39m=[32m"https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fwww.google.com%2Fmaps%2Fdir%2F%3Fapi%3D1%26destination%3D38.4%2C27.1&color=10-185-129&bgcolor=17-20-19"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  contentinfo:
+
+  Name "":
+  [36m<footer[39m
+    [33mclass[39m=[32m"mt-10 text-center"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mstyle[39m=[32m"overflow: unset;"[39m
+[36m>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col flex-grow items-center bg-background px-4 pb-12 pt-6 font-sans"[39m
+    [36m>[39m
+      [36m<main[39m
+        [33mclass[39m=[32m"w-full max-w-md flex flex-col flex-grow"[39m
+      [36m>[39m
+        [36m<header[39m
+          [33mclass[39m=[32m"mb-6 flex items-center justify-between"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center gap-2"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex items-center justify-center h-10 w-10 rounded-2xl bg-emerald-600 shadow-lg shadow-emerald-900/30"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"text-xl font-bold text-white leading-none"[39m
+              [36m>[39m
+                [0m+[0m
+              [36m</span>[39m
+            [36m</div>[39m
+            [36m<div>[39m
+              [36m<h1[39m
+                [33mclass[39m=[32m"text-xl font-black tracking-tight text-neutral-100 flex items-center gap-1.5"[39m
+              [36m>[39m
+                [0mEczane[0m
+                [36m<span[39m
+                  [33mclass[39m=[32m"text-emerald-500"[39m
+                [36m>[39m
+                  [0m+[0m
+                [36m</span>[39m
+              [36m</h1>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"text-[9px] font-bold text-neutral-400 uppercase tracking-widest leading-none mt-0.5"[39m
+              [36m>[39m
+                [0mEn yakın nöbetçi eczaneye tek dokunuş.[0m
+              [36m</p>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center gap-2"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-bold transition active:scale-95 border bg-neutral-900 hover:bg-neutral-800 border-neutral-800 text-neutral-300"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-glasses h-4 w-4 shrink-0"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"24"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"24"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<circle[39m
+                  [33mcx[39m=[32m"6"[39m
+                  [33mcy[39m=[32m"15"[39m
+                  [33mr[39m=[32m"4"[39m
+                [36m/>[39m
+                [36m<circle[39m
+                  [33mcx[39m=[32m"18"[39m
+                  [33mcy[39m=[32m"15"[39m
+                  [33mr[39m=[32m"4"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M14 15a2 2 0 0 0-2-2 2 2 0 0 0-2 2"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M2.5 13 5 7c.7-1.3 1.4-2 3-2"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M21.5 13 19 7c-.7-1.3-1.5-2-3-2"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [0mBüyük Yazı[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-bold transition active:scale-95 border bg-neutral-900 hover:bg-neutral-800 border-neutral-800 text-neutral-300"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-refresh-cw h-3.5 w-3.5"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"24"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"24"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M21 3v5h-5"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M8 16H3v5"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [0mYenile[0m
+            [36m</button>[39m
+          [36m</div>[39m
+        [36m</header>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"mb-5 space-y-3"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"rounded-2xl bg-emerald-500/5 border border-emerald-500/10 p-3 text-center flex flex-col items-center justify-center gap-1.5"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex items-center gap-1.5"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-shield-check h-4 w-4 text-emerald-400 animate-pulse"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"24"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"24"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"m9 12 2 2 4-4"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [36m<span[39m
+ ...
+[90m [2m❯[22m Object.getElementError ../../repo/node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m❯[22m ../../repo/node_modules/@testing-library/dom/dist/query-helpers.js:[2m76:38[22m[39m
+[90m [2m❯[22m ../../repo/node_modules/@testing-library/dom/dist/query-helpers.js:[2m52:17[22m[39m
+[90m [2m❯[22m ../../repo/node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m❯[22m tests/home-results.test.tsx:[2m111:28[22m[39m
+    [90m109|[39m     [35mawait[39m [34mloadPage[39m()[33m;[39m
+    [90m110|[39m     [34mexpand[39m()[33m;[39m
+    [90m111|[39m     fireEvent.click(screen.getByRole("button", { name: /İlk 3 Eczaneyi…
+    [90m   |[39m                            [31m^[39m
+    [90m112|[39m     [34mexpect[39m([34mcards[39m())[33m.[39m[34mtoHaveLength[39m([34m3[39m)[33m;[39m
+    [90m113|[39m     expect(screen.getByRole("button", { name: /Tüm Eczaneleri Göster \…
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/7]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/home-results.test.tsx[2m > [22mhome pharmacy result expansion[2m > [22mresets expansion when a new GPS query is started
+[31m[1mAssertionError[22m: expected [ Array(3) ] to have a length of 5 but got 3[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- 5[39m
+[31m+ 3[39m
+
+[36m [2m❯[22m tests/home-results.test.tsx:[2m122:21[22m[39m
+    [90m120|[39m     [35mawait[39m [34mloadPage[39m()[33m;[39m
+    [90m121|[39m     [34mexpand[39m()[33m;[39m
+    [90m122|[39m     [34mexpect[39m([34mcards[39m())[33m.[39m[34mtoHaveLength[39m([34m5[39m)[33m;[39m
+    [90m   |[39m                     [31m^[39m
+    [90m123|[39m     fireEvent[33m.[39m[34mclick[39m(screen[33m.[39m[34mgetByRole[39m([32m"button"[39m[33m,[39m { name[33m:[39m [32m"Yenile"[39m }))[33m;[39m
+    [90m124|[39m     [35mawait[39m [34mwaitFor[39m(() [33m=>[39m [34mexpect[39m(pharmacyRequests)[33m.[39m[34mtoHaveLength[39m([34m2[39m))[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/7]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/home-results.test.tsx[2m > [22mhome pharmacy result expansion[2m > [22mkeeps a new query collapsed while GPS and its response are still pending
+[31m[1mAssertionError[22m: expected false to be true // Object.is equality[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- true[39m
+[31m+ false[39m
+
+[36m [2m❯[22m tests/home-results.test.tsx:[2m135:107[22m[39m
+    [90m133|[39m     fireEvent[33m.[39m[34mclick[39m(screen[33m.[39m[34mgetByRole[39m([32m"button"[39m[33m,[39m { name[33m:[39m [32m"Yenile"[39m }))[33m;[39m
+    [90m134|[39m     [34mexpect[39m([34mcards[39m())[33m.[39m[34mtoHaveLength[39m([34m3[39m)[33m;[39m
+    [90m135|[39m     expect((screen.getByRole("button", { name: /Tüm Eczaneleri Göster/…
+    [90m   |[39m                                                                                                           [31m^[39m
+    [90m136|[39m     [34mexpand[39m()[33m;[39m
+    [90m137|[39m     [34mexpect[39m([34mcards[39m())[33m.[39m[34mtoHaveLength[39m([34m3[39m)[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/7]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/home-results.test.tsx[2m > [22mhome pharmacy result expansion[2m > [22mresets expansion on a submitted manual city/district search
+[31m[1mAssertionError[22m: expected [ Array(3) ] to have a length of 5 but got 3[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- 5[39m
+[31m+ 3[39m
+
+[36m [2m❯[22m tests/home-results.test.tsx:[2m160:21[22m[39m
+    [90m158|[39m     [35mawait[39m [34mloadPage[39m()[33m;[39m
+    [90m159|[39m     [34mexpand[39m()[33m;[39m
+    [90m160|[39m     [34mexpect[39m([34mcards[39m())[33m.[39m[34mtoHaveLength[39m([34m5[39m)[33m;[39m
+    [90m   |[39m                     [31m^[39m
+    [90m161|[39m     fireEvent.click(screen.getByRole("button", { name: /Başka Bir İl \…
+    [90m162|[39m     fireEvent.change(screen.getByPlaceholderText(/İl ara/), { target: …
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/7]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/home-results.test.tsx[2m > [22mhome pharmacy result expansion[2m > [22mkeeps expanded results when the unrelated large-text preference changes
+[31m[1mAssertionError[22m: expected [ Array(3) ] to have a length of 5 but got 3[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- 5[39m
+[31m+ 3[39m
+
+[36m [2m❯[22m tests/home-results.test.tsx:[2m176:21[22m[39m
+    [90m174|[39m     [34mexpand[39m()[33m;[39m
+    [90m175|[39m     fireEvent.click(screen.getByRole("button", { name: "Büyük Yazı" })…
+    [90m176|[39m     [34mexpect[39m([34mcards[39m())[33m.[39m[34mtoHaveLength[39m([34m5[39m)[33m;[39m
+    [90m   |[39m                     [31m^[39m
+    [90m177|[39m     expect(screen.getByRole("button", { name: "Standart Mod" })).toBeT…
+    [90m178|[39m     [34mexpect[39m(pharmacyRequests)[33m.[39m[34mtoHaveLength[39m([34m1[39m)[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/7]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/home-results.test.tsx[2m > [22mhome pharmacy result expansion[2m > [22mkeeps expanded results when the area picker is opened and closed without submitting
+[31m[1mTestingLibraryElementError[22m[39m: Unable to find an accessible element with the role "button" and name `/Başka Bir İl \/ İlçe Ara/`
+
+Here are the accessible roles:
+
+  main:
+
+  Name "":
+  [36m<main[39m
+    [33mclass[39m=[32m"w-full max-w-md flex flex-col flex-grow"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  banner:
+
+  Name "":
+  [36m<header[39m
+    [33mclass[39m=[32m"mb-6 flex items-center justify-between"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Eczane+":
+  [36m<h1[39m
+    [33mclass[39m=[32m"text-xl font-black tracking-tight text-neutral-100 flex items-center gap-1.5"[39m
+  [36m/>[39m
+
+  Name "📖 İlaç Prospektüs Bilgisi":
+  [36m<h3[39m
+    [33mclass[39m=[32m"font-black text-emerald-400 flex items-center gap-1.5 uppercase tracking-wide text-xs"[39m
+  [36m/>[39m
+
+  Name "TEST ECZANESİ A":
+  [36m<h3[39m
+    [33mclass[39m=[32m"font-black text-neutral-100 flex items-center gap-1.5 leading-tight text-xl"[39m
+  [36m/>[39m
+
+  Name "Eczane+":
+  [36m<h1[39m
+    [33mclass[39m=[32m"text-base font-black tracking-tight text-neutral-100 flex items-center gap-1"[39m
+  [36m/>[39m
+
+  Name "TEST ECZANESİ A":
+  [36m<h2[39m
+    [33mclass[39m=[32m"text-xl font-black text-neutral-100 leading-tight"[39m
+  [36m/>[39m
+
+  Name "TEST ECZANESİ B":
+  [36m<h3[39m
+    [33mclass[39m=[32m"font-black text-neutral-100 flex items-center gap-1.5 leading-tight text-xl"[39m
+  [36m/>[39m
+
+  Name "Eczane+":
+  [36m<h1[39m
+    [33mclass[39m=[32m"text-base font-black tracking-tight text-neutral-100 flex items-center gap-1"[39m
+  [36m/>[39m
+
+  Name "TEST ECZANESİ B":
+  [36m<h2[39m
+    [33mclass[39m=[32m"text-xl font-black text-neutral-100 leading-tight"[39m
+  [36m/>[39m
+
+  Name "TEST ECZANESİ C":
+  [36m<h3[39m
+    [33mclass[39m=[32m"font-black text-neutral-100 flex items-center gap-1.5 leading-tight text-xl"[39m
+  [36m/>[39m
+
+  Name "Eczane+":
+  [36m<h1[39m
+    [33mclass[39m=[32m"text-base font-black tracking-tight text-neutral-100 flex items-center gap-1"[39m
+  [36m/>[39m
+
+  Name "TEST ECZANESİ C":
+  [36m<h2[39m
+    [33mclass[39m=[32m"text-xl font-black text-neutral-100 leading-tight"[39m
+  [36m/>[39m
+
+  Name "Veya İl/İlçe Seçin":
+  [36m<h3[39m
+    [33mclass[39m=[32m"text-sm font-bold text-neutral-100 mb-4 flex items-center gap-2"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-[9px] font-bold text-neutral-400 uppercase tracking-widest leading-none mt-0.5"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-neutral-500 italic text-[10px]"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-neutral-500 leading-normal font-medium text-[9px]"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"leading-relaxed text-neutral-200 mt-3.5 text-xs text-neutral-400 font-medium line-clamp-2"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"font-bold mt-2.5 flex items-start gap-1 text-[10px] text-amber-400"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"mt-3 text-[10px] text-neutral-400 font-semibold flex items-center gap-1 bg-neutral-950/20 p-2 rounded-xl border border-neutral-850"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-[7px] text-neutral-500 font-bold uppercase tracking-wider leading-none mt-0.5"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-[10px] text-emerald-400 font-bold mt-1"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-amber-300"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-xs text-neutral-300 leading-normal font-medium mt-0.5"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-xs text-emerald-300 font-bold mt-0.5"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-[9px] text-neutral-500 leading-normal max-w-[170px] font-medium mt-0.5"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"leading-relaxed text-neutral-200 mt-3.5 text-xs text-neutral-400 font-medium line-clamp-2"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"font-bold mt-2.5 flex items-start gap-1 text-[10px] text-amber-400"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"mt-3 text-[10px] text-neutral-400 font-semibold flex items-center gap-1 bg-neutral-950/20 p-2 rounded-xl border border-neutral-850"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-[7px] text-neutral-500 font-bold uppercase tracking-wider leading-none mt-0.5"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-[10px] text-emerald-400 font-bold mt-1"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-amber-300"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-xs text-neutral-300 leading-normal font-medium mt-0.5"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-xs text-emerald-300 font-bold mt-0.5"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-[9px] text-neutral-500 leading-normal max-w-[170px] font-medium mt-0.5"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"leading-relaxed text-neutral-200 mt-3.5 text-xs text-neutral-400 font-medium line-clamp-2"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"font-bold mt-2.5 flex items-start gap-1 text-[10px] text-amber-400"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"mt-3 text-[10px] text-neutral-400 font-semibold flex items-center gap-1 bg-neutral-950/20 p-2 rounded-xl border border-neutral-850"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-[7px] text-neutral-500 font-bold uppercase tracking-wider leading-none mt-0.5"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-[10px] text-emerald-400 font-bold mt-1"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-amber-300"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-xs text-neutral-300 leading-normal font-medium mt-0.5"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-xs text-emerald-300 font-bold mt-0.5"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-[9px] text-neutral-500 leading-normal max-w-[170px] font-medium mt-0.5"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-[10px] font-bold text-neutral-600 uppercase tracking-widest"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"mt-1 text-[9px] text-neutral-500"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "Büyük Yazı":
+  [36m<button[39m
+    [33mclass[39m=[32m"flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-bold transition active:scale-95 border bg-neutral-900 hover:bg-neutral-800 border-neutral-800 text-neutral-300"[39m
+  [36m/>[39m
+
+  Name "Yenile":
+  [36m<button[39m
+    [33mclass[39m=[32m"flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-bold transition active:scale-95 border bg-neutral-900 hover:bg-neutral-800 border-neutral-800 text-neutral-300"[39m
+  [36m/>[39m
+
+  Name "Kamerayla İlaç Tara":
+  [36m<button[39m
+    [33mclass[39m=[32m"absolute right-3.5 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-emerald-400 active:scale-95 transition"[39m
+    [33mtitle[39m=[32m"Kamerayla İlaç Tara"[39m
+  [36m/>[39m
+
+  Name "Parol":
+  [36m<button[39m
+    [33mclass[39m=[32m"bg-neutral-950 hover:bg-neutral-800 border border-neutral-800 hover:border-emerald-500/30 text-neutral-300 hover:text-emerald-400 rounded-lg px-2.5 py-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/50 focus-visible:ring-offset-1 focus-visible:ring-offset-neutral-900 transition text-[10px] font-semibold"[39m
+  [36m/>[39m
+
+  Name "Arveles":
+  [36m<button[39m
+    [33mclass[39m=[32m"bg-neutral-950 hover:bg-neutral-800 border border-neutral-800 hover:border-emerald-500/30 text-neutral-300 hover:text-emerald-400 rounded-lg px-2.5 py-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/50 focus-visible:ring-offset-1 focus-visible:ring-offset-neutral-900 transition text-[10px] font-semibold"[39m
+  [36m/>[39m
+
+  Name "Majezik":
+  [36m<button[39m
+    [33mclass[39m=[32m"bg-neutral-950 hover:bg-neutral-800 border border-neutral-800 hover:border-emerald-500/30 text-neutral-300 hover:text-emerald-400 rounded-lg px-2.5 py-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/50 focus-visible:ring-offset-1 focus-visible:ring-offset-neutral-900 transition text-[10px] font-semibold"[39m
+  [36m/>[39m
+
+  Name "Apranax / Apranax Forte":
+  [36m<button[39m
+    [33mclass[39m=[32m"bg-neutral-950 hover:bg-neutral-800 border border-neutral-800 hover:border-emerald-500/30 text-neutral-300 hover:text-emerald-400 rounded-lg px-2.5 py-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/50 focus-visible:ring-offset-1 focus-visible:ring-offset-neutral-900 transition text-[10px] font-semibold"[39m
+  [36m/>[39m
+
+  Name "Haritada Gör (En Yakın 3 Eczane)Göster":
+  [36m<button[39m
+    [33mclass[39m=[32m"w-full px-5 py-4 flex items-center justify-between text-neutral-200 hover:text-white font-bold text-xs uppercase tracking-wider transition-colors"[39m
+  [36m/>[39m
+
+  Name "Yol Tarifi":
+  [36m<button[39m
+    [33mclass[39m=[32m"flex flex-col items-center justify-center gap-1.5 rounded-2xl text-white active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900 transition-all bg-emerald-600/90 py-3.5 hover:bg-emerald-500 shadow-md shadow-emerald-900/10"[39m
+  [36m/>[39m
+
+  Name "Bilgileri Paylaş":
+  [36m<button[39m
+    [33mclass[39m=[32m"inline-flex items-center gap-1 font-bold text-emerald-400 hover:text-emerald-300 focus-visible:outline-none focus-visible:underline focus-visible:text-emerald-300 transition text-[11px]"[39m
+  [36m/>[39m
+
+  Name "Konum hatalı mı? Bildir":
+  [36m<button[39m
+    [33mclass[39m=[32m"inline-flex items-center gap-1 font-bold focus-visible:outline-none focus-visible:underline focus-visible:text-amber-400 transition text-[11px] text-neutral-500 hover:text-amber-400"[39m
+  [36m/>[39m
+
+  Name "Yol Tarifi":
+  [36m<button[39m
+    [33mclass[39m=[32m"flex flex-col items-center justify-center gap-1.5 rounded-2xl text-white active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900 transition-all bg-emerald-600/90 py-3.5 hover:bg-emerald-500 shadow-md shadow-emerald-900/10"[39m
+  [36m/>[39m
+
+  Name "Bilgileri Paylaş":
+  [36m<button[39m
+    [33mclass[39m=[32m"inline-flex items-center gap-1 font-bold text-emerald-400 hover:text-emerald-300 focus-visible:outline-none focus-visible:underline focus-visible:text-emerald-300 transition text-[11px]"[39m
+  [36m/>[39m
+
+  Name "Konum hatalı mı? Bildir":
+  [36m<button[39m
+    [33mclass[39m=[32m"inline-flex items-center gap-1 font-bold focus-visible:outline-none focus-visible:underline focus-visible:text-amber-400 transition text-[11px] text-neutral-500 hover:text-amber-400"[39m
+  [36m/>[39m
+
+  Name "Yol Tarifi":
+  [36m<button[39m
+    [33mclass[39m=[32m"flex flex-col items-center justify-center gap-1.5 rounded-2xl text-white active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900 transition-all bg-emerald-600/90 py-3.5 hover:bg-emerald-500 shadow-md shadow-emerald-900/10"[39m
+  [36m/>[39m
+
+  Name "Bilgileri Paylaş":
+  [36m<button[39m
+    [33mclass[39m=[32m"inline-flex items-center gap-1 font-bold text-emerald-400 hover:text-emerald-300 focus-visible:outline-none focus-visible:underline focus-visible:text-emerald-300 transition text-[11px]"[39m
+  [36m/>[39m
+
+  Name "Konum hatalı mı? Bildir":
+  [36m<button[39m
+    [33mclass[39m=[32m"inline-flex items-center gap-1 font-bold focus-visible:outline-none focus-visible:underline focus-visible:text-amber-400 transition text-[11px] text-neutral-500 hover:text-amber-400"[39m
+  [36m/>[39m
+
+  Name "Tüm Eczaneleri Göster (5)":
+  [36m<button[39m
+    [33mclass[39m=[32m"w-full py-3 rounded-2xl bg-neutral-900 border border-neutral-800 text-xs font-bold text-neutral-400 hover:text-white transition"[39m
+  [36m/>[39m
+
+  Name "Eczaneleri Listele":
+  [36m<button[39m
+    [33mclass[39m=[32m"mt-4.5 w-full rounded-2xl bg-emerald-600 py-3.5 text-xs font-black uppercase text-white hover:bg-emerald-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900 active:scale-98 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-md shadow-emerald-950/20"[39m
+    [33mdisabled[39m=[32m""[39m
+    [33mtype[39m=[32m"submit"[39m
+  [36m/>[39m
+
+  Name "Kapat":
+  [36m<button[39m
+    [33mclass[39m=[32m"mt-2.5 w-full text-center text-xs font-semibold text-neutral-500 hover:text-neutral-400 py-1"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Gizlilik Politikası & KVKK Aydınlatma":
+  [36m<button[39m
+    [33mclass[39m=[32m"text-[9px] text-neutral-500 hover:text-emerald-400 hover:underline transition font-bold uppercase tracking-wider block mx-auto mt-2.5"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  textbox:
+
+  Name "":
+  [36m<input[39m
+    [33mclass[39m=[32m"w-full bg-neutral-950 border border-neutral-800 rounded-xl pl-9 pr-11 py-2 text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900 transition-all text-xs"[39m
+    [33mplaceholder[39m=[32m"İlaç veya etken madde adı yazın (örn: Parol)..."[39m
+    [33mtype[39m=[32m"text"[39m
+    [33mvalue[39m=[32m""[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<input[39m
+    [33mclass[39m=[32m"w-full rounded-2xl border border-neutral-800 bg-neutral-950 p-3.5 pr-10 text-xs font-semibold text-white placeholder-neutral-600 focus:outline-none focus:border-emerald-500/70 focus:ring-1 focus:ring-emerald-500/20 transition-all"[39m
+    [33mplaceholder[39m=[32m"İl ara... (Örn: İzmir)"[39m
+    [33mtype[39m=[32m"text"[39m
+    [33mvalue[39m=[32m""[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<input[39m
+    [33mclass[39m=[32m"w-full rounded-2xl border border-neutral-800 bg-neutral-950 p-3.5 pr-10 text-xs font-semibold text-white placeholder-neutral-600 focus:outline-none focus:border-emerald-500/70 focus:ring-1 focus:ring-emerald-500/20 transition-all disabled:opacity-40 disabled:cursor-not-allowed"[39m
+    [33mdisabled[39m=[32m""[39m
+    [33mplaceholder[39m=[32m"Önce il seçin..."[39m
+    [33mtype[39m=[32m"text"[39m
+    [33mvalue[39m=[32m""[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  strong:
+
+  Name "":
+  [36m<strong />[39m
+
+  --------------------------------------------------
+  link:
+
+  Name "Ara":
+  [36m<a[39m
+    [33mclass[39m=[32m"flex flex-col items-center justify-center gap-1.5 rounded-2xl active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900 transition-all bg-neutral-800 text-neutral-100 border border-neutral-700/50 py-3.5 hover:bg-neutral-700"[39m
+    [33mhref[39m=[32m"tel:+90"[39m
+  [36m/>[39m
+
+  Name "WhatsApp":
+  [36m<a[39m
+    [33mclass[39m=[32m"flex flex-col items-center justify-center gap-1.5 rounded-2xl active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900 transition-all bg-neutral-800 text-neutral-100 border border-neutral-700/50 py-3.5 hover:bg-neutral-700"[39m
+    [33mhref[39m=[32m"https://wa.me/90?text=Merhaba%20TEST%20ECZANES%C4%B0%20A%2C%20n%C3%B6bet%20durumunuzu%20ve%20stok%20bilginizi%20teyit%20etmek%20i%C3%A7in%20ileti%C5%9Fime%20ge%C3%A7iyorum.%20%C5%9Eu%20an%20a%C3%A7%C4%B1k%20m%C4%B1s%C4%B1n%C4%B1z%3F"[39m
+    [33mrel[39m=[32m"noopener noreferrer"[39m
+    [33mtarget[39m=[32m"_blank"[39m
+  [36m/>[39m
+
+  Name "Ara":
+  [36m<a[39m
+    [33mclass[39m=[32m"flex flex-col items-center justify-center gap-1.5 rounded-2xl active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900 transition-all bg-neutral-800 text-neutral-100 border border-neutral-700/50 py-3.5 hover:bg-neutral-700"[39m
+    [33mhref[39m=[32m"tel:+90"[39m
+  [36m/>[39m
+
+  Name "WhatsApp":
+  [36m<a[39m
+    [33mclass[39m=[32m"flex flex-col items-center justify-center gap-1.5 rounded-2xl active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900 transition-all bg-neutral-800 text-neutral-100 border border-neutral-700/50 py-3.5 hover:bg-neutral-700"[39m
+    [33mhref[39m=[32m"https://wa.me/90?text=Merhaba%20TEST%20ECZANES%C4%B0%20B%2C%20n%C3%B6bet%20durumunuzu%20ve%20stok%20bilginizi%20teyit%20etmek%20i%C3%A7in%20ileti%C5%9Fime%20ge%C3%A7iyorum.%20%C5%9Eu%20an%20a%C3%A7%C4%B1k%20m%C4%B1s%C4%B1n%C4%B1z%3F"[39m
+    [33mrel[39m=[32m"noopener noreferrer"[39m
+    [33mtarget[39m=[32m"_blank"[39m
+  [36m/>[39m
+
+  Name "Ara":
+  [36m<a[39m
+    [33mclass[39m=[32m"flex flex-col items-center justify-center gap-1.5 rounded-2xl active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900 transition-all bg-neutral-800 text-neutral-100 border border-neutral-700/50 py-3.5 hover:bg-neutral-700"[39m
+    [33mhref[39m=[32m"tel:+90"[39m
+  [36m/>[39m
+
+  Name "WhatsApp":
+  [36m<a[39m
+    [33mclass[39m=[32m"flex flex-col items-center justify-center gap-1.5 rounded-2xl active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900 transition-all bg-neutral-800 text-neutral-100 border border-neutral-700/50 py-3.5 hover:bg-neutral-700"[39m
+    [33mhref[39m=[32m"https://wa.me/90?text=Merhaba%20TEST%20ECZANES%C4%B0%20C%2C%20n%C3%B6bet%20durumunuzu%20ve%20stok%20bilginizi%20teyit%20etmek%20i%C3%A7in%20ileti%C5%9Fime%20ge%C3%A7iyorum.%20%C5%9Eu%20an%20a%C3%A7%C4%B1k%20m%C4%B1s%C4%B1n%C4%B1z%3F"[39m
+    [33mrel[39m=[32m"noopener noreferrer"[39m
+    [33mtarget[39m=[32m"_blank"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  img:
+
+  Name "Harita Rota QR Kodu":
+  [36m<img[39m
+    [33malt[39m=[32m"Harita Rota QR Kodu"[39m
+    [33mclass[39m=[32m"h-full w-full object-contain rounded-lg"[39m
+    [33msrc[39m=[32m"https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fwww.google.com%2Fmaps%2Fdir%2F%3Fapi%3D1%26destination%3D38.4%2C27.1&color=10-185-129&bgcolor=17-20-19"[39m
+  [36m/>[39m
+
+  Name "Harita Rota QR Kodu":
+  [36m<img[39m
+    [33malt[39m=[32m"Harita Rota QR Kodu"[39m
+    [33mclass[39m=[32m"h-full w-full object-contain rounded-lg"[39m
+    [33msrc[39m=[32m"https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fwww.google.com%2Fmaps%2Fdir%2F%3Fapi%3D1%26destination%3D38.4%2C27.1&color=10-185-129&bgcolor=17-20-19"[39m
+  [36m/>[39m
+
+  Name "Harita Rota QR Kodu":
+  [36m<img[39m
+    [33malt[39m=[32m"Harita Rota QR Kodu"[39m
+    [33mclass[39m=[32m"h-full w-full object-contain rounded-lg"[39m
+    [33msrc[39m=[32m"https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fwww.google.com%2Fmaps%2Fdir%2F%3Fapi%3D1%26destination%3D38.4%2C27.1&color=10-185-129&bgcolor=17-20-19"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  contentinfo:
+
+  Name "":
+  [36m<footer[39m
+    [33mclass[39m=[32m"mt-10 text-center"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mstyle[39m=[32m"overflow: unset;"[39m
+[36m>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col flex-grow items-center bg-background px-4 pb-12 pt-6 font-sans"[39m
+    [36m>[39m
+      [36m<main[39m
+        [33mclass[39m=[32m"w-full max-w-md flex flex-col flex-grow"[39m
+      [36m>[39m
+        [36m<header[39m
+          [33mclass[39m=[32m"mb-6 flex items-center justify-between"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center gap-2"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex items-center justify-center h-10 w-10 rounded-2xl bg-emerald-600 shadow-lg shadow-emerald-900/30"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"text-xl font-bold text-white leading-none"[39m
+              [36m>[39m
+                [0m+[0m
+              [36m</span>[39m
+            [36m</div>[39m
+            [36m<div>[39m
+              [36m<h1[39m
+                [33mclass[39m=[32m"text-xl font-black tracking-tight text-neutral-100 flex items-center gap-1.5"[39m
+              [36m>[39m
+                [0mEczane[0m
+                [36m<span[39m
+                  [33mclass[39m=[32m"text-emerald-500"[39m
+                [36m>[39m
+                  [0m+[0m
+                [36m</span>[39m
+              [36m</h1>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"text-[9px] font-bold text-neutral-400 uppercase tracking-widest leading-none mt-0.5"[39m
+              [36m>[39m
+                [0mEn yakın nöbetçi eczaneye tek dokunuş.[0m
+              [36m</p>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center gap-2"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-bold transition active:scale-95 border bg-neutral-900 hover:bg-neutral-800 border-neutral-800 text-neutral-300"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-glasses h-4 w-4 shrink-0"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"24"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"24"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<circle[39m
+                  [33mcx[39m=[32m"6"[39m
+                  [33mcy[39m=[32m"15"[39m
+                  [33mr[39m=[32m"4"[39m
+                [36m/>[39m
+                [36m<circle[39m
+                  [33mcx[39m=[32m"18"[39m
+                  [33mcy[39m=[32m"15"[39m
+                  [33mr[39m=[32m"4"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M14 15a2 2 0 0 0-2-2 2 2 0 0 0-2 2"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M2.5 13 5 7c.7-1.3 1.4-2 3-2"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M21.5 13 19 7c-.7-1.3-1.5-2-3-2"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [0mBüyük Yazı[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-bold transition active:scale-95 border bg-neutral-900 hover:bg-neutral-800 border-neutral-800 text-neutral-300"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-refresh-cw h-3.5 w-3.5"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"24"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"24"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M21 3v5h-5"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M8 16H3v5"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [0mYenile[0m
+            [36m</button>[39m
+          [36m</div>[39m
+        [36m</header>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"mb-5 space-y-3"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"rounded-2xl bg-emerald-500/5 border border-emerald-500/10 p-3 text-center flex flex-col items-center justify-center gap-1.5"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex items-center gap-1.5"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-shield-check h-4 w-4 text-emerald-400 animate-pulse"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"24"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"24"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"m9 12 2 2 4-4"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [36m<span[39m
+ ...
+[90m [2m❯[22m Object.getElementError ../../repo/node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m❯[22m ../../repo/node_modules/@testing-library/dom/dist/query-helpers.js:[2m76:38[22m[39m
+[90m [2m❯[22m ../../repo/node_modules/@testing-library/dom/dist/query-helpers.js:[2m52:17[22m[39m
+[90m [2m❯[22m ../../repo/node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m❯[22m tests/home-results.test.tsx:[2m184:28[22m[39m
+    [90m182|[39m     [35mawait[39m [34mloadPage[39m()[33m;[39m
+    [90m183|[39m     [34mexpand[39m()[33m;[39m
+    [90m184|[39m     fireEvent.click(screen.getByRole("button", { name: /Başka Bir İl \…
+    [90m   |[39m                            [31m^[39m
+    [90m185|[39m     [34mexpect[39m(screen[33m.[39m[34mgetByPlaceholderText[39m([36m/İl ara/[39m))[33m.[39m[34mtoBeTruthy[39m()[33m;[39m
+    [90m186|[39m     fireEvent[33m.[39m[34mclick[39m(screen[33m.[39m[34mgetByRole[39m([32m"button"[39m[33m,[39m { name[33m:[39m [32m"Kapat"[39m }))[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/7]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m7 failed[39m[22m[2m | [22m[1m[32m4 passed[39m[22m[90m (11)[39m
+[2m   Start at [22m 12:46:04
+[2m   Duration [22m 6.00s[2m (transform 501ms, setup 0ms, import 1.21s, tests 3.24s, environment 1.10s)[22m
+

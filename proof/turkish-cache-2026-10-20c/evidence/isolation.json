@@ -1,0 +1,9 @@
+{
+  "parent_commit": "a19404206966f7abe4ea6a37f8bba62eb91d5c1f",
+  "parent_tree": "37da218ddf02567fd86fb6d0f80edf613a3cb0d3",
+  "parent_source_manifest_sha256": "2b3685b4df1c670301b784efb0a476f3acb92201b9ded4356d4fc02e09de9550",
+  "copied_source_files_verified": 102,
+  "dependencies": "owned copy via cp -a --reflink=auto; no install or network",
+  "browser_source_sha256": "50bd583e099b6277ef9b8214181fda96c3df249d6746a260cd025fe0d6a398c8",
+  "lock_sha256": "fb935c07a027102acb5247aaa2c758e803e756d3d6e40943d1431805c6eabca4"
+}

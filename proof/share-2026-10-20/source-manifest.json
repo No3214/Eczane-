@@ -1,0 +1,67 @@
+{
+  "repository": "No3214/Eczane-",
+  "parent_commit": "2f733bc472f0aea50e37afc8ec2214a87ecf8ba5",
+  "parent_tree": "e745555eef38c4b26f72b31c92f219fd72467f6a",
+  "materialized_parent_blobs_verified": 97,
+  "candidate_source_files_monitored": 98,
+  "parent_blob_count": 422,
+  "unmaterialized_parent_blobs": 325,
+  "unmaterialized_scope": "Historical/agent entries are not represented as newly audited; preserve the complete parent tree.",
+  "retained_parent_provenance_sha256": "d33638e10c3acfdc8c6cdb484f07ad2d9a2aa173d2da20ef73a6e78a955a9089",
+  "recovered_v2_original_manifest_sha256": "f9e75f632753531e3b0fc9fdbdfc84ee25280812190872cf98bfe448f3a19fd2",
+  "recovered_v2_frozen_at_utc": "2026-10-20T03:04:40.466050+00:00",
+  "recovered_v2_patch": "recovered-v2.patch",
+  "final_patch": "final-candidate.patch",
+  "changes": [
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "old_git_blob_sha": "8d4eb98e33c4166537dadec5adec8be691c99e16",
+      "recovered_v2_git_blob_sha": "8d4eb98e33c4166537dadec5adec8be691c99e16",
+      "changed_since_recovered_v2": true,
+      "bytes": 667,
+      "sha256": "e047bd384439081ceac27ab9b9fd5f7d7423cad4f3e754a1b7b74b4fd01cb2f1",
+      "git_blob_sha": "3a8184d61d2628baf1f48f5caa2d84bd5f0cbbdf"
+    },
+    {
+      "path": "eslint.config.mjs",
+      "mode": "100644",
+      "old_git_blob_sha": "05e726d1b4201bc8c7716d2b058279676582e8c0",
+      "recovered_v2_git_blob_sha": "05e726d1b4201bc8c7716d2b058279676582e8c0",
+      "changed_since_recovered_v2": true,
+      "bytes": 554,
+      "sha256": "1473b4313fc9a03b2904e82d695e2c9ad7c34b52736342d29a5ba8652349a5f9",
+      "git_blob_sha": "9df381212807a081d673d8221f8c82a8f8efd15d"
+    },
+    {
+      "path": "components/PharmacyCard.tsx",
+      "mode": "100644",
+      "old_git_blob_sha": "b7689a6ab92d6ee945a302b43c5edd9667a6dba0",
+      "recovered_v2_git_blob_sha": "0abe23b0cdc1031866d832692df2233aed985d97",
+      "changed_since_recovered_v2": true,
+      "bytes": 12745,
+      "sha256": "c2f6d11872a33fe2d710d2f0a57f3ef1d254fa84c1c157dec0bcef7ef205679b",
+      "git_blob_sha": "a02e794775d1e7d8f016358c1678f1af131f4802"
+    },
+    {
+      "path": "package.json",
+      "mode": "100644",
+      "old_git_blob_sha": "0e0c6ed1b805e17403d8c3aa9d182dfeae998278",
+      "recovered_v2_git_blob_sha": "24e6120cec2e8d90388c1b4329c3be0fed21a4ac",
+      "changed_since_recovered_v2": false,
+      "bytes": 1283,
+      "sha256": "558370050c259dc7d0445ae6f1a1945447150685f8e20c3ac0c80318398a3848",
+      "git_blob_sha": "24e6120cec2e8d90388c1b4329c3be0fed21a4ac"
+    },
+    {
+      "path": "tests/pharmacy-share.node.cjs",
+      "mode": "100644",
+      "old_git_blob_sha": null,
+      "recovered_v2_git_blob_sha": "340229168bca1fe2bc26595783d413fc5b75853f",
+      "changed_since_recovered_v2": true,
+      "bytes": 13597,
+      "sha256": "d1ef650b12ea98edbf6fbc3643eee99908e3b36b5c5870d2df332c94a2b95eeb",
+      "git_blob_sha": "708646c499a8ee88997112de06ee8571cafff2c4"
+    }
+  ]
+}

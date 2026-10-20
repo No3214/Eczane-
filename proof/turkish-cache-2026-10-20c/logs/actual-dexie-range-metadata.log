@@ -1,0 +1,99 @@
+{
+  "packageVersion": "4.4.3",
+  "modulePath": "/workspace/scratch/c1829247bf0c/continuation-20261020c/eczane-followup/repo/node_modules/dexie/dist/dexie.js",
+  "packagePath": "/workspace/scratch/c1829247bf0c/continuation-20261020c/eczane-followup/repo/node_modules/dexie/package.json",
+  "hashesBefore": {
+    "module": "657d3e778a0ae98058c2ceb7c8cb0aeebc3b9f4ed936d6c4753387b1f0dbfedc",
+    "package": "2887ae27084be63eae7d1710cb3817f88a57dc1926a4bf873725dfa326bd7f5d"
+  },
+  "hashesAfter": {
+    "module": "657d3e778a0ae98058c2ceb7c8cb0aeebc3b9f4ed936d6c4753387b1f0dbfedc",
+    "package": "2887ae27084be63eae7d1710cb3817f88a57dc1926a4bf873725dfa326bd7f5d"
+  },
+  "filesUnchanged": true,
+  "databaseOpened": false,
+  "indexedDbImplementation": "none",
+  "keyRangePresenceOnly": "inert empty object; no methods",
+  "observed": [
+    {
+      "query": "İzmir",
+      "range": {
+        "type": 2,
+        "lower": "İZMIR",
+        "upper": "i̇zmir"
+      },
+      "lowerCodePoints": [
+        "U+0130",
+        "U+005A",
+        "U+004D",
+        "U+0049",
+        "U+0052"
+      ],
+      "upperCodePoints": [
+        "U+0069",
+        "U+0307",
+        "U+007A",
+        "U+006D",
+        "U+0069",
+        "U+0072"
+      ],
+      "lowerGreaterThanUpper": true,
+      "storedIzmirWithinRange": false,
+      "queryDefaultLower": "i̇zmir",
+      "queryTurkishLower": "izmir"
+    },
+    {
+      "query": "izmir",
+      "range": {
+        "type": 2,
+        "lower": "IZMIR",
+        "upper": "izmir"
+      },
+      "lowerCodePoints": [
+        "U+0049",
+        "U+005A",
+        "U+004D",
+        "U+0049",
+        "U+0052"
+      ],
+      "upperCodePoints": [
+        "U+0069",
+        "U+007A",
+        "U+006D",
+        "U+0069",
+        "U+0072"
+      ],
+      "lowerGreaterThanUpper": false,
+      "storedIzmirWithinRange": false,
+      "queryDefaultLower": "izmir",
+      "queryTurkishLower": "izmir"
+    },
+    {
+      "query": "Iğdır",
+      "range": {
+        "type": 2,
+        "lower": "IĞDIR",
+        "upper": "iğdır"
+      },
+      "lowerCodePoints": [
+        "U+0049",
+        "U+011E",
+        "U+0044",
+        "U+0049",
+        "U+0052"
+      ],
+      "upperCodePoints": [
+        "U+0069",
+        "U+011F",
+        "U+0064",
+        "U+0131",
+        "U+0072"
+      ],
+      "lowerGreaterThanUpper": false,
+      "storedIzmirWithinRange": false,
+      "queryDefaultLower": "iğdır",
+      "queryTurkishLower": "ığdır"
+    }
+  ],
+  "limit": "Inspects actual Dexie collection range only; no IndexedDB operation or exception was executed. Hosted trace separately records Dexie read error prefixes without an exposed exception type."
+}

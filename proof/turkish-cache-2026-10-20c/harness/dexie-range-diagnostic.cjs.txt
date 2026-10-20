@@ -1,0 +1,33 @@
+/* Inspect real installed Dexie query metadata without opening IndexedDB. */
+const fs = require('node:fs');
+const path = require('node:path');
+const crypto = require('node:crypto');
+const modulePath = path.join(__dirname, 'repo/node_modules/dexie/dist/dexie.js');
+const packagePath = path.join(__dirname, 'repo/node_modules/dexie/package.json');
+const digest = file => crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');
+const before = { module: digest(modulePath), package: digest(packagePath) };
+const Dexie = require(modulePath);
+// Node has no IndexedDB. Dexie checks presence before constructing a collection;
+// this inert object supplies no methods and cannot execute an IndexedDB action.
+const database = new Dexie('diagnostic-not-opened', { IDBKeyRange: Object.freeze({}) });
+database.version(1).stores({ pharmacies: 'id, city, district' });
+const points = text => [...text].map(char => 'U+' + char.codePointAt(0).toString(16).toUpperCase().padStart(4, '0'));
+const records = ['İzmir', 'izmir', 'Iğdır'].map(query => {
+  const collection = database.table('pharmacies').where('city').equalsIgnoreCase(query);
+  const range = collection._ctx.range;
+  return {
+    query, range, lowerCodePoints: points(range.lower), upperCodePoints: points(range.upper),
+    lowerGreaterThanUpper: range.lower > range.upper,
+    storedIzmirWithinRange: 'İzmir' >= range.lower && 'İzmir' <= range.upper,
+    queryDefaultLower: query.toLowerCase(), queryTurkishLower: query.toLocaleLowerCase('tr-TR'),
+  };
+});
+const after = { module: digest(modulePath), package: digest(packagePath) };
+if (JSON.stringify(before) !== JSON.stringify(after)) throw new Error('Dependency bytes changed');
+if (!records[0].lowerGreaterThanUpper || records[1].storedIzmirWithinRange) throw new Error('Expected actual Dexie range regression not reproduced');
+fs.writeSync(1, JSON.stringify({
+  packageVersion: JSON.parse(fs.readFileSync(packagePath, 'utf8')).version,
+  modulePath, packagePath, hashesBefore: before, hashesAfter: after, filesUnchanged: true,
+  databaseOpened: false, indexedDbImplementation: 'none', keyRangePresenceOnly: 'inert empty object; no methods', observed: records,
+  limit: 'Inspects actual Dexie collection range only; no IndexedDB operation or exception was executed. Hosted trace separately records Dexie read error prefixes without an exposed exception type.',
+}, null, 2) + '\n');

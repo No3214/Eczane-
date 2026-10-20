@@ -1,52 +1,127 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { Pharmacy } from "@/types/pharmacy";
 import { db } from "@/lib/db";
-import { calculateDistanceKm } from "@/lib/distance";
+
+type SearchQuery = { kind: "gps"; lat: number; lng: number }
+  | { kind: "area"; city: string; district: string };
+
+const CACHE_KEY = "last_viewed_pharmacies";
+const normalizeArea = (value: string) => value.trim().toLocaleLowerCase("tr-TR");
+
+function searchQuery(lat?: number, lng?: number, city?: string, district?: string): SearchQuery | null {
+  if (lat !== undefined && lng !== undefined) {
+    return Number.isFinite(lat) && Number.isFinite(lng) ? { kind: "gps", lat, lng } : null;
+  }
+  return city?.trim() && district?.trim()
+    ? { kind: "area", city: city.trim(), district: district.trim() } : null;
+}
+
+function queryKey(query: SearchQuery): string {
+  return JSON.stringify(query.kind === "area"
+    ? { kind: "area", city: normalizeArea(query.city), district: normalizeArea(query.district) }
+    : query);
+}
+
+function isCachedPharmacy(value: unknown): value is Pharmacy {
+  if (!value || typeof value !== "object") return false;
+  const row = value as Partial<Pharmacy>;
+  return [row.id, row.name, row.city, row.district, row.address, row.phone].every(field => typeof field === "string")
+    && typeof row.latitude === "number" && Number.isFinite(row.latitude)
+    && typeof row.longitude === "number" && Number.isFinite(row.longitude);
+}
+
+function scopedRows(value: unknown, query: SearchQuery): Pharmacy[] | null {
+  if (!Array.isArray(value)) return null;
+  const rows = value.filter(isCachedPharmacy).filter(row => query.kind === "gps"
+    || (normalizeArea(row.city) === normalizeArea(query.city)
+      && normalizeArea(row.district) === normalizeArea(query.district)));
+  // An actual empty snapshot is meaningful; an invalid/mismatched list is a miss.
+  return value.length > 0 && rows.length === 0 ? null : rows;
+}
+
+function readBrowserCache(query: SearchQuery | null): Pharmacy[] | null {
+  if (!query || typeof window === "undefined") return null;
+  try {
+    const cached: unknown = JSON.parse(localStorage.getItem(CACHE_KEY) || "null");
+    if (cached && typeof cached === "object" && !Array.isArray(cached)) {
+      const snapshot = cached as { version?: unknown; query?: unknown; pharmacies?: unknown };
+      if (snapshot.version === 1 && snapshot.query === queryKey(query)) {
+        return scopedRows(snapshot.pharmacies, query);
+      }
+    }
+    // Legacy manual rows can be checked against their own area fields. A legacy
+    // GPS list has no atomic query binding and must not be assigned to a location.
+    if (Array.isArray(cached) && query.kind === "area") {
+      const legacy: unknown = JSON.parse(localStorage.getItem("last_search_query") || "null");
+      if (legacy && typeof legacy === "object") {
+        const area = legacy as { city?: unknown; district?: unknown };
+        if (typeof area.city === "string" && typeof area.district === "string"
+          && normalizeArea(area.city) === normalizeArea(query.city)
+          && normalizeArea(area.district) === normalizeArea(query.district)) {
+          return scopedRows(cached, query);
+        }
+      }
+    }
+  } catch (cacheError) {
+    console.error("Browser pharmacy cache read error:", cacheError);
+  }
+  return null;
+}
 
 export function usePharmacies() {
   const [pharmacies, setPharmacies] = useState<Pharmacy[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isOfflineData, setIsOfflineData] = useState(false);
+  const latestRequest = useRef(0);
+  const mounted = useRef(true);
+
+  useEffect(() => {
+    mounted.current = true;
+    return () => {
+      mounted.current = false;
+      latestRequest.current += 1;
+    };
+  }, []);
 
   const fetchPharmacies = useCallback(async (lat?: number, lng?: number, city?: string, district?: string) => {
+    if (!mounted.current) return;
+    const requestId = ++latestRequest.current;
+    const isCurrent = () => mounted.current && latestRequest.current === requestId;
+    const query = searchQuery(lat, lng, city, district);
     setLoading(true);
     setError(null);
     setIsOfflineData(false);
     try {
       let url = "/api/pharmacies?";
       if (lat !== undefined && lng !== undefined) {
-        url += `lat=${lat}&lng=${lng}`;
+        url += "lat=" + lat + "&lng=" + lng;
       } else if (city && district) {
-        url += `city=${encodeURIComponent(city)}&district=${encodeURIComponent(district)}`;
+        url += "city=" + encodeURIComponent(city) + "&district=" + encodeURIComponent(district);
       }
 
       const res = await fetch(url);
+      if (!isCurrent()) return;
       const resData = await res.json();
+      if (!isCurrent()) return;
 
-      if (resData.success) {
+      if (res.ok && resData.success && Array.isArray(resData.data)) {
         const fetchedList: Pharmacy[] = resData.data;
         setPharmacies(fetchedList);
-        
-        // Save to localStorage for quick offline recovery
-        if (typeof window !== "undefined") {
-          localStorage.setItem("last_viewed_pharmacies", JSON.stringify(fetchedList));
-          if (city && district) {
-            localStorage.setItem("last_search_query", JSON.stringify({ city, district }));
-          } else if (lat !== undefined && lng !== undefined) {
-            localStorage.setItem("last_search_query", JSON.stringify({ lat, lng }));
+
+        // Store query and rows together, so a failed second storage write or
+        // another tab cannot pair one area's tag with another area's results.
+        if (query && typeof window !== "undefined") {
+          try {
+            localStorage.setItem(CACHE_KEY, JSON.stringify({ version: 1, query: queryKey(query), pharmacies: fetchedList }));
+          } catch (cacheError) {
+            console.error("Browser pharmacy cache write error:", cacheError);
           }
         }
-        
-        // Cache in Dexie DB
+
         try {
           if (fetchedList.length > 0) {
-            await db.pharmacies.bulkPut(
-              fetchedList.map(p => ({
-                ...p,
-                timestamp: Date.now()
-              }))
-            );
+            await db.pharmacies.bulkPut(fetchedList.map(p => ({ ...p, timestamp: Date.now() })));
           }
         } catch (dbErr) {
           console.error("Dexie cache error:", dbErr);
@@ -55,65 +130,35 @@ export function usePharmacies() {
         throw new Error(resData.error || "Eczaneler çekilemedi.");
       }
     } catch (err) {
+      if (!isCurrent()) return;
       console.error("Fetch pharmacies error, falling back to local database:", err);
-      
-      // Attempt to retrieve from localStorage first
-      let cached: Pharmacy[] = [];
-      if (typeof window !== "undefined") {
-        const localData = localStorage.getItem("last_viewed_pharmacies");
-        if (localData) {
-          try {
-            cached = JSON.parse(localData);
-          } catch (e) {
-            console.error("Error parsing localStorage cache:", e);
-          }
-        }
-      }
+      let cached = readBrowserCache(query);
 
-      // If localStorage is empty, try Dexie DB
-      if (cached.length === 0) {
+      // IndexedDB rows carry an area but no GPS search identity. Reusing arbitrary
+      // nearest rows cannot prove that they belong to the current GPS query.
+      if (cached === null && query?.kind === "area") {
         try {
-          if (city && district) {
-            cached = await db.pharmacies
-              .where("city")
-              .equalsIgnoreCase(city)
-              .filter(p => p.district.toLowerCase() === district.toLowerCase())
-              .toArray();
-          } else if (lat !== undefined && lng !== undefined) {
-            const allCached = await db.pharmacies.toArray();
-            cached = allCached
-              .map(p => {
-                const dist = calculateDistanceKm(lat, lng, p.latitude, p.longitude);
-                return { ...p, distance: dist };
-              })
-              .sort((a, b) => (a.distance ?? 0) - (b.distance ?? 0))
-              .slice(0, 5);
-          } else {
-            cached = await db.pharmacies.limit(10).toArray();
-          }
+          // Dexie's indexed case folding is not Turkish-aware. Validate and
+          // match both area fields with the same normalization as browser cache.
+          const rows = await db.pharmacies.toArray();
+          cached = scopedRows(rows, query);
         } catch (dbErr) {
           console.error("Dexie read error:", dbErr);
         }
       }
+      if (!isCurrent()) return;
 
-      if (cached.length > 0) {
-        setPharmacies(cached);
+      setPharmacies(cached || []);
+      if (cached && cached.length > 0) {
         setIsOfflineData(true);
         setError("İnternet bağlantısı yok. Bilgiler yerel veritabanı önbelleğinden yüklendi.");
       } else {
         setError("İnternet bağlantı hatası ve yerel veritabanında kayıtlı eczane bulunamadı.");
       }
     } finally {
-      setLoading(false);
+      if (isCurrent()) setLoading(false);
     }
   }, []);
 
-  return {
-    pharmacies,
-    loading,
-    error,
-    isOfflineData,
-    fetchPharmacies
-  };
+  return { pharmacies, loading, error, isOfflineData, fetchPharmacies };
 }
-

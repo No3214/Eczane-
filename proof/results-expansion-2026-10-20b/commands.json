@@ -1,0 +1,359 @@
+{
+  "format": "EXACT_RECEIPT_VALUES_WITH_ORIGINAL_RECEIPT_HASHES",
+  "commands": [
+    {
+      "classification": "FINAL_TEST_BYTES_ON_UNCHANGED_PARENT_EXPECTED_FAIL",
+      "original_receipt_sha256": "50cec7141b324f9541467cb40f505d76f8ebd7be852910fac7c74875e4a2cc32",
+      "raw_log": "logs/final-tests-parent-red.log",
+      "network_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt": {
+        "label": "final-tests-parent-red",
+        "command": [
+          "node",
+          "node_modules/vitest/vitest.mjs",
+          "run",
+          "tests/home-results.test.tsx"
+        ],
+        "cwd": "/workspace/scratch/c1829247bf0c/continuation-20261020b/eczane/parent-red/repo",
+        "started_at_utc": "2026-10-20T12:46:04.377845+00:00",
+        "timeout_seconds": 120,
+        "environment": {
+          "minimal_environment": true,
+          "provider_credentials": "not inherited",
+          "TZ": "UTC",
+          "CI": "1",
+          "external_node_network": "blocked by preload",
+          "runtime_sandbox_network": "restricted"
+        },
+        "source_before": {
+          "verified_files": 100,
+          "mismatches": []
+        },
+        "source_manifest_sha256": "9faf1bbe2691fc92278b013b7bfd6540d45a60409d99f5190800f11aec830c86",
+        "runner_sha256": "aeb8b0d0af7696fb2fc4591279b166008f126e717edfe463a3f5d2f32f12e4f2",
+        "network_guard_sha256": "8e968739063ec5c694c2e23056c5c1b7476389ea7385fca8c674d08fe10357e8",
+        "ended_at_utc": "2026-10-20T12:46:10.988233+00:00",
+        "exit_code": 1,
+        "elapsed_seconds": 6.61,
+        "log_path": "/workspace/scratch/c1829247bf0c/continuation-20261020b/eczane/parent-red/logs/final-tests-parent-red.log",
+        "log_sha256": "a11756ab9279a06b0e0af7c3dec4c0ec3180f374b4fa3d78166b511fa33e0337",
+        "network_log_path": "/workspace/scratch/c1829247bf0c/continuation-20261020b/eczane/parent-red/logs/final-tests-parent-red-network.ndjson",
+        "network_blocked_attempts": 0,
+        "source_after": {
+          "verified_files": 100,
+          "mismatches": []
+        }
+      }
+    },
+    {
+      "classification": "FULL_TEST_CHAIN_PASS",
+      "original_receipt_sha256": "384443a89efabb7f1c72a059a338960a41cb539a6a170910e527a93fa048abca",
+      "raw_log": "logs/final-npm-test.log",
+      "network_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt": {
+        "label": "final-npm-test",
+        "command": [
+          "npm",
+          "test"
+        ],
+        "cwd": "/workspace/scratch/c1829247bf0c/continuation-20261020b/eczane/repo",
+        "started_at_utc": "2026-10-20T12:43:32.771253+00:00",
+        "timeout_seconds": 180,
+        "environment": {
+          "minimal_environment": true,
+          "provider_credentials": "not inherited",
+          "TZ": "UTC",
+          "CI": "1",
+          "external_node_network": "blocked by preload",
+          "runtime_sandbox_network": "restricted"
+        },
+        "source_before": {
+          "verified_files": 100,
+          "mismatches": []
+        },
+        "source_manifest_sha256": "c3c83b8a2f6f7e7e3ba11eaed7313c78fe62501e0afe44297291ae6d9a210b84",
+        "runner_sha256": "aeb8b0d0af7696fb2fc4591279b166008f126e717edfe463a3f5d2f32f12e4f2",
+        "network_guard_sha256": "8e968739063ec5c694c2e23056c5c1b7476389ea7385fca8c674d08fe10357e8",
+        "ended_at_utc": "2026-10-20T12:43:43.910014+00:00",
+        "exit_code": 0,
+        "elapsed_seconds": 11.139,
+        "log_path": "/workspace/scratch/c1829247bf0c/continuation-20261020b/eczane/logs/final-npm-test.log",
+        "log_sha256": "d46387faba1d4966776bfb185d224fac5c1a4b9cdf85fe9e970e05b7f89aabde",
+        "network_log_path": "/workspace/scratch/c1829247bf0c/continuation-20261020b/eczane/logs/final-npm-test-network.ndjson",
+        "network_blocked_attempts": 0,
+        "source_after": {
+          "verified_files": 100,
+          "mismatches": []
+        }
+      }
+    },
+    {
+      "classification": "STRICT_TYPES_PASS_BEFORE_BROWSER_ONLY_FIXTURE_CHANGE",
+      "original_receipt_sha256": "ee9163336c14694545d8ccfb1c9c4bee8eba5602262dd3f8de424c05312531cc",
+      "raw_log": "logs/final-strict-types.log",
+      "network_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt": {
+        "label": "final-strict-types",
+        "command": [
+          "node",
+          "node_modules/typescript/bin/tsc",
+          "--noEmit",
+          "--incremental",
+          "false",
+          "--strict"
+        ],
+        "cwd": "/workspace/scratch/c1829247bf0c/continuation-20261020b/eczane/repo",
+        "started_at_utc": "2026-10-20T12:43:32.786774+00:00",
+        "timeout_seconds": 120,
+        "environment": {
+          "minimal_environment": true,
+          "provider_credentials": "not inherited",
+          "TZ": "UTC",
+          "CI": "1",
+          "external_node_network": "blocked by preload",
+          "runtime_sandbox_network": "restricted"
+        },
+        "source_before": {
+          "verified_files": 100,
+          "mismatches": []
+        },
+        "source_manifest_sha256": "c3c83b8a2f6f7e7e3ba11eaed7313c78fe62501e0afe44297291ae6d9a210b84",
+        "runner_sha256": "aeb8b0d0af7696fb2fc4591279b166008f126e717edfe463a3f5d2f32f12e4f2",
+        "network_guard_sha256": "8e968739063ec5c694c2e23056c5c1b7476389ea7385fca8c674d08fe10357e8",
+        "ended_at_utc": "2026-10-20T12:43:44.040829+00:00",
+        "exit_code": 0,
+        "elapsed_seconds": 11.254,
+        "log_path": "/workspace/scratch/c1829247bf0c/continuation-20261020b/eczane/logs/final-strict-types.log",
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "network_log_path": "/workspace/scratch/c1829247bf0c/continuation-20261020b/eczane/logs/final-strict-types-network.ndjson",
+        "network_blocked_attempts": 0,
+        "source_after": {
+          "verified_files": 100,
+          "mismatches": []
+        }
+      }
+    },
+    {
+      "classification": "FINAL_SOURCE_WEBPACK_BUILD_AND_TYPES_PASS",
+      "original_receipt_sha256": "6a1993bce14465eae126199b8f5c1f194fe0ae8a40e76445cd061cc22b337807",
+      "raw_log": "logs/webpack-production-build.log",
+      "network_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt": {
+        "label": "webpack-production-build",
+        "command": [
+          "npm",
+          "run",
+          "build",
+          "--",
+          "--webpack"
+        ],
+        "cwd": "/workspace/scratch/c1829247bf0c/continuation-20261020b/eczane/repo",
+        "started_at_utc": "2026-10-20T12:44:07.444536+00:00",
+        "timeout_seconds": 240,
+        "environment": {
+          "minimal_environment": true,
+          "provider_credentials": "not inherited",
+          "TZ": "UTC",
+          "CI": "1",
+          "external_node_network": "blocked by preload",
+          "runtime_sandbox_network": "restricted"
+        },
+        "source_before": {
+          "verified_files": 100,
+          "mismatches": []
+        },
+        "source_manifest_sha256": "970bb4485087fe8d1b3e8cc8c786b76bea80826425280c37d71a3b7eb29d76e2",
+        "runner_sha256": "aeb8b0d0af7696fb2fc4591279b166008f126e717edfe463a3f5d2f32f12e4f2",
+        "network_guard_sha256": "8e968739063ec5c694c2e23056c5c1b7476389ea7385fca8c674d08fe10357e8",
+        "ended_at_utc": "2026-10-20T12:44:58.152517+00:00",
+        "exit_code": 0,
+        "elapsed_seconds": 50.708,
+        "log_path": "/workspace/scratch/c1829247bf0c/continuation-20261020b/eczane/logs/webpack-production-build.log",
+        "log_sha256": "b898bc9dc1fc1f7a5ea6d605911dbb44b781ed967061d7b7ab248bfd8fe29002",
+        "network_log_path": "/workspace/scratch/c1829247bf0c/continuation-20261020b/eczane/logs/webpack-production-build-network.ndjson",
+        "network_blocked_attempts": 0,
+        "source_after": {
+          "verified_files": 100,
+          "mismatches": []
+        }
+      }
+    },
+    {
+      "classification": "FINAL_SOURCE_LINT_PASS_THREE_EXISTING_WARNINGS",
+      "original_receipt_sha256": "f55e5a4506f77318bdb8b463eff6857bba594063b22adce410352b655ff7d1f5",
+      "raw_log": "logs/postbuild-lint.log",
+      "network_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt": {
+        "label": "postbuild-lint",
+        "command": [
+          "npm",
+          "run",
+          "lint"
+        ],
+        "cwd": "/workspace/scratch/c1829247bf0c/continuation-20261020b/eczane/repo",
+        "started_at_utc": "2026-10-20T12:45:25.161860+00:00",
+        "timeout_seconds": 120,
+        "environment": {
+          "minimal_environment": true,
+          "provider_credentials": "not inherited",
+          "TZ": "UTC",
+          "CI": "1",
+          "external_node_network": "blocked by preload",
+          "runtime_sandbox_network": "restricted"
+        },
+        "source_before": {
+          "verified_files": 100,
+          "mismatches": []
+        },
+        "source_manifest_sha256": "970bb4485087fe8d1b3e8cc8c786b76bea80826425280c37d71a3b7eb29d76e2",
+        "runner_sha256": "aeb8b0d0af7696fb2fc4591279b166008f126e717edfe463a3f5d2f32f12e4f2",
+        "network_guard_sha256": "8e968739063ec5c694c2e23056c5c1b7476389ea7385fca8c674d08fe10357e8",
+        "ended_at_utc": "2026-10-20T12:45:32.950953+00:00",
+        "exit_code": 0,
+        "elapsed_seconds": 7.789,
+        "log_path": "/workspace/scratch/c1829247bf0c/continuation-20261020b/eczane/logs/postbuild-lint.log",
+        "log_sha256": "a3908bc8423b8db493a2127ced3d243ac554e37edcb36f2e456930ed2aca0735",
+        "network_log_path": "/workspace/scratch/c1829247bf0c/continuation-20261020b/eczane/logs/postbuild-lint-network.ndjson",
+        "network_blocked_attempts": 0,
+        "source_after": {
+          "verified_files": 100,
+          "mismatches": []
+        }
+      }
+    },
+    {
+      "classification": "DISCOVERY_ONLY_NOT_BROWSER_EXECUTION",
+      "original_receipt_sha256": "d9ca25ec900714e016de1d63138cc7bac0c1054464a53f0d820e0849a9098a16",
+      "raw_log": "logs/playwright-discovery.log",
+      "network_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt": {
+        "label": "playwright-discovery",
+        "command": [
+          "node",
+          "node_modules/playwright/cli.js",
+          "test",
+          "--list"
+        ],
+        "cwd": "/workspace/scratch/c1829247bf0c/continuation-20261020b/eczane/repo",
+        "started_at_utc": "2026-10-20T12:43:00.186777+00:00",
+        "timeout_seconds": 60,
+        "environment": {
+          "minimal_environment": true,
+          "provider_credentials": "not inherited",
+          "TZ": "UTC",
+          "CI": "1",
+          "external_node_network": "blocked by preload",
+          "runtime_sandbox_network": "restricted"
+        },
+        "source_before": {
+          "verified_files": 100,
+          "mismatches": []
+        },
+        "source_manifest_sha256": "be11cc25ada896eb83447020e2cc9505d3f13c8fa9106cea2c268390183f724c",
+        "runner_sha256": "aeb8b0d0af7696fb2fc4591279b166008f126e717edfe463a3f5d2f32f12e4f2",
+        "network_guard_sha256": "8e968739063ec5c694c2e23056c5c1b7476389ea7385fca8c674d08fe10357e8",
+        "ended_at_utc": "2026-10-20T12:43:02.303608+00:00",
+        "exit_code": 0,
+        "elapsed_seconds": 2.117,
+        "log_path": "/workspace/scratch/c1829247bf0c/continuation-20261020b/eczane/logs/playwright-discovery.log",
+        "log_sha256": "d453f3be1de004098603ada6962d0de3b99b997528747b2b117a46024d871439",
+        "network_log_path": "/workspace/scratch/c1829247bf0c/continuation-20261020b/eczane/logs/playwright-discovery-network.ndjson",
+        "network_blocked_attempts": 0,
+        "source_after": {
+          "verified_files": 100,
+          "mismatches": []
+        }
+      }
+    },
+    {
+      "classification": "INTERMEDIATE_PENDING_QUERY_REGRESSION_EXPECTED_FAIL",
+      "original_receipt_sha256": "6b02560ffef6c1e0338325877f674586d8974e7bd400b75045a2bfdf7f23d726",
+      "raw_log": "logs/pending-query-red.log",
+      "network_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt": {
+        "label": "pending-query-red",
+        "command": [
+          "node",
+          "node_modules/vitest/vitest.mjs",
+          "run",
+          "tests/home-results.test.tsx"
+        ],
+        "cwd": "/workspace/scratch/c1829247bf0c/continuation-20261020b/eczane/repo",
+        "started_at_utc": "2026-10-20T12:41:50.983881+00:00",
+        "timeout_seconds": 120,
+        "environment": {
+          "minimal_environment": true,
+          "provider_credentials": "not inherited",
+          "TZ": "UTC",
+          "CI": "1",
+          "external_node_network": "blocked by preload",
+          "runtime_sandbox_network": "restricted"
+        },
+        "source_before": {
+          "verified_files": 99,
+          "mismatches": []
+        },
+        "source_manifest_sha256": "269cfb3c4507a8003af7f70be17c1a99faaa021bd15240c9bc759395d143d2d7",
+        "runner_sha256": "aeb8b0d0af7696fb2fc4591279b166008f126e717edfe463a3f5d2f32f12e4f2",
+        "network_guard_sha256": "8e968739063ec5c694c2e23056c5c1b7476389ea7385fca8c674d08fe10357e8",
+        "ended_at_utc": "2026-10-20T12:41:58.060896+00:00",
+        "exit_code": 1,
+        "elapsed_seconds": 7.077,
+        "log_path": "/workspace/scratch/c1829247bf0c/continuation-20261020b/eczane/logs/pending-query-red.log",
+        "log_sha256": "80cbc60c6f01138a12439900a01c0cfbe86b33aa974238951fbf0fec1d66122b",
+        "network_log_path": "/workspace/scratch/c1829247bf0c/continuation-20261020b/eczane/logs/pending-query-red-network.ndjson",
+        "network_blocked_attempts": 0,
+        "source_after": {
+          "verified_files": 99,
+          "mismatches": []
+        }
+      }
+    },
+    {
+      "classification": "INTERMEDIATE_TEST_TYPE_ERROR_RETAINED",
+      "original_receipt_sha256": "bbd25b380e157067292b7d8eb99250ad7d079b67e275988d4c15f219f890a0b7",
+      "raw_log": "logs/strict-types.log",
+      "network_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt": {
+        "label": "strict-types",
+        "command": [
+          "node",
+          "node_modules/typescript/bin/tsc",
+          "--noEmit",
+          "--incremental",
+          "false",
+          "--strict"
+        ],
+        "cwd": "/workspace/scratch/c1829247bf0c/continuation-20261020b/eczane/repo",
+        "started_at_utc": "2026-10-20T12:43:00.220310+00:00",
+        "timeout_seconds": 120,
+        "environment": {
+          "minimal_environment": true,
+          "provider_credentials": "not inherited",
+          "TZ": "UTC",
+          "CI": "1",
+          "external_node_network": "blocked by preload",
+          "runtime_sandbox_network": "restricted"
+        },
+        "source_before": {
+          "verified_files": 100,
+          "mismatches": []
+        },
+        "source_manifest_sha256": "be11cc25ada896eb83447020e2cc9505d3f13c8fa9106cea2c268390183f724c",
+        "runner_sha256": "aeb8b0d0af7696fb2fc4591279b166008f126e717edfe463a3f5d2f32f12e4f2",
+        "network_guard_sha256": "8e968739063ec5c694c2e23056c5c1b7476389ea7385fca8c674d08fe10357e8",
+        "ended_at_utc": "2026-10-20T12:43:10.670474+00:00",
+        "exit_code": 2,
+        "elapsed_seconds": 10.45,
+        "log_path": "/workspace/scratch/c1829247bf0c/continuation-20261020b/eczane/logs/strict-types.log",
+        "log_sha256": "7dd66b1131c5169dfefcdc05b86c038ee1e189d9a89fbc0e76ef6f52cb9a099d",
+        "network_log_path": "/workspace/scratch/c1829247bf0c/continuation-20261020b/eczane/logs/strict-types-network.ndjson",
+        "network_blocked_attempts": 0,
+        "source_after": {
+          "verified_files": 100,
+          "mismatches": []
+        }
+      }
+    }
+  ]
+}

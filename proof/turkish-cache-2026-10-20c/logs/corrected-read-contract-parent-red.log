@@ -1,0 +1,200 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.8 [39m[90m/workspace/scratch/c1829247bf0c/continuation-20261020c/eczane-followup/repo[39m
+
+ [31m❯[39m tests/pharmacy-query-ownership.test.tsx [2m([22m[2m27 tests[22m[2m | [22m[31m10 failed[39m[2m)[22m[33m 619[2mms[22m[39m
+     [32m✓[39m ignores an older success after the newer manual query has completed, including cache writes[32m 113[2mms[22m[39m
+     [32m✓[39m also checks ownership after JSON body parsing completes[32m 8[2mms[22m[39m
+     [32m✓[39m does not let an older failed query mark a newer online result as offline[32m 22[2mms[22m[39m
+     [32m✓[39m keeps loading true when an old request fails while a new request is pending[32m 13[2mms[22m[39m
+[31m     [31m×[31m does not apply an old asynchronous database fallback after a newer online result[39m[32m 23[2mms[22m[39m
+     [32m✓[39m keeps the new query loading when the old query's cache write completes[32m 18[2mms[22m[39m
+     [32m✓[39m ignores a response after the hook has unmounted without writing caches[32m 21[2mms[22m[39m
+     [32m✓[39m ignores a retained GPS callback invoked after unmount, while allowing requests after StrictMode effect replay[32m 13[2mms[22m[39m
+     [32m✓[39m restores a matching manual query in a fresh hook instance[32m 93[2mms[22m[39m
+[31m     [31m×[31m uses matching database rows instead of another district's latest browser snapshot[39m[32m 59[2mms[22m[39m
+[31m     [31m×[31m restores only valid matching IndexedDB rows for Turkish city variant İzmir[39m[32m 12[2mms[22m[39m
+[31m     [31m×[31m restores only valid matching IndexedDB rows for Turkish city variant izmir[39m[32m 36[2mms[22m[39m
+[31m     [31m×[31m restores only valid matching IndexedDB rows for Turkish city variant   İZMİR  [39m[32m 9[2mms[22m[39m
+[31m     [31m×[31m matches dotless Turkish I in cached city and district without accepting a different city[39m[32m 14[2mms[22m[39m
+     [32m✓[39m clears the old result when the new area fails and has no matching cached records[32m 13[2mms[22m[39m
+     [32m✓[39m restores a query-tagged GPS snapshot only for the same coordinates[32m 4[2mms[22m[39m
+     [32m✓[39m does not assign a different GPS area's snapshot or arbitrary database records to a new location[32m 4[2mms[22m[39m
+     [32m✓[39m matches Turkish manual-area names across case and surrounding whitespace[32m 4[2mms[22m[39m
+     [32m✓[39m keeps a matching empty snapshot from resurrecting older database records[32m 8[2mms[22m[39m
+     [32m✓[39m filters a matching legacy manual snapshot by both city and district[32m 5[2mms[22m[39m
+     [32m✓[39m rejects a legacy GPS list whose separate query tag cannot establish an atomic snapshot[32m 37[2mms[22m[39m
+[31m     [31m×[31m ignores malformed browser cache and still tries a scoped database fallback: {"unexpected":"shape"}[39m[32m 15[2mms[22m[39m
+[31m     [31m×[31m ignores malformed browser cache and still tries a scoped database fallback: [null][39m[32m 12[2mms[22m[39m
+[31m     [31m×[31m ignores malformed browser cache and still tries a scoped database fallback: {broken[39m[32m 7[2mms[22m[39m
+     [32m✓[39m preserves an online result when browser storage denies writes[32m 4[2mms[22m[39m
+[31m     [31m×[31m falls back to the scoped database even when browser storage denies reads[39m[32m 3[2mms[22m[39m
+     [32m✓[39m does not accept a non-success HTTP response as an online result[32m 5[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 10 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/pharmacy-query-ownership.test.tsx[2m > [22mpharmacy request ownership[2m > [22mdoes not apply an old asynchronous database fallback after a newer online result
+[31m[1mAssertionError[22m: expected "vi.fn()" to be called 1 times, but got 0 times[39m
+[36m [2m❯[22m tests/pharmacy-query-ownership.test.tsx:[2m126:27[22m[39m
+    [90m124|[39m     const oldRequest = begin(hook, undefined, undefined, "İzmir", "Kon…
+    [90m125|[39m     [35mawait[39m [34mact[39m([35masync[39m () [33m=>[39m { [35mawait[39m [33mPromise[39m[33m.[39m[34mresolve[39m()[33m;[39m })[33m;[39m
+    [90m126|[39m     [34mexpect[39m(database[33m.[39mread)[33m.[39m[34mtoHaveBeenCalledTimes[39m([34m1[39m)[33m;[39m
+    [90m   |[39m                           [31m^[39m
+    [90m127|[39m     await load(hook, [bornova], undefined, undefined, "İzmir", "Bornov…
+    [90m128|[39m     await act(async () => { cacheRead.resolve([konak]); await oldReque…
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/10]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/pharmacy-query-ownership.test.tsx[2m > [22moffline results belong to the requested area[2m > [22muses matching database rows instead of another district's latest browser snapshot
+[31m[1mAssertionError[22m: expected [] to deeply equal [ { id: 'query-test-bornova', …(10) } ][39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- [[39m
+[32m-   {[39m
+[32m-     "address": "TEST RECORD — NOT A REAL ADDRESS",[39m
+[32m-     "city": "İzmir",[39m
+[32m-     "district": "Bornova",[39m
+[32m-     "id": "query-test-bornova",[39m
+[32m-     "is_live": false,[39m
+[32m-     "latitude": 38.46,[39m
+[32m-     "longitude": 27.22,[39m
+[32m-     "name": "TEST BORNOVA",[39m
+[32m-     "phone": "",[39m
+[32m-     "source": "mock",[39m
+[32m-     "warning_message": "Yerel test verisidir.",[39m
+[32m-   },[39m
+[32m- ][39m
+[31m+ [][39m
+
+[36m [2m❯[22m tests/pharmacy-query-ownership.test.tsx:[2m202:44[22m[39m
+    [90m200|[39m     fetchMock[33m.[39m[34mmockRejectedValueOnce[39m([35mnew[39m [33mError[39m([32m"offline"[39m))[33m;[39m
+    [90m201|[39m     await finish(begin(hook, undefined, undefined, "İzmir", "Bornova")…
+    [90m202|[39m     [34mexpect[39m(hook[33m.[39mresult[33m.[39mcurrent[33m.[39mpharmacies)[33m.[39m[34mtoEqual[39m([bornova])[33m;[39m
+    [90m   |[39m                                            [31m^[39m
+    [90m203|[39m     [34mexpect[39m(hook[33m.[39mresult[33m.[39mcurrent[33m.[39misOfflineData)[33m.[39m[34mtoBe[39m([35mtrue[39m)[33m;[39m
+    [90m204|[39m   })[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/10]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/pharmacy-query-ownership.test.tsx[2m > [22moffline results belong to the requested area[2m > [22mrestores only valid matching IndexedDB rows for Turkish city variant İzmir
+[41m[1m FAIL [22m[49m tests/pharmacy-query-ownership.test.tsx[2m > [22moffline results belong to the requested area[2m > [22mrestores only valid matching IndexedDB rows for Turkish city variant izmir
+[41m[1m FAIL [22m[49m tests/pharmacy-query-ownership.test.tsx[2m > [22moffline results belong to the requested area[2m > [22mrestores only valid matching IndexedDB rows for Turkish city variant   İZMİR  
+[31m[1mAssertionError[22m: expected "vi.fn()" to be called 1 times, but got 0 times[39m
+[36m [2m❯[22m tests/pharmacy-query-ownership.test.tsx:[2m220:27[22m[39m
+    [90m218|[39m     fetchMock[33m.[39m[34mmockRejectedValueOnce[39m([35mnew[39m [33mError[39m([32m"offline"[39m))[33m;[39m
+    [90m219|[39m     [35mawait[39m [34mfinish[39m([34mbegin[39m(hook[33m,[39m undefined[33m,[39m undefined[33m,[39m city[33m,[39m [32m" konak "[39m))[33m;[39m
+    [90m220|[39m     [34mexpect[39m(database[33m.[39mread)[33m.[39m[34mtoHaveBeenCalledTimes[39m([34m1[39m)[33m;[39m
+    [90m   |[39m                           [31m^[39m
+    [90m221|[39m     [34mexpect[39m(hook[33m.[39mresult[33m.[39mcurrent[33m.[39mpharmacies)[33m.[39m[34mtoEqual[39m([paddedKonak])[33m;[39m
+    [90m222|[39m     [34mexpect[39m(hook[33m.[39mresult[33m.[39mcurrent[33m.[39misOfflineData)[33m.[39m[34mtoBe[39m([35mtrue[39m)[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/10]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/pharmacy-query-ownership.test.tsx[2m > [22moffline results belong to the requested area[2m > [22mmatches dotless Turkish I in cached city and district without accepting a different city
+[31m[1mAssertionError[22m: expected [] to deeply equal [ { id: 'igdir-record', …(10) } ][39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- [[39m
+[32m-   {[39m
+[32m-     "address": "TEST RECORD — NOT A REAL ADDRESS",[39m
+[32m-     "city": " IĞDIR ",[39m
+[32m-     "district": " ARALIK ",[39m
+[32m-     "id": "igdir-record",[39m
+[32m-     "is_live": false,[39m
+[32m-     "latitude": 38.42,[39m
+[32m-     "longitude": 27.13,[39m
+[32m-     "name": "TEST KONAK",[39m
+[32m-     "phone": "",[39m
+[32m-     "source": "mock",[39m
+[32m-     "warning_message": "Yerel test verisidir.",[39m
+[32m-   },[39m
+[32m- ][39m
+[31m+ [][39m
+
+[36m [2m❯[22m tests/pharmacy-query-ownership.test.tsx:[2m231:44[22m[39m
+    [90m229|[39m     fetchMock[33m.[39m[34mmockRejectedValueOnce[39m([35mnew[39m [33mError[39m([32m"offline"[39m))[33m;[39m
+    [90m230|[39m     [35mawait[39m [34mfinish[39m([34mbegin[39m(hook[33m,[39m undefined[33m,[39m undefined[33m,[39m [32m"ığdır"[39m[33m,[39m [32m"aralık"[39m))[33m;[39m
+    [90m231|[39m     [34mexpect[39m(hook[33m.[39mresult[33m.[39mcurrent[33m.[39mpharmacies)[33m.[39m[34mtoEqual[39m([row])[33m;[39m
+    [90m   |[39m                                            [31m^[39m
+    [90m232|[39m     [34mexpect[39m(hook[33m.[39mresult[33m.[39mcurrent[33m.[39misOfflineData)[33m.[39m[34mtoBe[39m([35mtrue[39m)[33m;[39m
+    [90m233|[39m   })[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/10]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/pharmacy-query-ownership.test.tsx[2m > [22moffline results belong to the requested area[2m > [22mignores malformed browser cache and still tries a scoped database fallback: {"unexpected":"shape"}
+[41m[1m FAIL [22m[49m tests/pharmacy-query-ownership.test.tsx[2m > [22moffline results belong to the requested area[2m > [22mignores malformed browser cache and still tries a scoped database fallback: [null]
+[41m[1m FAIL [22m[49m tests/pharmacy-query-ownership.test.tsx[2m > [22moffline results belong to the requested area[2m > [22mignores malformed browser cache and still tries a scoped database fallback: {broken
+[31m[1mAssertionError[22m: expected [] to deeply equal [ { id: 'query-test-konak', …(10) } ][39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- [[39m
+[32m-   {[39m
+[32m-     "address": "TEST RECORD — NOT A REAL ADDRESS",[39m
+[32m-     "city": "İzmir",[39m
+[32m-     "district": "Konak",[39m
+[32m-     "id": "query-test-konak",[39m
+[32m-     "is_live": false,[39m
+[32m-     "latitude": 38.42,[39m
+[32m-     "longitude": 27.13,[39m
+[32m-     "name": "TEST KONAK",[39m
+[32m-     "phone": "",[39m
+[32m-     "source": "mock",[39m
+[32m-     "warning_message": "Yerel test verisidir.",[39m
+[32m-   },[39m
+[32m- ][39m
+[31m+ [][39m
+
+[36m [2m❯[22m tests/pharmacy-query-ownership.test.tsx:[2m311:44[22m[39m
+    [90m309|[39m     fetchMock[33m.[39m[34mmockRejectedValueOnce[39m([35mnew[39m [33mError[39m([32m"offline"[39m))[33m;[39m
+    [90m310|[39m     [35mawait[39m [34mfinish[39m([34mbegin[39m(hook[33m,[39m undefined[33m,[39m undefined[33m,[39m [32m"İzmir"[39m[33m,[39m [32m"Konak"[39m))[33m;[39m
+    [90m311|[39m     [34mexpect[39m(hook[33m.[39mresult[33m.[39mcurrent[33m.[39mpharmacies)[33m.[39m[34mtoEqual[39m([konak])[33m;[39m
+    [90m   |[39m                                            [31m^[39m
+    [90m312|[39m     [34mexpect[39m(hook[33m.[39mresult[33m.[39mcurrent[33m.[39misOfflineData)[33m.[39m[34mtoBe[39m([35mtrue[39m)[33m;[39m
+    [90m313|[39m   })[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/10]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/pharmacy-query-ownership.test.tsx[2m > [22moffline results belong to the requested area[2m > [22mfalls back to the scoped database even when browser storage denies reads
+[31m[1mAssertionError[22m: expected [] to deeply equal [ { id: 'query-test-konak', …(10) } ][39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- [[39m
+[32m-   {[39m
+[32m-     "address": "TEST RECORD — NOT A REAL ADDRESS",[39m
+[32m-     "city": "İzmir",[39m
+[32m-     "district": "Konak",[39m
+[32m-     "id": "query-test-konak",[39m
+[32m-     "is_live": false,[39m
+[32m-     "latitude": 38.42,[39m
+[32m-     "longitude": 27.13,[39m
+[32m-     "name": "TEST KONAK",[39m
+[32m-     "phone": "",[39m
+[32m-     "source": "mock",[39m
+[32m-     "warning_message": "Yerel test verisidir.",[39m
+[32m-   },[39m
+[32m- ][39m
+[31m+ [][39m
+
+[36m [2m❯[22m tests/pharmacy-query-ownership.test.tsx:[2m331:44[22m[39m
+    [90m329|[39m     fetchMock[33m.[39m[34mmockRejectedValueOnce[39m([35mnew[39m [33mError[39m([32m"offline"[39m))[33m;[39m
+    [90m330|[39m     [35mawait[39m [34mfinish[39m([34mbegin[39m(hook[33m,[39m undefined[33m,[39m undefined[33m,[39m [32m"İzmir"[39m[33m,[39m [32m"Konak"[39m))[33m;[39m
+    [90m331|[39m     [34mexpect[39m(hook[33m.[39mresult[33m.[39mcurrent[33m.[39mpharmacies)[33m.[39m[34mtoEqual[39m([konak])[33m;[39m
+    [90m   |[39m                                            [31m^[39m
+    [90m332|[39m     [34mexpect[39m(hook[33m.[39mresult[33m.[39mcurrent[33m.[39misOfflineData)[33m.[39m[34mtoBe[39m([35mtrue[39m)[33m;[39m
+    [90m333|[39m   })[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/10]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m10 failed[39m[22m[2m | [22m[1m[32m17 passed[39m[22m[90m (27)[39m
+[2m   Start at [22m 15:14:31
+[2m   Duration [22m 4.19s[2m (transform 289ms, setup 0ms, import 928ms, tests 619ms, environment 2.21s)[22m
+

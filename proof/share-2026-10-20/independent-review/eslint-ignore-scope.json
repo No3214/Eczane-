@@ -1,0 +1,40 @@
+{
+  "checked_at_utc": "2026-10-20T12:02:51.937Z",
+  "swSrc": "app/sw.ts",
+  "swDest": "public/sw.js",
+  "eslint": [
+    {
+      "file": "public/sw.js",
+      "ignored": true
+    },
+    {
+      "file": "app/sw.ts",
+      "ignored": false
+    },
+    {
+      "file": "components/PharmacyCard.tsx",
+      "ignored": false
+    },
+    {
+      "file": "tests/pharmacy-share.node.cjs",
+      "ignored": false
+    },
+    {
+      "file": "public/sw-helper.js",
+      "ignored": false
+    },
+    {
+      "file": "public/manual-worker.js",
+      "ignored": false
+    },
+    {
+      "file": "public/nested/sw.js",
+      "ignored": false
+    },
+    {
+      "file": "public/sw.ts",
+      "ignored": false
+    }
+  ],
+  "source_worker_rule_count": 112
+}

@@ -1,0 +1,27 @@
+{
+  "command": [
+    "node",
+    "tests/pharmacy-share.node.cjs"
+  ],
+  "cwd": "/workspace/scratch/c1829247bf0c/eczane/repo",
+  "started_at_utc": "2026-10-20T12:02:18.766001+00:00",
+  "finished_at_utc": "2026-10-20T12:02:20.270318+00:00",
+  "seconds": 1.504,
+  "exit_code": 0,
+  "source_pin_file": "source-pins.json",
+  "source_pin_sha256": "f33a85d4bce4904aa407e0884c36ba8cc2b8284927e439f3b9b75d24a0d59733",
+  "reviewed_source_unchanged": true,
+  "passed": 15,
+  "log_sha256": "379dde3b7a7e325198636cfa293da9622df2506ef2537733509b00ce310aac1b",
+  "guard_sha256": "8e968739063ec5c694c2e23056c5c1b7476389ea7385fca8c674d08fe10357e8",
+  "observed_external_network_attempts": 0,
+  "environment_names_only": [
+    "CI",
+    "ECZANE_AUDIT_NETWORK_LOG",
+    "NODE_OPTIONS",
+    "NO_COLOR",
+    "PATH",
+    "TZ"
+  ],
+  "boundary": "Real component handler in existing isolated VM harness; no real DOM, native share dialog, clipboard, image conversion or browser/provider run."
+}

@@ -1,0 +1,62 @@
+{
+  "repository": "No3214/Eczane-",
+  "parent_commit": "2f733bc472f0aea50e37afc8ec2214a87ecf8ba5",
+  "files": {
+    "components/PharmacyCard.tsx": {
+      "sha256": "c2f6d11872a33fe2d710d2f0a57f3ef1d254fa84c1c157dec0bcef7ef205679b",
+      "git_blob_sha": "a02e794775d1e7d8f016358c1678f1af131f4802",
+      "bytes": 12745
+    },
+    "components/ShareCard.tsx": {
+      "sha256": "cfa657f0f10923185128c0bde81cb9ffde6248d6a70dba0fa3d1adfb266dd058",
+      "git_blob_sha": "5ae577bf446107c67764307e547441ddd6a848e8",
+      "bytes": 6116
+    },
+    "tests/pharmacy-share.node.cjs": {
+      "sha256": "d1ef650b12ea98edbf6fbc3643eee99908e3b36b5c5870d2df332c94a2b95eeb",
+      "git_blob_sha": "708646c499a8ee88997112de06ee8571cafff2c4",
+      "bytes": 13597
+    },
+    "eslint.config.mjs": {
+      "sha256": "1473b4313fc9a03b2904e82d695e2c9ad7c34b52736342d29a5ba8652349a5f9",
+      "git_blob_sha": "9df381212807a081d673d8221f8c82a8f8efd15d",
+      "bytes": 554
+    },
+    ".gitignore": {
+      "sha256": "e047bd384439081ceac27ab9b9fd5f7d7423cad4f3e754a1b7b74b4fd01cb2f1",
+      "git_blob_sha": "3a8184d61d2628baf1f48f5caa2d84bd5f0cbbdf",
+      "bytes": 667
+    },
+    "next.config.ts": {
+      "sha256": "6304cb4005e59f80661763146ec802e838f7f227e4b072c5ac6dfca77e25df01",
+      "git_blob_sha": "b5ba91f8396778018ffb8e56f6d2d3d27f6678c8",
+      "bytes": 1116
+    },
+    "app/sw.ts": {
+      "sha256": "9afb1a42ae5d0e50793370de29750f1fddbfbb7b3d625ffa41231a421f8903a6",
+      "git_blob_sha": "552e004f6472c3b787444701375554bfc35aac55",
+      "bytes": 2046
+    },
+    "package.json": {
+      "sha256": "558370050c259dc7d0445ae6f1a1945447150685f8e20c3ac0c80318398a3848",
+      "git_blob_sha": "24e6120cec2e8d90388c1b4329c3be0fed21a4ac",
+      "bytes": 1283
+    },
+    "package-lock.json": {
+      "sha256": "1659380efcd1eea666d46989cd6250fcbd0b605950ec18574b4f79fc11002e64",
+      "git_blob_sha": "232661e0aa80780dc66f7b112b459cd5de809369",
+      "bytes": 338876
+    },
+    "types/pharmacy.ts": {
+      "sha256": "c9f31291aa62bc91d99d046aea9a6c6067b2116aed4360c350ccf8bb9943578f",
+      "git_blob_sha": "069057d9280e7c63eeac2c230055eeb5264ce407",
+      "bytes": 963
+    }
+  },
+  "author_pins_verified": [
+    "components/PharmacyCard.tsx",
+    "tests/pharmacy-share.node.cjs",
+    "eslint.config.mjs",
+    ".gitignore"
+  ]
+}
